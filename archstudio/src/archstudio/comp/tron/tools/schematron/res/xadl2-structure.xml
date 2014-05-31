@@ -1,0 +1,496 @@
+<?xml version="1.0" ?>
+
+<schema ns="http://www.isr.uci.edu/schematron/xadl2-structure.xml"
+        xmlns="http://www.ascc.net/xml/schematron"        
+	fpi="+//IDN isr.uci.edu/SGML Schema//EN">
+
+  <title>xADL 2.0 Structure Tests Schema</title>
+  
+  <ns uri="http://www.w3.org/1999/xlink" prefix="xlink"/>
+  <ns uri="http://www.ics.uci.edu/pub/arch/xArch/instance.xsd" prefix="instance"/>
+  <ns uri="http://www.ics.uci.edu/pub/arch/xArch/types.xsd" prefix="types"/>
+
+  <pattern id="test.80c3147f.102b3c70dfa.2576389267ac4a8a.10id2" 
+   name="xADL 2.0/No Duplicate IDs"
+   description="Checks for duplicate anyIDs in a xADL 2.0 document.">
+    <rule context="*">
+      <let name="id1" value="@*[local-name()='id']"/>
+      <assert test="not($id1) or ($id1 and (count(//@*[local-name()='id' and (.=$id1)]) = 1))">
+        text=Duplicate ID <value-of select="$id1"/> |*|
+        detail=Two elements have the same ID (<value-of select="$id1"/>) in the same xADL 2.0 document.
+               This is a serious error and most tools will not operate properly
+               on this document until this error is resolved.
+      </assert>
+    </rule>
+  </pattern>
+  
+  <pattern id="test.80c3147f.102b3c70dfa.2576389267ac4a8a.10e" 
+   name="xADL 2.0/Structure and Types/Structure/ArchStructures/ID Present"
+   description="Checks for the presence of an ID on architecture structures.">
+    <rule context="instance:xArch/types:archStructure">
+      <assert test="@types:id">
+        text=Architecture structure must have an ID |*|
+        detail=ArchStructure <value-of select="./types:description/."/> must have an ID
+      </assert>
+    </rule>
+  </pattern>
+  
+  <pattern id="test.80c3147f.102b3c8d04f.6da6c6b508aeb61d.10f" 
+   name="xADL 2.0/Structure and Types/Structure/ArchStructures/Description Present"
+   description="Checks for the presence of a Description on architecture structures.">
+    <rule context="instance:xArch/types:archStructure">
+      <assert test="types:description">
+        id=<value-of select="@types:id"/> |*|
+        iddesc=ArchStructure |*|
+        text=Architecture structure must have a description |*|
+        detail=Architecture structure with ID <value-of select="@types:id"/> must have a description
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3147f.102b3c8e01d.562cc2871d077a3.110" 
+   name="xADL 2.0/Structure and Types/Structure/ArchStructures/Description Non-Empty"
+   description="Checks for the presence of a non-empty Description on architecture structures.">
+    <rule context="instance:xArch/types:archStructure/types:description">
+      <assert test="normalize-space(.) != ''">
+        id=<value-of select="../@types:id"/> |*|
+        iddesc=ArchStructure |*|
+        text=Architecture structure must have a non-empty description |*|
+        detail=Architecture structure with ID <value-of select="@types:id"/> must have a non-empty description
+      </assert>
+    </rule>
+  </pattern>
+  
+  <!-- Components -->
+
+  <pattern id="test.80c3147f.10285474143.ad9c42b14784eb5d.0" 
+   name="xADL 2.0/Structure and Types/Structure/Components/ID Present"
+   description="Checks for the presence of an ID on components.">
+    <rule context="instance:xArch/types:archStructure/types:component">
+      <assert test="@types:id">
+        text=Component must have an ID |*|
+        detail=Component <value-of select="./types:description/."/> must have an ID
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3147f.1028548ab08.860591990d819f77.0" 
+   name="xADL 2.0/Structure and Types/Structure/Components/Description Present"
+   description="Checks for the presence of a Description on components.">
+    <rule context="instance:xArch/types:archStructure/types:component">
+      <assert test="types:description">
+        id=<value-of select="@types:id"/> |*|
+        iddesc=Component |*|
+        text=Component must have a description |*|
+        detail=Component with ID <value-of select="@types:id"/> must have a description
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3147f.1028548ab08.860591990d819f78.1" 
+   name="xADL 2.0/Structure and Types/Structure/Components/Description Non-Empty"
+   description="Checks for the presence of a non-empty Description on components.">
+    <rule context="instance:xArch/types:archStructure/types:component/types:description">
+      <assert test="normalize-space(.) != ''">
+        id=<value-of select="../@types:id"/> |*|
+        iddesc=Component |*|
+        text=Component must have a non-empty description |*|
+        detail=Component with ID <value-of select="@types:id"/> must have a non-empty description
+      </assert>
+    </rule>
+  </pattern>
+
+  <!-- Component Interfaces -->
+  
+  <pattern id="test.80c3147f.102b211d999.7ff5df43c1573f3b.22" 
+   name="xADL 2.0/Structure and Types/Structure/Components/Interfaces/ID Present"
+   description="Checks for the presence of an ID on component interfaces.">
+    <rule context="instance:xArch/types:archStructure/types:component/types:interface">
+      <assert test="@types:id">
+        text=Interface must have an ID |*|
+        detail=Interface <value-of select="./types:description"/> on
+               component <value-of select="../types:description"/> must have an ID
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3147f.102b217399a.fce08258bb50fd89.23" 
+   name="xADL 2.0/Structure and Types/Structure/Components/Interfaces/Description Present"
+   description="Checks for the presence of a Description on component interfaces.">
+    <rule context="instance:xArch/types:archStructure/types:component/types:interface">
+      <assert test="types:description">
+        id0=<value-of select="@types:id"/> |*|
+        iddesc0=Interface |*|
+        id1=<value-of select="../@types:id"/> |*|
+        iddesc1=Component |*|
+        text=Interface must have a description |*|
+        detail=Interface with id <value-of select="@types:id"/>
+               on component <value-of select="../types:description"/>
+               must have a description
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3147f.102b2174e0f.d11c6eb2887d55f1.24" 
+   name="xADL 2.0/Structure and Types/Structure/Components/Interfaces/Description Non-Empty"
+   description="Checks for the presence of a non-empty Description on component interfaces.">
+    <rule context="instance:xArch/types:archStructure/types:component/types:interface/types:description">
+      <assert test="normalize-space(.) != ''">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Interface |*|
+        id1=<value-of select="../../@types:id"/> |*|
+        iddesc1=Component |*|
+        text=Interface must have a non-empty description |*|
+        detail=Interface with id <value-of select="@types:id"/>
+               on component <value-of select="../types:description"/>
+               must have a non-empty description
+      </assert>
+    </rule>
+  </pattern>
+ 
+  <pattern id="test.80c3147f.102b21d5505.55d0461685980f25.25" 
+   name="xADL 2.0/Structure and Types/Structure/Components/Interfaces/Direction Present"
+   description="Checks for the presence of a Direction on component interfaces.">
+    <rule context="instance:xArch/types:archStructure/types:component/types:interface">
+      <assert test="types:direction">
+        id0=<value-of select="@types:id"/> |*|
+        iddesc0=Interface |*|
+        id1=<value-of select="../@types:id"/> |*|
+        iddesc1=Component |*|
+        text=Interface on component must have a direction |*|
+        detail=Interface <value-of select="./types:description"/>
+               on component <value-of select="../types:description"/> 
+               must have a direction
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3147f.102b21d66e6.5b517931e3875c49.26" 
+   name="xADL 2.0/Structure and Types/Structure/Components/Interfaces/Direction Non-Empty"
+   description="Checks for the presence of a non-empty Direction on component interfaces.">
+    <rule context="instance:xArch/types:archStructure/types:component/types:interface/types:direction">
+      <assert test="normalize-space(.) != ''">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Interface |*|
+        id1=<value-of select="../../@types:id"/> |*|
+        iddesc1=Component |*|
+        text=Interface must have a non-empty direction |*|
+        detail=Interface <value-of select="./types:description"/>
+               on component <value-of select="../types:description"/> 
+               must have a non-empty direction
+      </assert>
+    </rule>
+  </pattern>
+ 
+  <pattern id="test.80c3147f.102b21d7fe5.f442f989102bb66a.27" 
+   name="xADL 2.0/Structure and Types/Structure/Components/Interfaces/Direction Valid"
+   description="Checks for the presence of a valid Direction on component interfaces.">
+    <rule context="instance:xArch/types:archStructure/types:component/types:interface/types:direction">
+      <assert test="normalize-space(.) = 'none' 
+                 or normalize-space(.) = 'in'
+                 or normalize-space(.) = 'out'
+                 or normalize-space(.) = 'inout'">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Interface |*|
+        id1=<value-of select="../../@types:id"/> |*|
+        iddesc1=Component |*|
+        text=Interface direction is invalid |*|
+        detail=Interface <value-of select="./types:description"/>
+               on component <value-of select="../types:description"/> 
+               must have must be one of 'none', 'in', 'out', or 'inout'
+      </assert>
+    </rule>
+  </pattern>
+  
+  <!-- Connectors -->
+
+  <pattern id="test.80c3147e.10285474143.ad9c42b14784eb5d.0" 
+   name="xADL 2.0/Structure and Types/Structure/Connectors/ID Present"
+   description="Checks for the presence of an ID on connectors.">
+    <rule context="instance:xArch/types:archStructure/types:connector">
+      <assert test="@types:id">
+        text=Connector must have an ID |*|
+        detail=Connector <value-of select="./types:description/."/> must have an ID
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3147e.1028548ab08.860591990d819f77.0" 
+   name="xADL 2.0/Structure and Types/Structure/Connectors/Description Present"
+   description="Checks for the presence of a Description on connectors.">
+    <rule context="instance:xArch/types:archStructure/types:connector">
+      <assert test="types:description">
+        id=<value-of select="@types:id"/> |*|
+        iddesc=Connector |*|
+        text=Connector must have a description |*|
+        detail=Connector with ID <value-of select="@types:id"/> must have a description
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3147e.1028548ab08.860591990d819f78.1" 
+   name="xADL 2.0/Structure and Types/Structure/Connectors/Description Non-Empty"
+   description="Checks for the presence of a non-empty Description on connectors.">
+    <rule context="instance:xArch/types:archStructure/types:connector/types:description">
+      <assert test="normalize-space(.) != ''">
+        id=<value-of select="../@types:id"/> |*|
+        iddesc=Connector |*|
+        text=Connector must have a non-empty description |*|
+        detail=Connector with ID <value-of select="@types:id"/> must have a non-empty description
+      </assert>
+    </rule>
+  </pattern>
+
+  <!-- Connector Interfaces -->
+  
+  <pattern id="test.80c3147e.102b211d999.7ff5df43c1573f3b.22" 
+   name="xADL 2.0/Structure and Types/Structure/Connectors/Interfaces/ID Present"
+   description="Checks for the presence of an ID on connector interfaces.">
+    <rule context="instance:xArch/types:archStructure/types:connector/types:interface">
+      <assert test="@types:id">
+        text=Interface must have an ID |*|
+        detail=Interface <value-of select="./types:description"/> on
+               connector <value-of select="../types:description"/> must have an ID
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3147e.102b217399a.fce08258bb50fd89.23" 
+   name="xADL 2.0/Structure and Types/Structure/Connectors/Interfaces/Description Present"
+   description="Checks for the presence of a Description on connector interfaces.">
+    <rule context="instance:xArch/types:archStructure/types:connector/types:interface">
+      <assert test="types:description">
+        id0=<value-of select="@types:id"/> |*|
+        iddesc0=Interface |*|
+        id1=<value-of select="../@types:id"/> |*|
+        iddesc1=Connector |*|
+        text=Interface must have a description |*|
+        detail=Interface with id <value-of select="@types:id"/>
+               on connector <value-of select="../types:description"/>
+               must have a description
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3147e.102b2174e0f.d11c6eb2887d55f1.24" 
+   name="xADL 2.0/Structure and Types/Structure/Connectors/Interfaces/Description Non-Empty"
+   description="Checks for the presence of a non-empty Description on connector interfaces.">
+    <rule context="instance:xArch/types:archStructure/types:connector/types:interface/types:description">
+      <assert test="normalize-space(.) != ''">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Interface |*|
+        id1=<value-of select="../../@types:id"/> |*|
+        iddesc1=Connector |*|
+        text=Interface must have a non-empty description |*|
+        detail=Interface with id <value-of select="@types:id"/>
+               on connector <value-of select="../types:description"/>
+               must have a non-empty description
+      </assert>
+    </rule>
+  </pattern>
+ 
+  <pattern id="test.80c3147e.102b21d5505.55d0461685980f25.25" 
+   name="xADL 2.0/Structure and Types/Structure/Connectors/Interfaces/Direction Present"
+   description="Checks for the presence of a Direction on connector interfaces.">
+    <rule context="instance:xArch/types:archStructure/types:connector/types:interface">
+      <assert test="types:direction">
+        id0=<value-of select="@types:id"/> |*|
+        iddesc0=Interface |*|
+        id1=<value-of select="../@types:id"/> |*|
+        iddesc1=Connector |*|
+        text=Interface on connector must have a direction |*|
+        detail=Interface <value-of select="./types:description"/>
+               on connector <value-of select="../types:description"/> 
+               must have a direction
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3147e.102b21d66e6.5b517931e3875c49.26" 
+   name="xADL 2.0/Structure and Types/Structure/Connectors/Interfaces/Direction Non-Empty"
+   description="Checks for the presence of a non-empty Direction on connector interfaces.">
+    <rule context="instance:xArch/types:archStructure/types:connector/types:interface/types:direction">
+      <assert test="normalize-space(.) != ''">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Interface |*|
+        id1=<value-of select="../../@types:id"/> |*|
+        iddesc1=Connector |*|
+        text=Interface must have a non-empty direction |*|
+        detail=Interface <value-of select="./types:description"/>
+               on connector <value-of select="../types:description"/> 
+               must have a non-empty direction
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3147e.102b21d7fe5.f442f989102bb66a.27" 
+   name="xADL 2.0/Structure and Types/Structure/Connectors/Interfaces/Direction Valid"
+   description="Checks for the presence of a valid Direction on connector interfaces.">
+    <rule context="instance:xArch/types:archStructure/types:connector/types:interface/types:direction">
+      <assert test="normalize-space(.) = 'none' 
+                 or normalize-space(.) = 'in'
+                 or normalize-space(.) = 'out'
+                 or normalize-space(.) = 'inout'">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Interface |*|
+        id1=<value-of select="../../@types:id"/> |*|
+        iddesc1=Connector |*|
+        text=Interface direction is invalid |*|
+        detail=Interface <value-of select="./types:description"/>
+               on connector <value-of select="../types:description"/> 
+               must have must be one of 'none', 'in', 'out', or 'inout'
+      </assert>
+    </rule>
+  </pattern>
+  
+  <!-- Links -->
+  
+  <pattern id="test.80c3147f.102b27ad91c.a674a634512e584.11a" 
+   name="xADL 2.0/Structure and Types/Structure/Links/ID Present"
+   description="Checks for the presence of an ID on links.">
+    <rule context="instance:xArch/types:archStructure/types:link">
+      <assert test="@types:id">
+        text=Link must have an ID |*|
+        detail=Link <value-of select="./types:description"/> 
+               must have an ID
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3147f.102b27aed37.ce56ed05264c62d5.11b" 
+   name="xADL 2.0/Structure and Types/Structure/Links/Description Present"
+   description="Checks for the presence of a Description on links.">
+    <rule context="instance:xArch/types:archStructure/types:link">
+      <assert test="types:description">
+        id0=<value-of select="@types:id"/> |*|
+        iddesc0=Link |*|
+        text=Link must have a description |*|
+        detail=Link with id <value-of select="@types:id"/>
+               must have a description
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3147f.102b27afce7.1725b1c2a18cc9a8.11c" 
+   name="xADL 2.0/Structure and Types/Structure/Links/Description Non-Empty"
+   description="Checks for the presence of a non-empty Description on links.">
+    <rule context="instance:xArch/types:archStructure/types:link/types:description">
+      <assert test="normalize-space(.) != ''">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Link |*|
+        text=Link must have a non-empty description |*|
+        detail=Link with id <value-of select="@types:id"/>
+               must have a non-empty description
+      </assert>
+    </rule>
+  </pattern>
+    
+  <pattern id="test.80c3147f.102b27afce7.1725b1c2a18cc9a8.11d" 
+   name="xADL 2.0/Structure and Types/Structure/Links/Two Points"
+   description="Checks for the presence of exactly two endpoints on links.">
+    <rule context="instance:xArch/types:archStructure/types:link">
+      <assert test="count(./types:point) = 2">
+        id0=<value-of select="@types:id"/> |*|
+        iddesc0=Link |*|
+        text=Link must have exactly two points |*|
+        detail=Link <value-of select="./types:description"/>
+               must have exactly two points
+      </assert>
+    </rule>
+  </pattern>
+  
+  <pattern id="test.80c3147f.102b27aed37.ce56ed05264c62d5.11f" 
+   name="xADL 2.0/Structure and Types/Structure/Links/Anchors Present"
+   description="Checks for the presence of an anchor-on-interface on link endpoints.">
+    <rule context="instance:xArch/types:archStructure/types:link/types:point">
+      <assert test="instance:anchorOnInterface">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Link |*|
+        text=Link point missing anchor-on-interface |*|
+        detail=Link <value-of select="../types:description"/>
+               must have an anchor-on-interface for every endpoint
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3147f.102b32c629a.8bedb9e05f903208.22" 
+   name="xADL 2.0/Structure and Types/Structure/Links/Anchors Valid"
+   description="Checks the validity of XLinks for anchor-on-interfaces.">
+    <rule context="instance:xArch/types:archStructure/types:link/types:point/instance:anchorOnInterface">
+      <assert test="@xlink:type">
+        id=<value-of select="../../@types:id"/> |*|
+        iddesc=Link |*|
+        text=Anchor-on-interface XLink must have a type |*|
+        detail=Anchor-on-interface of
+               Link <value-of select="../../types:description"/>
+               must have an XLink type
+      </assert>
+      <assert test="@xlink:type = 'simple'">
+        id=<value-of select="../../@types:id"/> |*|
+        iddesc=Link |*|
+        text=Anchor-on-interface XLink must have type 'simple' |*|
+        detail=Anchor-on-interface of
+               Link <value-of select="../../types:description"/>
+               must have an XLink type 'simple'
+      </assert>
+      <assert test="starts-with(@xlink:href, '#')">
+        id=<value-of select="../../@types:id"/> |*|
+        iddesc=Link |*|
+        text=Anchor-on-interface XLink href should start with '#' |*|
+        detail=Anchor-on-interface of
+               Link <value-of select="../../types:description"/>
+               should have an XLink href starting with '#'
+      </assert>
+    </rule>
+  </pattern>
+  
+  <pattern id="test.80c3147f.102b3307532.81b7ae1f46af1059.23" 
+   name="xADL 2.0/Structure and Types/Structure/Links/Anchors connect to Interfaces"
+   description="Checks that link endpoints are anchored on Interfaces.">
+    <rule context="instance:xArch/types:archStructure/types:link/types:point/instance:anchorOnInterface">
+      <assert 
+        test="substring-after(@xlink:href, '#') = /instance:xArch/types:archStructure/types:component/types:interface/@types:id
+           or substring-after(@xlink:href, '#') = /instance:xArch/types:archStructure/types:connector/types:interface/@types:id">
+        id=<value-of select="../../@types:id"/> |*|
+        iddesc=Link |*|
+        text=Link endpoint should point to an interface |*|
+        detail=Anchor-on-interface of
+               Link <value-of select="../../types:description"/>
+               should have an XLink href indicating an interface on a component or connector.
+      </assert>
+    </rule>
+  </pattern>
+
+  <!-- Note: this test does not fail for broken links -->
+  <pattern id="test.80c3147f.102b33a6502.c581b5587f597235.fb" 
+   name="xADL 2.0/Structure and Types/Structure/Links/Interface Directions Compatible"
+   description="Checks that linked interface directions are compatible; i.e. none/none, in/out, out/in, or inout/inout.">
+    <rule context="instance:xArch/types:archStructure/types:link">
+      <let name="id1" value="substring-after(./types:point[1]/instance:anchorOnInterface/@xlink:href, '#')"/>
+      <let name="id2" value="substring-after(./types:point[2]/instance:anchorOnInterface/@xlink:href, '#')"/>
+      <let name="dir1" value="/instance:xArch/types:archStructure/*/types:interface[@types:id=string($id1)]/types:direction"/>
+      <let name="dir2" value="/instance:xArch/types:archStructure/*/types:interface[@types:id=string($id2)]/types:direction"/>
+
+      <assert test="
+           (not($dir1) or not($dir2)) or
+           (($dir1='') or ($dir2='')) or
+           (($dir1='none') and ($dir2='none')) or
+           (($dir1='in')   and ($dir2='out')) or
+           (($dir1='out')  and ($dir2='in')) or
+           (($dir1='inout') and ($dir2='inout'))
+           ">
+        id=<value-of select="./@types:id"/> |*|
+        iddesc=Link |*|
+        text=Link endpoint directions are not compatible. |*|
+        detail=Link <value-of select="./types:description"/>
+               should connect interfaces with compatible
+               directions.  Valid combinations are 
+               none/none, in/out, out/in, or inout/inout.
+               This link currently connects interfaces with
+               directions '<value-of select="$dir1"/>' and
+               '<value-of select="$dir2"/>'.
+      </assert>
+    </rule>
+  </pattern>
+
+</schema>

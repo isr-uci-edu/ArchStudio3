@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance:xArch xmlns:hints="http://www.ics.uci.edu/pub/arch/xArch/hints.xsd" xmlns:instance="http://www.ics.uci.edu/pub/arch/xArch/instance.xsd" xmlns:types="http://www.ics.uci.edu/pub/arch/xArch/types.xsd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ics.uci.edu/pub/arch/xArch/tronanalysis.xsd http://www.isr.uci.edu/projects/xarchuci/ext/tronanalysis.xsd http://www.ics.uci.edu/pub/arch/xArch/analysis.xsd http://www.isr.uci.edu/projects/xarchuci/ext/analysis.xsd http://www.ics.uci.edu/pub/arch/xArch/types.xsd http://www.isr.uci.edu/projects/xarchuci/ext/types.xsd http://www.ics.uci.edu/pub/arch/xArch/hints.xsd http://www.isr.uci.edu/projects/xarchuci/ext/hints.xsd">
+    <types:archStructure types:id="archStructure.Container" xsi:type="types:ArchStructure">
+        <types:description xsi:type="instance:Description">DCOM for XP SP2</types:description>
+        <types:component types:id="ClientLocal" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">ClientLocal</types:description>
+            <types:interface types:id="ClientLocal-Callback" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">ClientLocal-Callback</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:interface>
+            <types:interface types:id="ClientLocal-Out" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">ClientLocal-Out</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+        </types:component>
+        <types:component types:id="ClientRemote" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">ClientRemote</types:description>
+            <types:interface types:id="ClientRemote-Callback" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">ClientRemote-Callback</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:interface>
+            <types:interface types:id="ClientRemote-Out" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">ClientRemote-Out</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+        </types:component>
+        <types:component types:id="Component" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">Component</types:description>
+            <types:interface types:id="Component-In" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Component-In</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:interface>
+            <types:interface types:id="Component-SourceInterface" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Coomponent-SourceInterface</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+        </types:component>
+        <types:connector types:id="DCOMOverLRPC" xsi:type="types:Connector">
+            <types:description xsi:type="instance:Description">DCOM over LRPC</types:description>
+            <types:interface types:id="DCOMOverLRPC-Client" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">DCOMOverLRPC-Client</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:interface>
+            <types:interface types:id="DCOMOverLRPC-Component" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">DCOMOverLRPC-Component</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+        </types:connector>
+        <types:connector types:id="DCOMOverORPC" xsi:type="types:Connector">
+            <types:description xsi:type="instance:Description">DCOM over ORPC</types:description>
+            <types:interface types:id="DCOMOverORPC-Client" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">DCOMOverORPC-Client</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:interface>
+            <types:interface types:id="DCOMOverORPC-Component" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">DCOMOverORPC-Component</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+        </types:connector>
+        <types:link types:id="link1" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">link1</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#ClientLocal-Out" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#DCOMOverLRPC-Client" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="link2" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">link2</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#DCOMOverLRPC-Component" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#Component-In" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="link3" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">link3</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#ClientRemote-Out" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#DCOMOverORPC-Client" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="link4" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">link4</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#DCOMOverORPC-Component" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#Component-In" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+    </types:archStructure>
+<hints:renderingHints xsi:type="hints:RenderingHints">
+        <hints:hints xsi:type="hints:Hints">
+            <hints:hintedThing xlink:href="#archStructure.Container" xsi:type="instance:XMLLink" xlink:type="simple"/>
+            <hints:propertyHint hints:name="allHints" xsi:type="hints:PropertyHint" hints:value="link1|numPoints:java.lang.Integer=INT2;link1|point0:java.awt.Point=POINT10126,10090;link1|point1:java.awt.Point=POINT10191,10090;link1|splineMode:java.lang.Integer=INT100;link1|color:java.awt.Color=COLOR-16777216;link2|numPoints:java.lang.Integer=INT2;link2|point0:java.awt.Point=POINT10412,10094;link2|point1:java.awt.Point=POINT10471,10184;link2|splineMode:java.lang.Integer=INT100;link2|color:java.awt.Color=COLOR-16777216;link3|numPoints:java.lang.Integer=INT2;link3|point0:java.awt.Point=POINT10127,10270;link3|point1:java.awt.Point=POINT10195,10270;link3|splineMode:java.lang.Integer=INT100;link3|color:java.awt.Color=COLOR-16777216;link4|numPoints:java.lang.Integer=INT2;link4|point0:java.awt.Point=POINT10411,10273;link4|point1:java.awt.Point=POINT10471,10184;link4|splineMode:java.lang.Integer=INT100;link4|color:java.awt.Color=COLOR-16777216;ClientLocal|boundingBox:java.awt.Rectangle=RECT10026,10045,100,100;ClientLocal|color:java.awt.Color=COLOR-3814401;ClientLocal-Callback|boundingBox:java.awt.Rectangle=RECT10121,10063,10,10;ClientLocal-Callback|orientation:java.lang.Integer=INT1010;ClientLocal-Out|boundingBox:java.awt.Rectangle=RECT10121,10085,10,10;ClientLocal-Out|orientation:java.lang.Integer=INT1010;ClientRemote|boundingBox:java.awt.Rectangle=RECT10027,10223,100,100;ClientRemote|color:java.awt.Color=COLOR-3814401;ClientRemote-Callback|boundingBox:java.awt.Rectangle=RECT10122,10237,10,10;ClientRemote-Callback|orientation:java.lang.Integer=INT1010;ClientRemote-Out|boundingBox:java.awt.Rectangle=RECT10122,10265,10,10;ClientRemote-Out|orientation:java.lang.Integer=INT1010;Component|boundingBox:java.awt.Rectangle=RECT10471,10131,100,100;Component|color:java.awt.Color=COLOR-3814401;Component-In|boundingBox:java.awt.Rectangle=RECT10466,10179,10,10;Component-In|orientation:java.lang.Integer=INT1030;Component-SourceInterface|boundingBox:java.awt.Rectangle=RECT10466,10211,10,10;Component-SourceInterface|orientation:java.lang.Integer=INT1030;DCOMOverLRPC|boundingBox:java.awt.Rectangle=RECT10191,10066,221,47;DCOMOverLRPC|color:java.awt.Color=COLOR-5441;DCOMOverLRPC-Client|boundingBox:java.awt.Rectangle=RECT10186,10085,10,10;DCOMOverLRPC-Client|orientation:java.lang.Integer=INT1030;DCOMOverLRPC-Component|boundingBox:java.awt.Rectangle=RECT10407,10089,10,10;DCOMOverLRPC-Component|orientation:java.lang.Integer=INT1010;DCOMOverORPC|boundingBox:java.awt.Rectangle=RECT10195,10246,216,50;DCOMOverORPC|color:java.awt.Color=COLOR-5441;DCOMOverORPC-Client|boundingBox:java.awt.Rectangle=RECT10190,10265,10,10;DCOMOverORPC-Client|orientation:java.lang.Integer=INT1030;DCOMOverORPC-Component|boundingBox:java.awt.Rectangle=RECT10406,10268,10,10;DCOMOverORPC-Component|orientation:java.lang.Integer=INT1010;"/>
+        </hints:hints>
+    </hints:renderingHints>
+</instance:xArch>

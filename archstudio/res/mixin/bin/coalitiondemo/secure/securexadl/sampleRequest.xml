@@ -1,0 +1,75 @@
+<Request xmlns="urn:oasis:names:tc:xacml:1.0:context" xmlns:context="urn:oasis:names:tc:xacml:1.0:context" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:messages="http://www.ics.uci.edu/pub/arch/xArch/messages.xsd" xmlns:security="http://www.ics.uci.edu/pub/arch/xArch/security.xsd">
+	<Subject SubjectCategory="urn:oasis:names:tc:xacml:1.0:subject-category:access-subject">
+		<Attribute AttributeId="urn:oasis:names:tc:xacml:1.0:subject:subject-id" DataType="http://www.w3.org/2001/XMLSchema#string">
+			<AttributeValue>SecureManagedSystem</AttributeValue>
+		</Attribute>
+	</Subject>
+	<Resource>
+		<!--
+		<ResourceContent>
+			<security:sourceInterface xlink:href="#USFranceConnector.IFACE_BOTTOM" xsi:type="instance:XMLLink" xlink:type="simple"/>
+			<security:destinationInterface xlink:href="#USFranceConnector.IFACE_TOP" xsi:type="instance:XMLLink" xlink:type="simple"/>
+			<security:routeMessage messages:id="entity" messages:kind="notification" xsi:type="messages:NamedPropertyMessage">
+				<messages:description xsi:type="instance:Description"> Dummy</messages:description>
+				<messages:count xsi:type="messages:Count">1</messages:count>
+				<messages:type xsi:type="messages:MessageType"> c2.fw.NamedPropertyMessage</messages:type>
+				<messages:name xsi:type="messages:MessageName"> entity</messages:name>
+				<messages:namedProperty xsi:type="messages:NamedProperty">
+					<messages:name xsi:type="messages:PropertyName"> locY</messages:name>
+					<messages:value xsi:type="messages:PropertyValue"> 317.0</messages:value>
+				</messages:namedProperty>
+				<messages:namedProperty xsi:type="messages:NamedProperty">
+					<messages:name xsi:type="messages:PropertyName"> tick</messages:name>
+					<messages:value xsi:type="messages:PropertyValue"> 11500</messages:value>
+				</messages:namedProperty>
+				<messages:namedProperty xsi:type="messages:NamedProperty">
+					<messages:name xsi:type="messages:PropertyName"> country</messages:name>
+					<messages:value xsi:type="messages:PropertyValue">United States of America</messages:value>
+				</messages:namedProperty>
+				<messages:namedProperty xsi:type="messages:NamedProperty">
+					<messages:name xsi:type="messages:PropertyName"> locX</messages:name>
+					<messages:value xsi:type="messages:PropertyValue"> 253.0</messages:value>
+				</messages:namedProperty>
+				<messages:namedProperty xsi:type="messages:NamedProperty">
+					<messages:name xsi:type="messages:PropertyName">type</messages:name>
+					<messages:value xsi:type="messages:PropertyValue">AAAAAircraft Carrier</messages:value>
+				</messages:namedProperty>
+				<messages:namedProperty xsi:type="messages:NamedProperty">
+					<messages:name xsi:type="messages:PropertyName"> locZ</messages:name>
+					<messages:value xsi:type="messages:PropertyValue"> 1.0</messages:value>
+				</messages:namedProperty>
+				<messages:namedProperty xsi:type="messages:NamedProperty">
+					<messages:name xsi:type="messages:PropertyName"> pathIdx</messages:name>
+					<messages:value xsi:type="messages:PropertyValue"> 0</messages:value>
+				</messages:namedProperty>
+				<messages:namedProperty xsi:type="messages:NamedProperty">
+					<messages:name xsi:type="messages:PropertyName"> C2_TYPE</messages:name>
+					<messages:value xsi:type="messages:PropertyValue"> NOTIFICATION</messages:value>
+				</messages:namedProperty>
+				<messages:namedProperty xsi:type="messages:NamedProperty">
+					<messages:name xsi:type="messages:PropertyName"> heading</messages:name>
+					<messages:value xsi:type="messages:PropertyValue"> 28</messages:value>
+				</messages:namedProperty>
+				<messages:namedProperty xsi:type="messages:NamedProperty">
+					<messages:name xsi:type="messages:PropertyName"> entityId</messages:name>
+					<messages:value xsi:type="messages:PropertyValue"> US-Rad1</messages:value>
+				</messages:namedProperty>
+			</security:routeMessage>
+		</ResourceContent>
+		-->
+		<Attribute AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string">
+			<AttributeValue>USFilterControlBus.IFACE_TOP_to_USFranceConnector.IFACE_BOTTOM</AttributeValue>
+		</Attribute>
+		<Attribute AttributeId="urn:xadl:archStructure:link:point" DataType="http://www.w3.org/2001/XMLSchema#string">
+			<AttributeValue>USFilterControlBus.IFACE_TOP</AttributeValue>
+		</Attribute>
+		<Attribute AttributeId="urn:xadl:archStructure:link:point" DataType="http://www.w3.org/2001/XMLSchema#string">
+			<AttributeValue>USFranceConnector.IFACE_BOTTOM</AttributeValue>
+		</Attribute>
+	</Resource>
+	<Action>
+		<Attribute AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id" DataType="http://www.w3.org/2001/XMLSchema#string">
+			<AttributeValue>addWeld</AttributeValue></Attribute>
+	</Action>
+</Request>

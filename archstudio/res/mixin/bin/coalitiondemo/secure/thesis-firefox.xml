@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance:xArch xmlns:hints="http://www.ics.uci.edu/pub/arch/xArch/hints.xsd" xmlns:instance="http://www.ics.uci.edu/pub/arch/xArch/instance.xsd" xmlns:types="http://www.ics.uci.edu/pub/arch/xArch/types.xsd" xmlns:security="http://www.ics.uci.edu/pub/arch/xArch/security.xsd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ics.uci.edu/pub/arch/xArch/tronanalysis.xsd http://www.isr.uci.edu/projects/xarchuci/ext/tronanalysis.xsd http://www.ics.uci.edu/pub/arch/xArch/analysis.xsd http://www.isr.uci.edu/projects/xarchuci/ext/analysis.xsd http://www.ics.uci.edu/pub/arch/xArch/types.xsd http://www.isr.uci.edu/projects/xarchuci/ext/types.xsd http://www.ics.uci.edu/pub/arch/xArch/hints.xsd http://www.isr.uci.edu/projects/xarchuci/ext/hints.xsd http://www.ics.uci.edu/pub/arch/xArch/security.xsd file:///C:/Documents%20and%20Settings/Jie%20Ren/My%20Documents/My%20Research/workspace/securexadl/res/security.xsd">
+    <types:archTypes xsi:type="types:ArchTypes">
+        <types:componentType types:id="ContentContainer" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">Content Container</types:description>
+            <types:signature types:id="ContentContainer-sig-in" xsi:type="types:Signature">
+                <types:description xsi:type="instance:Description">Content Container Signature 1</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:signature>
+            <types:signature types:id="ContentContainer-sig-out" xsi:type="types:Signature">
+                <types:description xsi:type="instance:Description">Content Container Signature 2</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:signature>
+            <types:subArchitecture xsi:type="types:SubArchitecture">
+                <types:archStructure xlink:href="#archStructure.Container" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                <types:signatureInterfaceMapping xsi:type="types:SignatureInterfaceMapping">
+                    <types:description xsi:type="instance:Description">(New Signature-Interface Mapping)</types:description>
+                    <types:outerSignature xlink:href="#ContentContainer-sig-out" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                    <types:innerInterface xlink:href="#DOMNode1-out" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                </types:signatureInterfaceMapping>
+            </types:subArchitecture>
+        </types:componentType>
+        <types:componentType types:id="DOMNode" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">DOM Node Type</types:description>
+            <types:signature types:id="DOMNode-sig-in" xsi:type="types:Signature">
+                <types:description xsi:type="instance:Description">DOM Node Signature 1</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:signature>
+            <types:signature types:id="DOMNode-sig-out" xsi:type="types:Signature">
+                <types:description xsi:type="instance:Description">DOM Node Signature 2</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:signature>
+        </types:componentType>
+    </types:archTypes>
+    <types:archStructure types:id="archStructure.Container" xsi:type="types:ArchStructure">
+        <types:description xsi:type="instance:Description">DOM Content Container</types:description>
+        <types:component types:id="InternalContainer" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">Frame Container</types:description>
+            <types:interface types:id="InternalContainer-in" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">InternalContainer-in</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:interface>
+            <types:interface types:id="InternalContainer-out" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">InternalContainer-out</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+            <types:type xlink:href="#ContentContainer" xlink:type="simple" xsi:type="instance:XMLLink"/>
+        </types:component>
+        <types:component types:id="DOMNode1" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">DOM Node 1</types:description>
+            <types:interface types:id="DOMNode1-in" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Node1-in</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:interface>
+            <types:interface types:id="DOMNode1-out" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Node1-out</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+        </types:component>
+        <types:component types:id="DOMNode2" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">DOM Node 2</types:description>
+            <types:interface types:id="DOMNode2-in" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Node1-in</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:interface>
+            <types:interface types:id="DOMNode2-out" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Node1-out</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+        </types:component>
+    </types:archStructure>
+    <types:archStructure types:id="archStructure.Firefox" xsi:type="types:ArchStructure">
+        <types:description xsi:type="instance:Description">Firefox Component Security Architecture</types:description>
+        <types:component types:id="ChromeJavaScript" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">Chrome JavaScript</types:description>
+            <types:interface types:id="ChromeJavaScript-in" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">ChromeJavaScript-in</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:interface>
+            <types:interface types:id="ChromeJavaScript-out" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">ChromeJavaScript-out</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+        </types:component>
+        <types:component types:id="XPCOMComponents" xsi:type="security:SecureComponent">
+            <types:description xsi:type="instance:Description">XPCOM Components</types:description>
+            <types:interface types:id="XPCOMComponents-in" xsi:type="security:SecureInterface">
+                <types:description xsi:type="instance:Description">XPCOMComponents-in</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+				<security:safeguards>
+					<security:safeguard>Chrome</security:safeguard>
+				</security:safeguards>
+			</types:interface>
+            <types:interface types:id="XPCOMComponents-out" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">XPCOMComponents-out</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+        </types:component>
+        <types:component types:id="DOMOrigin1" xsi:type="security:SecureComponent">
+            <types:description xsi:type="instance:Description">DOM from Origin 1</types:description>
+            <types:interface types:id="DOMOrigin1-in" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">DOMOrigin1-in</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:interface>
+            <types:interface types:id="DOMOrigin1-out" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">DOMOrigin1-out</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+				<types:signature xlink:href="#ContentContainer-sig-out" xlink:type="simple" xsi:type="instance:XMLLink"/>                
+            </types:interface>
+			<types:type xlink:href="#ContentContainer" xlink:type="simple" xsi:type="instance:XMLLink"/>
+			<security:security xsi:type="security:SecurityPropertyType">
+				<security:privileges>
+					<security:privilege>Content</security:privilege>
+				</security:privileges>
+			</security:security>
+        </types:component>
+        <types:component types:id="DOMOrigin2" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">DOM from Origin 2</types:description>
+            <types:interface types:id="DOMOrigin2-in" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">DOMOrigin2-in</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:interface>
+            <types:interface types:id="DOMOrigin2-out" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">DOMOrigin2-out</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+			<types:type xlink:href="#ContentContainer" xlink:type="simple" xsi:type="instance:XMLLink"/>
+        </types:component>
+        <types:connector types:id="XPConnect" xsi:type="types:Connector">
+            <types:description xsi:type="instance:Description">XPConnect</types:description>
+            <types:interface types:id="XPConnect-JavaScript" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">XPConnect-JavaScript</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:interface>
+            <types:interface types:id="XPConnect-XPCOM" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">XPConnect-XPCOM</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+        </types:connector>
+        <types:link types:id="link1" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">link1</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#ChromeJavaScript-out" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#XPConnect-JavaScript" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="link2" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">link2</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#DOMOrigin1-out" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#XPConnect-JavaScript" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="link3" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">link3</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#DOMOrigin2-out" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#XPConnect-JavaScript" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="link4" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">link4</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#XPConnect-XPCOM" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#XPCOMComponents-in" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+    </types:archStructure>
+<hints:renderingHints xsi:type="hints:RenderingHints">
+        <hints:hints xsi:type="hints:Hints">
+            <hints:hintedThing xlink:href="#ContentContainer" xsi:type="instance:XMLLink" xlink:type="simple"/>
+            <hints:propertyHint hints:name="allHints" xsi:type="hints:PropertyHint" hints:value="ContentContainer|boundingBox:java.awt.Rectangle=RECT10050,10050,200,150;ContentContainer|color:java.awt.Color=COLOR-9932353;ContentContainer-sig-in|boundingBox:java.awt.Rectangle=RECT10045,10045,10,10;ContentContainer-sig-in|orientation:java.lang.Integer=INT1000;ContentContainer-sig-out|boundingBox:java.awt.Rectangle=RECT10045,10045,10,10;ContentContainer-sig-out|orientation:java.lang.Integer=INT1000;"/>
+        </hints:hints>
+        <hints:hints xsi:type="hints:Hints">
+            <hints:hintedThing xlink:href="#archStructure.Container" xsi:type="instance:XMLLink" xlink:type="simple"/>
+            <hints:propertyHint hints:name="allHints" xsi:type="hints:PropertyHint" hints:value="InternalContainer|boundingBox:java.awt.Rectangle=RECT10067,10104,100,100;InternalContainer|color:java.awt.Color=COLOR-3814401;InternalContainer-in|boundingBox:java.awt.Rectangle=RECT10112,10099,10,10;InternalContainer-in|orientation:java.lang.Integer=INT1000;InternalContainer-out|boundingBox:java.awt.Rectangle=RECT10113,10199,10,10;InternalContainer-out|orientation:java.lang.Integer=INT1020;DOMNode1|boundingBox:java.awt.Rectangle=RECT10227,10104,100,100;DOMNode1|color:java.awt.Color=COLOR-3814401;DOMNode1-in|boundingBox:java.awt.Rectangle=RECT10270,10099,10,10;DOMNode1-in|orientation:java.lang.Integer=INT1000;DOMNode1-out|boundingBox:java.awt.Rectangle=RECT10273,10199,10,10;DOMNode1-out|orientation:java.lang.Integer=INT1020;DOMNode2|boundingBox:java.awt.Rectangle=RECT10387,10105,100,100;DOMNode2|color:java.awt.Color=COLOR-3814401;DOMNode2-in|boundingBox:java.awt.Rectangle=RECT10430,10100,10,10;DOMNode2-in|orientation:java.lang.Integer=INT1000;DOMNode2-out|boundingBox:java.awt.Rectangle=RECT10438,10200,10,10;DOMNode2-out|orientation:java.lang.Integer=INT1020;archStructure.Container$$environmentProperties|__scale:java.lang.Double=DOU1.0;archStructure.Container$$environmentProperties|__worldOriginY:java.lang.Integer=INT10000;archStructure.Container$$environmentProperties|__worldOriginX:java.lang.Integer=INT10000;"/>
+        </hints:hints>
+        <hints:hints xsi:type="hints:Hints">
+            <hints:hintedThing xlink:href="#archStructure.Firefox" xsi:type="instance:XMLLink" xlink:type="simple"/>
+            <hints:propertyHint hints:name="allHints" xsi:type="hints:PropertyHint" hints:value="link1|numPoints:java.lang.Integer=INT2;link1|point0:java.awt.Point=POINT10063,10201;link1|point1:java.awt.Point=POINT10330,10255;link1|splineMode:java.lang.Integer=INT100;link1|color:java.awt.Color=COLOR-16777216;link2|numPoints:java.lang.Integer=INT2;link2|point0:java.awt.Point=POINT10302,10200;link2|point1:java.awt.Point=POINT10330,10255;link2|splineMode:java.lang.Integer=INT100;link2|color:java.awt.Color=COLOR-16777216;link3|numPoints:java.lang.Integer=INT2;link3|point0:java.awt.Point=POINT10602,10198;link3|point1:java.awt.Point=POINT10330,10255;link3|splineMode:java.lang.Integer=INT100;link3|color:java.awt.Color=COLOR-16777216;link4|numPoints:java.lang.Integer=INT2;link4|point0:java.awt.Point=POINT10333,10295;link4|point1:java.awt.Point=POINT10333,10331;link4|splineMode:java.lang.Integer=INT100;link4|color:java.awt.Color=COLOR-16777216;ChromeJavaScript|boundingBox:java.awt.Rectangle=RECT10015,10026,100,175;ChromeJavaScript|color:java.awt.Color=COLOR-3814401;ChromeJavaScript-in|boundingBox:java.awt.Rectangle=RECT10056,10021,10,10;ChromeJavaScript-in|orientation:java.lang.Integer=INT1000;ChromeJavaScript-out|boundingBox:java.awt.Rectangle=RECT10058,10196,10,10;ChromeJavaScript-out|orientation:java.lang.Integer=INT1020;XPCOMComponents|boundingBox:java.awt.Rectangle=RECT10281,10331,100,100;XPCOMComponents|color:java.awt.Color=COLOR-3814401;XPCOMComponents-in|boundingBox:java.awt.Rectangle=RECT10328,10326,10,10;XPCOMComponents-in|orientation:java.lang.Integer=INT1000;XPCOMComponents-out|boundingBox:java.awt.Rectangle=RECT10329,10426,10,10;XPCOMComponents-out|orientation:java.lang.Integer=INT1020;DOMOrigin1|boundingBox:java.awt.Rectangle=RECT10145,10029,287,171;DOMOrigin1|color:java.awt.Color=COLOR-3814401;DOMOrigin1-in|boundingBox:java.awt.Rectangle=RECT10297,10024,10,10;DOMOrigin1-in|orientation:java.lang.Integer=INT1000;DOMOrigin1-out|boundingBox:java.awt.Rectangle=RECT10297,10195,10,10;DOMOrigin1-out|orientation:java.lang.Integer=INT1020;DOMOrigin2|boundingBox:java.awt.Rectangle=RECT10456,10027,272,171;DOMOrigin2|color:java.awt.Color=COLOR-3814401;DOMOrigin2-in|boundingBox:java.awt.Rectangle=RECT10600,10022,10,10;DOMOrigin2-in|orientation:java.lang.Integer=INT1000;DOMOrigin2-out|boundingBox:java.awt.Rectangle=RECT10597,10193,10,10;DOMOrigin2-out|orientation:java.lang.Integer=INT1020;XPConnect|boundingBox:java.awt.Rectangle=RECT10123,10255,376,40;XPConnect|color:java.awt.Color=COLOR-5441;XPConnect-JavaScript|boundingBox:java.awt.Rectangle=RECT10325,10250,10,10;XPConnect-JavaScript|orientation:java.lang.Integer=INT1000;XPConnect-XPCOM|boundingBox:java.awt.Rectangle=RECT10328,10290,10,10;XPConnect-XPCOM|orientation:java.lang.Integer=INT1020;archStructure.Firefox$$environmentProperties|__scale:java.lang.Double=DOU1.0;archStructure.Firefox$$environmentProperties|__worldOriginY:java.lang.Integer=INT10000;archStructure.Firefox$$environmentProperties|__worldOriginX:java.lang.Integer=INT10000;"/>
+        </hints:hints>
+    </hints:renderingHints>
+</instance:xArch>

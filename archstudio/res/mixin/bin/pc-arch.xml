@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance:xArch xmlns:instance="http://www.ics.uci.edu/pub/arch/xArch/instance.xsd" xmlns:hints="http://www.ics.uci.edu/pub/arch/xArch/hints.xsd" xmlns:types="http://www.ics.uci.edu/pub/arch/xArch/types.xsd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ics.uci.edu/pub/arch/xArch/types.xsd http://www.isr.uci.edu/projects/xarchuci/ext/types.xsd http://www.ics.uci.edu/pub/arch/xArch/hints.xsd http://www.isr.uci.edu/projects/xarchuci/ext/hints.xsd">
+    <types:archTypes xsi:type="types:ArchTypes">
+        <types:componentType types:id="componentType.80c3147f.fd7f79fcaa.29b3cfaf0019d593.56" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">PCI Subsystem Type</types:description>
+            <types:signature types:id="signature.80c3147f.fd7f7abc8b.4e797f8585ab031e.73" xsi:type="types:Signature">
+                <types:description xsi:type="instance:Description">PCI Bus Out</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:signature>
+            <types:signature types:id="signature.80c3147f.fd81cf5fae.9243eedea2b8ec45.127" xsi:type="types:Signature">
+                <types:description xsi:type="instance:Description">Audio In</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:signature>
+            <types:signature types:id="signature.80c3147f.fd81cfa1c1.f4c575aad3a9f8f3.133" xsi:type="types:Signature">
+                <types:description xsi:type="instance:Description">Audio Out</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:signature>
+            <types:signature types:id="signature.80c3147f.fd81cff91b.76efaec4f98c3b12.140" xsi:type="types:Signature">
+                <types:description xsi:type="instance:Description">Video In</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:signature>
+            <types:signature types:id="signature.80c3147f.fd81d03274.670747cd5892d165.14b" xsi:type="types:Signature">
+                <types:description xsi:type="instance:Description">Video Out</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:signature>
+            <types:signature types:id="signature.80c3147f.fd81d09743.56cfe20b54b2b7fb.158" xsi:type="types:Signature">
+                <types:description xsi:type="instance:Description">S-Video Out</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:signature>
+            <types:signature types:id="signature.80c3147f.fd81d0d9e1.cded7774f1801921.164" xsi:type="types:Signature">
+                <types:description xsi:type="instance:Description">100baseT inout</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:signature>
+            <types:subArchitecture xsi:type="types:SubArchitecture">
+                <types:archStructure xlink:href="#archStructure.80c3147f.fd7f72c10f.9115f2f1420677ee.23" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                <types:signatureInterfaceMapping types:id="sigIntMap.80c3147f.fd7f7e1028.ab555094cc4c8fee.be" xsi:type="types:SignatureInterfaceMapping">
+                    <types:description xsi:type="instance:Description">(New Signature-Interface Mapping)</types:description>
+                    <types:outerSignature xlink:href="#signature.80c3147f.fd7f7abc8b.4e797f8585ab031e.73" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                    <types:innerInterface xlink:href="#interface.80c3147f.fd7f77da7d.325646c84c8a4905.17e" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                </types:signatureInterfaceMapping>
+                <types:signatureInterfaceMapping types:id="sigIntMap.80c3147f.fd81d34b8c.d5907b6a12cea222.1c4" xsi:type="types:SignatureInterfaceMapping">
+                    <types:description xsi:type="instance:Description">(New Signature-Interface Mapping)</types:description>
+                    <types:outerSignature xlink:href="#signature.80c3147f.fd81cf5fae.9243eedea2b8ec45.127" xsi:type="instance:XMLLink" xlink:type="simple"/>
+                    <types:innerInterface xlink:href="#interface.80c3147f.fd81d17c6b.d42dda000cf8398e.184" xsi:type="instance:XMLLink" xlink:type="simple"/>
+                </types:signatureInterfaceMapping>
+                <types:signatureInterfaceMapping types:id="sigIntMap.80c3147f.fd81d365e9.21d8987cb0592f44.1c7" xsi:type="types:SignatureInterfaceMapping">
+                    <types:description xsi:type="instance:Description">(New Signature-Interface Mapping)</types:description>
+                    <types:outerSignature xlink:href="#signature.80c3147f.fd81cfa1c1.f4c575aad3a9f8f3.133" xsi:type="instance:XMLLink" xlink:type="simple"/>
+                    <types:innerInterface xlink:href="#interface.80c3147f.fd81d15cee.4dfb11338876efae.178" xsi:type="instance:XMLLink" xlink:type="simple"/>
+                </types:signatureInterfaceMapping>
+                <types:signatureInterfaceMapping types:id="sigIntMap.80c3147f.fd81d3c5fd.5ae33ec24a46ad8c.1ca" xsi:type="types:SignatureInterfaceMapping">
+                    <types:description xsi:type="instance:Description">(New Signature-Interface Mapping)</types:description>
+                    <types:outerSignature xlink:href="#signature.80c3147f.fd81cff91b.76efaec4f98c3b12.140" xsi:type="instance:XMLLink" xlink:type="simple"/>
+                    <types:innerInterface xlink:href="#interface.80c3147f.fd81d1ed29.9ed59d4dcc0c0a6e.193" xsi:type="instance:XMLLink" xlink:type="simple"/>
+                </types:signatureInterfaceMapping>
+                <types:signatureInterfaceMapping types:id="sigIntMap.80c3147f.fd81d3f49e.1824f5d6868e6b97.1cd" xsi:type="types:SignatureInterfaceMapping">
+                    <types:description xsi:type="instance:Description">(New Signature-Interface Mapping)</types:description>
+                    <types:outerSignature xlink:href="#signature.80c3147f.fd81d03274.670747cd5892d165.14b" xsi:type="instance:XMLLink" xlink:type="simple"/>
+                    <types:innerInterface xlink:href="#interface.80c3147f.fd81d21361.aab7a5034532da57.1a0" xsi:type="instance:XMLLink" xlink:type="simple"/>
+                </types:signatureInterfaceMapping>
+                <types:signatureInterfaceMapping types:id="sigIntMap.80c3147f.fd81d41c53.363082f8496538b2.1d0" xsi:type="types:SignatureInterfaceMapping">
+                    <types:description xsi:type="instance:Description">(New Signature-Interface Mapping)</types:description>
+                    <types:outerSignature xlink:href="#signature.80c3147f.fd81d09743.56cfe20b54b2b7fb.158" xsi:type="instance:XMLLink" xlink:type="simple"/>
+                    <types:innerInterface xlink:href="#interface.80c3147f.fd81d27a4d.f803c3fe8aff9fd5.1ae" xsi:type="instance:XMLLink" xlink:type="simple"/>
+                </types:signatureInterfaceMapping>
+                <types:signatureInterfaceMapping types:id="sigIntMap.80c3147f.fd81d4369c.4e0907ac9a3c1289.1d3" xsi:type="types:SignatureInterfaceMapping">
+                    <types:description xsi:type="instance:Description">(New Signature-Interface Mapping)</types:description>
+                    <types:outerSignature xlink:href="#signature.80c3147f.fd81d0d9e1.cded7774f1801921.164" xsi:type="instance:XMLLink" xlink:type="simple"/>
+                    <types:innerInterface xlink:href="#interface.80c3147f.fd81d2a3b0.a7377f7c784a20e7.1bb" xsi:type="instance:XMLLink" xlink:type="simple"/>
+                </types:signatureInterfaceMapping>
+            </types:subArchitecture>
+        </types:componentType>
+        <types:componentType types:id="componentType.80c3147f.fd7f890e84.a785efac69209ae4.39c" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">Eric Dashofy's PC Type</types:description>
+            <types:subArchitecture xsi:type="types:SubArchitecture">
+                <types:archStructure xlink:href="#archStructure.80c3147f.fd7f7eb728.1ae312c6e5c83aea.d1" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:subArchitecture>
+        </types:componentType>
+        <types:componentType types:id="componentType.80c3147f.fd7f900980.b549858373b44be0.1b7" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">Onboard Subsystem Type</types:description>
+            <types:signature types:id="signature.80c3147f.fd7f9064ce.8ce2d07396f5e3ca.1cc" xsi:type="types:Signature">
+                <types:description xsi:type="instance:Description">(New Signature)</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:signature>
+            <types:subArchitecture xsi:type="types:SubArchitecture">
+                <types:archStructure xlink:href="#archStructure.80c3147f.fd7f8cb308.a67dbcfda6c51b6a.64" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                <types:signatureInterfaceMapping types:id="sigIntMap.80c3147f.fd7f909911.16b69986f5e07dd2.1d8" xsi:type="types:SignatureInterfaceMapping">
+                    <types:description xsi:type="instance:Description">(New Signature-Interface Mapping)</types:description>
+                    <types:outerSignature xlink:href="#signature.80c3147f.fd7f9064ce.8ce2d07396f5e3ca.1cc" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                    <types:innerInterface xlink:href="#interface.80c3147f.fd7f8f8de3.6961c710bb4c134c.1a8" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                </types:signatureInterfaceMapping>
+            </types:subArchitecture>
+        </types:componentType>
+        <types:interfaceType types:id="interfaceType.80c3147f.fd7f7062b7.ea137562843aeaf1.22" xsi:type="types:InterfaceType">
+            <types:description xsi:type="instance:Description">PCI Interface</types:description>
+        </types:interfaceType>
+    </types:archTypes>
+    <types:archStructure types:id="archStructure.80c3147f.fd7f72c10f.9115f2f1420677ee.23" xsi:type="types:ArchStructure">
+        <types:description xsi:type="instance:Description">Card Structure</types:description>
+        <types:component types:id="component.80c3147f.fd7f736dec.b18b2f339695746e.41" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">Sound Card</types:description>
+            <types:interface types:id="interface.80c3147f.fd7f75a5a7.83d2998b0ce61230.f2" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">(New Interface)</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+            <types:interface types:id="interface.80c3147f.fd81d15cee.4dfb11338876efae.178" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Audio Out</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+            <types:interface types:id="interface.80c3147f.fd81d17c6b.d42dda000cf8398e.184" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Audio In</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:interface>
+        </types:component>
+        <types:component types:id="component.80c3147f.fd7f73bd41.2ccdf1315f9ac35f.4c" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">Video Capture Card</types:description>
+            <types:interface types:id="interface.80c3147f.fd7f75b68d.7b55bc2105697838.fd" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">(New Interface)</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+            <types:interface types:id="interface.80c3147f.fd81d1ed29.9ed59d4dcc0c0a6e.193" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Video In</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:interface>
+            <types:interface types:id="interface.80c3147f.fd81d21361.aab7a5034532da57.1a0" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Video Out</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+        </types:component>
+        <types:component types:id="component.80c3147f.fd7f73e849.c0abc937d3609712.57" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">DVD Decoder Card</types:description>
+            <types:interface types:id="interface.80c3147f.fd7f75c4f3.eb6e49d044a437a8.108" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">(New Interface)</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+            <types:interface types:id="interface.80c3147f.fd81d27a4d.f803c3fe8aff9fd5.1ae" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">S-Video Out</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+        </types:component>
+        <types:component types:id="component.80c3147f.fd7f7422ed.9eaf94c041630636.62" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">Ethernet Card</types:description>
+            <types:interface types:id="interface.80c3147f.fd7f75d543.f272415079f72bcd.113" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">(New Interface)</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+            <types:interface types:id="interface.80c3147f.fd81d2a3b0.a7377f7c784a20e7.1bb" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">100baseT inout</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+        </types:component>
+        <types:connector types:id="connector.80c3147f.fd7f7450f8.17f5a1151ebd3ea2.6d" xsi:type="types:Connector">
+            <types:description xsi:type="instance:Description">PCI Bus</types:description>
+            <types:interface types:id="interface.80c3147f.fd7f755204.ad3ccd868644b137.bc" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">(New Interface)</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:interface>
+            <types:interface types:id="interface.80c3147f.fd7f7572cd.c41a63bc0b4569ce.d1" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">(New Interface)</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:interface>
+            <types:interface types:id="interface.80c3147f.fd7f75818c.9eb31f772983e489.dc" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">(New Interface)</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:interface>
+            <types:interface types:id="interface.80c3147f.fd7f75972e.d38f96faa410fac6.e7" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">(New Interface)</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:interface>
+            <types:interface types:id="interface.80c3147f.fd7f77da7d.325646c84c8a4905.17e" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">PCI Bus Out</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+        </types:connector>
+        <types:link types:id="link.80c3147f.fd7f768b3e.70575ebd315a81bb.129" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">(New Link)</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interface.80c3147f.fd7f755204.ad3ccd868644b137.bc" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interface.80c3147f.fd7f75a5a7.83d2998b0ce61230.f2" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="link.80c3147f.fd7f76a3e3.8b06a2f8abf23b5c.12e" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">(New Link)</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interface.80c3147f.fd7f7572cd.c41a63bc0b4569ce.d1" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interface.80c3147f.fd7f75b68d.7b55bc2105697838.fd" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="link.80c3147f.fd7f76b5cd.40bad5fffdef5100.134" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">(New Link)</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interface.80c3147f.fd7f75818c.9eb31f772983e489.dc" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interface.80c3147f.fd7f75c4f3.eb6e49d044a437a8.108" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="link.80c3147f.fd7f76c9c1.1192329aa7875ea.139" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">(New Link)</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interface.80c3147f.fd7f75972e.d38f96faa410fac6.e7" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interface.80c3147f.fd7f75d543.f272415079f72bcd.113" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+    </types:archStructure>
+    <types:archStructure types:id="archStructure.80c3147f.fd7f7eb728.1ae312c6e5c83aea.d1" xsi:type="types:ArchStructure">
+        <types:description xsi:type="instance:Description">Eric Dashofy's PC</types:description>
+        <types:component types:id="component.80c3147f.fd7f7ef316.d5a08d06da28ddb2.d2" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">Pentium III 1000Mhz</types:description>
+            <types:interface types:id="interface.80c3147f.fd7f84ef54.65be0869550c7f4d.2bc" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">(New Interface)</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+        </types:component>
+        <types:component types:id="component.80c3147f.fd7f7f27a9.2ce4038a164e801b.f5" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">Pentium III 1000Mhz</types:description>
+            <types:interface types:id="interface.80c3147f.fd7f853b92.f47e9d5928dda719.2de" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">(New Interface)</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+        </types:component>
+        <types:component types:id="component.80c3147f.fd7f806526.a2389b8b16e118ba.136" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">PCI Subsystem</types:description>
+            <types:interface types:id="interface.80c3147f.fd7f83a76f.1467bd9b74d768cf.269" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">(New Interface)</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+                <types:signature xlink:href="#signature.80c3147f.fd7f7abc8b.4e797f8585ab031e.73" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:interface>
+            <types:interface types:id="interface.80c3147f.fd81d4971e.116304e865c5b4ef.220" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Audio In</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+                <types:signature xlink:href="#signature.80c3147f.fd81cf5fae.9243eedea2b8ec45.127" xsi:type="instance:XMLLink" xlink:type="simple"/>
+            </types:interface>
+            <types:interface types:id="interface.80c3147f.fd81d4d994.1581b2aa6e27c216.22d" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Audio Out</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+                <types:signature xlink:href="#signature.80c3147f.fd81cfa1c1.f4c575aad3a9f8f3.133" xsi:type="instance:XMLLink" xlink:type="simple"/>
+            </types:interface>
+            <types:interface types:id="interface.80c3147f.fd81d52cbf.c2b2e6a1cbc30cf6.245" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Video In</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+                <types:signature xlink:href="#signature.80c3147f.fd81cff91b.76efaec4f98c3b12.140" xsi:type="instance:XMLLink" xlink:type="simple"/>
+            </types:interface>
+            <types:interface types:id="interface.80c3147f.fd81d63cf9.54c2437a1c6ebe3.27c" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Video Out</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+                <types:signature xlink:href="#signature.80c3147f.fd81d03274.670747cd5892d165.14b" xsi:type="instance:XMLLink" xlink:type="simple"/>
+            </types:interface>
+            <types:interface types:id="interface.80c3147f.fd81d68b7c.d0b0a96927902d97.29b" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">S-Video Out</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+                <types:signature xlink:href="#signature.80c3147f.fd81d09743.56cfe20b54b2b7fb.158" xsi:type="instance:XMLLink" xlink:type="simple"/>
+            </types:interface>
+            <types:interface types:id="interface.80c3147f.fd81d6dd34.c5b1cecf59d04fe9.2a8" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">100baseT inout</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:signature xlink:href="#signature.80c3147f.fd81d0d9e1.cded7774f1801921.164" xsi:type="instance:XMLLink" xlink:type="simple"/>
+            </types:interface>
+            <types:type xlink:href="#componentType.80c3147f.fd7f79fcaa.29b3cfaf0019d593.56" xlink:type="simple" xsi:type="instance:XMLLink"/>
+        </types:component>
+        <types:component types:id="component.80c3147f.fd7f814755.9e7e82ce2482f87e.179" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">256MB PC100 ECC SDRAM</types:description>
+            <types:interface types:id="interface.80c3147f.fd7f8192df.984e43bb5e3c9ff2.196" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">(New Interface)</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+        </types:component>
+        <types:component types:id="component.80c3147f.fd7f818498.49df4324d19c0f38.184" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">256MB PC100 ECC SDRAM</types:description>
+            <types:interface types:id="interface.80c3147f.fd7f821d28.ae250d81d79da74d.1da" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">(New Interface)</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+        </types:component>
+        <types:component types:id="component.80c3147f.fd7f860667.3bb32be86eb7baa7.2fa" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">Video Card</types:description>
+            <types:interface types:id="interface.80c3147f.fd7f86c3ee.260e87ab5117a4ea.337" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">(New Interface)</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+        </types:component>
+        <types:component types:id="component.80c3147f.fd7f90ef99.391fe771ce75edd4.1de" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">Onboard Subsystem</types:description>
+            <types:interface types:id="interface.80c3147f.fd7f919544.6d7340142cb59913.220" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">(New Interface)</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+                <types:signature xlink:href="#signature.80c3147f.fd7f9064ce.8ce2d07396f5e3ca.1cc" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:interface>
+            <types:type xlink:href="#componentType.80c3147f.fd7f900980.b549858373b44be0.1b7" xlink:type="simple" xsi:type="instance:XMLLink"/>
+        </types:component>
+        <types:connector types:id="connector.80c3147f.fd7f7f7835.dade037280696834.114" xsi:type="types:Connector">
+            <types:description xsi:type="instance:Description">MPS Bus</types:description>
+            <types:interface types:id="interface.80c3147f.fd7f8492bc.71baf4025312847c.2a7" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">(New Interface)</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+            <types:interface types:id="interface.80c3147f.fd7f8517a9.920b9bcfeaef2c65.2c8" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">(New Interface)</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+            <types:interface types:id="interface.80c3147f.fd7f855120.bf975d3662043730.2ea" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">(New Interface)</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+        </types:connector>
+        <types:connector types:id="connector.80c3147f.fd7f8002ce.be04c1afc7b5329b.120" xsi:type="types:Connector">
+            <types:description xsi:type="instance:Description">North Bridge</types:description>
+            <types:interface types:id="interface.80c3147f.fd7f8343a4.ebd4c7a89414a964.24e" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">(New Interface)</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+            <types:interface types:id="interface.80c3147f.fd7f841dd9.c716185b1f66fa91.27d" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">(New Interface)</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+            <types:interface types:id="interface.80c3147f.fd7f8473ca.798731763f4b5480.29b" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">(New Interface)</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+            <types:interface types:id="interface.80c3147f.fd7f87b98f.55a49142870ec679.37c" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">(New Interface)</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+        </types:connector>
+        <types:connector types:id="connector.80c3147f.fd7f81cb52.5f8bcd98f2a0a6d8.1b5" xsi:type="types:Connector">
+            <types:description xsi:type="instance:Description">SDRAM Bus</types:description>
+            <types:interface types:id="interface.80c3147f.fd7f823a11.aa7691459433da09.1e6" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">(New Interface)</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+            <types:interface types:id="interface.80c3147f.fd7f82514d.f68f9dd03c91e640.1f1" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">(New Interface)</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+            <types:interface types:id="interface.80c3147f.fd7f828306.44477790fda811b7.204" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">(New Interface)</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+            <types:interface types:id="interface.80c3147f.fd7f828eea.93f0356fffd31793.20f" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">(New Interface)</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+            <types:interface types:id="interface.80c3147f.fd7f831702.5b0cc38914039213.242" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">(New Interface)</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+        </types:connector>
+        <types:connector types:id="connector.80c3147f.fd7f863d53.c7e623ecadbe3436.305" xsi:type="types:Connector">
+            <types:description xsi:type="instance:Description">AGP Bus</types:description>
+            <types:interface types:id="interface.80c3147f.fd7f86859d.b581f29dde2e791b.325" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">(New Interface)</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+            <types:interface types:id="interface.80c3147f.fd7f86e72d.751b78302d5d6a03.343" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">(New Interface)</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:interface>
+        </types:connector>
+        <types:connector types:id="connector.80c3147f.fd7f874e4b.b73b93182717c9c7.34c" xsi:type="types:Connector">
+            <types:description xsi:type="instance:Description">South Bridge</types:description>
+            <types:interface types:id="interface.80c3147f.fd7f879aee.a9a31c5a89362d02.368" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">(New Interface)</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+            <types:interface types:id="interface.80c3147f.fd7f881844.419445a163dbfe9.393" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">(New Interface)</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:interface>
+            <types:interface types:id="interface.80c3147f.fd7f91d1aa.2e3361a267002240.22f" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">(New Interface)</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:interface>
+        </types:connector>
+        <types:link types:id="link.80c3147f.fd7f82d72b.4d79fc88bfa3657a.230" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">(New Link)</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interface.80c3147f.fd7f8192df.984e43bb5e3c9ff2.196" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interface.80c3147f.fd7f82514d.f68f9dd03c91e640.1f1" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="link.80c3147f.fd7f82ed9f.9e0a0b31b3d38045.235" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">(New Link)</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interface.80c3147f.fd7f821d28.ae250d81d79da74d.1da" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interface.80c3147f.fd7f823a11.aa7691459433da09.1e6" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="link.80c3147f.fd7f836d62.ef5a003f0031318e.253" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">(New Link)</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interface.80c3147f.fd7f86859d.b581f29dde2e791b.325" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interface.80c3147f.fd7f8343a4.ebd4c7a89414a964.24e" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="link.80c3147f.fd7f8436ce.3eb0d7966b34a0d2.281" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">(New Link)</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interface.80c3147f.fd7f831702.5b0cc38914039213.242" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interface.80c3147f.fd7f841dd9.c716185b1f66fa91.27d" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="link.80c3147f.fd7f84add8.3d2fe82935191ff.2ab" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">(New Link)</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interface.80c3147f.fd7f8492bc.71baf4025312847c.2a7" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interface.80c3147f.fd7f8473ca.798731763f4b5480.29b" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="link.80c3147f.fd7f857bd8.f4bb5079c1050504.2ee" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">(New Link)</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interface.80c3147f.fd7f84ef54.65be0869550c7f4d.2bc" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interface.80c3147f.fd7f8517a9.920b9bcfeaef2c65.2c8" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="link.80c3147f.fd7f859870.25dea3a3190d24c2.2f3" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">(New Link)</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interface.80c3147f.fd7f853b92.f47e9d5928dda719.2de" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interface.80c3147f.fd7f855120.bf975d3662043730.2ea" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="link.80c3147f.fd7f870846.7fd0cd362a7e9870.347" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">(New Link)</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interface.80c3147f.fd7f86e72d.751b78302d5d6a03.343" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interface.80c3147f.fd7f86c3ee.260e87ab5117a4ea.337" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="link.80c3147f.fd7f87ee7c.ed5c7226201fb5f2.381" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">(New Link)</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interface.80c3147f.fd7f87b98f.55a49142870ec679.37c" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interface.80c3147f.fd7f879aee.a9a31c5a89362d02.368" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="link.80c3147f.fd7f88045a.905ae1347c220a66.386" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">(New Link)</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interface.80c3147f.fd7f881844.419445a163dbfe9.393" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interface.80c3147f.fd7f83a76f.1467bd9b74d768cf.269" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="link.80c3147f.fd7f920453.cb6e241b6150e561.233" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">(New Link)</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interface.80c3147f.fd7f91d1aa.2e3361a267002240.22f" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interface.80c3147f.fd7f919544.6d7340142cb59913.220" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+    </types:archStructure>
+    <types:archStructure types:id="archStructure.80c3147f.fd7f8cb308.a67dbcfda6c51b6a.64" xsi:type="types:ArchStructure">
+        <types:description xsi:type="instance:Description">Onboard Structure</types:description>
+        <types:component types:id="component.80c3147f.fd7f8ce4d4.fe7a342271fe5273.65" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">USB Controller</types:description>
+            <types:interface types:id="interface.80c3147f.fd7f8e2106.13aec9e95723ebb0.e2" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">(New Interface)</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+        </types:component>
+        <types:component types:id="component.80c3147f.fd7f8d0e4b.632e7a85cd819f07.70" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">Serial Controller</types:description>
+            <types:interface types:id="interface.80c3147f.fd7f8e2e7b.5f1c49067e1dc142.ed" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">(New Interface)</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+        </types:component>
+        <types:component types:id="component.80c3147f.fd7f8d31bc.f6613067dace6d90.7b" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">Parallel Controller</types:description>
+            <types:interface types:id="interface.80c3147f.fd7f8e373f.a6708763e25ee03e.f8" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">(New Interface)</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+        </types:component>
+        <types:connector types:id="connector.80c3147f.fd7f8d8aa7.ae566f35a23993b9.99" xsi:type="types:Connector">
+            <types:description xsi:type="instance:Description">Onboard Bus</types:description>
+            <types:interface types:id="interface.80c3147f.fd7f8ddbf1.8b2c3366c2e650bc.b5" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">(New Interface)</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:interface>
+            <types:interface types:id="interface.80c3147f.fd7f8de478.4859096e371f1937.c0" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">(New Interface)</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:interface>
+            <types:interface types:id="interface.80c3147f.fd7f8deed6.bf152486b765060d.cb" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">(New Interface)</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:interface>
+            <types:interface types:id="interface.80c3147f.fd7f8f8de3.6961c710bb4c134c.1a8" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Onboard Bus Out</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+        </types:connector>
+        <types:link types:id="link.80c3147f.fd7f8e7d58.895b0382b5376ee9.122" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">(New Link)</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interface.80c3147f.fd7f8ddbf1.8b2c3366c2e650bc.b5" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interface.80c3147f.fd7f8e2106.13aec9e95723ebb0.e2" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="link.80c3147f.fd7f8e955d.a969de764db938fd.127" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">(New Link)</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interface.80c3147f.fd7f8de478.4859096e371f1937.c0" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interface.80c3147f.fd7f8e2e7b.5f1c49067e1dc142.ed" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="link.80c3147f.fd7f8ea979.fbd87f40f42db50f.12c" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">(New Link)</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interface.80c3147f.fd7f8deed6.bf152486b765060d.cb" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interface.80c3147f.fd7f8e373f.a6708763e25ee03e.f8" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+    </types:archStructure>
+    <hints:renderingHints xsi:type="hints:RenderingHints">
+        <hints:hints xsi:type="hints:Hints">
+            <hints:hintedThing xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#componentType.80c3147f.fd7f900980.b549858373b44be0.1b7"/>
+            <hints:propertyHint xsi:type="hints:PropertyHint" hints:name="allHints" hints:value="componentType.80c3147f.fd7f900980.b549858373b44be0.1b7|boundingBox:java.awt.Rectangle=RECT10118,10050,418,478;signature.80c3147f.fd7f9064ce.8ce2d07396f5e3ca.1cc|boundingBox:java.awt.Rectangle=RECT10113,10296,10,10;signature.80c3147f.fd7f9064ce.8ce2d07396f5e3ca.1cc|orientation:java.lang.Integer=INT1030;"/>
+        </hints:hints>
+        <hints:hints xsi:type="hints:Hints">
+            <hints:hintedThing xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#componentType.80c3147f.fd7f79fcaa.29b3cfaf0019d593.56"/>
+            <hints:propertyHint xsi:type="hints:PropertyHint" hints:name="allHints" hints:value="componentType.80c3147f.fd7f79fcaa.29b3cfaf0019d593.56|boundingBox:java.awt.Rectangle=RECT10050,10201,467,630;signature.80c3147f.fd7f7abc8b.4e797f8585ab031e.73|boundingBox:java.awt.Rectangle=RECT10045,10496,10,10;signature.80c3147f.fd7f7abc8b.4e797f8585ab031e.73|orientation:java.lang.Integer=INT1030;signature.80c3147f.fd81cf5fae.9243eedea2b8ec45.127|boundingBox:java.awt.Rectangle=RECT10512,10300,10,10;signature.80c3147f.fd81cf5fae.9243eedea2b8ec45.127|orientation:java.lang.Integer=INT1010;signature.80c3147f.fd81cfa1c1.f4c575aad3a9f8f3.133|boundingBox:java.awt.Rectangle=RECT10512,10344,10,10;signature.80c3147f.fd81cfa1c1.f4c575aad3a9f8f3.133|orientation:java.lang.Integer=INT1010;signature.80c3147f.fd81cff91b.76efaec4f98c3b12.140|boundingBox:java.awt.Rectangle=RECT10512,10427,10,10;signature.80c3147f.fd81cff91b.76efaec4f98c3b12.140|orientation:java.lang.Integer=INT1010;signature.80c3147f.fd81d03274.670747cd5892d165.14b|boundingBox:java.awt.Rectangle=RECT10512,10467,10,10;signature.80c3147f.fd81d03274.670747cd5892d165.14b|orientation:java.lang.Integer=INT1010;signature.80c3147f.fd81d09743.56cfe20b54b2b7fb.158|boundingBox:java.awt.Rectangle=RECT10512,10579,10,10;signature.80c3147f.fd81d09743.56cfe20b54b2b7fb.158|orientation:java.lang.Integer=INT1010;signature.80c3147f.fd81d0d9e1.cded7774f1801921.164|boundingBox:java.awt.Rectangle=RECT10512,10699,10,10;signature.80c3147f.fd81d0d9e1.cded7774f1801921.164|orientation:java.lang.Integer=INT1010;"/>
+        </hints:hints>
+        <hints:hints xsi:type="hints:Hints">
+            <hints:hintedThing xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#archStructure.80c3147f.fd7f72c10f.9115f2f1420677ee.23"/>
+            <hints:propertyHint xsi:type="hints:PropertyHint" hints:name="allHints" hints:value="link.80c3147f.fd7f768b3e.70575ebd315a81bb.129|numPoints:java.lang.Integer=INT2;link.80c3147f.fd7f768b3e.70575ebd315a81bb.129|point0:java.awt.Point=POINT10209,10376;link.80c3147f.fd7f768b3e.70575ebd315a81bb.129|point1:java.awt.Point=POINT10246,10376;link.80c3147f.fd7f768b3e.70575ebd315a81bb.129|splineMode:java.lang.Integer=INT100;link.80c3147f.fd7f76a3e3.8b06a2f8abf23b5c.12e|numPoints:java.lang.Integer=INT2;link.80c3147f.fd7f76a3e3.8b06a2f8abf23b5c.12e|point0:java.awt.Point=POINT10209,10504;link.80c3147f.fd7f76a3e3.8b06a2f8abf23b5c.12e|point1:java.awt.Point=POINT10247,10504;link.80c3147f.fd7f76a3e3.8b06a2f8abf23b5c.12e|splineMode:java.lang.Integer=INT100;link.80c3147f.fd7f76b5cd.40bad5fffdef5100.134|numPoints:java.lang.Integer=INT2;link.80c3147f.fd7f76b5cd.40bad5fffdef5100.134|point0:java.awt.Point=POINT10209,10636;link.80c3147f.fd7f76b5cd.40bad5fffdef5100.134|point1:java.awt.Point=POINT10246,10636;link.80c3147f.fd7f76b5cd.40bad5fffdef5100.134|splineMode:java.lang.Integer=INT100;link.80c3147f.fd7f76c9c1.1192329aa7875ea.139|numPoints:java.lang.Integer=INT2;link.80c3147f.fd7f76c9c1.1192329aa7875ea.139|point0:java.awt.Point=POINT10209,10754;link.80c3147f.fd7f76c9c1.1192329aa7875ea.139|point1:java.awt.Point=POINT10246,10754;link.80c3147f.fd7f76c9c1.1192329aa7875ea.139|splineMode:java.lang.Integer=INT100;component.80c3147f.fd7f736dec.b18b2f339695746e.41|boundingBox:java.awt.Rectangle=RECT10246,10325,203,100;interface.80c3147f.fd7f75a5a7.83d2998b0ce61230.f2|boundingBox:java.awt.Rectangle=RECT10241,10371,10,10;interface.80c3147f.fd7f75a5a7.83d2998b0ce61230.f2|orientation:java.lang.Integer=INT1030;interface.80c3147f.fd81d15cee.4dfb11338876efae.178|boundingBox:java.awt.Rectangle=RECT10444,10393,10,10;interface.80c3147f.fd81d15cee.4dfb11338876efae.178|orientation:java.lang.Integer=INT1010;interface.80c3147f.fd81d17c6b.d42dda000cf8398e.184|boundingBox:java.awt.Rectangle=RECT10444,10348,10,10;interface.80c3147f.fd81d17c6b.d42dda000cf8398e.184|orientation:java.lang.Integer=INT1010;component.80c3147f.fd7f73bd41.2ccdf1315f9ac35f.4c|boundingBox:java.awt.Rectangle=RECT10247,10452,204,100;interface.80c3147f.fd7f75b68d.7b55bc2105697838.fd|boundingBox:java.awt.Rectangle=RECT10242,10499,10,10;interface.80c3147f.fd7f75b68d.7b55bc2105697838.fd|orientation:java.lang.Integer=INT1030;interface.80c3147f.fd81d1ed29.9ed59d4dcc0c0a6e.193|boundingBox:java.awt.Rectangle=RECT10446,10476,10,10;interface.80c3147f.fd81d1ed29.9ed59d4dcc0c0a6e.193|orientation:java.lang.Integer=INT1010;interface.80c3147f.fd81d21361.aab7a5034532da57.1a0|boundingBox:java.awt.Rectangle=RECT10446,10514,10,10;interface.80c3147f.fd81d21361.aab7a5034532da57.1a0|orientation:java.lang.Integer=INT1010;component.80c3147f.fd7f73e849.c0abc937d3609712.57|boundingBox:java.awt.Rectangle=RECT10246,10583,203,100;interface.80c3147f.fd7f75c4f3.eb6e49d044a437a8.108|boundingBox:java.awt.Rectangle=RECT10241,10631,10,10;interface.80c3147f.fd7f75c4f3.eb6e49d044a437a8.108|orientation:java.lang.Integer=INT1030;interface.80c3147f.fd81d27a4d.f803c3fe8aff9fd5.1ae|boundingBox:java.awt.Rectangle=RECT10444,10628,10,10;interface.80c3147f.fd81d27a4d.f803c3fe8aff9fd5.1ae|orientation:java.lang.Integer=INT1010;component.80c3147f.fd7f7422ed.9eaf94c041630636.62|boundingBox:java.awt.Rectangle=RECT10246,10703,204,100;interface.80c3147f.fd7f75d543.f272415079f72bcd.113|boundingBox:java.awt.Rectangle=RECT10241,10749,10,10;interface.80c3147f.fd7f75d543.f272415079f72bcd.113|orientation:java.lang.Integer=INT1030;interface.80c3147f.fd81d2a3b0.a7377f7c784a20e7.1bb|boundingBox:java.awt.Rectangle=RECT10445,10748,10,10;interface.80c3147f.fd81d2a3b0.a7377f7c784a20e7.1bb|orientation:java.lang.Integer=INT1010;connector.80c3147f.fd7f7450f8.17f5a1151ebd3ea2.6d|boundingBox:java.awt.Rectangle=RECT10149,10326,60,479;interface.80c3147f.fd7f755204.ad3ccd868644b137.bc|boundingBox:java.awt.Rectangle=RECT10204,10371,10,10;interface.80c3147f.fd7f755204.ad3ccd868644b137.bc|orientation:java.lang.Integer=INT1010;interface.80c3147f.fd7f7572cd.c41a63bc0b4569ce.d1|boundingBox:java.awt.Rectangle=RECT10204,10499,10,10;interface.80c3147f.fd7f7572cd.c41a63bc0b4569ce.d1|orientation:java.lang.Integer=INT1010;interface.80c3147f.fd7f75818c.9eb31f772983e489.dc|boundingBox:java.awt.Rectangle=RECT10204,10631,10,10;interface.80c3147f.fd7f75818c.9eb31f772983e489.dc|orientation:java.lang.Integer=INT1010;interface.80c3147f.fd7f75972e.d38f96faa410fac6.e7|boundingBox:java.awt.Rectangle=RECT10204,10749,10,10;interface.80c3147f.fd7f75972e.d38f96faa410fac6.e7|orientation:java.lang.Integer=INT1010;interface.80c3147f.fd7f77da7d.325646c84c8a4905.17e|boundingBox:java.awt.Rectangle=RECT10144,10551,10,10;interface.80c3147f.fd7f77da7d.325646c84c8a4905.17e|orientation:java.lang.Integer=INT1030;archStructure.80c3147f.fd7f72c10f.9115f2f1420677ee.23$$environmentProperties|__scale:java.lang.Double=DOU0.9;archStructure.80c3147f.fd7f72c10f.9115f2f1420677ee.23$$environmentProperties|__worldOriginY:java.lang.Integer=INT10335;archStructure.80c3147f.fd7f72c10f.9115f2f1420677ee.23$$environmentProperties|__worldOriginX:java.lang.Integer=INT10069;"/>
+        </hints:hints>
+        <hints:hints xsi:type="hints:Hints">
+            <hints:hintedThing xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#archStructure.80c3147f.fd7f7eb728.1ae312c6e5c83aea.d1"/>
+            <hints:propertyHint xsi:type="hints:PropertyHint" hints:name="allHints" hints:value="link.80c3147f.fd7f82d72b.4d79fc88bfa3657a.230|numPoints:java.lang.Integer=INT2;link.80c3147f.fd7f82d72b.4d79fc88bfa3657a.230|point0:java.awt.Point=POINT9570,11114;link.80c3147f.fd7f82d72b.4d79fc88bfa3657a.230|point1:java.awt.Point=POINT9677,11114;link.80c3147f.fd7f82d72b.4d79fc88bfa3657a.230|splineMode:java.lang.Integer=INT100;link.80c3147f.fd7f82ed9f.9e0a0b31b3d38045.235|numPoints:java.lang.Integer=INT2;link.80c3147f.fd7f82ed9f.9e0a0b31b3d38045.235|point0:java.awt.Point=POINT9570,11257;link.80c3147f.fd7f82ed9f.9e0a0b31b3d38045.235|point1:java.awt.Point=POINT9677,11257;link.80c3147f.fd7f82ed9f.9e0a0b31b3d38045.235|splineMode:java.lang.Integer=INT100;link.80c3147f.fd7f836d62.ef5a003f0031318e.253|numPoints:java.lang.Integer=INT2;link.80c3147f.fd7f836d62.ef5a003f0031318e.253|point0:java.awt.Point=POINT10378,11613;link.80c3147f.fd7f836d62.ef5a003f0031318e.253|point1:java.awt.Point=POINT10047,11613;link.80c3147f.fd7f836d62.ef5a003f0031318e.253|splineMode:java.lang.Integer=INT100;link.80c3147f.fd7f8436ce.3eb0d7966b34a0d2.281|numPoints:java.lang.Integer=INT2;link.80c3147f.fd7f8436ce.3eb0d7966b34a0d2.281|point0:java.awt.Point=POINT9824,11186;link.80c3147f.fd7f8436ce.3eb0d7966b34a0d2.281|point1:java.awt.Point=POINT9911,11186;link.80c3147f.fd7f8436ce.3eb0d7966b34a0d2.281|splineMode:java.lang.Integer=INT100;link.80c3147f.fd7f84add8.3d2fe82935191ff.2ab|numPoints:java.lang.Integer=INT2;link.80c3147f.fd7f84add8.3d2fe82935191ff.2ab|point0:java.awt.Point=POINT9778,10837;link.80c3147f.fd7f84add8.3d2fe82935191ff.2ab|point1:java.awt.Point=POINT9911,10837;link.80c3147f.fd7f84add8.3d2fe82935191ff.2ab|splineMode:java.lang.Integer=INT100;link.80c3147f.fd7f857bd8.f4bb5079c1050504.2ee|numPoints:java.lang.Integer=INT2;link.80c3147f.fd7f857bd8.f4bb5079c1050504.2ee|point0:java.awt.Point=POINT9562,10768;link.80c3147f.fd7f857bd8.f4bb5079c1050504.2ee|point1:java.awt.Point=POINT9639,10768;link.80c3147f.fd7f857bd8.f4bb5079c1050504.2ee|splineMode:java.lang.Integer=INT100;link.80c3147f.fd7f859870.25dea3a3190d24c2.2f3|numPoints:java.lang.Integer=INT2;link.80c3147f.fd7f859870.25dea3a3190d24c2.2f3|point0:java.awt.Point=POINT9563,10907;link.80c3147f.fd7f859870.25dea3a3190d24c2.2f3|point1:java.awt.Point=POINT9639,10907;link.80c3147f.fd7f859870.25dea3a3190d24c2.2f3|splineMode:java.lang.Integer=INT100;link.80c3147f.fd7f870846.7fd0cd362a7e9870.347|numPoints:java.lang.Integer=INT2;link.80c3147f.fd7f870846.7fd0cd362a7e9870.347|point0:java.awt.Point=POINT10484,11611;link.80c3147f.fd7f870846.7fd0cd362a7e9870.347|point1:java.awt.Point=POINT10537,11611;link.80c3147f.fd7f870846.7fd0cd362a7e9870.347|splineMode:java.lang.Integer=INT100;link.80c3147f.fd7f87ee7c.ed5c7226201fb5f2.381|numPoints:java.lang.Integer=INT2;link.80c3147f.fd7f87ee7c.ed5c7226201fb5f2.381|point0:java.awt.Point=POINT10047,10639;link.80c3147f.fd7f87ee7c.ed5c7226201fb5f2.381|point1:java.awt.Point=POINT10113,10639;link.80c3147f.fd7f87ee7c.ed5c7226201fb5f2.381|splineMode:java.lang.Integer=INT100;link.80c3147f.fd7f88045a.905ae1347c220a66.386|numPoints:java.lang.Integer=INT2;link.80c3147f.fd7f88045a.905ae1347c220a66.386|point0:java.awt.Point=POINT10271,11196;link.80c3147f.fd7f88045a.905ae1347c220a66.386|point1:java.awt.Point=POINT10390,11196;link.80c3147f.fd7f88045a.905ae1347c220a66.386|splineMode:java.lang.Integer=INT100;link.80c3147f.fd7f920453.cb6e241b6150e561.233|numPoints:java.lang.Integer=INT2;link.80c3147f.fd7f920453.cb6e241b6150e561.233|point0:java.awt.Point=POINT10271,10638;link.80c3147f.fd7f920453.cb6e241b6150e561.233|point1:java.awt.Point=POINT10387,10638;link.80c3147f.fd7f920453.cb6e241b6150e561.233|splineMode:java.lang.Integer=INT100;component.80c3147f.fd7f7ef316.d5a08d06da28ddb2.d2|boundingBox:java.awt.Rectangle=RECT9363,10720,199,100;interface.80c3147f.fd7f84ef54.65be0869550c7f4d.2bc|boundingBox:java.awt.Rectangle=RECT9557,10763,10,10;interface.80c3147f.fd7f84ef54.65be0869550c7f4d.2bc|orientation:java.lang.Integer=INT1010;component.80c3147f.fd7f7f27a9.2ce4038a164e801b.f5|boundingBox:java.awt.Rectangle=RECT9361,10855,202,100;interface.80c3147f.fd7f853b92.f47e9d5928dda719.2de|boundingBox:java.awt.Rectangle=RECT9558,10902,10,10;interface.80c3147f.fd7f853b92.f47e9d5928dda719.2de|orientation:java.lang.Integer=INT1010;component.80c3147f.fd7f806526.a2389b8b16e118ba.136|boundingBox:java.awt.Rectangle=RECT10390,10927,359,556;interface.80c3147f.fd7f83a76f.1467bd9b74d768cf.269|boundingBox:java.awt.Rectangle=RECT10385,11191,10,10;interface.80c3147f.fd7f83a76f.1467bd9b74d768cf.269|orientation:java.lang.Integer=INT1030;interface.80c3147f.fd81d4971e.116304e865c5b4ef.220|boundingBox:java.awt.Rectangle=RECT10744,10988,10,10;interface.80c3147f.fd81d4971e.116304e865c5b4ef.220|orientation:java.lang.Integer=INT1010;interface.80c3147f.fd81d4d994.1581b2aa6e27c216.22d|boundingBox:java.awt.Rectangle=RECT10744,11033,10,10;interface.80c3147f.fd81d4d994.1581b2aa6e27c216.22d|orientation:java.lang.Integer=INT1010;interface.80c3147f.fd81d52cbf.c2b2e6a1cbc30cf6.245|boundingBox:java.awt.Rectangle=RECT10744,11116,10,10;interface.80c3147f.fd81d52cbf.c2b2e6a1cbc30cf6.245|orientation:java.lang.Integer=INT1010;interface.80c3147f.fd81d63cf9.54c2437a1c6ebe3.27c|boundingBox:java.awt.Rectangle=RECT10744,11154,10,10;interface.80c3147f.fd81d63cf9.54c2437a1c6ebe3.27c|orientation:java.lang.Integer=INT1010;interface.80c3147f.fd81d68b7c.d0b0a96927902d97.29b|boundingBox:java.awt.Rectangle=RECT10744,11268,10,10;interface.80c3147f.fd81d68b7c.d0b0a96927902d97.29b|orientation:java.lang.Integer=INT1010;interface.80c3147f.fd81d6dd34.c5b1cecf59d04fe9.2a8|boundingBox:java.awt.Rectangle=RECT10744,11388,10,10;interface.80c3147f.fd81d6dd34.c5b1cecf59d04fe9.2a8|orientation:java.lang.Integer=INT1010;component.80c3147f.fd7f814755.9e7e82ce2482f87e.179|boundingBox:java.awt.Rectangle=RECT9325,11065,245,100;interface.80c3147f.fd7f8192df.984e43bb5e3c9ff2.196|boundingBox:java.awt.Rectangle=RECT9565,11109,10,10;interface.80c3147f.fd7f8192df.984e43bb5e3c9ff2.196|orientation:java.lang.Integer=INT1010;component.80c3147f.fd7f818498.49df4324d19c0f38.184|boundingBox:java.awt.Rectangle=RECT9326,11206,244,100;interface.80c3147f.fd7f821d28.ae250d81d79da74d.1da|boundingBox:java.awt.Rectangle=RECT9565,11252,10,10;interface.80c3147f.fd7f821d28.ae250d81d79da74d.1da|orientation:java.lang.Integer=INT1010;component.80c3147f.fd7f860667.3bb32be86eb7baa7.2fa|boundingBox:java.awt.Rectangle=RECT10537,11563,205,100;interface.80c3147f.fd7f86c3ee.260e87ab5117a4ea.337|boundingBox:java.awt.Rectangle=RECT10532,11606,10,10;interface.80c3147f.fd7f86c3ee.260e87ab5117a4ea.337|orientation:java.lang.Integer=INT1030;component.80c3147f.fd7f90ef99.391fe771ce75edd4.1de|boundingBox:java.awt.Rectangle=RECT10387,10380,361,491;interface.80c3147f.fd7f919544.6d7340142cb59913.220|boundingBox:java.awt.Rectangle=RECT10382,10633,10,10;interface.80c3147f.fd7f919544.6d7340142cb59913.220|orientation:java.lang.Integer=INT1030;connector.80c3147f.fd7f7f7835.dade037280696834.114|boundingBox:java.awt.Rectangle=RECT9639,10705,139,247;interface.80c3147f.fd7f8492bc.71baf4025312847c.2a7|boundingBox:java.awt.Rectangle=RECT9773,10832,10,10;interface.80c3147f.fd7f8492bc.71baf4025312847c.2a7|orientation:java.lang.Integer=INT1010;interface.80c3147f.fd7f8517a9.920b9bcfeaef2c65.2c8|boundingBox:java.awt.Rectangle=RECT9634,10763,10,10;interface.80c3147f.fd7f8517a9.920b9bcfeaef2c65.2c8|orientation:java.lang.Integer=INT1030;interface.80c3147f.fd7f855120.bf975d3662043730.2ea|boundingBox:java.awt.Rectangle=RECT9634,10902,10,10;interface.80c3147f.fd7f855120.bf975d3662043730.2ea|orientation:java.lang.Integer=INT1030;connector.80c3147f.fd7f8002ce.be04c1afc7b5329b.120|boundingBox:java.awt.Rectangle=RECT9911,10363,136,1357;interface.80c3147f.fd7f8343a4.ebd4c7a89414a964.24e|boundingBox:java.awt.Rectangle=RECT10042,11608,10,10;interface.80c3147f.fd7f8343a4.ebd4c7a89414a964.24e|orientation:java.lang.Integer=INT1010;interface.80c3147f.fd7f841dd9.c716185b1f66fa91.27d|boundingBox:java.awt.Rectangle=RECT9906,11181,10,10;interface.80c3147f.fd7f841dd9.c716185b1f66fa91.27d|orientation:java.lang.Integer=INT1030;interface.80c3147f.fd7f8473ca.798731763f4b5480.29b|boundingBox:java.awt.Rectangle=RECT9906,10832,10,10;interface.80c3147f.fd7f8473ca.798731763f4b5480.29b|orientation:java.lang.Integer=INT1030;interface.80c3147f.fd7f87b98f.55a49142870ec679.37c|boundingBox:java.awt.Rectangle=RECT10042,10634,10,10;interface.80c3147f.fd7f87b98f.55a49142870ec679.37c|orientation:java.lang.Integer=INT1010;connector.80c3147f.fd7f81cb52.5f8bcd98f2a0a6d8.1b5|boundingBox:java.awt.Rectangle=RECT9677,11046,147,416;interface.80c3147f.fd7f823a11.aa7691459433da09.1e6|boundingBox:java.awt.Rectangle=RECT9672,11252,10,10;interface.80c3147f.fd7f823a11.aa7691459433da09.1e6|orientation:java.lang.Integer=INT1030;interface.80c3147f.fd7f82514d.f68f9dd03c91e640.1f1|boundingBox:java.awt.Rectangle=RECT9672,11109,10,10;interface.80c3147f.fd7f82514d.f68f9dd03c91e640.1f1|orientation:java.lang.Integer=INT1030;interface.80c3147f.fd7f828306.44477790fda811b7.204|boundingBox:java.awt.Rectangle=RECT9672,11339,10,10;interface.80c3147f.fd7f828306.44477790fda811b7.204|orientation:java.lang.Integer=INT1030;interface.80c3147f.fd7f828eea.93f0356fffd31793.20f|boundingBox:java.awt.Rectangle=RECT9672,11425,10,10;interface.80c3147f.fd7f828eea.93f0356fffd31793.20f|orientation:java.lang.Integer=INT1030;interface.80c3147f.fd7f831702.5b0cc38914039213.242|boundingBox:java.awt.Rectangle=RECT9819,11181,10,10;interface.80c3147f.fd7f831702.5b0cc38914039213.242|orientation:java.lang.Integer=INT1010;connector.80c3147f.fd7f863d53.c7e623ecadbe3436.305|boundingBox:java.awt.Rectangle=RECT10378,11507,106,214;interface.80c3147f.fd7f86859d.b581f29dde2e791b.325|boundingBox:java.awt.Rectangle=RECT10373,11608,10,10;interface.80c3147f.fd7f86859d.b581f29dde2e791b.325|orientation:java.lang.Integer=INT1030;interface.80c3147f.fd7f86e72d.751b78302d5d6a03.343|boundingBox:java.awt.Rectangle=RECT10479,11606,10,10;interface.80c3147f.fd7f86e72d.751b78302d5d6a03.343|orientation:java.lang.Integer=INT1010;connector.80c3147f.fd7f874e4b.b73b93182717c9c7.34c|boundingBox:java.awt.Rectangle=RECT10113,10367,158,1024;interface.80c3147f.fd7f879aee.a9a31c5a89362d02.368|boundingBox:java.awt.Rectangle=RECT10108,10634,10,10;interface.80c3147f.fd7f879aee.a9a31c5a89362d02.368|orientation:java.lang.Integer=INT1030;interface.80c3147f.fd7f881844.419445a163dbfe9.393|boundingBox:java.awt.Rectangle=RECT10266,11191,10,10;interface.80c3147f.fd7f881844.419445a163dbfe9.393|orientation:java.lang.Integer=INT1010;interface.80c3147f.fd7f91d1aa.2e3361a267002240.22f|boundingBox:java.awt.Rectangle=RECT10266,10633,10,10;interface.80c3147f.fd7f91d1aa.2e3361a267002240.22f|orientation:java.lang.Integer=INT1010;archStructure.80c3147f.fd7f7eb728.1ae312c6e5c83aea.d1$$environmentProperties|__scale:java.lang.Double=DOU0.3;archStructure.80c3147f.fd7f7eb728.1ae312c6e5c83aea.d1$$environmentProperties|__worldOriginY:java.lang.Integer=INT10362;archStructure.80c3147f.fd7f7eb728.1ae312c6e5c83aea.d1$$environmentProperties|__worldOriginX:java.lang.Integer=INT9383;"/>
+        </hints:hints>
+        <hints:hints xsi:type="hints:Hints">
+            <hints:hintedThing xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#archStructure.80c3147f.fd7f8cb308.a67dbcfda6c51b6a.64"/>
+            <hints:propertyHint xsi:type="hints:PropertyHint" hints:name="allHints" hints:value="link.80c3147f.fd7f8e7d58.895b0382b5376ee9.122|numPoints:java.lang.Integer=INT2;link.80c3147f.fd7f8e7d58.895b0382b5376ee9.122|point0:java.awt.Point=POINT10255,10129;link.80c3147f.fd7f8e7d58.895b0382b5376ee9.122|point1:java.awt.Point=POINT10316,10129;link.80c3147f.fd7f8e7d58.895b0382b5376ee9.122|splineMode:java.lang.Integer=INT100;link.80c3147f.fd7f8e955d.a969de764db938fd.127|numPoints:java.lang.Integer=INT2;link.80c3147f.fd7f8e955d.a969de764db938fd.127|point0:java.awt.Point=POINT10255,10279;link.80c3147f.fd7f8e955d.a969de764db938fd.127|point1:java.awt.Point=POINT10316,10279;link.80c3147f.fd7f8e955d.a969de764db938fd.127|splineMode:java.lang.Integer=INT100;link.80c3147f.fd7f8ea979.fbd87f40f42db50f.12c|numPoints:java.lang.Integer=INT2;link.80c3147f.fd7f8ea979.fbd87f40f42db50f.12c|point0:java.awt.Point=POINT10255,10407;link.80c3147f.fd7f8ea979.fbd87f40f42db50f.12c|point1:java.awt.Point=POINT10317,10407;link.80c3147f.fd7f8ea979.fbd87f40f42db50f.12c|splineMode:java.lang.Integer=INT100;component.80c3147f.fd7f8ce4d4.fe7a342271fe5273.65|boundingBox:java.awt.Rectangle=RECT10316,10076,100,100;interface.80c3147f.fd7f8e2106.13aec9e95723ebb0.e2|boundingBox:java.awt.Rectangle=RECT10311,10124,10,10;interface.80c3147f.fd7f8e2106.13aec9e95723ebb0.e2|orientation:java.lang.Integer=INT1030;component.80c3147f.fd7f8d0e4b.632e7a85cd819f07.70|boundingBox:java.awt.Rectangle=RECT10316,10225,100,100;interface.80c3147f.fd7f8e2e7b.5f1c49067e1dc142.ed|boundingBox:java.awt.Rectangle=RECT10311,10274,10,10;interface.80c3147f.fd7f8e2e7b.5f1c49067e1dc142.ed|orientation:java.lang.Integer=INT1030;component.80c3147f.fd7f8d31bc.f6613067dace6d90.7b|boundingBox:java.awt.Rectangle=RECT10317,10362,99,97;interface.80c3147f.fd7f8e373f.a6708763e25ee03e.f8|boundingBox:java.awt.Rectangle=RECT10312,10402,10,10;interface.80c3147f.fd7f8e373f.a6708763e25ee03e.f8|orientation:java.lang.Integer=INT1030;connector.80c3147f.fd7f8d8aa7.ae566f35a23993b9.99|boundingBox:java.awt.Rectangle=RECT10182,10076,73,382;interface.80c3147f.fd7f8ddbf1.8b2c3366c2e650bc.b5|boundingBox:java.awt.Rectangle=RECT10250,10124,10,10;interface.80c3147f.fd7f8ddbf1.8b2c3366c2e650bc.b5|orientation:java.lang.Integer=INT1010;interface.80c3147f.fd7f8de478.4859096e371f1937.c0|boundingBox:java.awt.Rectangle=RECT10250,10274,10,10;interface.80c3147f.fd7f8de478.4859096e371f1937.c0|orientation:java.lang.Integer=INT1010;interface.80c3147f.fd7f8deed6.bf152486b765060d.cb|boundingBox:java.awt.Rectangle=RECT10250,10402,10,10;interface.80c3147f.fd7f8deed6.bf152486b765060d.cb|orientation:java.lang.Integer=INT1010;interface.80c3147f.fd7f8f8de3.6961c710bb4c134c.1a8|boundingBox:java.awt.Rectangle=RECT10177,10275,10,10;interface.80c3147f.fd7f8f8de3.6961c710bb4c134c.1a8|orientation:java.lang.Integer=INT1030;archStructure.80c3147f.fd7f8cb308.a67dbcfda6c51b6a.64$$environmentProperties|__scale:java.lang.Double=DOU1.0;archStructure.80c3147f.fd7f8cb308.a67dbcfda6c51b6a.64$$environmentProperties|__worldOriginY:java.lang.Integer=INT10062;archStructure.80c3147f.fd7f8cb308.a67dbcfda6c51b6a.64$$environmentProperties|__worldOriginX:java.lang.Integer=INT10095;"/>
+        </hints:hints>
+    </hints:renderingHints>
+</instance:xArch>

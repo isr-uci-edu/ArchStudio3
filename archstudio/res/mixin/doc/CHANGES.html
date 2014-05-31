@@ -1,0 +1,1040 @@
+<html>
+<head><title>CHANGELOG for ArchStudio 3 Builds</title></head>
+<body bgcolor="#ffffff">
+
+<pre>
+-----------------------------------------------------------------------
+CHANGELOG for ArchStudio 3 Builds
+-----------------------------------------------------------------------
+ * Note: -DEV builds are released but are not considered to be part
+         of the stable ArchStudio release path.
+
+Build 1067:
+  Jie Ren [jie@ics.uci.edu]
+    - Intiial integration of Secure xADL changes
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Added Font Chooser dialog in WidgetUtils from L2FProd.com
+      under license
+    - You can now select a default Archipelago font which will
+      be applied to boxes
+    - Gradients now save with Archipelago PNGs
+    
+Build 1066:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Fixed a bug related to independent hints being applied to
+      the wrong structures
+      Special thanks to Michael Bailey [mjbailey@usc.edu]
+    - Made Archipelago more robust against incorrect type
+      links on components/connectors
+      Special thanks to Michael Bailey [mjbailey@usc.edu]
+      
+Build 1065:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - NotifyDocs mechanism timeout increased to handle longer-running
+      components
+  Scott A. Hendrickson [shendric@uci.edu]
+    - Various and sundry robustness improvements to BNA
+
+Build 1064:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Archipelago: Save as PNG now gives you the option to save
+      at a zoom level other than 100%.  For including in documents
+      and PowerPoint presentations and such, smaller zoom levels
+      generally look better.
+      Special thanks to Haig F. Krikorian [haig.f.krikorian@boeing.com]
+    - BNA: ThingLogic lifecycle updated.  Now, BNAComponent will call
+      setComponent() with a non-null parameter when adding a logic
+      and setComponent() with a null parameter when removing one.
+      ThingLogicAdapter responds to this by calling init() and
+      destroy() methods on the logic, respectively.  destroy() is
+      no longer a logic interface method although it remains in
+      ThingLogicAdapter.
+    - AEM: AEM now uses a LookupImplementation to determine the
+      name of the c2.fw interface on a brick that corresponds
+      to a xADL interface, rather than using the
+      BrickID.InterfaceID hack.  The hack is still supported
+      for now, but is deprecated.
+    - File Manager: There is now a "NotifyDocs" mechanism for
+      components to detect when a document is being closed or saved
+      and gives them an opportunity to get work done before
+      approving the change.
+    - Archipelago: Archipelago now uses the NotifyDocs mechanism
+      to store hints only when a document is about to be saved
+      or closed, or when the Archipelago window is closed
+      instead of when the window loses focus.
+      Special thanks to Haig F. Krikorian [haig.f.krikorian@boeing.com]
+    - Archipelago: You can now save as PNG in a type view.
+      Special thanks to Haig F. Krikorian [haig.f.krikorian@boeing.com]
+    - File Manager/Archipelago: File Manager and Save as PNG now store 
+      the most recently visited directory in file chooser in the 
+      preferences repository so you don't have to constantly navigate
+      back to the same directory.
+      Special thanks to Haig F. Krikorian [haig.f.krikorian@boeing.com]
+    
+Build 1063:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - File Manager: There is now an option in Preferences for setting
+      a default editor.  If you double-click on a document in the
+      file manager, it will open it with the default editor.
+    - Archipelago: Endpoint labels don't duplicate or hang around when 
+      you change structures you're looking at and change back.
+      Special thanks to Haig F. Krikorian [haig.f.krikorian@boeing.com]
+    - Archipelago: Fixes to handling of independent hinted things
+      like endpoint labels.
+      Special thanks to Haig F. Krikorian [haig.f.krikorian@boeing.com]
+    - Archipelago: Interface-Interface mappings now no longer remain
+      when removing a component/connector
+      Special thanks to Haig F. Krikorian [haig.f.krikorian@boeing.com]
+    - BNA: removeThingWithChildren now works properly in 
+      DefaultBNAModel for Things that are not in the root node list 
+      of a ThingTree
+      Special thanks to Haig F. Krikorian [haig.f.krikorian@boeing.com]
+    - Release builds now include debug info in the .jar file.
+    - BNA: Better drag'n'drop support through a support plugin
+    - Archipelago: Can now drag'n'drop interface types onto signatures
+      to assign types
+      Special thanks to Haig F. Krikorian [haig.f.krikorian@boeing.com]
+    - New Archon interactive scripting shell, not ready for prime time
+      yet though.
+
+Build 1062:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Fixed a potential deadlock in the File Manager/Invoker when
+      saving.
+    - File Manager/Invoker no longer loses selection when getting
+      an XArchFileEvent
+      Special thanks to Haig F. Krikorian [haig.f.krikorian@boeing.com]
+    - Tron: Added a duplicate ID test.
+    - Tron: Fixed a bug that could cause new test results not to
+      appear when two test results were identical except for the
+      elements to which they referred.
+    - Tron: Fixed a test that erroneously reported that innerInterface
+      links on subarchitectures did not point to interfaces.
+    - Archipelago: Full support for endpoint name tags
+    - Archipelago: Can now specify node/rank separation for dot
+      layouts
+    - Archipelago: Integrated graph layout via Neato
+    - Archipelago: Support for 'independently' hinted objects - 
+      objects that are added to the BNA canvas but don't
+      have associated xArch IDs.
+    - Archipelago: Components/Connectors can now be set to inherit
+      their colors from their types.
+    - Archipelago: If you set the color on a component/connector
+      to be dark, the text will become white automatically for
+      visibility.
+    - BNA: Fixed a timing bug where deselection might not be 
+      complete when you context-click on no thing, thus 
+      combining context menus.
+      Special thanks to Haig F. Krikorian [haig.f.krikorian@boeing.com]
+    - BNA: New tags and logics to support them.
+    - BNA: New RotaterThing and supporting logics.
+    - BNA: New TextReadabilityLogic
+  
+Build 1061:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Update for RASDS
+      
+Build 1060:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - GuardTracker now has a slight delay before reparsing documents,
+      so a bunch of requests coming in rapid fire will only result
+      in a small number of reparses.
+      
+Build 1059:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - By popular demand, ArchEdit now clicks the 'apply' button when
+      you hit 'enter' while editing a value.
+    - New architectures are now assigned a default name instead
+      of asking the user.
+    - File Manager now adds ".xml" to saved files if you don't
+      specify an extension.
+    - SelectorDriver renamed to Product Line Selector.
+    - Invoke menu is now hierarchical.
+    - Archipelago: Many, many new options for coloring elements.
+      To distinguish components from connectors, components are
+      now displayed with a double border.
+    - Archipelago: Gradient mode removed from BoxThings because it
+      was stupid for it to be there in the first place; it's now a 
+      rendering hint in the BNA component like antialiasing.
+    - Archipelago: Antialiasing and gradient mode are now
+      preferences in the preferences panel.
+    - Archipelago: Variant components/connectors now show up with
+      the variant-stroke border and display individual variants internally 
+      as a Thumbnail.
+    - New GuardTracker component tracks the boolean guards that are
+      stored in documents and emit messages when those guards change.
+    - Archipelago: Guard editing widgets are now combo boxes that
+      conveniently display all guards in use in the current document.
+    - Archipelago: Variant components now have a new right-click
+      option that allows you to select a variant immediately; that is;
+      without using the selector.
+  Scott A. Hendrickson [shendric@uci.edu]
+    - Archipelago: Text wrapping is now automatic on components,
+      connectors, and component/connector types.
+  
+Build 1058:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Fix for MAB2 that mixes in xalan.jar correctly so Schematron
+      will run right.
+
+Build 1057:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - New Tron system replaces the critics framework; see the website.
+  Scott A. Hendrickson [shendric@uci.edu]
+    - ArchEdit no longer shows metadata operations in right-click
+      menus
+
+Build 1056:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Archipelago: fixed an ArrayIndexOutOfBounds exception that could
+      occur when updating types.
+      Special thanks to Haig F. Krikorian [haig.f.krikorian@boeing.com]
+    - File Manager: Made Malformed URL and file not found error
+      reporting friendlier.
+      Special thanks to Haig F. Krikorian [haig.f.krikorian@boeing.com]
+
+Build 1055:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Got rid of most deprecation warnings in the source.
+    - Archipelago: Fixed a latent bug in LinkMappingLogic that
+      could cause an infinite loop when moving a link endpoint from
+      one interface to another; symptom was the link endpoint
+      jumping back and forth between the two interfaces.
+    - Added the ability to rename (e.g. change the URI of) an
+      open xArch document.  Renaming sends out an XArchFileEvent
+      indicating the rename. This means that components should
+      not rely on the URI of an open document being totally stable;
+      they should either update their code to rely on root-element
+      ObjRefs (which are stable), handle the rename file event
+      properly, or both.
+    - Updated critics, ArchEdit, and other tools to use root-
+      element ObjRefs rather than URIs to refer to open
+      documents.
+    - File Manager: File manager now detects changes to open
+      architecture descriptions and highlights them with an
+      asterisk as in most modern multi-document applications.
+      It also asks the user if they want to save unsaved changes
+      on close document or exit.
+    - Deprecated a few functions that had "URL" in their names
+      xArchADT and replaced them with "URI".  Updated calling
+      components to use the non-deprecated functions.
+    - Fixed a latent race condition in the critics framework
+      that could cause wrong issues to be displayed if an issue
+      was removed before a critic artist was able to render it.
+
+Build 1054:
+  Scott A. Hendrickson [shendric@uci.edu]
+    - Fixed null pointer bugs in XArchFlatProxy
+    - Added access to xarchlibs metadata through flat interfaces
+    - Consolidated XArchFlatProxyFactory into XArchFlatProxyUtils
+    - Changed Notional AWACS demo to use zipped App-6A images
+      as resources rather than raw .gif images
+  Scott A. Hendrickson [shendric@uci.edu] and
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Added a new mechanism for dealing with Java-style event
+      listeners in EBIWrapperUtils; replaced existing state-
+      change message processors in various ArchStudio components
+      with this mechanism.  Due to the fact that this mechanism
+      does not throw/catch Exceptions when presented with irrelevant
+      events (like many ArchStudio event processors did), there
+      has been a significant (~18%) speedup to ArchStudio operations
+      that involve sending/receiving a lot of events.
+
+Build 1053:
+  Scott A. Hendrickson [shendric@uci.edu]
+    - Added the XArchFlatProxy mechanism that allows component
+      developers to use the type-checked data binding library
+      interfaces for accessing xArchADT rather than the non-checked
+      XArchFlatInterface.  See the website for more details.
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Updated the LinkCritic to use the bulk query interface for
+      optimization; improvement in speed for link checking is
+      ginormous.
+    - xArchADT: It was possible that a second ObjRef would get
+      created and returned for the same Data Binding Library object
+      if the object was retrieved after add()ing or set()ting it
+      into the document.  While both ObjRefs would work,
+      this is a non-desirable behavior for applications that wish
+      to use ObjRef comparison in lieu of wrapper comparison. Now,
+      retrieving an object (via getByID(), for example), should
+      return the same ObjRef as was originally created and put
+      into the document.
+      Special thanks to Kari Nies [kari@ics.uci.edu]
+    - AEM: AEM will no longer try to suspend/resume bricks that are
+      about to be removed in a reconfiguration, causing an exception.
+      Special thanks to Matthew Wastrodowski [mwastrod@uci.edu]
+    - xArchADT: isEqual should now properly find the isEqual method
+      on the data binding object.
+      Special thanks to Scott Hendrickson [shendric@uci.edu]
+
+Build 1052:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Some changes to OneThreadPerBrickArchitectureEngine to eliminate
+      race conditions on shutdown and hopefully make engine-state
+      changes more stable.
+    - Fixes for Klax to eliminate a latent race condition that was
+      aggravated by a fix in 1051.
+      Special thanks to Chris Trezzo [ctrezzo@uci.edu] and
+      Justin Erenkrantz [justin@erenkrantz.com]
+    - BNA: Fix for a synchronization bug that can occur when
+      merging spline points, usually on a multiprocessor box.
+
+Build 1051:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Fixed a race condition that could cause some bricks to
+      not start up or process messages when using the
+      OneThreadPerBrickArchitectureEngine.
+      Very special thanks to Jeffery von Ronne [jronne@ics.uci.edu]
+      and Justin Erenkrantz [justin@erenkrantz.com]
+    - Archipelago: Optional interfaces now display dotted border;
+      optional signatures now supported.
+      Special thanks to Christopher van der Westhuizen
+      [cvanderw@ics.uci.edu] and Ping Chen [pchen@ics.uci.edu].
+    - Archipelago: A stack trace is no longer printed for exceptions
+      that occur when parsing a formula in a boolean guard (though
+      this was just a diagnostic and did not cause a program crash).
+      Special thanks to Christopher van der Westhuizen
+      [cvanderw@ics.uci.edu] and Ping Chen [pchen@ics.uci.edu].
+    - Type Wrangler: Stamping out an interface/signature now
+      assigns the proper direction.
+      Special thanks to Christopher van der Westhuizen
+      [cvanderw@ics.uci.edu] and Ping Chen [pchen@ics.uci.edu].
+    - Type Wrangler now creates better names when stamping out
+      new signatures/interfaces.
+    - Bootstrapper should now work properly with URLs instead
+      of filenames.
+      Special thanks to Leonardo Gresta Paulino Murta
+      [murta@ics.uci.edu]
+    - BNA: Things no longer emit ThingEvents when a
+      property changes its value to the same value it had
+      before.  This apparently happens more often than you'd
+      think, so performance should be somewhat snappier,
+      especially on slower machines.
+    - BNA: Fixed several race conditions/synchronization
+      bugs that caused Very Bad Things to happen when using
+      Archipelago on a multiprocessor machine.
+    - GraphLayout: Put in a workaround for a bug in newer
+      (1.16+) versions of DOT that leaves out colons (:) between
+      node and endpoint names in DOT output.  Reported the bug
+      to the GraphViz dev team; they report it will be fixed in
+      dot in the near future.
+    - Archipelago: You can now 'q-click' (hold the Q key and click)
+      on various elements to display a property sheet.  Q-clicking
+      again hides the sheet.
+    - BNA: Fixed the AbstractThing.replaceSetPropertyValues() function
+      so it uses the copied set of property values.  Also added an
+      optimization to AbstractThing.equals() such that it checks for
+      same object (e.g. ==) equality before testing contents.
+      Special thanks to Scott Hendrickson [shendric@uci.edu]
+
+Build 1050:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Archipelago: Remove component/connector now works again.
+      Special thanks to Christopher van der Westhuizen
+      [cvanderw@ics.uci.edu].
+
+Build 1049:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Archipelago: First support for xADL 2.0 options and variants.
+    - Archipelago: Can now save a structure diagram as a PNG file.
+    - Archipelago: Archipelago now has browser-style back and forward
+      buttons with the little menus next to them.  Code for the widgets
+      is in edu.uci.ics.widgets.navpanel in case you want to have similar
+      buttons for your app.
+    - xArchADT now supports a new bulk query mechanism for retrieving
+      large quantities of data from the xArchADT repository with one
+      call; this reduces communication overhead significantly.  AEM,
+      GraphLayout, and Archipelago have all been modified to use this
+      mechanism; major performance gains should be seen (up to 15-20x
+      for viewing an architecture in Archipelago or laying out an
+      architecture using GraphLayout).
+    - FilteringBusConnector now works properly when hooked up to
+      component or connector interfaces that do not have the legacy C2
+      top and bottom interface IDs.
+      Special thanks to Scott Hendrickson [shendric@uci.edu]
+    - IPreferences in PreferencePanel is now transient to properly allow
+      serialization.
+      Special thanks to Scott Hendrickson [shendric@uci.edu]
+
+Build 1048:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Archipelago: Peers are now optionally responsible for determining
+      the local bounding box of their target Things for drawing
+      optimization.
+      Special thanks to Justin Erenkrantz [justin@erenkrantz.com]
+    - Archipelago: Update to BNAComponent's painting mechanism to use
+      peer bounding boxes along with the clip rectangle to
+      optimize painting to only those regions that have changed.
+      Also changed the way painting is held from a setHoldPainting()
+      method in the component to a pair of (optional) methods in the
+      model: beginBulkChange() and endBulkChange().  This means that
+      bulk change begin/end notifications become part of the
+      event stream from the model and therefore don't get into weird
+      race conditions with the direct calls on the component.
+      Special thanks to Justin Erenkrantz [justin@erenkrantz.com]
+    - Archipelago: Edit interface-to-signature mapping widget now
+      displays correct title and also displays current interface-to-
+      signature mapping when started.
+    - Archipelago: Glass mode/gradient mode plugins are now
+      somewhat better-behaved.
+    - xArchADT now caches context objects so you don't burn a whole
+      bunch of ObjRefs when you create lots of them.
+    - xArchADT finally emits events in response to transactions the
+      right way: if changes took place inside a transaction, they
+      are emitted as both regular XArchFlatEvents and ALSO grouped
+      up inside an XArchTransactionEvent.  If a change took place
+      outside a transaction, it is emitted as a single XArchFlatEvent
+      and ALSO in a 1-item group in an XArchTransactionEvent.  This
+      means that components can either listen for XArchFlatEvents
+      or XArchTransactionEvents, and still get all the events only
+      once.
+    - Slightly improved the XadlUtils class to add a couple more
+      methods regarding XLinks, also refactored TypeWrangler and some
+      of Archipelago to use these.
+    - Refactored the BrickSelectorDialog and TypeSelectorDialog into
+      the more generic StructureSelectorDialog and TypeSelectorDialog
+      in the xadlutils package.  These provide nice, tree-based
+      dialogs to select a structural element (brick or interface)
+      or a type.  NewSIMContextMenuPlugin now uses the
+      StructureSelectorDialog interface rather than rolling its own
+      and is much more compact now.
+    - TypeWrangler is now included in the archstudio.xml file.
+      My bad!
+      Special thanks to Kari Nies [kari@ics.uci.edu]
+    - Updated AEM and JavaImplementationCritic to support change in
+      cardinality of "implementation" element in xADL 2.0.
+    - Configurator now puts spaces around the whole classpath instead
+      of just individual elements on Windows; apparently this works
+      properly and solves a problem some users were having caused by
+      spaces in their environment classpath.
+
+Build 1047:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Archipelago: Update to BNAUtils to work around a bug in the
+      Macintosh JVM that causes box labels to render in the wrong
+      place.
+      Special thanks to Justin Erenkrantz [justin@erenkrantz.com]
+
+Build 1046:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Archipelago: major update this release; first release with:
+      - Support for creating and editing architectural structures;
+      - Support for creating and editing types;
+      - Support for hierarchical architectures.
+    - New Type Wrangler component for managing the mappings between
+      brick instances and types, and matching interfaces to signatures.
+    - Finally added some branding to ArchStudio 3 (Splash Screen,
+      Icons, About Box).  Functions for branding are in
+      archstudio.Branding.
+    - Finally set an .xml file filter as the default for Open/Save in
+      the File Manager.
+    - Finally added a Recent Files menu on the File Manager, using the
+      new Preferences component.
+    - Fixed a race condition in NativeProcess.java that could cause
+      native process running to fail with a RuntimeException.  This
+      currently affected the DOT/GraphLayout integration.
+      Special thanks to Justin Erenkrantz [justin@erenkrantz.com]
+    - Fixed a bug in the GraphLayout component that caused
+      NullPointerExceptions when a link had an invalid but present
+      link href.
+      Special thanks to Justin Erenkrantz [justin@erenkrantz.com]
+
+*Build 1046-DEV:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Archipelago: The Great BNA Renaming: renamed all the BNA
+      Thing classes to end in "Thing" and all the tagging/functionality
+      interfaces to be prefaced with I rather than ending in Thing,
+      so Box is now BoxThing and GlassableThing is now IGlassable.
+      Also moved all the logics into their own package.
+    - Archipelago: Added preliminary support for mouse gestures.
+      Now the HHreco package is included in the source for
+      ArchStudio, in package hhreco.  Also, two libraries used by
+      HHreco are now rolled into archstudio.jar and must be on
+      the classpath to compile.
+      Very, very special thanks to Hazel Asuncion
+      [hasuncio@ics.uci.edu] and Fei Hoffman [fhoffman@uci.edu].
+    - Archipelago: some fixes to MoveIndicatorPointLogic.
+      Special thanks to Ping Chen [pchen@ics.uci.edu]
+
+Build 1045:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Archipelago: Logics and BNAComponent now have a destroy() method
+      that can be called to give logics a chance to clean up properly.
+    - Archipelago: Menu options no longer duplicated around after you
+      open a new ArchStructure
+    - Archipelago: Dancing ants animation code completely refactored
+      into a series of plugins; should also use less CPU now.
+    - Archipelago: If you have multiple indicators pointing at a
+      Thing, they are now all updated. Special thanks to
+      Christopher van der Westhuizen [cvanderw@ics.uci.edu] and
+      Ping Chen [pchen@ics.uci.edu]
+    - Fixed a bug in SimpleClassLoader that could cause classes to
+      not be compatible with each other if part of the application
+      was located in a directory unpacked, part of the application
+      was in an archive on the classpath, and the part of the
+      application in the classpath loaded a class, and the part of
+      the application in the archive loaded the same class using
+      Class.forName(), and the target machine is Windows.  Gold
+      medal for obscure bug finding goes to
+      Christopher van der Westhuizen [cvanderw@ics.uci.edu] and
+      Ping Chen [pchen@ics.uci.edu]
+
+Build 1044:
+  Ping Chen [pchen@ics.uci.edu]
+    - Bugfixes for Selector Driver component
+
+Build 1043:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Fix to a race condition introduced in either Build 1041 or 1042
+      that could cause components to operate improperly if they used
+      the EBI wrapper stuff.  The behavior was random hanging or event
+      drops.  My bad.
+    - Major performance enhancement to repaint in Archipelago
+    - Added ability to hold painting in BNA for Archipelago plugins to
+      better control the appearance of animations and prevent
+      intermediate repaints.
+
+Build 1042:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Some fixes to the LinkCritic so it updates properly when
+      certain elements change.
+      Special thanks to Mahboobe Moghaddam [mahboobe_57@yahoo.com]
+    - Various and sundry Archipelago enhancements.
+  Ping Chen [pchen@ics.uci.edu]
+    - Bugfix & efficiency tweak for PLA Diff Component
+    - New PLA merge component
+
+Build 1041:
+  Christopher van der Westhuizen [cvanderw@ics.uci.edu] and
+  Ping Chen [pingc@hotmail.com]
+    - New PLA diff component
+    - New PLA merge component
+    - New PLA diff driver component
+    - New PLA merge driver component
+      See the website for more details on all these.
+
+Build 1040:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Fixed a bug in AEM that resulted in classes not being loaded off
+      URLs if they didn't have init parameters.  My bad.
+      Special thanks to Scott Hendrickson [shendric@uci.edu]
+
+Build 1039:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - ClassLoading model changed to allow loading of bricks off
+      URLs as specified in xADL 2.0 URL implementation elements.
+      Beta feature, YMMV.
+      Special thanks to Justin Erenkrantz [justin@erenkrantz.com]
+      and Eugen Nistor [enistor@ics.uci.edu]
+    - Preferences system should be working but is not documented
+      yet.
+    - First official ArchStudio 3 build to include Archipelago, a new
+      graphical editor for xADL 2.0 documents.  This project is not
+      nearly complete, so only a small number of features will work.
+      This build of Archipelago changes the structure of the GUI
+      around significantly such that there is now a tree with
+      pluggable behaviors parked in the left pane rather than
+      using a system of modes and configurations as in previous
+      ArchStudio builds.
+    - Addition of the GraphLayout component that can leverage
+      AT&T GraphViz's DOT to lay out architectures.  Documentation
+      coming in a future release when this stabilizes.
+    - Small changes to c2.fw to allow users to plug in new
+      behaviors for the sendToAll function.
+      Special thanks to Roshni Malani [rmalani@uci.edu]
+
+*Build 1039-DEV:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Changed the ClassLoading model for c2.fw around entirely, to
+      allow class reloading.  It seems to work OK now, but YMMV.
+      See README.html for more details.
+    - Moved createAsyncCallMessage function to EBIWrapperUtils.
+      Special thanks to Isabel Muñoz [imunoz@eui.upm.es]
+    - Removed extraneous thread creations in
+      OneThreadPerBrickArchitectureEngine.
+      Special thanks to Isabel Muñoz [imunoz@eui.upm.es]
+    - Fixed SimpleWeld.equals() method.
+      Special thanks to Isabel Muñoz [imunoz@eui.upm.es]
+    - Introduced the ArchStudio 3 Preferences System, to allow
+      components to store and access user and system preferences
+      persistently across ArchStudio 3 invocations.  Preferences
+      are retained using a platform-specific store, e.g. Windows
+      JVMs will use the Windows Registry.  There is now a unified
+      Edit->Preferences dialog accessible from the
+      File Manager/Invoker.  Website docs will be up when this gets
+      officially released.
+    - Changed the .TXT files (changes, license, readme) to .html
+      for better cross-platform usability.
+
+Build 1038:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Fixed a bug in the Configurator that caused it to choose an
+      incorrect pathname for the Description file when resolving it
+      from the ISR registry.
+      Special thanks to Kari Nies [kari@ics.uci.edu]
+    - Fixed a bug in the Configurator that caused it to not generate
+      a script if all the default choices were correct and no options
+      are ever changed.
+      Special thanks to Justin Erenkrantz [justin@erenkrantz.com]
+    - Configurator will now attempt to exec "chmod u+x [scriptfile]"
+      when it's done if on a UNIX machine.
+    - Configurator now appends environment variable CLASSPATH to
+      command-line classpath when generating script.
+      Special thanks to Justin Erenkrantz [justin@erenkrantz.com]
+  Jie Ren [jie@ics.uci.edu]
+    - New visio Integration components
+
+Build 1037:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Added the ArchStudio 3 Configurator (see the website).  Feedback
+      on the new Configurator is appreciated, especially from those
+      running on exotic platforms.
+    - Integrated the ISR Registry classes, which are a generically
+      useful data structure, to edu.uci.isr.registry.  These classes
+      were originally present in the ISR Deployment system.
+    - Migrated many useful system functions (process management,
+      environment exploration) into the new c2.util.SystemUtils class
+      from the ISR Deployment System.
+    - Added a new Widget, the Wizard base class, to
+      edu.uci.isr.widgets.
+
+Build 1036:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Added support to File Manager for dragging'n'dropping files from
+      the OS onto the file list instead of using File->Open to open
+      them, 'cause I love y'all so much.  Tested it on Windows, should
+      work with other OSes too.  Beta feature; YMMV.
+
+Build 1035:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Added support to ArchEdit for fixed attribute values and
+      FixedValueExceptions.  Beta feature; YMMV.
+
+Build 1034:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Fixed a bug in ArchEdit that caused attribute names/values with
+      special characters (<,>,&,') to not print correctly sometimes
+      due to HTML rendering of JLabels.
+      Special thanks to Roshanak Roshandel [roshande@usc.edu]
+
+Build 1033:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Fixed a bug in xArch Flat Interface's MethodCache that could
+      cause it to throw a NullPointerException
+
+Build 1032:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Fixed a bug in xArchADT/XArchFlatInterface where isEquivalent
+      could sometimes return a false positive when checking
+      equivalence of two xArch objects whose classes have superclasses
+      that are also xArch objects (i.e. are not xArch base types).
+      Special thanks to Ping Chen [pingc@hotmail.com]
+
+Build 1031:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Fixed a bug in IdTable.java that could cause an exception to
+      be thrown whenever an XMLLink that doesn't point at anything is
+      removed.
+      Special thanks to Roshanak Roshandel [roshande@usc.edu]
+    - Fixed a bug in ArchEdit that caused the edit pane (right pane)
+      to remain even after an element has been removed.
+
+Build 1030:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - The doc/ directory now has docs in it again; some previous
+      builds were lacking docs because extraneous Java files
+      in the ArchPruner component package were crashing Javadoc;
+      these have now been removed.
+
+Build 1029:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Fixed a latent bug in CriticManagerGUI and CriticGUI
+      that could cause issues or critics to disappear mysteriously
+      when the window was closed and then re-opened.
+      Special thanks to Christopher Van der Westhuizen
+      [cvanderw@ics.uci.edu]
+
+Build 1028:
+  Christopher Van der Westhuizen [cvanderw@ics.uci.edu]
+    - Bugfix for Pruner component
+    - Versions Pruner component added
+  Matt Critchlow [critchlm@uci.edu]
+    - New SelectorDriver to work with new Pruner, Versions
+      Pruner Components.
+
+Build 1027:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - getTagID() in XArchPath now returns tag ID.  My bad.
+      Special thanks to Matt Critchlow [critchlm@uci.edu]
+
+Build 1026:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Fixed Christopher Van der Westhuizen's email address in this
+      changelog.
+      Special thanks to Christopher Van der Westhuizen
+      [cvanderw@ics.uci.edu]
+    - getTargetPath() in an XArchFlatEvent now returns the correct
+      path.
+      Special thanks to Matt Critchlow [critchlm@uci.edu]
+    - ArchEdit can now optionally view IDs or Descriptions of
+      elements in the left (tree) pane.  This is facilitated
+      through a new "View" menu, with checkbox-menu-items
+      for viewing IDs, Descriptions, neither, or both.  Vaguely
+      tested feature, YMMV.
+
+Build 1025:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Actually included the pruner component in archstudio.xml this
+      time.  My bad.
+      Special thanks to Christopher Van der Westhuizen
+      [cvanderw@ics.uci.edu]
+
+Build 1024:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Updated Description.java files to reflect changes in xADL 2.0
+      schemas, also updated shipping XML files generated by these
+      programs. All files are now xADL 2.0-valid again.
+    - New Pruner component integrated into architecture.
+    - Integrated Bootstrapper component into bootstrapper architecture
+      (See below)
+    - Fixed a bug that caused the bootstrapper to hang at "Binding..."
+      when passed a syntactically correct XML file that was not valid
+      for instantiation.  Bootstrapper now correctly reports the
+      InvalidArchitectureDescriptionException to System.err.
+      Special Thanks to Akash Garg [agarg@ics.uci.edu]
+      Special Thanks to Jennifer Chen [jenniferchen81@cs.com]
+    - Above bug fix resulted in initialization parameter support
+      for AEM to be deprecated; this will be removed in a future
+      release.  If your code depends on passing instantiation
+      parameters to AEM to instantiate an architecture (e.g. you've
+      written your own Bootstrapper), contact Eric.
+  Matt Critchlow [critchlm@uci.edu]
+    - Updated SelectorDriver component.
+  Ping Chen [pingc@hotmail.com]
+    - Updated Selector component
+  Christopher Van der Westhuizen [cvanderw@ics.uci.edu]
+    - Added the Pruner component
+
+Build 1023:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Fixed a latent deadlock that can occur when starting ArchStudio
+      on a fast machine.
+    - Added keyboard mnemonics for file manager and ArchEdit.
+      Special thanks to Christopher Van der Westhuizen
+      [cvanderw@ics.uci.edu]
+    - Various and sundry additions of source code that is not yet
+      integrated; these are not the droids you're looking for.
+
+Build 1022:
+  Matt Critchlow [critchlm@uci.edu] and Lewis Chiang [chiangl@uci.edu]
+    - Updated booleaneval, selector, selectordriver components.
+
+Build 1021:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Added the files for the "From Architecture to Implementation"
+      tutorial on the ArchStudio 3 website.
+    - Clarified naming of URI vs URL in the file manager; more
+      of this distinction will come in future builds.
+
+*Build 1021-DEV:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - AEM now instantiates bootstrapped architectures (i.e. those
+      passed in through an initialization parameter) in the same
+      way as it instantiates ones via an event.
+      Special Thanks to Maulik Oza [moza@ics.uci.edu].
+    - Fixed release note about ArchDiff/ArchMerge interfaces
+      for build 1020, see below.
+
+Build 1020:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - You can now communicate with the framework that instantiated
+      your architecture using ArchMessages.  See the sendArchMessage
+      function in AbstractBrick.  AEM handles ArchMessages by
+      wrapping them in WrappedArchMessages and sending them out
+      its bottom interface as notifications.
+    - File Manager now asks you whether you want to overwrite an
+      existing file when doing a Save-As.
+    - IdTable no longer throws a RuntimeException when opening
+      a file with unknown XML stuff (from schemas that have not
+      been compiled into the data binding library, for instance).
+    - Removed deprecated stuff (LJMConnectors, the old EBI stuff)
+      NOTE: If your component code imports c2.legacy.comp.* or
+      c2.pcwrap.comp.*, you may get error messages when compiling.
+      Remove these import statements; they are no longer needed.
+    - Added the -systemlaf option to archstudio.Bootstrap.  You can
+      now start applications with the system's Look and Feel instead
+      of the default (Metal) look and feel.  YMMV.
+    - Fixed a bug in ArchEdit that threw an exception when adding
+      a child element who was declared in a different context than
+      the parent element.  Special thanks to Vijaysundar Srirangam
+      [vijaysr@cs.uoregon.edu] and Roshanak Roshandel
+      [roshande@usc.edu].
+    - Added a "copy current value" button in ArchEdit.
+    - ArchDiff and ArchMerge interfaces have changed; they are now
+      completely event-based and the old EPC interfaces are no
+      longer supported.  NOTE: This release note was added
+      after the release of 1020.
+  Kari Nies [kari@ics.uci.edu]:
+    - Updated coalition demo sources in c2demo/coalitiondemo.
+    - Added coalition data manager component.
+    - Added archstudio-coalition.xml file to bin/.
+
+Build 1019:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Fixed a bug in IdTable.java that caused RuntimeExceptions on
+      some valid set(..., "href", ...) calls or
+      clear(..., "href", ...) calls.
+    - Various and sundry performance enhancements across the board.
+      Put in a serious performance fix for OneThreadPerBrick message
+      handler; now the handler only wakes up threads that are actually
+      affected by a message being sent rather than every thread in
+      the architecture.  Approximate speedup for all these
+      enhancements is between 40 and 70%.
+    - For performance reasons, split up XArchADTC2Component and
+      XArchTransactionsC2Component into alternatives, rather than
+      XArchTransactionsC2Component being a "layer in front of"
+      XArchADTC2Component.  Now, architects using an architecture
+      ADT should choose *either* XArchTransactionsC2Component (for
+      applications needing transactions) *or* XArchADT (for
+      applications not requiring transactions).  Theoretically, this
+      reduces flexibility slightly, as you can no longer add
+      transaction support on the fly, but this functionality is
+      rarely, if ever, needed.  Speedup is another 40% or
+      thereabouts.
+    - I got tired of writing boilerplate subclasses of
+      NamedPropertyMessage every time I wanted a new message type,
+      so I wrote a simple generator.  Try it.  Run:
+      java c2.util.MessageCodeGenerator
+    - AEM has been completely rearchitected.  AEM Driver now supports
+      all the new functionality.  AEM now responds to changes in
+      bound architecture descriptions (i.e. it monitors transaction
+      events from XArchTrans) and attempts to co-evolve the
+      architecture along with the description.
+    - Several fixes in the c2.fw framework regarding what happens
+      when you remove a brick.  Previously, brick removal was
+      broken in several places, mostly because parts of the framework
+      received a brickRemoved event *after* the brick had been
+      removed, at which point there was not enough information left
+      to clean up.  Split that event into two events, brickRemoving
+      (before removal) and brickRemoved (after removal), and fixed
+      appropriate parts of the framework to listen for the correct
+      event.  Similar fix for weldRemoved->weldRemoving/weldRemoved.
+    - Added an efficient isAttached(...) function to
+      XArchFlatInterface.
+    - Fixed the LinkCritic.
+    - Fixed an error where removed critics didn't properly disappear
+      from the Critic Manager GUI.
+    - Updates to Klax
+      - c2demo.klax.Description will now generate a spelling klax
+        description on request.
+      - You can now evolve Klax into spelling Klax properly, the
+        wrong kinds of tiles in the chutes will disappear when this
+        evolution takes place instead of just sticking around.
+    - Fixed a race condition in AbstractArchitectureEngine that could
+      cause a call to waitState() to wait forever.
+    - Added the Notional AWACS Demo in c2demo.nad.  xADL 2.0
+      descriptions are in bin/adxml.
+    - Fixed a bug in c2.util.UIDGenerator that caused it to generate
+      not-so-unique IDs.
+    - Removed the c2demo.ebi demo, since the old EBI base classes are
+      no longer supported.
+  Ping Chen [pingc@hotmail.com]
+    - Updates of ArchMerge, ArchMergeDriver, ArchDiff,
+      and ArchDiffDriver.  Special thanks to
+      Christopher Van der Westhuizen [cvanderw@ics.uci.edu].
+
+Build 1018:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Added the ArchStudio Performance Tester component to do
+      back-of-the-envelope performance tests on ArchStudio 3.
+    - Put method caching in xArchADT (Speedup = 3%)
+    - Various small performance/memory tweaks.
+    - Replaced all Bus connectors with Filtering Bus connectors.
+      Note that Filtering Bus connectors only implement Exclusive
+      filters at this time.
+    - Augmented EPC mechanism to send out exclusive filter
+      messages for filtering connectors. (Speedup = 15%)
+    - Finished the xArchADT transaction manager component.  Now,
+      xArchADT has full, real transaction support.  Also, put a
+      neat hack in the component that passes through non-write call
+      messages to xArchADT directly (except during a commit).
+      Note that this does affect performance of read calls slightly
+      (Slowdown = 18%).
+    - xArch Transaction Manager now sends out XArchTransactionEvents
+      in addition to the regular XArchFlatEvents.  Listen for one
+      or the other, not both.
+    - Fixed a regression in ArchEdit introduced in build 1017 when
+      I accidentally left a debug print statement in there that could
+      de-reference a null ObjRef.  My bad.
+    - Fixed a bug in IdTable.java that caused a NullPointerException
+      when trying to remove a bad href reference.
+    - Fixed a synchronization bug in ArchEdit that sometimes caused
+      the "wait" cursor (hourglass) to remain active on an ArchEdit
+      window even after an operation had successfully completed.
+    - AEM now supports the JavaInitParams xADL 2.0 extension, which
+      means you can now use the InitializationParameter[] parameter
+      in component constructors and have it work with xADL 2.0
+      InitializationParameter elements.
+    - Made several non-serializable classes in c2demo.klax
+      serializable.
+      Special thanks to Scott Hendrickson [shendric@uci.edu]
+    - Applied the ThreadInterfaceProxyFactory fix to AEMDriver's
+      "instantiate" button.
+      Special thanks to Scott Hendrickson [shendric@uci.edu]
+  Christopher Van der Westhuizen [cvanderw@ics.uci.edu]:
+    - New ArchDiff component, now included in archstudio.xml
+      Special thanks to Ping Chen [pingc@hotmail.com]
+    - New ArchDiffDriver component, also included in archstudio.xml
+      Special thanks to Ping Chen [pingc@hotmail.com]
+  Ping Chen [pingc@hotmail.com]
+    - Updates of BooleanEval, Selector, SelectorDriver.
+
+Build 1017:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - ArchEdit no longer throws a NullPointerException when you hit
+      cancel on the "Open Architecture" dialog.
+      Special thanks to Christopher Van der Westhuizen
+      [cvanderw@ics.uci.edu]
+    - AEM and AEM Driver now have the option of creating an instance
+      model of the software system while instantiating it if you
+      provide a URI for the instance model.  Beta feature; YMMV.
+  Christopher Van der Westhuizen [cvanderw@ics.uci.edu]:
+    - Initial integration of ArchDiff component; not included in
+      main archstudio.xml yet.
+
+Build 1016:
+  Eric M. Dashofy [edashofy@ics.uci.edu]
+    - Added klax.xml xADL 2.0 description of Klax
+    - Added c2demo.klax.Description class to generate klax.xml
+  Kari Nies [kari@ics.uci.edu]:
+    - Updated Coalition Forces Demo sources.
+
+Build 1015:
+  Eric M. Dashofy [edashofy@ics.uci.edu]:
+    - Initial release of the ArchStudio 3 Critics Framework
+      (see online documentation).  This adds 11 new components to
+      ArchStudio, 6 of which are design critics.
+    - Added release notes in README.TXT
+    - Implemented fairly reasonable equals() and hashCode() methods
+      in NamedPropertyMessage that do equals-by-content rather than
+      equals-by-reference.
+    - Menu items in Invoke menu of File Manager/Invoker are now
+      sorted by name.
+    - Added the ThreadInterfaceProxyFactory class to c2.fw as a
+      workaround for a deadlock issue involving single-threaded
+      AWT/Swing implementations.  See release notes for details.
+      Special thanks to Rob Egelink [egelink@ics.uci.edu].
+    - EPCs no longer throw an exception when the caller receives
+      its own call.
+      Special thanks to Sundararajan Sowrirajan
+      [ssowrira@ics.uci.edu] and Maulik Oza [moza@ics.uci.edu].
+  Ping H. Chen [pingc@hotmail.com]:
+    - Initial release of the ArchStudio 3 BooleanEval, Selector,
+      and SelectorDriver components.  See the online documentation
+      for more details.
+  Joachim "Joe" Feise [jfeise@ics.uci.edu]:
+    - Integrated the Klax demo application in c2demo.klax.
+
+*Build 1015-DEV:
+  Eric M. Dashofy [edashofy@ics.uci.edu]:
+    - Preliminary DEV release of the critic framework.
+    - Closing an architecture no longer makes dead ArchEdit windows
+      pop up.
+      Special thanks to whoever reported that [somebody@ics.uci.edu]
+    - File Manager window now starts at a slightly more reasonable
+      size.
+    - Added an efficient hasAncestor(...) function to
+      XArchFlatInterface.
+    - Fixed several bugs in IdTable.java that caused unnecessary
+      runtime exceptions when dealing with malformed or mistargeted
+      URLs.
+      Special thanks to Ping Chen [pingc@hotmail.com]
+    - Made RuntimeExceptions caused by InvocationTargetExceptions
+      coming out of XArchFlatInterface have their target exceptions
+      chained (using JDK1.4 chaining method) rather than just passing
+      the string message in.  This means that the stack traces on
+      those exceptions will be much nicer.
+
+Build 1014:
+  Eric M. Dashofy [edashofy@ics.uci.edu]:
+    - Fixed a bug in IdTable.java regarding clearing the href part
+      of an XMLLink.
+      Fixed a bug in IdTable.java regarding resolving IDs and hrefs
+      in cloned documents.
+      Special thanks to Ping Chen [pingc@hotmail.com]
+
+*Build 1013-DEV:
+  Eric M. Dashofy [edashofy@ics.uci.edu]:
+    - Brought the reverse-XML-link-resolver functionality through
+      to XArchFlatInterface from IdTable - feature has not been
+      tested thoroughly so YMMV.
+    - Made the 'Invalid Operation' exception in XArchFlatInterface
+      more useful.
+      Special thanks to Ping Chen [pingc@hotmail.com]
+    - Significant updates to FredConnector and nameless LJM
+
+Build 1012:
+  Eric M. Dashofy [edashofy@ics.uci.edu]:
+    - Support for new data binding libraries based on
+      the 05/2001 W3C Schema Recommendation.  Co-released
+      with new builds of Apigen and the Data Binding Library.
+
+Build 1011:
+  Eric M. Dashofy [edashofy@ics.uci.edu]:
+    - Bug fix for exception in getXArchURL().
+      Special thanks to Rob Egelink [egelink@ics.uci.edu]
+
+Build 1010:
+  Eric M. Dashofy [edashofy@ics.uci.edu]:
+    - Implemented proper Close/Exit functionality for both File
+      Manger/Invoker and ArchEdit.
+      Special thanks to Roberto Silveira Silva Filho
+        [rsilvafi@ics.uci.edu]
+
+Build 1009:
+  Eric M. Dashofy [edashofy@ics.uci.edu]:
+    - Added Change Log to the ArchStudio 3 Build
+    - Fixed a bug in the Duplicate menu option of ArchEdit
+    - Added the current type name of objects to the context menu in
+      ArchEdit
+
+Build 1008:
+  Eric M. Dashofy [edashofy@ics.uci.edu]:
+    - Fixed a bug in IdTable.java that caused a NullPointerException
+      when encountering an XMLLink with no HREF field, preventing
+      some incomplete documents from parsing.  This also fixed
+      subsequent "Bad Mojo" exceptions.
+      Special thanks to Girish Suryanarayana [sgirish@ics.uci.edu]
+
+Build 1007:
+  Eric M. Dashofy [edashofy@ics.uci.edu]:
+    - Fixed several bugs in ArchEdit Duplicate functionality.
+
+Build 1006:
+  Eric M. Dashofy [edashofy@ics.uci.edu]:
+    - Initial release of cloneElement() function in xArchADT and
+      ArchEdit Duplicate functionality.
+
+Build 1005:
+  [No entries]
+
+Build 1004:
+  [No entries]
+
+Build 1003:
+  [No entries]
+
+Build 1002:
+  [No entries]
+
+Build 1001:
+  [No entries]
+
+Build 1000:
+  Eric M. Dashofy [edashofy@ics.uci.edu]:
+    - Initial release of ArchStudio 3 under the ISR Software
+      Deployment system.
+
+</pre>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Policy 
+	xmlns="urn:oasis:names:tc:xacml:1.0:policy" 
+	xmlns:context="urn:oasis:names:tc:xacml:1.0:context" 
+	xmlns:types="http://www.ics.uci.edu/pub/arch/xArch/types.xsd"
+	xmlns:messages="http://www.ics.uci.edu/pub/arch/xArch/messages.xsd" 
+	xmlns:security="http://www.ics.uci.edu/pub/arch/xArch/security.xsd" 
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="urn:oasis:names:tc:xacml:1.0:policy http://www.oasis-open.org/committees/download.php/915/cs-xacml-schema-policy-01.xsd"
+	PolicyId="AddWeld" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:ordered-permit-overrides">
+	<!-- 
+		we use ordered permit override rule combination. 
+		We have a default deny rule, thus only those explicitly granted actions are permitted.
+		(The close policy)
+		
+		The other way is to use "ordered-deny-orverride" and have a default permit rule, thus
+		permit anything that is not explicitly disallowed. (The open policy)
+	-->
+	<Description>Permit adding a weld</Description>
+	<PolicyDefaults>
+		<XPathVersion>http://www.w3.org/TR/1999/Rec-xpath-19991116</XPathVersion>
+	</PolicyDefaults>
+	
+	<!--
+		Apply to any target, so only rules targets are effective. 
+	-->
+	<Target>
+		<Subjects>
+			<AnySubject/>
+		</Subjects>
+		<Resources>
+			<AnyResource/>
+		</Resources>
+		<Actions>
+			<AnyAction/>
+		</Actions>
+	</Target>
+	<Rule Effect="Permit" RuleId="PermitAddWeld">
+		<Target>
+			<Subjects>
+				<Subject>
+					<SubjectMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+						<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SecureManagedSystem</AttributeValue>
+						<SubjectAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:subject:subject-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+					</SubjectMatch>
+				</Subject>
+			</Subjects>
+			<Resources>
+				<Resource>
+					<!--
+						This regular expression match allows using any resource id, since this attribute
+						must be present, yet the two points are equal peers. 
+						The regular expression match would even match literal prefixes, e.g. aa matches aaa. 
+					-->
+					<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:regexp-string-match">
+						<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">.*</AttributeValue>
+						<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+					</ResourceMatch>
+				</Resource>
+			</Resources>
+			<Actions>
+				<Action>
+					<ActionMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+						<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">urn:xadl:action:AddWeld</AttributeValue>
+						<ActionAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+					</ActionMatch>
+				</Action>
+			</Actions>
+		</Target>
+		<!--
+			Using the set equal, we just need to get the urn:xadl:archStructure:link:point attributes. 
+			No need for urn:xadl:archStructure:link:point1 and urn:xadl:archStructure:link:point2. 
+			XACML returns a bag of attributes with the same id. 
+			SunXACML needs this check to be at the Condition part, not the Target part.
+		-->
+		<Condition FunctionId="urn:oasis:names:tc:xacml:1.0:function:string-set-equals">
+			<Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:string-bag">
+				<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">USFilterControlBus.IFACE_TOP</AttributeValue>
+				<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">USFranceConnector.IFACE_BOTTOM</AttributeValue>							
+			</Apply>
+			<ResourceAttributeDesignator AttributeId="urn:xadl:archStructure:link:point" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+		</Condition>
+	</Rule>
+	<Rule RuleId="DenyEverythingElse" Effect="Deny"/>
+</Policy>

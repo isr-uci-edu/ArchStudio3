@@ -1,0 +1,23 @@
+<Request xmlns="urn:oasis:names:tc:xacml:1.0:context" xmlns:context="urn:oasis:names:tc:xacml:1.0:context" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:messages="http://www.ics.uci.edu/pub/arch/xArch/messages.xsd" xmlns:security="http://www.ics.uci.edu/pub/arch/xArch/security.xsd">
+	<Subject SubjectCategory="urn:oasis:names:tc:xacml:1.0:subject-category:access-subject">
+		<Attribute AttributeId="urn:oasis:names:tc:xacml:1.0:subject:subject-id" DataType="http://www.w3.org/2001/XMLSchema#string">
+			<AttributeValue>SecureManagedSystem</AttributeValue>
+		</Attribute>
+	</Subject>
+	<Resource>
+		<Attribute AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string">
+			<AttributeValue>USFilterControlBus.IFACE_TOP_to_USFranceConnector.IFACE_BOTTOM</AttributeValue>
+		</Attribute>
+		<Attribute AttributeId="urn:xadl:archStructure:link:point" DataType="http://www.w3.org/2001/XMLSchema#string">
+			<AttributeValue>USFilterControlBus.IFACE_TOP</AttributeValue>
+		</Attribute>
+		<Attribute AttributeId="urn:xadl:archStructure:link:point" DataType="http://www.w3.org/2001/XMLSchema#string">
+			<AttributeValue>USFranceConnector.IFACE_BOTTOM</AttributeValue>
+		</Attribute>
+	</Resource>
+	<Action>
+		<Attribute AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id" DataType="http://www.w3.org/2001/XMLSchema#string">
+			<AttributeValue>urn:xadl:action:AddWeld</AttributeValue></Attribute>
+	</Action>
+</Request>

@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance:xArch xmlns:hints="http://www.ics.uci.edu/pub/arch/xArch/hints.xsd" xmlns:instance="http://www.ics.uci.edu/pub/arch/xArch/instance.xsd" xmlns:types="http://www.ics.uci.edu/pub/arch/xArch/types.xsd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ics.uci.edu/pub/arch/xArch/tronanalysis.xsd http://www.isr.uci.edu/projects/xarchuci/ext/tronanalysis.xsd http://www.ics.uci.edu/pub/arch/xArch/analysis.xsd http://www.isr.uci.edu/projects/xarchuci/ext/analysis.xsd http://www.ics.uci.edu/pub/arch/xArch/types.xsd http://www.isr.uci.edu/projects/xarchuci/ext/types.xsd http://www.ics.uci.edu/pub/arch/xArch/hints.xsd http://www.isr.uci.edu/projects/xarchuci/ext/hints.xsd">
+    <types:archTypes xsi:type="types:ArchTypes">
+        <types:componentType types:id="CT1" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">Component Type 1</types:description>
+            <types:signature types:id="CT1-Sig1" xsi:type="types:Signature">
+                <types:description xsi:type="instance:Description">Component Type 1 Signature 1</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:signature>
+            <types:signature types:id="CT1-Sig2" xsi:type="types:Signature">
+                <types:description xsi:type="instance:Description">Component Type 1 Signature 2</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:signature>
+            <types:subArchitecture xsi:type="types:SubArchitecture">
+                <types:archStructure xlink:href="#archStructure.CT1" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                <types:signatureInterfaceMapping types:id="sigIntMap.80c3147f.fd7f7e1028.ab555094cc4c8fee.be" xsi:type="types:SignatureInterfaceMapping">
+                    <types:description xsi:type="instance:Description">(New Signature-Interface Mapping)</types:description>
+                    <types:outerSignature xlink:href="#CT1-Sig1" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                    <types:innerInterface xlink:href="#CT1-C1-In1" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                </types:signatureInterfaceMapping>
+                <types:signatureInterfaceMapping types:id="sigIntMap.80c3147f.fd81d34b8c.d5907b6a12cea222.1c4" xsi:type="types:SignatureInterfaceMapping">
+                    <types:description xsi:type="instance:Description">(New Signature-Interface Mapping)</types:description>
+                    <types:outerSignature xlink:href="#CT1-Sig2" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                    <types:innerInterface xlink:href="#CT1-C2-Out1" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                </types:signatureInterfaceMapping>
+            </types:subArchitecture>
+        </types:componentType>
+        <types:componentType types:id="CT2" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">Component Type 2</types:description>
+            <types:signature types:id="CT2-Sig1" xsi:type="types:Signature">
+                <types:description xsi:type="instance:Description">Component 2 Signature 1</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:signature>
+            <types:signature types:id="CT2-Sig2" xsi:type="types:Signature">
+                <types:description xsi:type="instance:Description">Component 2 Signature 2</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:signature>
+            <types:signature types:id="CT2-Sig3" xsi:type="types:Signature">
+                <types:description xsi:type="instance:Description">Component 2 Signature 3</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:signature>
+            <types:subArchitecture xsi:type="types:SubArchitecture">
+                <types:archStructure xlink:href="#archStructure.CT2" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                <types:signatureInterfaceMapping types:id="sigIntMap.80c3147f.fd7f909911.16b69986f5e07dd2.1d8" xsi:type="types:SignatureInterfaceMapping">
+                    <types:description xsi:type="instance:Description">(New Signature-Interface Mapping)</types:description>
+                    <types:outerSignature xlink:href="#CT2-Sig1" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                    <types:innerInterface xlink:href="#CT2-C2-In1" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                </types:signatureInterfaceMapping>
+                <types:signatureInterfaceMapping types:id="sigIntMap.80c3147f.fd7f909911.16b69986f5e07dd2.1d8" xsi:type="types:SignatureInterfaceMapping">
+                    <types:description xsi:type="instance:Description">(New Signature-Interface Mapping)</types:description>
+                    <types:outerSignature xlink:href="#CT2-Sig2" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                    <types:innerInterface xlink:href="#CT2-C-2" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                </types:signatureInterfaceMapping>
+                <types:signatureInterfaceMapping types:id="sigIntMap.80c3147f.fd7f909911.16b69986f5e07dd2.1d8" xsi:type="types:SignatureInterfaceMapping">
+                    <types:description xsi:type="instance:Description">(New Signature-Interface Mapping)</types:description>
+                    <types:outerSignature xlink:href="#CT2-Sig3" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                    <types:innerInterface xlink:href="#CT2-C2-Inout" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                </types:signatureInterfaceMapping>
+            </types:subArchitecture>
+        </types:componentType>
+        <types:componentType types:id="TT" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">Top Type</types:description>
+            <types:signature types:id="TT-Sig1" xsi:type="types:Signature">
+                <types:description xsi:type="instance:Description">Top Type Signature 1</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:signature>
+            <types:signature types:id="TT-Sig2" xsi:type="types:Signature">
+                <types:description xsi:type="instance:Description">Top Type Signature 2</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:signature>
+            <types:subArchitecture xsi:type="types:SubArchitecture">
+                <types:archStructure xlink:href="#Top1" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                <types:signatureInterfaceMapping types:id="sigIntMap.80c3147f.fd7f909911.16b69986f5e07dd2.1d8" xsi:type="types:SignatureInterfaceMapping">
+                    <types:description xsi:type="instance:Description">(New Signature-Interface Mapping)</types:description>
+                    <types:outerSignature xlink:href="#TT-Sig1" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                    <types:innerInterface xlink:href="#Top1-C1-I2" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                </types:signatureInterfaceMapping>
+                <types:signatureInterfaceMapping types:id="sigIntMap.80c3147f.fd7f909911.16b69986f5e07dd2.1d8" xsi:type="types:SignatureInterfaceMapping">
+                    <types:description xsi:type="instance:Description">(New Signature-Interface Mapping)</types:description>
+                    <types:outerSignature xlink:href="#TT-Sig2" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                    <types:innerInterface xlink:href="#Top1-C2-I1" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                </types:signatureInterfaceMapping>
+            </types:subArchitecture>
+        </types:componentType>
+        <types:interfaceType types:id="interfaceType.80c3147f.fd7f7062b7.ea137562843aeaf1.22" xsi:type="types:InterfaceType">
+            <types:description xsi:type="instance:Description">PCI Interface</types:description>
+        </types:interfaceType>
+    </types:archTypes>
+    <types:archStructure types:id="archStructure.CT1" xsi:type="types:ArchStructure">
+        <types:description xsi:type="instance:Description">Component Type 1 Structure</types:description>
+        <types:component types:id="CT1-C1" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">C1 of CT1</types:description>
+            <types:interface types:id="CT1-C1-Out1" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">CT1-C1-Out1</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+            <types:interface types:id="CT1-C1-In1" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">CT1-C1-In1</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:interface>
+            <types:interface types:id="CT1-C1-Inout" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">CT1-C1-Inout</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+        </types:component>
+        <types:component types:id="CT1-C2" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">C2 of CT1</types:description>
+            <types:interface types:id="CT1-C2-Out1" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">CT1-C2-Out1</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+            <types:interface types:id="CT1-C2-In1" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">CT1-C2-In1</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:interface>
+            <types:interface types:id="CT1-C2-Inout" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">CT1-C2-Inout</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+        </types:component>
+        <types:connector types:id="CT1-C" xsi:type="types:Connector">
+            <types:description xsi:type="instance:Description">CT1 Connector</types:description>
+            <types:interface types:id="CT1-C-1" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">CT1-C-1</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:interface>
+            <types:interface types:id="CT1-C-2" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">CT1-C-2</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+        </types:connector>
+        <types:link types:id="link1" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">link1</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#CT1-C-2" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#CT1-C2-In1" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="link2" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">link2</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#CT1-C-1" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#CT1-C1-Out1" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+    </types:archStructure>
+    <types:archStructure types:id="archStructure.CT2" xsi:type="types:ArchStructure">
+        <types:description xsi:type="instance:Description">Component Type 2 Structure</types:description>
+        <types:component types:id="CT2-C2" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">C2 of CT2</types:description>
+            <types:interface types:id="CT2-C2-Out1" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">CT2-C2-Out1</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+            <types:interface types:id="CT2-C2-In1" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">CT2-C2-In1</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:interface>
+            <types:interface types:id="CT2-C2-Inout" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">CT2-C2-Inout</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+        </types:component>
+        <types:connector types:id="CT2-C" xsi:type="types:Connector">
+            <types:description xsi:type="instance:Description">CT2 Connector</types:description>
+            <types:interface types:id="CT2-C-1" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">CT2-C-1</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:interface>
+            <types:interface types:id="CT2-C-2" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">CT2-C-2</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+        </types:connector>
+        <types:link types:id="link3" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">link3</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#CT2-C-2" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#CT2-C2-In1" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+    </types:archStructure>
+    <types:archStructure types:id="Top1" xsi:type="types:ArchStructure">
+        <types:description xsi:type="instance:Description">Top 1</types:description>
+        <types:component types:id="Top1-C1" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">Component 1 of Top 1</types:description>
+            <types:interface types:id="Top1-C1-I1" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Top1-C1-I1</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+                <types:signature xlink:href="#CT1-Sig1" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:interface>
+            <types:interface types:id="Top1-C1-I2" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Top1-C1-I2</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+                <types:signature xlink:href="#CT1-Sig2" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:interface>
+            <types:type xlink:href="#CT1" xlink:type="simple" xsi:type="instance:XMLLink"/>
+        </types:component>
+        <!-- to try multiple instances of the same sub architecture type
+        <types:component types:id="Top1-C11" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">Component 11 of Top 1</types:description>
+            <types:interface types:id="Top1-C11-I1" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Top1-C11-I1</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+                <types:signature xlink:href="#CT1-Sig1" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:interface>
+            <types:interface types:id="Top1-C11-I2" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Top1-C11-I2</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+                <types:signature xlink:href="#CT1-Sig2" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:interface>
+            <types:type xlink:href="#CT1" xlink:type="simple" xsi:type="instance:XMLLink"/>
+        </types:component>
+        -->
+        <types:component types:id="Top1-C2" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">Component 2 of Top 1</types:description>
+            <types:interface types:id="Top1-C2-I1" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Top1-C2-I1</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+                <types:signature xlink:href="#CT2-Sig1" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:interface>
+            <types:interface types:id="Top1-C2-I2" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Top1-C2-I2</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+                <types:signature xlink:href="#CT2-Sig2" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:interface>
+            <types:interface types:id="Top1-C2-I3" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Top1-C2-I3</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+                <types:signature xlink:href="#CT2-Sig3" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:interface>
+            <types:type xlink:href="#CT2" xlink:type="simple" xsi:type="instance:XMLLink"/>
+        </types:component>
+        <types:connector types:id="Top1-Connector" xsi:type="types:Connector">
+            <types:description xsi:type="instance:Description">Top1-Connector</types:description>
+            <types:interface types:id="Top1-Connector-I1" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Top1-Connector-I1</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:interface>
+            <types:interface types:id="Top1-Connector-I2" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Top1-Connector-I2</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+        </types:connector>
+        <types:link types:id="link4" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">link4</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#Top1-Connector-I1" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#Top1-C1-I1" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="link5" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">link5</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#Top1-Connector-I2" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#Top1-C2-I3" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <!-- multi instance
+        <types:link types:id="link8" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">link8</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#Top1-Connector-I1" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#Top1-C11-I1" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        -->
+    </types:archStructure>
+    <!-- to try either two top archStructure or one more level of Top2 contains Top1
+    <types:archStructure types:id="Top2" xsi:type="types:ArchStructure">
+        <types:description xsi:type="instance:Description">Top 2</types:description>
+        <types:component types:id="Top2-C1" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">Component 1 of Top 2</types:description>
+            <types:interface types:id="Top2-C1-I1" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Top2-C1-I1</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+            <types:interface types:id="Top2-C1-I2" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Top2-C1-I2</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:interface>
+        </types:component>
+        <types:component types:id="Top2-C2" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">Component 2 of Top 2</types:description>
+            <types:interface types:id="Top2-C2-I1" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Top2-C2-I1</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+            <types:interface types:id="Top2-C2-I2" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Top2-C2-I2</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:interface>
+            <types:interface types:id="Top2-C2-I3" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Top2-C2-I3</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:interface>
+        </types:component>
+        <types:connector types:id="Top2-Connector" xsi:type="types:Connector">
+            <types:description xsi:type="instance:Description">Top2-Connector</types:description>
+            <types:interface types:id="Top2-Connector-I1" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Top2-Connector-I1</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:interface>
+            <types:interface types:id="Top2-Connector-I2" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Top2-Connector-I2</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+        </types:connector>
+        <types:link types:id="link6" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">link4</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#Top2-Connector-I1" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#Top2-C1-I1" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="link6" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">link5</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#Top2-Connector-I2" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#Top2-C2-I3" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:component types:id="Top1C" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">Top1 As Component</types:description>
+            <types:interface types:id="Top1C-I1" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Top1C-I1</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+                <types:signature xlink:href="#TT-Sig1" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:interface>
+            <types:interface types:id="Top1C-I2" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Top1C-I2</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+                <types:signature xlink:href="#TT-Sig2" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:interface>
+            <types:type xlink:href="#TT" xlink:type="simple" xsi:type="instance:XMLLink"/>
+        </types:component>
+		<types:link types:id="link7" xsi:type="types:Link">
+			<types:description xsi:type="instance:Description">link7</types:description>
+			<types:point xsi:type="instance:Point">
+				<instance:anchorOnInterface xlink:href="#Top2-Connector-I2" xlink:type="simple" xsi:type="instance:XMLLink"/>
+			</types:point>
+			<types:point xsi:type="instance:Point">
+				<instance:anchorOnInterface xlink:href="#Top1C-I1" xlink:type="simple" xsi:type="instance:XMLLink"/>
+			</types:point>
+		</types:link>
+    </types:archStructure>
+	-->
+
+
+
+
+<hints:renderingHints xsi:type="hints:RenderingHints">
+        <hints:hints xsi:type="hints:Hints">
+            <hints:hintedThing xlink:href="#TT" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            <hints:propertyHint hints:name="allHints" hints:value="TT|boundingBox:java.awt.Rectangle=RECT10050,10050,200,150;TT|color:java.awt.Color=COLOR-9932353;TT-Sig1|boundingBox:java.awt.Rectangle=RECT10145,10045,10,10;TT-Sig1|orientation:java.lang.Integer=INT1000;TT-Sig2|boundingBox:java.awt.Rectangle=RECT10145,10045,10,10;TT-Sig2|orientation:java.lang.Integer=INT1000;" xsi:type="hints:PropertyHint"/>
+        </hints:hints>
+        <hints:hints xsi:type="hints:Hints">
+            <hints:hintedThing xlink:href="#Top2" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            <hints:propertyHint hints:name="allHints" hints:value="link6|numPoints:java.lang.Integer=INT2;link6|point0:java.awt.Point=POINT10473,10480;link6|point1:java.awt.Point=POINT10527,10416;link6|splineMode:java.lang.Integer=INT100;link6|color:java.awt.Color=COLOR-16777216;link6|numPoints:java.lang.Integer=INT2;link6|point0:java.awt.Point=POINT10373,10501;link6|point1:java.awt.Point=POINT10329,10630;link6|splineMode:java.lang.Integer=INT100;link6|color:java.awt.Color=COLOR-16777216;link7|numPoints:java.lang.Integer=INT2;link7|point0:java.awt.Point=POINT10373,10501;link7|point1:java.awt.Point=POINT10176,10557;link7|splineMode:java.lang.Integer=INT100;link7|color:java.awt.Color=COLOR-16777216;Top2-C1|boundingBox:java.awt.Rectangle=RECT10507,10316,100,100;Top2-C1|color:java.awt.Color=COLOR-3814401;Top2-C1-I1|boundingBox:java.awt.Rectangle=RECT10522,10411,10,10;Top2-C1-I1|orientation:java.lang.Integer=INT1020;Top2-C1-I2|boundingBox:java.awt.Rectangle=RECT10551,10411,10,10;Top2-C1-I2|orientation:java.lang.Integer=INT1020;Top2-C2|boundingBox:java.awt.Rectangle=RECT10279,10630,100,100;Top2-C2|color:java.awt.Color=COLOR-3814401;Top2-C2-I1|boundingBox:java.awt.Rectangle=RECT10324,10625,10,10;Top2-C2-I1|orientation:java.lang.Integer=INT1000;Top2-C2-I2|boundingBox:java.awt.Rectangle=RECT10324,10625,10,10;Top2-C2-I2|orientation:java.lang.Integer=INT1000;Top2-C2-I3|boundingBox:java.awt.Rectangle=RECT10324,10625,10,10;Top2-C2-I3|orientation:java.lang.Integer=INT1000;Top1C|boundingBox:java.awt.Rectangle=RECT10126,10557,100,100;Top1C|color:java.awt.Color=COLOR-3814401;Top1C-I1|boundingBox:java.awt.Rectangle=RECT10171,10552,10,10;Top1C-I1|orientation:java.lang.Integer=INT1000;Top1C-I2|boundingBox:java.awt.Rectangle=RECT10171,10552,10,10;Top1C-I2|orientation:java.lang.Integer=INT1000;Top2-Connector|boundingBox:java.awt.Rectangle=RECT10373,10422,100,100;Top2-Connector|color:java.awt.Color=COLOR-5441;Top2-Connector-I1|boundingBox:java.awt.Rectangle=RECT10468,10475,10,10;Top2-Connector-I1|orientation:java.lang.Integer=INT1010;Top2-Connector-I2|boundingBox:java.awt.Rectangle=RECT10368,10496,10,10;Top2-Connector-I2|orientation:java.lang.Integer=INT1030;" xsi:type="hints:PropertyHint"/>
+        </hints:hints>
+        <hints:hints xsi:type="hints:Hints">
+            <hints:hintedThing xlink:href="#CT1" xsi:type="instance:XMLLink" xlink:type="simple"/>
+            <hints:propertyHint hints:name="allHints" xsi:type="hints:PropertyHint" hints:value="CT1|boundingBox:java.awt.Rectangle=RECT10050,10050,200,150;CT1|color:java.awt.Color=COLOR-9932353;CT1-Sig1|boundingBox:java.awt.Rectangle=RECT10045,10045,10,10;CT1-Sig1|orientation:java.lang.Integer=INT1000;CT1-Sig2|boundingBox:java.awt.Rectangle=RECT10045,10045,10,10;CT1-Sig2|orientation:java.lang.Integer=INT1000;"/>
+        </hints:hints>
+        <hints:hints xsi:type="hints:Hints">
+            <hints:hintedThing xlink:href="#CT2" xsi:type="instance:XMLLink" xlink:type="simple"/>
+            <hints:propertyHint hints:name="allHints" xsi:type="hints:PropertyHint" hints:value="CT2|boundingBox:java.awt.Rectangle=RECT10050,10050,200,150;CT2|color:java.awt.Color=COLOR-9932353;CT2-Sig1|boundingBox:java.awt.Rectangle=RECT10045,10045,10,10;CT2-Sig1|orientation:java.lang.Integer=INT1000;CT2-Sig2|boundingBox:java.awt.Rectangle=RECT10045,10045,10,10;CT2-Sig2|orientation:java.lang.Integer=INT1000;CT2-Sig3|boundingBox:java.awt.Rectangle=RECT10045,10045,10,10;CT2-Sig3|orientation:java.lang.Integer=INT1000;"/>
+        </hints:hints>
+        <hints:hints xsi:type="hints:Hints">
+            <hints:hintedThing xlink:href="#archStructure.CT1" xsi:type="instance:XMLLink" xlink:type="simple"/>
+            <hints:propertyHint hints:name="allHints" xsi:type="hints:PropertyHint" hints:value="link1|numPoints:java.lang.Integer=INT2;link1|point0:java.awt.Point=POINT10168,10250;link1|point1:java.awt.Point=POINT10114,10296;link1|splineMode:java.lang.Integer=INT100;link1|color:java.awt.Color=COLOR-16777216;link2|numPoints:java.lang.Integer=INT2;link2|point0:java.awt.Point=POINT10181,10150;link2|point1:java.awt.Point=POINT10285,10090;link2|splineMode:java.lang.Integer=INT100;link2|color:java.awt.Color=COLOR-16777216;CT1-C1|boundingBox:java.awt.Rectangle=RECT10285,10025,100,100;CT1-C1|color:java.awt.Color=COLOR-3814401;CT1-C1-Out1|boundingBox:java.awt.Rectangle=RECT10280,10085,10,10;CT1-C1-Out1|orientation:java.lang.Integer=INT1030;CT1-C1-In1|boundingBox:java.awt.Rectangle=RECT10338,10120,10,10;CT1-C1-In1|orientation:java.lang.Integer=INT1020;CT1-C1-Inout|boundingBox:java.awt.Rectangle=RECT10331,10020,10,10;CT1-C1-Inout|orientation:java.lang.Integer=INT1000;CT1-C2|boundingBox:java.awt.Rectangle=RECT10061,10296,100,100;CT1-C2|color:java.awt.Color=COLOR-3814401;CT1-C2-Out1|boundingBox:java.awt.Rectangle=RECT10056,10338,10,10;CT1-C2-Out1|orientation:java.lang.Integer=INT1030;CT1-C2-In1|boundingBox:java.awt.Rectangle=RECT10109,10291,10,10;CT1-C2-In1|orientation:java.lang.Integer=INT1000;CT1-C2-Inout|boundingBox:java.awt.Rectangle=RECT10156,10353,10,10;CT1-C2-Inout|orientation:java.lang.Integer=INT1010;CT1-C|boundingBox:java.awt.Rectangle=RECT10118,10150,100,100;CT1-C|color:java.awt.Color=COLOR-5441;CT1-C-1|boundingBox:java.awt.Rectangle=RECT10176,10145,10,10;CT1-C-1|orientation:java.lang.Integer=INT1000;CT1-C-2|boundingBox:java.awt.Rectangle=RECT10163,10245,10,10;CT1-C-2|orientation:java.lang.Integer=INT1020;archStructure.CT1$$environmentProperties|__scale:java.lang.Double=DOU1.0;archStructure.CT1$$environmentProperties|__worldOriginY:java.lang.Integer=INT10000;archStructure.CT1$$environmentProperties|__worldOriginX:java.lang.Integer=INT10000;"/>
+        </hints:hints>
+        <hints:hints xsi:type="hints:Hints">
+            <hints:hintedThing xlink:href="#archStructure.CT2" xsi:type="instance:XMLLink" xlink:type="simple"/>
+            <hints:propertyHint hints:name="allHints" xsi:type="hints:PropertyHint" hints:value="link3|numPoints:java.lang.Integer=INT2;link3|point0:java.awt.Point=POINT10157,10234;link3|point1:java.awt.Point=POINT10240,10142;link3|splineMode:java.lang.Integer=INT100;link3|color:java.awt.Color=COLOR-16777216;CT2-C2|boundingBox:java.awt.Rectangle=RECT10240,10086,100,100;CT2-C2|color:java.awt.Color=COLOR-3814401;CT2-C2-Out1|boundingBox:java.awt.Rectangle=RECT10284,10081,10,10;CT2-C2-Out1|orientation:java.lang.Integer=INT1000;CT2-C2-In1|boundingBox:java.awt.Rectangle=RECT10235,10137,10,10;CT2-C2-In1|orientation:java.lang.Integer=INT1030;CT2-C2-Inout|boundingBox:java.awt.Rectangle=RECT10299,10181,10,10;CT2-C2-Inout|orientation:java.lang.Integer=INT1020;CT2-C|boundingBox:java.awt.Rectangle=RECT10097,10234,100,100;CT2-C|color:java.awt.Color=COLOR-5441;CT2-C-1|boundingBox:java.awt.Rectangle=RECT10149,10329,10,10;CT2-C-1|orientation:java.lang.Integer=INT1020;CT2-C-2|boundingBox:java.awt.Rectangle=RECT10152,10229,10,10;CT2-C-2|orientation:java.lang.Integer=INT1000;"/>
+        </hints:hints>
+        <hints:hints xsi:type="hints:Hints">
+            <hints:hintedThing xlink:href="#Top1" xsi:type="instance:XMLLink" xlink:type="simple"/>
+            <hints:propertyHint hints:name="allHints" xsi:type="hints:PropertyHint" hints:value="link4|numPoints:java.lang.Integer=INT2;link4|point0:java.awt.Point=POINT10210,10209;link4|point1:java.awt.Point=POINT10120,10263;link4|splineMode:java.lang.Integer=INT100;link4|color:java.awt.Color=COLOR-16777216;link5|numPoints:java.lang.Integer=INT2;link5|point0:java.awt.Point=POINT10310,10196;link5|point1:java.awt.Point=POINT10417,10153;link5|splineMode:java.lang.Integer=INT100;link5|color:java.awt.Color=COLOR-16777216;link8|numPoints:java.lang.Integer=INT2;link8|point0:java.awt.Point=POINT10210,10209;link8|point1:java.awt.Point=POINT10044,10390;link8|splineMode:java.lang.Integer=INT100;link8|color:java.awt.Color=COLOR-16777216;Top1-C1|boundingBox:java.awt.Rectangle=RECT10020,10192,100,100;Top1-C1|color:java.awt.Color=COLOR-3814401;Top1-C1-I1|boundingBox:java.awt.Rectangle=RECT10115,10258,10,10;Top1-C1-I1|orientation:java.lang.Integer=INT1010;Top1-C1-I2|boundingBox:java.awt.Rectangle=RECT10015,10265,10,10;Top1-C1-I2|orientation:java.lang.Integer=INT1030;Top1-C11|boundingBox:java.awt.Rectangle=RECT9994,10390,100,100;Top1-C11|color:java.awt.Color=COLOR-3814401;Top1-C11-I1|boundingBox:java.awt.Rectangle=RECT10039,10385,10,10;Top1-C11-I1|orientation:java.lang.Integer=INT1000;Top1-C11-I2|boundingBox:java.awt.Rectangle=RECT9989,10470,10,10;Top1-C11-I2|orientation:java.lang.Integer=INT1030;Top1-C2|boundingBox:java.awt.Rectangle=RECT10347,10053,100,100;Top1-C2|color:java.awt.Color=COLOR-3814401;Top1-C2-I1|boundingBox:java.awt.Rectangle=RECT10342,10057,10,10;Top1-C2-I1|orientation:java.lang.Integer=INT1030;Top1-C2-I2|boundingBox:java.awt.Rectangle=RECT10342,10083,10,10;Top1-C2-I2|orientation:java.lang.Integer=INT1030;Top1-C2-I3|boundingBox:java.awt.Rectangle=RECT10412,10148,10,10;Top1-C2-I3|orientation:java.lang.Integer=INT1020;Top1-Connector|boundingBox:java.awt.Rectangle=RECT10210,10149,100,100;Top1-Connector|color:java.awt.Color=COLOR-5441;Top1-Connector-I1|boundingBox:java.awt.Rectangle=RECT10205,10204,10,10;Top1-Connector-I1|orientation:java.lang.Integer=INT1030;Top1-Connector-I2|boundingBox:java.awt.Rectangle=RECT10305,10191,10,10;Top1-Connector-I2|orientation:java.lang.Integer=INT1010;"/>
+        </hints:hints>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </hints:renderingHints>
+</instance:xArch>

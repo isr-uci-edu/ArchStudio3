@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin
+   id="archstudio"
+   name="archstudio"
+   version="0.0.0">
+   <runtime>
+      <library name="archstudio.jar">
+         <export name="*"/>
+      </library>
+      <library name="res/mixlibs/diva.jar">
+         <export name="*"/>
+      </library>
+      <library name="res/mixlibs/libsvm.jar">
+         <export name="*"/>
+      </library>
+      <library name="res/mixlibs/xalan.jar">
+         <export name="*"/>
+      </library>
+      <library name="res/mixlibs/jython.jar">
+         <export name="*"/>
+      </library>
+      <library name="res/mixlibs/jythonlibs.jar">
+         <export name="*"/>
+      </library>
+      <library name="res/mixlibs/l2fprod-common-fontchooser.jar">
+         <export name="*"/>
+      </library>
+   </runtime>
+   <requires>
+      <import plugin="xarchlibs"/>
+   </requires>
+</plugin>

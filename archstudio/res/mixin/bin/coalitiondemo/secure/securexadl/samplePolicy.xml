@@ -1,0 +1,69 @@
+<PolicySet xmlns="urn:oasis:names:tc:xacml:1.0:policy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="urn:oasis:names:tc:xacml:1.0:context" xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:messages="http://www.ics.uci.edu/pub/arch/xArch/messages.xsd" xmlns:security="http://www.ics.uci.edu/pub/arch/xArch/security.xsd"
+	xsi:schemaLocation="urn:oasis:names:tc:xacml:1.0:policy http://www.oasis-open.org/committees/download.php/915/cs-xacml-schema-policy-01.xsd" PolicySetId="GeneratedPolicy"
+	PolicyCombiningAlgId="urn:oasis:names:tc:xacml:1.0:policy-combining-algorithm:deny-overrides">
+	<Description> Example policy set.
+	</Description>
+	<Target>
+		<Subjects>
+			<AnySubject/>
+		</Subjects>
+		<Resources>
+			<AnyResource/>
+		</Resources>
+		<Actions>
+			<AnyAction/>
+		</Actions>
+	</Target>
+	<Policy PolicyId="GeneratedPolicy" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:deny-overrides">
+		<Description>Dummy</Description>
+		<PolicyDefaults>
+			<XPathVersion>http://www.w3.org/TR/1999/Rec-xpath-19991116</XPathVersion>
+		</PolicyDefaults>
+		
+		<Target>
+			<Subjects>
+				<AnySubject/>
+			</Subjects>
+			<Resources>
+				<AnyResource/>
+			</Resources>
+			<Actions>
+				<AnyAction/>
+			</Actions>
+		</Target>
+		<Rule RuleId="Rule0" Effect="Deny">
+			<Target>
+				<Subjects>
+					<Subject>
+						<SubjectMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:regexp-string-match">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">US</AttributeValue>
+							<SubjectAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:subject:subject-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</SubjectMatch>
+					</Subject>
+				</Subjects>
+				<Resources>
+					<Resource>
+						<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:regexp-string-match">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">route</AttributeValue>
+							<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ResourceMatch>
+					</Resource>
+				</Resources>
+				<Actions>
+					<Action>
+						<ActionMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:regexp-string-match">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">route</AttributeValue>
+							<ActionAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+						</ActionMatch>
+					</Action>
+				</Actions>
+			</Target>
+			<Condition FunctionId="urn:oasis:names:tc:xacml:1.0:function:string-is-in">
+				<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Aircraft Carrier</AttributeValue>
+				<AttributeSelector RequestContextPath="//context:ResourceContent/security:routeMessage/messages:namedProperty/messages:value/text()" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+			</Condition>
+		</Rule>
+		<Rule RuleId="FinalRule" Effect="Permit"/>
+	</Policy>
+</PolicySet>

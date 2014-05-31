@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance:xArch xsi:schemaLocation="http://www.ics.uci.edu/pub/arch/xArch/diff.xsd http://www.isr.uci.edu/projects/xarchuci/ext/diff.xsd" xmlns:types="http://www.ics.uci.edu/pub/arch/xArch/types.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diff="http://www.ics.uci.edu/pub/arch/xArch/diff.xsd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:instance="http://www.ics.uci.edu/pub/arch/xArch/instance.xsd">
+    <diff:diff xsi:type="diff:Diff">
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:add xsi:type="diff:Add">
+                <diff:component xsi:type="types:Component" types:id="ReplacementRadarComponent">
+            <types:description xsi:type="instance:Description">BetterRadarComponent</types:description>
+            <types:interface xsi:type="types:Interface" types:id="ReplacementRadarComponent.IFACE_TOP">
+                <types:description xsi:type="instance:Description">BetterRadarComponent Top Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+            </types:interface>
+            <types:interface xsi:type="types:Interface" types:id="ReplacementRadarComponent.IFACE_BOTTOM">
+                <types:description xsi:type="instance:Description">BetterRadarComponent Bottom Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+            </types:interface>
+            <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#BetterRadarComponent_type"/>
+        </diff:component>
+            </diff:add>
+        </diff:diffPart>
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:add xsi:type="diff:Add">
+                <diff:component xsi:type="types:Component" types:id="ReplacementIFFComponent">
+            <types:description xsi:type="instance:Description">IFFComponent</types:description>
+            <types:interface xsi:type="types:Interface" types:id="ReplacementIFFComponent.IFACE_TOP">
+                <types:description xsi:type="instance:Description">IFFComponent Top Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+            </types:interface>
+            <types:interface xsi:type="types:Interface" types:id="ReplacementIFFComponent.IFACE_BOTTOM">
+                <types:description xsi:type="instance:Description">IFFComponent Bottom Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+            </types:interface>
+            <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#IFFComponent_type"/>
+        </diff:component>
+            </diff:add>
+        </diff:diffPart>
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:add xsi:type="diff:Add">
+                <diff:connector xsi:type="types:Connector" types:id="BackupSensorBus">
+            <types:description xsi:type="instance:Description">Backup Sensor Bus</types:description>
+            <types:interface xsi:type="types:Interface" types:id="BackupSensorBus.IFACE_TOP">
+                <types:description xsi:type="instance:Description">Backup Sensor Bus Top Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+            </types:interface>
+            <types:interface xsi:type="types:Interface" types:id="BackupSensorBus.IFACE_BOTTOM">
+                <types:description xsi:type="instance:Description">Backup Sensor Bus Bottom Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+            </types:interface>
+            <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#BusConnector_type"/>
+        </diff:connector>
+            </diff:add>
+        </diff:diffPart>
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:add xsi:type="diff:Add">
+                <diff:link xsi:type="types:Link" types:id="RealWorldBus_to_ReplacementRadarComponent">
+            <types:description xsi:type="instance:Description">RealWorldBus to ReplacementRadarComponent Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#RealWorldBus.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#ReplacementRadarComponent.IFACE_TOP"/>
+            </types:point>
+        </diff:link>
+            </diff:add>
+        </diff:diffPart>
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:add xsi:type="diff:Add">
+                <diff:link xsi:type="types:Link" types:id="ReplacementRadarComponent_to_BackupSensorBus">
+            <types:description xsi:type="instance:Description">ReplacementRadarComponent to BackupSensorBus Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#ReplacementRadarComponent.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#BackupSensorBus.IFACE_TOP"/>
+            </types:point>
+        </diff:link>
+            </diff:add>
+        </diff:diffPart>
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:add xsi:type="diff:Add">
+                <diff:link xsi:type="types:Link" types:id="RealWorldBus_to_ReplacementIFFComponent">
+            <types:description xsi:type="instance:Description">RealWorldBus to ReplacementIFFComponent Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#RealWorldBus.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#ReplacementIFFComponent.IFACE_TOP"/>
+            </types:point>
+        </diff:link>
+            </diff:add>
+        </diff:diffPart>
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:add xsi:type="diff:Add">
+                <diff:link xsi:type="types:Link" types:id="ReplacementIFFComponent_to_BackupSensorBus">
+            <types:description xsi:type="instance:Description">ReplacementIFFComponent to BackupSensorBus Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#ReplacementIFFComponent.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#BackupSensorBus.IFACE_TOP"/>
+            </types:point>
+        </diff:link>
+            </diff:add>
+        </diff:diffPart>
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:add xsi:type="diff:Add">
+                <diff:link xsi:type="types:Link" types:id="BackupSensorBus_to_SensorBus">
+            <types:description xsi:type="instance:Description">BackupSensorBus to SensorBus Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#BackupSensorBus.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#SensorBus.IFACE_TOP"/>
+            </types:point>
+        </diff:link>
+            </diff:add>
+        </diff:diffPart>
+    </diff:diff>
+</instance:xArch>
+

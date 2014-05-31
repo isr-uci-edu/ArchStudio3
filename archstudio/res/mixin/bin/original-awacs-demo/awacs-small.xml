@@ -1,0 +1,996 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance:xArch
+    xmlns:instance="http://www.ics.uci.edu/pub/arch/xArch/instance.xsd"
+    xmlns:types="http://www.ics.uci.edu/pub/arch/xArch/types.xsd"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance" xsi:schemaLocation="http://www.ics.uci.edu/pub/arch/xArch/types.xsd http://www.isr.uci.edu/projects/xarchuci/ext/types.xsd">
+    <types:archTypes xsi:type="types:ArchTypes">
+        <types:componentType types:id="AOCPCAU_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">AOCPCAU_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="MAINRDMX_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">MAINRDMX_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="TMRDMX_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">TMRDMX_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="AMCPRDMX_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">AMCPRDMX_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="SHRDMX_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">SHRDMX_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="AGRDMX_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">AGRDMX_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="MTT1RDMX_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">MTT1RDMX_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="MTT2RDMX_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">MTT2RDMX_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="MTT3RDMX_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">MTT3RDMX_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="SSRDMX_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">SSRDMX_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="MHRDMX_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">MHRDMX_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="SMRDMX_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">SMRDMX_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="RSSRDMX_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">RSSRDMX_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="DSRDMX_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">DSRDMX_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="MAPRDMX_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">MAPRDMX_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="SCSIRDMX_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">SCSIRDMX_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="SWAFLAN_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">SWAFLAN_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="SWBFLAN_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">SWBFLAN_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="RDMX1SDS_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">RDMX1SDS_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="RDMX2SDS_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">RDMX2SDS_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="CTL1SDS_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">CTL1SDS_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="CTL2SDS_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">CTL2SDS_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="CTL3SDS_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">CTL3SDS_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="CTL4SDS_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">CTL4SDS_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="STC1SDS_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">STC1SDS_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="STC2SDS_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">STC2SDS_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="DSAMC_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">DSAMC_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="SMAMC_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">SMAMC_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="TICMAMC_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">TICMAMC_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="MHAMC_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">MHAMC_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="DSSTC_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">DSSTC_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="SCSISTC_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">SCSISTC_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="SMSTC_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">SMSTC_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="TINSTC_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">TINSTC_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="CKPTSTC_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">CKPTSTC_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="TOUTSTC_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">TOUTSTC_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="MHSTC_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">MHSTC_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="MAINSTC_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">MAINSTC_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="TRCKSTC_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">TRCKSTC_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="DSWSC_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">DSWSC_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="SMWSC_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">SMWSC_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:componentType types:id="MHWSC_TYPE" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">MHWSC_TYPE</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:componentType>
+        <types:connectorType types:id="CONNECTOR_TYPE_01" xsi:type="types:ConnectorType">
+            <types:description xsi:type="instance:Description">CONNECTOR_TYPE_01</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:signature>
+        </types:connectorType>
+        <types:interfaceType types:id="Interface_inout" xsi:type="types:InterfaceType">
+            <types:description xsi:type="instance:Description">Interface_inout</types:description>
+        </types:interfaceType>
+    </types:archTypes>
+    <types:archStructure xsi:type="types:ArchStructure" types:id="AWACS">
+        <types:description xsi:type="instance:Description">AWACS_Architecture</types:description>
+        <types:component types:id="TMRDMX1" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">DESCRIPTION</types:description>
+            <types:interface types:id="TMRDMX1_I_MAINRDMX1" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">DESCRIPTION</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:interface>
+            <types:type xlink:href="#TMRDMX_TYPE" xsi:type="instance:XMLLink"/>
+        </types:component>
+        <types:component types:id="SHRDMX1" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">DESCRIPTION</types:description>
+            <types:interface types:id="SHRDMX1_I_MAINRDMX1" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">DESCRIPTION</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:interface>
+            <types:type xlink:href="#SHRDMX_TYPE" xsi:type="instance:XMLLink"/>
+        </types:component>
+        <types:component types:id="AGRDMX1" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">DESCRIPTION</types:description>
+            <types:interface types:id="AGRDMX1_I_MAINRDMX1" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">DESCRIPTION</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:interface>
+            <types:type xlink:href="#AGRDMX_TYPE" xsi:type="instance:XMLLink"/>
+        </types:component>
+        <types:component types:id="MAINRDMX1" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">DESCRIPTION</types:description>
+            <types:interface types:id="MAINRDMX1_I_TMRDMX1" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">DESCRIPTION</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:interface>
+            <types:interface types:id="MAINRDMX1_I_AGRDMX1" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">DESCRIPTION</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:interface>
+            <types:interface types:id="MAINRDMX1_I_SHRDMX1" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">DESCRIPTION</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:interface>
+            <types:interface types:id="MAINRDMX1_I_MTT1RDMX1" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">DESCRIPTION</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:interface>
+            <types:interface types:id="MAINRDMX1_I_MTT2RDMX1" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">DESCRIPTION</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:interface>
+            <types:interface types:id="MAINRDMX1_I_MTT3RDMX1" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">DESCRIPTION</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:interface>
+            <types:type xlink:href="#MAINRDMX_TYPE" xsi:type="instance:XMLLink"/>
+        </types:component>
+        <types:component types:id="MTT1RDMX1" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">DESCRIPTION</types:description>
+            <types:interface types:id="MTT1RDMX1_I_MAINRDMX1" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">DESCRIPTION</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:interface>
+            <types:type xlink:href="#MTT1RDMX_TYPE" xsi:type="instance:XMLLink"/>
+        </types:component>
+        <types:component types:id="MTT2RDMX1" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">DESCRIPTION</types:description>
+            <types:interface types:id="MTT2RDMX1_I_MAINRDMX1" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">DESCRIPTION</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:interface>
+            <types:type xlink:href="#MTT2RDMX_TYPE" xsi:type="instance:XMLLink"/>
+        </types:component>
+        <types:component types:id="MTT3RDMX1" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">DESCRIPTION</types:description>
+            <types:interface types:id="MTT3RDMX1_I_MAINRDMX1" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">DESCRIPTION</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:interface>
+            <types:type xlink:href="#MTT3RDMX_TYPE" xsi:type="instance:XMLLink"/>
+        </types:component>
+        <types:connector types:id="Connector_09" xsi:type="types:Connector">
+            <types:description xsi:type="instance:Description">Connector_09</types:description>
+            <types:interface types:id="Interface_A_09" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">DESCRIPTION</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:interface>
+            <types:interface types:id="Interface_B_09" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">DESCRIPTION</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:interface>
+            <types:type xlink:href="#CONNECTOR_TYPE_01" xsi:type="instance:XMLLink"/>
+        </types:connector>
+        <types:connector types:id="Connector_11" xsi:type="types:Connector">
+            <types:description xsi:type="instance:Description">Connector_11</types:description>
+            <types:interface types:id="Interface_A_11" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">DESCRIPTION</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:interface>
+            <types:interface types:id="Interface_B_11" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">DESCRIPTION</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:interface>
+            <types:type xlink:href="#CONNECTOR_TYPE_01" xsi:type="instance:XMLLink"/>
+        </types:connector>
+        <types:connector types:id="Connector_12" xsi:type="types:Connector">
+            <types:description xsi:type="instance:Description">Connector_12</types:description>
+            <types:interface types:id="Interface_A_12" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">DESCRIPTION</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:interface>
+            <types:interface types:id="Interface_B_12" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">DESCRIPTION</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:interface>
+            <types:type xlink:href="#CONNECTOR_TYPE_01" xsi:type="instance:XMLLink"/>
+        </types:connector>
+        <types:connector types:id="Connector_13" xsi:type="types:Connector">
+            <types:description xsi:type="instance:Description">Connector_13</types:description>
+            <types:interface types:id="Interface_A_13" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">DESCRIPTION</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:interface>
+            <types:interface types:id="Interface_B_13" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">DESCRIPTION</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:interface>
+            <types:type xlink:href="#CONNECTOR_TYPE_01" xsi:type="instance:XMLLink"/>
+        </types:connector>
+        <types:connector types:id="Connector_14" xsi:type="types:Connector">
+            <types:description xsi:type="instance:Description">Connector_14</types:description>
+            <types:interface types:id="Interface_A_14" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">DESCRIPTION</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:interface>
+            <types:interface types:id="Interface_B_14" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">DESCRIPTION</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:interface>
+            <types:type xlink:href="#CONNECTOR_TYPE_01" xsi:type="instance:XMLLink"/>
+        </types:connector>
+        <types:connector types:id="Connector_15" xsi:type="types:Connector">
+            <types:description xsi:type="instance:Description">Connector_15</types:description>
+            <types:interface types:id="Interface_A_15" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">DESCRIPTION</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:interface>
+            <types:interface types:id="Interface_B_15" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">DESCRIPTION</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Interface_inout" xsi:type="instance:XMLLink"/>
+            </types:interface>
+            <types:type xlink:href="#CONNECTOR_TYPE_01" xsi:type="instance:XMLLink"/>
+        </types:connector>
+        <types:link types:id="Link_TMRDMX1_09" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">Connector_09</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#TMRDMX1_I_MAINRDMX1" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#Interface_A_09" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="Link_MAINRDMX1_09" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">Connector_09</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#Interface_B_09" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#MAINRDMX1_I_TMRDMX1" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="Link_SHRDMX1_11" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">Connector_11</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#SHRDMX1_I_MAINRDMX1" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#Interface_A_11" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="Link_MAINRDMX1_11" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">Connector_11</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#Interface_B_11" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#MAINRDMX1_I_SHRDMX1" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="Link_AGRDMX1_12" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">Connector_12</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#AGRDMX1_I_MAINRDMX1" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#Interface_A_12" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="Link_MAINRDMX1_12" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">Connector_12</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#Interface_B_12" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#MAINRDMX1_I_AGRDMX1" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="Link_MAINRDMX1_13" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">Connector_13</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#MAINRDMX1_I_MTT1RDMX1" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#Interface_A_13" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="Link_MTT1RDMX1_13" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">Connector_13</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#Interface_B_13" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#MTT1RDMX1_I_MAINRDMX1" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="Link_MAINRDMX1_14" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">Connector_14</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#MAINRDMX1_I_MTT2RDMX1" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#Interface_A_14" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="Link_MTT2RDMX1_14" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">Connector_14</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#Interface_B_14" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#MTT2RDMX1_I_MAINRDMX1" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="Link_MAINRDMX1_15" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">Connector_15</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#MAINRDMX1_I_MTT3RDMX1" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#Interface_A_15" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="Link_MTT3RDMX1_15" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">Connector_15</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#Interface_B_15" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#MTT3RDMX1_I_MAINRDMX1" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:group instance:id="RDMX1_Config" xsi:type="instance:Group">
+            <instance:description xsi:type="instance:Description">RDMX1_Config</instance:description>
+            <instance:member xlink:href="#TMRDMX1" xsi:type="instance:XMLLink"/>
+            <instance:member xlink:href="#SHRDMX1" xsi:type="instance:XMLLink"/>
+            <instance:member xlink:href="#AGRDMX1" xsi:type="instance:XMLLink"/>
+            <instance:member xlink:href="#MAINRDMX1" xsi:type="instance:XMLLink"/>
+            <instance:member xlink:href="#MTT1RDMX1" xsi:type="instance:XMLLink"/>
+            <instance:member xlink:href="#MTT2RDMX1" xsi:type="instance:XMLLink"/>
+            <instance:member xlink:href="#MTT3RDMX1" xsi:type="instance:XMLLink"/>
+            <instance:member xlink:href="#Connector_09" xsi:type="instance:XMLLink"/>
+            <instance:member xlink:href="#Connector_11" xsi:type="instance:XMLLink"/>
+            <instance:member xlink:href="#Connector_12" xsi:type="instance:XMLLink"/>
+            <instance:member xlink:href="#Connector_13" xsi:type="instance:XMLLink"/>
+            <instance:member xlink:href="#Connector_14" xsi:type="instance:XMLLink"/>
+            <instance:member xlink:href="#Connector_15" xsi:type="instance:XMLLink"/>
+        </types:group>
+        <types:group instance:id="Legacy_Subsystem" xsi:type="instance:Group">
+            <instance:description xsi:type="instance:Description">Legacy_Subsystem</instance:description>
+            <instance:member xlink:href="#RDMX1_Config" xsi:type="instance:XMLLink"/>
+        </types:group>
+        <types:group instance:id="Sim_Facility" xsi:type="instance:Group">
+            <instance:description xsi:type="instance:Description">Sim_Facility</instance:description>
+            <instance:member xlink:href="#Legacy_Subsystem" xsi:type="instance:XMLLink"/>
+        </types:group>
+    </types:archStructure>
+</instance:xArch>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance:xArch xsi:schemaLocation="http://www.ics.uci.edu/pub/arch/xArch/tronanalysis.xsd http://www.isr.uci.edu/projects/xarchuci/ext/tronanalysis.xsd http://www.ics.uci.edu/pub/arch/xArch/types.xsd http://www.isr.uci.edu/projects/xarchuci/ext/types.xsd http://www.ics.uci.edu/pub/arch/xArch/analysis.xsd http://www.isr.uci.edu/projects/xarchuci/ext/analysis.xsd http://www.ics.uci.edu/pub/arch/xArch/diff.xsd http://www.isr.uci.edu/projects/xarchuci/ext/diff.xsd" xmlns:types="http://www.ics.uci.edu/pub/arch/xArch/types.xsd" xmlns:implementation="http://www.ics.uci.edu/pub/arch/xArch/implementation.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diff="http://www.ics.uci.edu/pub/arch/xArch/diff.xsd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:javaimplementation="http://www.ics.uci.edu/pub/arch/xArch/javaimplementation.xsd" xmlns:instance="http://www.ics.uci.edu/pub/arch/xArch/instance.xsd">
+    <diff:diff xsi:type="diff:Diff">
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:remove xsi:type="diff:Remove" diff:removeId="MatchingLogic"/>
+        </diff:diffPart>
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:remove xsi:type="diff:Remove" diff:removeId="NextTileLogic"/>
+        </diff:diffPart>
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:remove xsi:type="diff:Remove" diff:removeId="TileArtist"/>
+        </diff:diffPart>
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:remove xsi:type="diff:Remove" diff:removeId="Bus1_to_NextTileLogic"/>
+        </diff:diffPart>
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:remove xsi:type="diff:Remove" diff:removeId="Bus1_to_MatchingLogic"/>
+        </diff:diffPart>
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:remove xsi:type="diff:Remove" diff:removeId="MatchingLogic_to_Bus2"/>
+        </diff:diffPart>
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:remove xsi:type="diff:Remove" diff:removeId="Bus4_to_TileArtist"/>
+        </diff:diffPart>
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:remove xsi:type="diff:Remove" diff:removeId="TileArtist_to_Bus5"/>
+        </diff:diffPart>
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:remove xsi:type="diff:Remove" diff:removeId="MatchingLogic_type"/>
+        </diff:diffPart>
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:remove xsi:type="diff:Remove" diff:removeId="NextTileLogic_type"/>
+        </diff:diffPart>
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:remove xsi:type="diff:Remove" diff:removeId="TileArtist_type"/>
+        </diff:diffPart>
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:add xsi:type="diff:Add">
+                <diff:component xsi:type="types:Component" types:id="SpellingMatchingLogic">
+            <types:description xsi:type="instance:Description">SpellingMatchingLogic</types:description>
+            <types:interface xsi:type="types:Interface" types:id="SpellingMatchingLogic.IFACE_TOP">
+                <types:description xsi:type="instance:Description">SpellingMatchingLogic Top Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#SpellingMatchingLogic_type_topSig"/>
+            </types:interface>
+            <types:interface xsi:type="types:Interface" types:id="SpellingMatchingLogic.IFACE_BOTTOM">
+                <types:description xsi:type="instance:Description">SpellingMatchingLogic Bottom Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#SpellingMatchingLogic_type_bottomSig"/>
+            </types:interface>
+            <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#SpellingMatchingLogic_type"/>
+        </diff:component>
+            </diff:add>
+        </diff:diffPart>
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:add xsi:type="diff:Add">
+                <diff:component xsi:type="types:Component" types:id="NextLetterTileLogic">
+            <types:description xsi:type="instance:Description">NextLetterTileLogic</types:description>
+            <types:interface xsi:type="types:Interface" types:id="NextLetterTileLogic.IFACE_TOP">
+                <types:description xsi:type="instance:Description">NextLetterTileLogic Top Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#NextLetterTileLogic_type_topSig"/>
+            </types:interface>
+            <types:interface xsi:type="types:Interface" types:id="NextLetterTileLogic.IFACE_BOTTOM">
+                <types:description xsi:type="instance:Description">NextLetterTileLogic Bottom Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#NextLetterTileLogic_type_bottomSig"/>
+            </types:interface>
+            <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#NextLetterTileLogic_type"/>
+        </diff:component>
+            </diff:add>
+        </diff:diffPart>
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:add xsi:type="diff:Add">
+                <diff:component xsi:type="types:Component" types:id="LetterTileArtist">
+            <types:description xsi:type="instance:Description">LetterTileArtist</types:description>
+            <types:interface xsi:type="types:Interface" types:id="LetterTileArtist.IFACE_TOP">
+                <types:description xsi:type="instance:Description">LetterTileArtist Top Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#LetterTileArtist_type_topSig"/>
+            </types:interface>
+            <types:interface xsi:type="types:Interface" types:id="LetterTileArtist.IFACE_BOTTOM">
+                <types:description xsi:type="instance:Description">LetterTileArtist Bottom Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#LetterTileArtist_type_bottomSig"/>
+            </types:interface>
+            <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#LetterTileArtist_type"/>
+        </diff:component>
+            </diff:add>
+        </diff:diffPart>
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:add xsi:type="diff:Add">
+                <diff:link xsi:type="types:Link" types:id="Bus1_to_NextLetterTileLogic">
+            <types:description xsi:type="instance:Description">Bus1 to NextLetterTileLogic Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#Bus1.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#NextLetterTileLogic.IFACE_TOP"/>
+            </types:point>
+        </diff:link>
+            </diff:add>
+        </diff:diffPart>
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:add xsi:type="diff:Add">
+                <diff:link xsi:type="types:Link" types:id="Bus1_to_SpellingMatchingLogic">
+            <types:description xsi:type="instance:Description">Bus1 to SpellingMatchingLogic Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#Bus1.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#SpellingMatchingLogic.IFACE_TOP"/>
+            </types:point>
+        </diff:link>
+            </diff:add>
+        </diff:diffPart>
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:add xsi:type="diff:Add">
+                <diff:link xsi:type="types:Link" types:id="SpellingMatchingLogic_to_Bus2">
+            <types:description xsi:type="instance:Description">SpellingMatchingLogic to Bus2 Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#SpellingMatchingLogic.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#Bus2.IFACE_TOP"/>
+            </types:point>
+        </diff:link>
+            </diff:add>
+        </diff:diffPart>
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:add xsi:type="diff:Add">
+                <diff:link xsi:type="types:Link" types:id="Bus4_to_LetterTileArtist">
+            <types:description xsi:type="instance:Description">Bus4 to LetterTileArtist Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#Bus4.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#LetterTileArtist.IFACE_TOP"/>
+            </types:point>
+        </diff:link>
+            </diff:add>
+        </diff:diffPart>
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:add xsi:type="diff:Add">
+                <diff:link xsi:type="types:Link" types:id="LetterTileArtist_to_Bus5">
+            <types:description xsi:type="instance:Description">LetterTileArtist to Bus5 Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#LetterTileArtist.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#Bus5.IFACE_TOP"/>
+            </types:point>
+        </diff:link>
+            </diff:add>
+        </diff:diffPart>
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:add xsi:type="diff:Add">
+                <diff:componentType xsi:type="implementation:VariantComponentTypeImpl" types:id="SpellingMatchingLogic_type">
+            <types:description xsi:type="instance:Description">SpellingMatching Logic Type</types:description>
+            <types:signature xsi:type="types:Signature" types:id="SpellingMatchingLogic_type_topSig">
+                <types:description xsi:type="instance:Description">SpellingMatchingLogic_type_topSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature" types:id="SpellingMatchingLogic_type_bottomSig">
+                <types:description xsi:type="instance:Description">SpellingMatchingLogic_type_bottomSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+            </types:signature>
+            <implementation:implementation xsi:type="javaimplementation:JavaImplementation">
+                <javaimplementation:mainClass xsi:type="javaimplementation:JavaClassFile">
+                    <javaimplementation:javaClassName xsi:type="javaimplementation:JavaClassName">c2demo.klax.SpellingMatchingLogic</javaimplementation:javaClassName>
+                </javaimplementation:mainClass>
+            </implementation:implementation>
+        </diff:componentType>
+            </diff:add>
+        </diff:diffPart>
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:add xsi:type="diff:Add">
+                <diff:componentType xsi:type="implementation:VariantComponentTypeImpl" types:id="NextLetterTileLogic_type">
+            <types:description xsi:type="instance:Description">Next Letter Tile Logic Type</types:description>
+            <types:signature xsi:type="types:Signature" types:id="NextLetterTileLogic_type_topSig">
+                <types:description xsi:type="instance:Description">NextLetterTileLogic_type_topSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature" types:id="NextLetterTileLogic_type_bottomSig">
+                <types:description xsi:type="instance:Description">NextLetterTileLogic_type_bottomSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+            </types:signature>
+            <implementation:implementation xsi:type="javaimplementation:JavaImplementation">
+                <javaimplementation:mainClass xsi:type="javaimplementation:JavaClassFile">
+                    <javaimplementation:javaClassName xsi:type="javaimplementation:JavaClassName">c2demo.klax.NextLetterTileLogic</javaimplementation:javaClassName>
+                </javaimplementation:mainClass>
+            </implementation:implementation>
+        </diff:componentType>
+            </diff:add>
+        </diff:diffPart>
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:add xsi:type="diff:Add">
+                <diff:componentType xsi:type="implementation:VariantComponentTypeImpl" types:id="LetterTileArtist_type">
+            <types:description xsi:type="instance:Description">Letter Tile Artist Type</types:description>
+            <types:signature xsi:type="types:Signature" types:id="LetterTileArtist_type_topSig">
+                <types:description xsi:type="instance:Description">LetterTileArtist_type_topSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature" types:id="LetterTileArtist_type_bottomSig">
+                <types:description xsi:type="instance:Description">LetterTileArtist_type_bottomSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+            </types:signature>
+            <implementation:implementation xsi:type="javaimplementation:JavaImplementation">
+                <javaimplementation:mainClass xsi:type="javaimplementation:JavaClassFile">
+                    <javaimplementation:javaClassName xsi:type="javaimplementation:JavaClassName">c2demo.klax.LetterTileArtist</javaimplementation:javaClassName>
+                </javaimplementation:mainClass>
+            </implementation:implementation>
+        </diff:componentType>
+            </diff:add>
+        </diff:diffPart>
+    </diff:diff>
+</instance:xArch>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance:xArch xsi:schemaLocation="http://www.ics.uci.edu/pub/arch/xArch/diff.xsd http://www.isr.uci.edu/projects/xarchuci/ext/diff.xsd" xmlns:types="http://www.ics.uci.edu/pub/arch/xArch/types.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diff="http://www.ics.uci.edu/pub/arch/xArch/diff.xsd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:instance="http://www.ics.uci.edu/pub/arch/xArch/instance.xsd">
+    <diff:diff xsi:type="diff:Diff">
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:add xsi:type="diff:Add">
+                <diff:component xsi:type="types:Component" types:id="ViewTransformer2">
+            <types:description xsi:type="instance:Description">View Transformer 2</types:description>
+            <types:interface xsi:type="types:Interface" types:id="ViewTransformer2.IFACE_TOP">
+                <types:description xsi:type="instance:Description">View Transformer 2 Top Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+            </types:interface>
+            <types:interface xsi:type="types:Interface" types:id="ViewTransformer2.IFACE_BOTTOM">
+                <types:description xsi:type="instance:Description">View Transformer 2 Bottom Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+            </types:interface>
+            <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#ViewTransformer_type"/>
+        </diff:component>
+            </diff:add>
+        </diff:diffPart>
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:add xsi:type="diff:Add">
+                <diff:component xsi:type="types:Component" types:id="RadarDisplay2">
+            <types:description xsi:type="instance:Description">Radar Display 2</types:description>
+            <types:interface xsi:type="types:Interface" types:id="RadarDisplay2.IFACE_TOP">
+                <types:description xsi:type="instance:Description">Radar Display 2 Top Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+            </types:interface>
+            <types:interface xsi:type="types:Interface" types:id="RadarDisplay2.IFACE_BOTTOM">
+                <types:description xsi:type="instance:Description">Radar Display 2 Bottom Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+            </types:interface>
+            <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#RadarDisplay_type"/>
+        </diff:component>
+            </diff:add>
+        </diff:diffPart>
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:add xsi:type="diff:Add">
+                <diff:connector xsi:type="types:Connector" types:id="WS2Bus">
+            <types:description xsi:type="instance:Description">WS2Bus</types:description>
+            <types:interface xsi:type="types:Interface" types:id="WS2Bus.IFACE_TOP">
+                <types:description xsi:type="instance:Description">WS2Bus Top Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+            </types:interface>
+            <types:interface xsi:type="types:Interface" types:id="WS2Bus.IFACE_BOTTOM">
+                <types:description xsi:type="instance:Description">WS2Bus Bottom Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+            </types:interface>
+            <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#BusConnector_type"/>
+        </diff:connector>
+            </diff:add>
+        </diff:diffPart>
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:add xsi:type="diff:Add">
+                <diff:link xsi:type="types:Link" types:id="WorldBus_to_ViewTransformer2">
+            <types:description xsi:type="instance:Description">WorldBus to ViewTransformer2 Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#WorldBus.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#ViewTransformer2.IFACE_TOP"/>
+            </types:point>
+        </diff:link>
+            </diff:add>
+        </diff:diffPart>
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:add xsi:type="diff:Add">
+                <diff:link xsi:type="types:Link" types:id="ViewTransformer2_to_WS2Bus">
+            <types:description xsi:type="instance:Description">ViewTransformer2 to WS2Bus Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#ViewTransformer2.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#WS2Bus.IFACE_TOP"/>
+            </types:point>
+        </diff:link>
+            </diff:add>
+        </diff:diffPart>
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:add xsi:type="diff:Add">
+                <diff:link xsi:type="types:Link" types:id="WS2Bus_to_RadarDisplay2">
+            <types:description xsi:type="instance:Description">WS2Bus to RadarDisplay2 Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#WS2Bus.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#RadarDisplay2.IFACE_TOP"/>
+            </types:point>
+        </diff:link>
+            </diff:add>
+        </diff:diffPart>
+    </diff:diff>
+</instance:xArch>
+

@@ -1,0 +1,23 @@
+<Request xmlns="urn:oasis:names:tc:xacml:1.0:context" xmlns:context="urn:oasis:names:tc:xacml:1.0:context" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:messages="http://www.ics.uci.edu/pub/arch/xArch/messages.xsd" xmlns:security="http://www.ics.uci.edu/pub/arch/xArch/security.xsd">
+	<Subject SubjectCategory="urn:oasis:names:tc:xacml:1.0:subject-category:access-subject">
+		<Attribute AttributeId="urn:oasis:names:tc:xacml:1.0:subject:subject-id" DataType="http://www.w3.org/2001/XMLSchema#string">
+			<AttributeValue>SecureManagedSystem</AttributeValue>
+		</Attribute>
+	</Subject>
+	<Resource>
+		<Attribute AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string">
+			<AttributeValue>USFranceConnector</AttributeValue>
+		</Attribute>
+		<Attribute AttributeId="urn:xadl:ArchTypes:ConnectorType:id" DataType="http://www.w3.org/2001/XMLSchema#string">
+			<AttributeValue>SecureC2Connector_type</AttributeValue>
+		</Attribute>
+		<Attribute AttributeId="urn:xadl:principal" DataType="http://www.w3.org/2001/XMLSchema#string">
+			<AttributeValue>US</AttributeValue>
+		</Attribute>
+	</Resource>
+	<Action>
+		<Attribute AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id" DataType="http://www.w3.org/2001/XMLSchema#string">
+			<AttributeValue>urn:xadl:action:AddBrick</AttributeValue></Attribute>
+	</Action>
+</Request>

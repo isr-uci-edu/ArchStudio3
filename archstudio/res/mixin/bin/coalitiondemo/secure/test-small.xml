@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<instance:xArch xmlns:implementation="http://www.ics.uci.edu/pub/arch/xArch/implementation.xsd"
+	xmlns:instance="http://www.ics.uci.edu/pub/arch/xArch/instance.xsd" xmlns:javaimplementation="http://www.ics.uci.edu/pub/arch/xArch/javaimplementation.xsd"
+	xmlns:javainitparams="http://www.ics.uci.edu/pub/arch/xArch/javainitparams.xsd" xmlns:messages="http://www.ics.uci.edu/pub/arch/xArch/messages.xsd"
+	xmlns:types="http://www.ics.uci.edu/pub/arch/xArch/types.xsd" xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:security="http://www.ics.uci.edu/pub/arch/xArch/security.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.ics.uci.edu/pub/arch/xArch/messages.xsd http://www.isr.uci.edu/projects/xarchuci/ext/messages.xsd http://www.ics.uci.edu/pub/arch/xArch/versions.xsd http://www.isr.uci.edu/projects/xarchuci/ext/versions.xsd http://www.ics.uci.edu/pub/arch/xArch/javainitparams.xsd http://www.isr.uci.edu/projects/xarchuci/ext/javainitparams.xsd http://www.ics.uci.edu/pub/arch/xArch/javaimplementation.xsd http://www.isr.uci.edu/projects/xarchuci/ext/javaimplementation.xsd http://www.ics.uci.edu/pub/arch/xArch/boolguard.xsd http://www.isr.uci.edu/projects/xarchuci/ext/boolguard.xsd http://www.ics.uci.edu/pub/arch/xArch/variants.xsd http://www.isr.uci.edu/projects/xarchuci/ext/variants.xsd http://www.ics.uci.edu/pub/arch/xArch/implementation.xsd http://www.isr.uci.edu/projects/xarchuci/ext/implementation.xsd http://www.ics.uci.edu/pub/arch/xArch/types.xsd http://www.isr.uci.edu/projects/xarchuci/ext/types.xsd http://www.ics.uci.edu/pub/arch/xArch/instance.xsd http://www.isr.uci.edu/projects/xarchuci/core/instance.xsd http://www.ics.uci.edu/pub/arch/xArch/security.xsd file:///C:/Documents%20and%20Settings/Jie%20Ren/My%20Documents/My%20Research/workspace/securexadl/res/security.xsd">
+	<types:archTypes xsi:type="types:ArchTypes">
+		<types:connectorType types:id="SecureC2Connector_type" xsi:type="security:SecureConnectorType">
+			<types:description xsi:type="instance:Description">C2 Secure Bus Connector Type</types:description>
+			<types:signature types:id="SecureC2Connector_type_topSig" xsi:type="types:Signature">
+				<types:description xsi:type="instance:Description">SecureC2Connector_type_topSig</types:description>
+				<types:direction xsi:type="instance:Direction">inout</types:direction>
+				<types:type xlink:href="#C2TopType" xsi:type="instance:XMLLink" xlink:type="simple" />
+			</types:signature>
+			<types:signature types:id="SecureC2Connector_type_bottomSig" xsi:type="types:Signature">
+				<types:description xsi:type="instance:Description">SecureC2Connector_type_bottomSig</types:description>
+				<types:direction xsi:type="instance:Direction">inout</types:direction>
+				<types:type xlink:href="#C2BottomType" xsi:type="instance:XMLLink" xlink:type="simple" />
+			</types:signature>
+			<implementation:implementation xsi:type="javaimplementation:JavaImplementation">
+				<javaimplementation:mainClass xsi:type="javaimplementation:JavaClassFile">
+					<javaimplementation:javaClassName xsi:type="javaimplementation:JavaClassName">c2.fw.secure.SecureC2Connector</javaimplementation:javaClassName>
+				</javaimplementation:mainClass>
+			</implementation:implementation>
+			<security:security>
+				<security:subject xsi:type="security:Subject">US</security:subject>
+				<security:privilege xsi:type="security:Privilege">France</security:privilege>
+			</security:security>
+		</types:connectorType>
+		<types:connectorType types:id="USBusConnector_type" xsi:type="implementation:VariantConnectorTypeImpl">
+			<types:description xsi:type="instance:Description">US Bus Connector Type</types:description>
+			<types:signature types:id="USBusConnector_type_topSig" xsi:type="types:Signature">
+				<types:description xsi:type="instance:Description">USBusConnector_type_topSig</types:description>
+				<types:direction xsi:type="instance:Direction">inout</types:direction>
+				<types:type xlink:href="#C2TopType" xsi:type="instance:XMLLink" xlink:type="simple" />
+			</types:signature>
+			<types:signature types:id="USBusConnector_type_bottomSig" xsi:type="types:Signature">
+				<types:description xsi:type="instance:Description">USBusConnector_type_bottomSig</types:description>
+				<types:direction xsi:type="instance:Direction">inout</types:direction>
+				<types:type xlink:href="#C2BottomType" xsi:type="instance:XMLLink" xlink:type="simple" />
+			</types:signature>
+			<implementation:implementation xsi:type="javaimplementation:JavaImplementation">
+				<javaimplementation:mainClass xsi:type="javaimplementation:JavaClassFile">
+					<javaimplementation:javaClassName xsi:type="javaimplementation:JavaClassName">c2.legacy.conn.BusConnector</javaimplementation:javaClassName>
+				</javaimplementation:mainClass>
+			</implementation:implementation>
+		</types:connectorType>
+        <types:interfaceType xsi:type="security:SecureInterfaceType" types:id="SecureC2TopType">
+            <types:description xsi:type="instance:Description">Secure C2 Top Interface</types:description>
+            <implementation:implementation xsi:type="javaimplementation:JavaImplementation">
+                <javaimplementation:mainClass xsi:type="javaimplementation:JavaClassFile">
+                    <javaimplementation:javaClassName xsi:type="javaimplementation:JavaClassName">c2.fw.secure.SimpleSecureInterface</javaimplementation:javaClassName>
+                </javaimplementation:mainClass>
+            </implementation:implementation>
+        </types:interfaceType>
+        <types:interfaceType xsi:type="security:SecureInterfaceType" types:id="SecureC2BottomType">
+            <types:description xsi:type="instance:Description">Secure C2 Top Interface</types:description>
+            <implementation:implementation xsi:type="javaimplementation:JavaImplementation">
+                <javaimplementation:mainClass xsi:type="javaimplementation:JavaClassFile">
+                    <javaimplementation:javaClassName xsi:type="javaimplementation:JavaClassName">c2.fw.secure.SimpleSecureInterface</javaimplementation:javaClassName>
+                </javaimplementation:mainClass>
+            </implementation:implementation>
+        </types:interfaceType>
+	</types:archTypes>
+	<types:archStructure types:id="CoalitionForces" xsi:type="types:ArchStructure">
+		<types:description xsi:type="instance:Description">Coalition Forces</types:description>
+		<types:connector types:id="USFranceConnector" xsi:type="security:SecureConnector">
+			<types:description xsi:type="instance:Description">US and France Connector</types:description>
+			<types:interface types:id="USFranceConnector.IFACE_TOP" xsi:type="types:Interface">
+				<types:description xsi:type="instance:Description">US France Connector Top Interface</types:description>
+				<types:direction xsi:type="instance:Direction">inout</types:direction>
+				<types:type xlink:href="#C2TopType" xsi:type="instance:XMLLink" xlink:type="simple" />
+			</types:interface>
+			<types:interface types:id="USFranceConnector.IFACE_BOTTOM" xsi:type="security:SecureInterface">
+				<types:description xsi:type="instance:Description">US France Connector Bottom Interface</types:description>
+				<types:direction xsi:type="instance:Direction">inout</types:direction>
+				<types:type xlink:href="#C2BottomType" xsi:type="instance:XMLLink" xlink:type="simple" />
+				<security:safeguard>France</security:safeguard>
+			</types:interface>
+			<types:type xlink:href="#SecureC2Connector_type" xsi:type="instance:XMLLink" xlink:type="simple" />
+			<security:initializationParameter javainitparams:name="Source" xsi:type="javainitparams:InitializationParameter"
+				javainitparams:value="type" />
+			<security:initializationParameter javainitparams:name="Kind" xsi:type="javainitparams:InitializationParameter"
+				javainitparams:value="AWACS Aircraft" />
+			<security:initializationParameter javainitparams:name="Subject" xsi:type="javainitparams:InitializationParameter"
+				javainitparams:value="France" />
+			<security:initializationParameter javainitparams:name="Object" xsi:type="javainitparams:InitializationParameter"
+				javainitparams:value="any" />
+			<security:initializationParameter javainitparams:name="Action" xsi:type="javainitparams:InitializationParameter"
+				javainitparams:value="instantiate" />
+			<security:security xsi:type="security:SecurityPropertyType">
+				<security:privilege xsi:type="security:Privilege">France</security:privilege>
+				<security:Policy xmlns="urn:oasis:names:tc:xacml:1.0:policy:schema:os"
+						xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						PolicyId="GeneratedPolicy"
+						RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:ordered-permit-overrides">
+					  <Description>Dummy</Description>
+					  <Target>
+						<Subjects>
+						  <AnySubject/>
+						</Subjects>
+						<Resources>
+						  <AnyResource/>
+						</Resources>
+						<Actions>
+						  <AnyAction/>
+						</Actions>
+					  </Target>
+					  <Rule RuleId="Rule0" Effect="Permit">
+						<Target>
+						  <Subjects>
+							<Subject>
+							  <SubjectMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:regexp-string-match">
+								<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">USFilterControlBus</AttributeValue>
+								<SubjectAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:subject:subject-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+							  </SubjectMatch>
+							</Subject>
+						  </Subjects>
+						  <Resources>
+							<Resource>
+							  <ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:regexp-string-match">
+								<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">IFACE_BOTTOM</AttributeValue>
+								<ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+							  </ResourceMatch>
+							</Resource>
+						  </Resources>
+						  <Actions>
+							<Action>
+							  <ActionMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:regexp-string-match">
+								<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">weld</AttributeValue>
+								<ActionAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+							  </ActionMatch>
+							</Action>
+						  </Actions>
+						</Target>
+					  </Rule>
+					  <Rule RuleId="FinalRule" Effect="Deny"/>
+				</security:Policy>
+			</security:security>
+			<!--
+				-->
+		</types:connector>
+		<types:connector types:id="USFilterControlBus" xsi:type="types:Connector">
+			<types:description xsi:type="instance:Description">Filter and Command&amp;Control Connector</types:description>
+			<types:interface types:id="USFilterControlBus.IFACE_TOP" xsi:type="types:Interface">
+				<types:description xsi:type="instance:Description">Filter and Command&amp;Control Connector Top Interface</types:description>
+				<types:direction xsi:type="instance:Direction">inout</types:direction>
+				<types:type xlink:href="#C2TopType" xsi:type="instance:XMLLink" xlink:type="simple" />
+			</types:interface>
+			<types:interface types:id="USFilterControlBus.IFACE_BOTTOM" xsi:type="security:SecureInterface">
+				<types:description xsi:type="instance:Description">Filter and Command&amp;Control Connector Bottom Interface</types:description>
+				<types:direction xsi:type="instance:Direction">inout</types:direction>
+				<types:type xlink:href="#SecureC2BottomType" xsi:type="instance:XMLLink" xlink:type="simple" />
+				<security:safeguard>France</security:safeguard>
+			</types:interface>
+			<types:type xlink:href="#USBusConnector_type" xsi:type="instance:XMLLink" xlink:type="simple" />
+		</types:connector>
+		<types:link types:id="USFranceConnector_to_USFilterControlBus" xsi:type="types:Link">
+			<types:description xsi:type="instance:Description">USFranceConnector to USFilterControlBus Link</types:description>
+			<types:point xsi:type="instance:Point">
+				<instance:anchorOnInterface xlink:href="#USFilterControlBus.IFACE_TOP" xsi:type="instance:XMLLink" xlink:type="simple" />
+			</types:point>
+			<types:point xsi:type="instance:Point">
+				<instance:anchorOnInterface xlink:href="#USFranceConnector.IFACE_BOTTOM" xsi:type="instance:XMLLink" xlink:type="simple" />
+			</types:point>
+		</types:link>
+	</types:archStructure>
+</instance:xArch>

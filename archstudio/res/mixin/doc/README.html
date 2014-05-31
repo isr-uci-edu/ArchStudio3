@@ -1,0 +1,299 @@
+<HTML>
+<HEAD><TITLE>Release Notes for ArchStudio 3 Builds</TITLE></HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<PRE>
+-----------------------------------------------------------------------
+Release Notes for ArchStudio 3 Builds
+-----------------------------------------------------------------------
+
+TABLE OF CONTENTS
+
+I.   KNOWN ISSUES
+II.  CLASS LOADING ISSUES
+III. MISCELLANEOUS FAQs
+
+-----------------------------------------------------------------------
+I.  KNOWN ISSUES
+-----------------------------------------------------------------------
+
+----------
+ISSUE ID:   0001
+OVERVIEW:   Problems with incorrect types on elements when running
+            with an old ArchStudio build.
+
+ISSUE:      If you are running an ArchStudio 3.0 build older than
+            1012, some elements in documents created or edited with
+            a build > 1012 may appear to be the wrong XML Schema
+            (XSI) type in  ArchEdit, along with other problems.
+            No exceptions or other indication of the problem is
+            generally given.
+
+WORKAROUND: Upgrade to latest build.
+
+REPRTD BY:  Rob Egelink [egelink@ics.uci.edu]
+
+STATUS:     Closed, not a bug.
+
+-----------
+ISSUE ID:   0002
+OVERVIEW:   Possible Event Dispatch Thread (AWT thread) deadlock when
+            two GUIs communicate via EPC (Event-based Procedure Call).
+
+ISSUE:      There is a very subtle threading issue that can cause a
+            deadlock in the Event Dispatch Thread, also known as the
+            AWT thread, that processes AWT and Swing events, when
+            two communicating GUIs in separate components interact
+            via the Event-based Procedure Call (EPC) mechanism.  This
+            situation occurs in the following case:
+
+            Consider two components with GUIs, C1 and C2.
+
+            The user performs an action on the GUI in C1, causing the
+            AWT thread to call a listener function.  For example, the
+            user selects a menu item, causing the AWT thread to call
+            the menu item's ActionListener's actionPerformed() function.
+
+            In the programming for this function, an event-based
+            procedure call is made to component C2.  C2 receives this
+            EPC and, in response to it, makes a call that results in
+            C2's thread blocking, waiting for the AWT thread
+            to perform some action (e.g. popping up a modal dialog
+            like a JOptionPane).
+
+            In this case, the system will deadlock.  The AWT thread
+            is blocked waiting for C2 to complete the EPC and return.
+            C2's thread, processing the EPC, is blocked waiting for
+            the AWT thread to process some data.
+
+            After investigation, we have determined that this behavior
+            cannot be entirely solved by a workaround hidden entirely
+            in the EPC mechanism, and that this is a fundamental problem
+            in building event-based, independent components using
+            AWT or Swing.  Basically, each component assumes (because of
+            event-based architecture style rules) that it has its own
+            independent thread of control and that it cannot be affected
+            by things going on in other components.  ArchStudio and the
+            underlying C2 framework both try to create this illusion as
+            much as possible.  However, in this case there is
+            communication between two components "under the covers"--that
+            is, the existence of only a single AWT thread shared by
+            all components causes this problem.  This cannot be remedied
+            by the framework, since the control of AWT thread creation
+            and maintenance is handled almost entirely by the JVM
+            implementation.  JVM implementers are free to use a multi-
+            threaded AWT threading policy, but many (including Sun)
+            choose not to.
+
+WORKAROUND: In this case, the best way to handle the deadlock is to
+            release control of the AWT thread before actionPerformed()
+            in C1 returns.  This is possible if the call is proxied
+            off to a separate thread.  So:
+
+            AWT Thread->(calls)->actionPerformed();
+            actionPerformed() passes its work to delegate thread T
+            actionPerformed() returns immediately, freeing AWT thread.
+            T processes actionPerformed()'s work separately.
+
+            Unfortunately, this requires changes to the code of the
+            calling component C1.  Instead of adding a standard
+            ActionListener, it must add a special ActionListener that
+            is able to delegate its work to another thread.  For
+            this workaround, a new class in the c2.fw framework
+            was created to make this much easier.
+
+            So, in the very limited case where the AWT thread calls a
+            listener that makes an EPC to another component that will
+            block until the AWT thread processes its event queue,
+            replace the call of this form:
+
+            someObject.addXXXListener(l);
+
+            with a call of this form:
+
+            someObject.addXXXListener((XXXListener)
+              c2.pcwrap.ThreadInterfaceProxyFactory.
+              createThreadInterfaceProxy(l, XXXListener.class)
+            );
+
+            All calls to the Listener's methods will now be
+            delegated to a separate thread, unless they return a
+            value (in which case the calling AWT thread must wait
+            for the results and this workaround will fail;
+            however, all known AWT listeners to date have methods
+            that return void).
+
+REPRTD BY:  Rob Egelink [egelink@ics.uci.edu]
+
+STATUS:     Closed, issue description and fix/workaround available.
+-----------
+
+ISSUE ID:   0003
+OVERVIEW:   Possible NullPointerException in serialize() call to
+            XArchFlatInterface, or a getPrettyXmlRepresentation()
+            call to the data binding library
+
+ISSUE:      If your application inserts "null" data into an attribute
+            or element in the XML tree, a call to serialize() can
+            possibly throw a NullPointerException originating from the
+            internal Xalan implementation in Java 1.4.  The console
+            output will be listed as something like this:
+
+This shouldn't happen.
+java.lang.NullPointerException
+ at org.apache.xml.utils.TreeWalker.dispatachChars(TreeWalker.java:259)
+ at org.apache.xml.utils.TreeWalker.startNode(TreeWalker.java:403)
+ at org.apache.xml.utils.TreeWalker.traverse(TreeWalker.java:167)
+ at org.apache.xalan.transformer.TransformerIdentityImpl.transform(Tra
+   nsformerIdentityImpl.java:325)
+ at edu.uci.isr.xarch.XArchUtils.getPrettyXmlRepresentation(Unknown
+   Source)
+ at c2demo.klax.Description.getXml(Description.java:245)
+ at c2demo.klax.Description.main(Description.java:35)
+
+WORKAROUND: Don't put null data in the XML tree; it's not allowed
+            anyway.
+
+REPRTD BY:  Santiago Ca Hung Li [lis@uci.edu]
+
+STATUS:     Closed, not a bug.
+-----------
+
+ISSUE ID:   0004
+OVERVIEW:   Exiting ArchStudio 3 causes STOP error (Blue Screen of
+            Death) on some Windows machines with ATI video cards.
+
+ISSUE:      Exiting ArchStudio 3 can sometimes cause a STOP error
+            or a complete system hang requiring a hard-reset. This
+            occurs only on Windows machines with ATI video cards,
+            most notably Radeon video cards.  This also occurs only
+            with JDK 1.4.1.
+
+            This is a bug in the ATI video drivers that is exercised
+            in JDK 1.4.1 and 1.4.1_01, not a bug in ArchStudio 3.
+            Sun engineers have built a workaround that will be
+            released in JDK 1.4.1_02, due out sometime in late Feb.
+            2003. The latest ATI drivers for DESKTOP MACHINES ONLY
+            also seem to fix this issue.
+
+            Note that this problem affects most other Java Swing
+            applications and other non-Java applications as well.
+
+WORKAROUND: Upgrade to JDK 1.4.1_02, upgrade ATI video drivers,
+            or run ArchStudio 3 with the following command line
+            switch:
+
+            java -Dsun.java2d.noddraw=true archstudio.Bootstrap ...
+
+REPRTD BY:  Eric Dashofy, [edashofy@ics.uci.edu]
+
+STATUS:     Closed, bug in infrastructure.
+-----------
+
+-----------------------------------------------------------------------
+II.  CLASS LOADING POLICY
+-----------------------------------------------------------------------
+
+The intent of c2.fw and ArchStudio 3 was always to compartmentalize
+class loading as much as possible.  That is, each instance of an
+application would basically be loaded in its own ClassLoader.
+
+Automatic dynamic class reloading within a running application is a
+future goal, but is not supported now.  There are many thorny issues
+involved there, such as reloading classes where instances already
+exist.  We may eventually allow automatic or forcible class reloading
+at the level of individual bricks someday.
+
+Previous (<1039) ArchStudio 3 releases included custom ClassLoaders
+like SimpleClassLoader and NetClassLoader (not used) that had
+reloading code in them, but this code was never exercised for a
+variety of reasons.
+
+The Post-Java-1.2 Classloading model is not well-understood by, well,
+anybody.  Available examples of classloading are incorrect and buggy.
+Even correct implementations elide critical details: namely, classes
+loaded in one classloader don't play nicely with classes loaded in
+other classloaders (including the default classloader).  The best
+article I have found explaining this difficulty is at:
+
+http://forum.java.sun.com/thread.jsp?forum=4&thread=169232
+
+Basically, this means that a foo.bar.Foobar loaded by classloader A
+is not an instanceof a foo.bar.Foobar loaded by classloader B in
+general.  There are useful exceptions, however, based on the
+classloader delegation model.  A classloader's loadClass method can
+choose to either load the class itself or call a parent (or the
+system) classloader to load the class for it.  Classes loaded by
+the classloader itself are *different* than those loaded by a
+delegate classloader, in that classes loaded by the delegate live
+in the delegate's world and classes loaded by the main classloader
+live in the main classloader's world.  So, for example:
+
+Class B extends Class A
+
+Class main is the main program and is loaded by the system
+classloader.
+
+Class main creates a new CustomClassLoader, which loads class B.
+Since B depends on A, CustomClassLoader tries to load class A
+too, but CustomClassLoader decides not to, and instead delegates
+this to the system classloader.  So now we have Class main and
+Class A loaded by the system classloader, and class B loaded by
+the CustomClassLoader.  It turns out that, as far as class main
+is concerned, class A isAssignableFrom class B. This is not
+normally the case, but it means that Class main can call methods
+on class B indirectly through its life as an extension of Class A.
+
+We use this to our advantage in new builds of ArchStudio.  The new
+ClassLoaders will, when instantiating an application, delegate
+the loading of any class starting with "java.", "javax." or "c2.fw."
+to the system class loader.  This includes interfaces like Brick
+and MessageProvider and such.  It loads all other classes, like
+component classes, using a SimpleClassLoader.  Because c2.fw makes
+all calls to Bricks through the Brick interface, the classes are
+compatible.
+
+This gives special privilege to classes in the "c2.fw." "namespace,"
+however.  So, if you are a component developer who wants your component
+to implement a new interface that is called from the framework (i.e.,
+from outside the architecture), you need to put the interface
+definition in package c2.fw (or a subpackage) when changing the
+framework, otherwise you'll get ClassCastExceptions and such.  Note
+that this should affect almost no users or developers, but is
+documented here just in case some brave soul attempts to extend the
+framework itself.
+
+-----------------------------------------------------------------------
+III.  MISCELLANEOUS FAQs
+-----------------------------------------------------------------------
+
+Q001:       Why is that editor called "Archipelago?"
+
+A001:       According to dictionary.com, an archipelago is "Any sea or
+            broad sheet of water interspersed with many islands or with
+            a group of islands."  ("Archipelago" may also refer to the
+            island group itself).  We felt that the name archipelago
+            reflected several salient qualities of the editor.  First,
+            it's a word that starts with "arch," carrying the
+            "architecture" connotation.  Second, it describes the
+            internal structure of the editor itself--Archipelago is
+            composed of a group of loosely connected plugins rather
+            than one monolithic mass of code.  Third, it describes the
+            typical diagrams edited by Archipelago--namely, diagrams
+            of loosely connected blocks that resemble a sea populated
+            by islands.
+
+Q002:       How do you pronounce "Archipelago?"
+
+A002:       Archipelago is an ordinary English word, its proper
+            pronunciation is roughly "ark-ih-PEL-uh-go."
+
+Q003:       Does ArchStudio really reticulate splines?
+
+A003:       Yes.
+
+-----------------------------------------------------------------------
+
+</PRE>
+</BODY>
+</HTML>

@@ -1,0 +1,1123 @@
+<?xml version="1.0" ?>
+
+<schema ns="http://www.isr.uci.edu/schematron/xadl2-types.xml"
+        xmlns="http://www.ascc.net/xml/schematron"        
+	fpi="+//IDN isr.uci.edu/SGML Schema//EN">
+
+  <title>xADL 2.0 Types Tests Schema</title>
+  
+  <ns uri="http://www.w3.org/1999/xlink" prefix="xlink"/>
+  <ns uri="http://www.ics.uci.edu/pub/arch/xArch/instance.xsd" prefix="instance"/>
+  <ns uri="http://www.ics.uci.edu/pub/arch/xArch/types.xsd" prefix="types"/>
+
+  <!-- ArchTypes -->
+
+  <pattern id="test.80c3147f.102b3c70dfa.2576389267ac4a8a.10f" 
+   name="xADL 2.0/Structure and Types/Types/ArchTypes/ArchTypes Present"
+   description="Checks for the presence of an ArchTypes element.">
+    <rule context="instance:xArch">
+      <assert test="types:archTypes">
+        text=Document should include an ArchTypes element. |*|
+        detail=The document does not include an ArchTypes element.
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3147f.102b3c70dfa.2576389267ac4a8a.11a" 
+   name="xADL 2.0/Structure and Types/Types/ArchTypes/No Multiple ArchTypes"
+   description="Checks for the presence of exactly one ArchTypes element.">
+    <rule context="instance:xArch">
+      <assert test="count(types:archTypes) &lt; 2">
+        text=Document should include at most one ArchTypes element. |*|
+        detail=The document does not include at most one ArchTypes element.
+               xADL 2.0 documents should contain only one ArchTypes element,
+               if one is present.
+      </assert>
+    </rule>
+  </pattern>
+
+  <!-- Component Types -->
+
+  <pattern id="test.80c3148f.10285474143.ad9c42b14784eb5d.0" 
+   name="xADL 2.0/Structure and Types/Types/Component Types/ID Present"
+   description="Checks for the presence of an ID on component types.">
+    <rule context="instance:xArch/types:archTypes/types:componentType">
+      <assert test="@types:id">
+        text=Component Type must have an ID |*|
+        detail=Component Type <value-of select="./types:description/."/> must have an ID
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3148f.1028548ab08.860591990d819f77.0" 
+   name="xADL 2.0/Structure and Types/Types/Component Types/Description Present"
+   description="Checks for the presence of a Description on component types.">
+    <rule context="instance:xArch/types:archTypes/types:componentType">
+      <assert test="types:description">
+        id=<value-of select="@types:id"/> |*|
+        iddesc=Component Type |*|
+        text=Component Type must have a description |*|
+        detail=Component Type with ID <value-of select="@types:id"/> must have a description
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3148f.1028548ab08.860591990d819f78.1" 
+   name="xADL 2.0/Structure and Types/Types/Component Types/Description Non-Empty"
+   description="Checks for the presence of a non-empty Description on component types.">
+    <rule context="instance:xArch/types:archTypes/types:componentType/types:description">
+      <assert test="normalize-space(.) != ''">
+        id=<value-of select="../@types:id"/> |*|
+        iddesc=Component Type |*|
+        text=Component Type must have a non-empty description |*|
+        detail=Component Type with ID <value-of select="@types:id"/> must have a non-empty description
+      </assert>
+    </rule>
+  </pattern>
+
+  <!-- Component Type Signatures -->
+  
+  <pattern id="test.80c3148f.102b211d999.7ff5df43c1573f3b.22" 
+   name="xADL 2.0/Structure and Types/Types/Component Types/Signatures/ID Present"
+   description="Checks for the presence of an ID on component type signatures.">
+    <rule context="instance:xArch/types:archTypes/types:componentType/types:signature">
+      <assert test="@types:id">
+        text=Signature must have an ID |*|
+        detail=Signature <value-of select="./types:description"/> on
+               component type <value-of select="../types:description"/> must have an ID
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3148f.102b217399a.fce08258bb50fd89.23" 
+   name="xADL 2.0/Structure and Types/Types/Component Types/Signatures/Description Present"
+   description="Checks for the presence of a Description on component type signatures.">
+    <rule context="instance:xArch/types:archTypes/types:componentType/types:signature">
+      <assert test="types:description">
+        id0=<value-of select="@types:id"/> |*|
+        iddesc0=Signature |*|
+        id1=<value-of select="../@types:id"/> |*|
+        iddesc1=Component Type |*|
+        text=Signature must have a description |*|
+        detail=Signature with id <value-of select="@types:id"/>
+               on component type <value-of select="../types:description"/>
+               must have a description
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3148f.102b2174e0f.d11c6eb2887d55f1.24" 
+   name="xADL 2.0/Structure and Types/Types/Component Types/Signatures/Description Non-Empty"
+   description="Checks for the presence of a non-empty Description on component type signatures.">
+    <rule context="instance:xArch/types:archTypes/types:componentType/types:signature/types:description">
+      <assert test="normalize-space(.) != ''">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Signature |*|
+        id1=<value-of select="../../@types:id"/> |*|
+        iddesc1=Component Type |*|
+        text=Signature must have a non-empty description |*|
+        detail=Signature with id <value-of select="@types:id"/>
+               on component type <value-of select="../types:description"/>
+               must have a non-empty description
+      </assert>
+    </rule>
+  </pattern>
+ 
+  <pattern id="test.80c3148f.102b21d5505.55d0461685980f25.25" 
+   name="xADL 2.0/Structure and Types/Types/Component Types/Signatures/Direction Present"
+   description="Checks for the presence of a Direction on component type signatures.">
+    <rule context="instance:xArch/types:archTypes/types:componentType/types:signature">
+      <assert test="types:direction">
+        id0=<value-of select="@types:id"/> |*|
+        iddesc0=Signature |*|
+        id1=<value-of select="../@types:id"/> |*|
+        iddesc1=Component Type |*|
+        text=Signature on component type must have a direction |*|
+        detail=Signature <value-of select="./types:description"/>
+               on component type <value-of select="../types:description"/> 
+               must have a direction
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3148f.102b21d66e6.5b517931e3875c49.26" 
+   name="xADL 2.0/Structure and Types/Types/Component Types/Signatures/Direction Non-Empty"
+   description="Checks for the presence of a non-empty Direction on component type signatures.">
+    <rule context="instance:xArch/types:archTypes/types:componentType/types:signature/types:direction">
+      <assert test="normalize-space(.) != ''">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Signature |*|
+        id1=<value-of select="../../@types:id"/> |*|
+        iddesc1=Component Type |*|
+        text=Signature must have a non-empty direction |*|
+        detail=Signature <value-of select="./types:description"/>
+               on component type <value-of select="../types:description"/> 
+               must have a non-empty direction
+      </assert>
+    </rule>
+  </pattern>
+ 
+  <pattern id="test.80c3148f.102b21d7fe5.f442f989102bb66a.27" 
+   name="xADL 2.0/Structure and Types/Types/Component Types/Signatures/Direction Valid"
+   description="Checks for the presence of a valid Direction on component type signatures.">
+    <rule context="instance:xArch/types:archTypes/types:componentType/types:signature/types:direction">
+      <assert test="normalize-space(.) = 'none' 
+                 or normalize-space(.) = 'in'
+                 or normalize-space(.) = 'out'
+                 or normalize-space(.) = 'inout'">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Signature |*|
+        id1=<value-of select="../../@types:id"/> |*|
+        iddesc1=Component Type |*|
+        text=Signature direction is invalid |*|
+        detail=Signature <value-of select="./types:description"/>
+               on component type <value-of select="../types:description"/> 
+               must have must be one of 'none', 'in', 'out', or 'inout'
+      </assert>
+    </rule>
+  </pattern>
+  
+  <!-- Component Type Subarchitectures -->
+ 
+  <pattern id="test.80c3147f.102d2330cbc.b88091d54bd1c705.63" 
+   name="xADL 2.0/Structure and Types/Types/Component Types/Subarchitectures/ArchStructure Link Present"
+   description="Checks for the presence of an ArchStructure XLink on component type subarchitectures.">
+    <rule context="instance:xArch/types:archTypes/types:componentType/types:subArchitecture">
+      <assert test="types:archStructure">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Component Type |*|
+        text=Component type subarchitecture must have an ArchStructure link |*|
+        detail=Subarchitecture on 
+               Component Type <value-of select="../types:description"/> must have an ArchStructure link.
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3147f.102d23320a5.6e97fc7f5dbca4b7.64" 
+   name="xADL 2.0/Structure and Types/Types/Component Types/Subarchitectures/ArchStructure Link Valid"
+   description="Checks the validity of ArchStructure XLinks on component type subarchitectures.">
+    <rule context="instance:xArch/types:archTypes/types:componentType/types:subArchitecture/types:archStructure">
+      <assert test="@xlink:type">
+        id0=<value-of select="../../@types:id"/> |*|
+        iddesc0=Component Type |*|
+        text=Component Type Subarchitecture's ArchStructure XLink must have a type |*|
+        detail=ArchStructure of subarchitecture of
+               Component Type <value-of select="../../types:description"/>
+               must have an XLink type
+      </assert>
+      <assert test="@xlink:type = 'simple'">
+        id0=<value-of select="../../@types:id"/> |*|
+        iddesc0=Component Type |*|
+        text=Component Type Subarchitecture's ArchStructure XLink must have type 'simple' |*|
+        detail=ArchStructure of subarchitecture of
+               Component Type <value-of select="../../types:description"/>
+               must have an XLink type 'simple'
+      </assert>
+      <assert test="starts-with(@xlink:href, '#')">
+        id0=<value-of select="../../@types:id"/> |*|
+        iddesc0=Component Type |*|
+        text=Component Type Subarchitecture's ArchStructure XLink href should start with '#' |*|
+        detail=ArchStructure of subarchitecture of 
+               Component Type <value-of select="../../types:description"/>
+               must have an XLink href starting with '#'
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3147f.102d233343e.3855e34cb21c47fa.65" 
+   name="xADL 2.0/Structure and Types/Types/Component Types/Subarchitectures/ArchStructure link -&gt; ArchStructure"
+   description="Checks that ArchStructure XLinks on component type subarchitectures point to ArchStructures.">
+    <rule context="instance:xArch/types:archTypes/types:componentType/types:subArchitecture/types:archStructure">
+      <assert 
+        test="substring-after(@xlink:href, '#') = /instance:xArch/types:archStructure/@types:id">
+        id0=<value-of select="../../@types:id"/> |*|
+        iddesc0=Component Type |*|
+        text=Component Type Subarchitecture's ArchStructure link should point to an ArchStructure |*|
+        detail=ArchStructure of subarchitecture of 
+               Interface <value-of select="../types:description"/> on
+               Component Type <value-of select="../../types:description"/>
+               must have an XLink href indicating an ArchStructure.
+      </assert>
+    </rule>
+  </pattern>
+
+  <!-- Component type subarchitecture signature-interface mappings -->
+
+  <pattern id="test.80c3147f.102d2461bdc.aa7267d23ffe6dec.67" 
+   name="xADL 2.0/Structure and Types/Types/Component Types/Subarchitectures/Signature-Interface Mappings/ID Present"
+   description="Checks for the presence of an ID on component type subarchitecture signature-interface mappings.">
+    <rule context="instance:xArch/types:archTypes/types:componentType/types:subArchitecture/types:signatureInterfaceMapping">
+      <assert test="@types:id">
+        text=Signature-Interface Mapping must have an ID |*|
+        detail=Signature-Interface Mapping <value-of select="./types:description/."/> must have an ID
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3147f.102d2462df8.50dd2e4239074a3d.68" 
+   name="xADL 2.0/Structure and Types/Types/Component Types/Subarchitectures/Signature-Interface Mappings/Description Present"
+   description="Checks for the presence of a Description on component type subarchitecture signature-interface mappings.">
+    <rule context="instance:xArch/types:archTypes/types:componentType/types:subArchitecture/types:signatureInterfaceMapping">
+      <assert test="types:description">
+        id=<value-of select="@types:id"/> |*|
+        iddesc=Signature-Interface Mapping |*|
+        text=Signature-Interface Mapping must have a description |*|
+        detail=Signature-Interface Mapping with ID <value-of select="@types:id"/> must have a description
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3147f.102d2463cf4.46c7ea64d817aea1.69" 
+   name="xADL 2.0/Structure and Types/Types/Component Types/Subarchitectures/Signature-Interface Mappings/Description Non-Empty"
+   description="Checks for the presence of a non-empty Description on component type subarchitecture signature-interface mappings.">
+    <rule context="instance:xArch/types:archTypes/types:componentType/types:subArchitecture/types:signatureInterfaceMapping/types:description">
+      <assert test="normalize-space(.) != ''">
+        id=<value-of select="../@types:id"/> |*|
+        iddesc=Signature-Interface Mapping |*|
+        text=Signature-Interface Mapping must have a non-empty description |*|
+        detail=Signature-Interface Mapping with ID <value-of select="@types:id"/> must have a non-empty description
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3147f.102d25464ae.a11b236470590525.6d" 
+   name="xADL 2.0/Structure and Types/Types/Component Types/Subarchitectures/Signature-Interface Mappings/OuterSignature Link Present"
+   description="Checks for the presence of an OuterSignature XLink on component type subarchitecture signature-interface mappings.">
+    <rule context="instance:xArch/types:archTypes/types:componentType/types:subArchitecture/types:signatureInterfaceMapping">
+      <assert test="types:outerSignature">
+        id0=<value-of select="@types:id"/> |*|
+        iddesc0=Signature-Interface Mapping |*|
+        id1=<value-of select="../../@types:id"/> |*|
+        iddesc1=Component Type |*|
+        text=Component type subarchitecture signature-interface mapping must have an outerSignature link |*|
+        detail=Signature-interface mapping <value-of select="types:description"/>
+               on Component type <value-of select="../../types:description"/> must have an outerSignature link.
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3147f.102d2548056.27bd577e0865f6ef.6e" 
+   name="xADL 2.0/Structure and Types/Types/Component Types/Subarchitectures/Signature-Interface Mappings/OuterSignature Link Valid"
+   description="Checks the validity of OuterSignature XLinks on component type subarchitecture signature-interface mappings.">
+    <rule context="instance:xArch/types:archTypes/types:componentType/types:subArchitecture/types:signatureInterfaceMapping/types:outerSignature">
+      <assert test="@xlink:type">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Signature-Interface Mapping |*|
+        id1=<value-of select="../../../@types:id"/> |*|
+        iddesc1=Component Type |*|
+        text=Component type subarchitecture signature-interface mapping's OuterSignature XLink must have a type |*|
+        detail=OuterSignature of
+               Signature-Interface Mapping <value-of select="../types:description"/> on
+               Component Type <value-of select="../../../types:description"/>
+               must have an XLink type
+      </assert>
+      <assert test="@xlink:type = 'simple'">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Signature-Interface Mapping |*|
+        id1=<value-of select="../../../@types:id"/> |*|
+        iddesc1=Component Type |*|
+        text=Component type subarchitecture signature-interface mapping's OuterSignature XLink must have type 'simple' |*|
+        detail=OuterSignature of
+               Signature-Interface Mapping <value-of select="../types:description"/> on
+               Component Type <value-of select="../../../types:description"/>
+               must have an XLink type 'simple'
+      </assert>
+      <assert test="starts-with(@xlink:href, '#')">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Signature-Interface Mapping |*|
+        id1=<value-of select="../../../@types:id"/> |*|
+        iddesc1=Component Type |*|
+        text=Component type subarchitecture signature-interface mapping's OuterSignature XLink href should start with '#' |*|
+        detail=OuterSignature of
+               Signature-Interface Mapping <value-of select="../types:description"/> on
+               Component Type <value-of select="../../../types:description"/>
+               must have an XLink href starting with '#'
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3147f.102d2549c30.9d678610a8fe1fcb.6f" 
+   name="xADL 2.0/Structure and Types/Types/Component Types/Subarchitectures/Signature-Interface Mappings/OuterSignature Link -&gt; Signature"
+   description="Checks that outerSignature XLinks on component type subarchitecture signature-interface mappings point to Signatures on their component types.">
+    <rule context="instance:xArch/types:archTypes/types:componentType/types:subArchitecture/types:signatureInterfaceMapping/types:outerSignature">
+      <assert 
+        test="substring-after(@xlink:href, '#') = ../../../types:signature/@types:id">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Signature-Interface Mapping |*|
+        id1=<value-of select="../../../@types:id"/> |*|
+        iddesc1=Component Type |*|
+        text=Component type subarchitecture signature-interface mapping's OuterSignature link should point to a Signature on its Component Type |*|
+        detail=OuterSignature of
+               Signature-Interface Mapping <value-of select="../types:description"/> on
+               Component Type <value-of select="../../../types:description"/>
+               must have an XLink href indicating a signature on its component type.
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3147f.102d27f6e8e.19606b6364f14a06.2ae" 
+   name="xADL 2.0/Structure and Types/Types/Component Types/Subarchitectures/Signature-Interface Mappings/InnerInterface Link Present"
+   description="Checks for the presence of an InnerInterface XLink on component type subarchitecture signature-interface mappings.">
+    <rule context="instance:xArch/types:archTypes/types:componentType/types:subArchitecture/types:signatureInterfaceMapping">
+      <assert test="types:innerInterface">
+        id0=<value-of select="@types:id"/> |*|
+        iddesc0=Signature-Interface Mapping |*|
+        id1=<value-of select="../../@types:id"/> |*|
+        iddesc1=Component Type |*|
+        text=Component type subarchitecture signature-interface mapping must have an innerInterface link |*|
+        detail=Signature-interface mapping <value-of select="types:description"/>
+               on Component type <value-of select="../../types:description"/> must have an innerInterface link.
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3147f.102d27f80fa.14fcbe1a7a64f491.2af" 
+   name="xADL 2.0/Structure and Types/Types/Component Types/Subarchitectures/Signature-Interface Mappings/InnerInterface Link Valid"
+   description="Checks the validity of InnerInterface XLinks on component type subarchitecture signature-interface mappings.">
+    <rule context="instance:xArch/types:archTypes/types:componentType/types:subArchitecture/types:signatureInterfaceMapping/types:innerInterface">
+      <assert test="@xlink:type">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Signature-Interface Mapping |*|
+        id1=<value-of select="../../../@types:id"/> |*|
+        iddesc1=Component Type |*|
+        text=Component type subarchitecture signature-interface mapping's InnerInterface XLink must have a type |*|
+        detail=InnerInterface of
+               Signature-Interface Mapping <value-of select="../types:description"/> on
+               Component Type <value-of select="../../../types:description"/>
+               must have an XLink type
+      </assert>
+      <assert test="@xlink:type = 'simple'">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Signature-Interface Mapping |*|
+        id1=<value-of select="../../../@types:id"/> |*|
+        iddesc1=Component Type |*|
+        text=Component type subarchitecture signature-interface mapping's InnerInterface XLink must have type 'simple' |*|
+        detail=InnerInterface of
+               Signature-Interface Mapping <value-of select="../types:description"/> on
+               Component Type <value-of select="../../../types:description"/>
+               must have an XLink type 'simple'
+      </assert>
+      <assert test="starts-with(@xlink:href, '#')">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Signature-Interface Mapping |*|
+        id1=<value-of select="../../../@types:id"/> |*|
+        iddesc1=Component Type |*|
+        text=Component type subarchitecture signature-interface mapping's InnerInterface XLink href should start with '#' |*|
+        detail=InnerInterface of
+               Signature-Interface Mapping <value-of select="../types:description"/> on
+               Component Type <value-of select="../../../types:description"/>
+               must have an XLink href starting with '#'
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3147f.102d27f9cdf.d5760acda180fdc5.2b0" 
+   name="xADL 2.0/Structure and Types/Types/Component Types/Subarchitectures/Signature-Interface Mappings/InnerInterface Link -&gt; Interface"
+   description="Checks that innerInterface XLinks on component type subarchitecture signature-interface mappings point to Interfaces.">
+    <rule context="instance:xArch/types:archTypes/types:componentType/types:subArchitecture/types:signatureInterfaceMapping/types:innerInterface">
+      <assert 
+        test="substring-after(@xlink:href, '#') = /instance:xArch/types:archStructure/*/types:interface/@types:id">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Signature-Interface Mapping |*|
+        id1=<value-of select="../../../@types:id"/> |*|
+        iddesc1=Component Type |*|
+        text=Component type subarchitecture signature-interface mapping's InnerInterface link should point to an Interface |*|
+        detail=InnerInterface of
+               Signature-Interface Mapping <value-of select="../types:description"/> on
+               Component Type <value-of select="../../../types:description"/>
+               must have an XLink href indicating an interface.
+      </assert>
+    </rule>
+  </pattern>
+
+  <!-- Connector Types -->
+
+  <pattern id="test.80c3148e.10285474143.ad9c42b14784eb5d.0" 
+   name="xADL 2.0/Structure and Types/Types/Connector Types/ID Present"
+   description="Checks for the presence of an ID on connector types.">
+    <rule context="instance:xArch/types:archTypes/types:connectorType">
+      <assert test="@types:id">
+        text=Connector Type must have an ID |*|
+        detail=Connector Type <value-of select="./types:description/."/> must have an ID
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3148e.1028548ab08.860591990d819f77.0" 
+   name="xADL 2.0/Structure and Types/Types/Connector Types/Description Present"
+   description="Checks for the presence of a Description on connector types.">
+    <rule context="instance:xArch/types:archTypes/types:connectorType">
+      <assert test="types:description">
+        id=<value-of select="@types:id"/> |*|
+        iddesc=Connector Type |*|
+        text=Connector Type must have a description |*|
+        detail=Connector Type with ID <value-of select="@types:id"/> must have a description
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3148e.1028548ab08.860591990d819f78.1" 
+   name="xADL 2.0/Structure and Types/Types/Connector Types/Description Non-Empty"
+   description="Checks for the presence of a non-empty Description on connector types.">
+    <rule context="instance:xArch/types:archTypes/types:connectorType/types:description">
+      <assert test="normalize-space(.) != ''">
+        id=<value-of select="../@types:id"/> |*|
+        iddesc=Connector Type |*|
+        text=Connector Type must have a non-empty description |*|
+        detail=Connector Type with ID <value-of select="@types:id"/> must have a non-empty description
+      </assert>
+    </rule>
+  </pattern>
+
+  <!-- Connector Type Signatures -->
+  
+  <pattern id="test.80c3148e.102b211d999.7ff5df43c1573f3b.22" 
+   name="xADL 2.0/Structure and Types/Types/Connector Types/Signatures/ID Present"
+   description="Checks for the presence of an ID on connector type signatures.">
+    <rule context="instance:xArch/types:archTypes/types:connectorType/types:signature">
+      <assert test="@types:id">
+        text=Signature must have an ID |*|
+        detail=Signature <value-of select="./types:description"/> on
+               connector type <value-of select="../types:description"/> must have an ID
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3148e.102b217399a.fce08258bb50fd89.23" 
+   name="xADL 2.0/Structure and Types/Types/Connector Types/Signatures/Description Present"
+   description="Checks for the presence of a Description on connector type signatures.">
+    <rule context="instance:xArch/types:archTypes/types:connectorType/types:signature">
+      <assert test="types:description">
+        id0=<value-of select="@types:id"/> |*|
+        iddesc0=Signature |*|
+        id1=<value-of select="../@types:id"/> |*|
+        iddesc1=Connector Type |*|
+        text=Signature must have a description |*|
+        detail=Signature with id <value-of select="@types:id"/>
+               on connector type <value-of select="../types:description"/>
+               must have a description
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3148e.102b2174e0f.d11c6eb2887d55f1.24" 
+   name="xADL 2.0/Structure and Types/Types/Connector Types/Signatures/Description Non-Empty"
+   description="Checks for the presence of a non-empty Description on connector type signatures.">
+    <rule context="instance:xArch/types:archTypes/types:connectorType/types:signature/types:description">
+      <assert test="normalize-space(.) != ''">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Signature |*|
+        id1=<value-of select="../../@types:id"/> |*|
+        iddesc1=Connector Type |*|
+        text=Signature must have a non-empty description |*|
+        detail=Signature with id <value-of select="@types:id"/>
+               on connector type <value-of select="../types:description"/>
+               must have a non-empty description
+      </assert>
+    </rule>
+  </pattern>
+ 
+  <pattern id="test.80c3148e.102b21d5505.55d0461685980f25.25" 
+   name="xADL 2.0/Structure and Types/Types/Connector Types/Signatures/Direction Present"
+   description="Checks for the presence of a Direction on connector type signatures.">
+    <rule context="instance:xArch/types:archTypes/types:connectorType/types:signature">
+      <assert test="types:direction">
+        id0=<value-of select="@types:id"/> |*|
+        iddesc0=Signature |*|
+        id1=<value-of select="../@types:id"/> |*|
+        iddesc1=Connector Type |*|
+        text=Signature on connector type must have a direction |*|
+        detail=Signature <value-of select="./types:description"/>
+               on connector type <value-of select="../types:description"/> 
+               must have a direction
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3148e.102b21d66e6.5b517931e3875c49.26" 
+   name="xADL 2.0/Structure and Types/Types/Connector Types/Signatures/Direction Non-Empty"
+   description="Checks for the presence of a non-empty Direction on connector type signatures.">
+    <rule context="instance:xArch/types:archTypes/types:connectorType/types:signature/types:direction">
+      <assert test="normalize-space(.) != ''">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Signature |*|
+        id1=<value-of select="../../@types:id"/> |*|
+        iddesc1=Connector Type |*|
+        text=Signature must have a non-empty direction |*|
+        detail=Signature <value-of select="./types:description"/>
+               on connector type <value-of select="../types:description"/> 
+               must have a non-empty direction
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3148e.102b21d7fe5.f442f989102bb66a.27" 
+   name="xADL 2.0/Structure and Types/Types/Connector Types/Signatures/Direction Valid"
+   description="Checks for the presence of a valid Direction on connector type signatures.">
+    <rule context="instance:xArch/types:archTypes/types:connectorType/types:signature/types:direction">
+      <assert test="normalize-space(.) = 'none' 
+                 or normalize-space(.) = 'in'
+                 or normalize-space(.) = 'out'
+                 or normalize-space(.) = 'inout'">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Signature |*|
+        id1=<value-of select="../../@types:id"/> |*|
+        iddesc1=Connector Type |*|
+        text=Signature direction is invalid |*|
+        detail=Signature <value-of select="./types:description"/>
+               on connector type <value-of select="../types:description"/> 
+               must have must be one of 'none', 'in', 'out', or 'inout'
+      </assert>
+    </rule>
+  </pattern>
+
+  <!-- Connector Type Subarchitectures -->
+
+  <pattern id="test.91c3147f.102d2330cbc.b88091d54bd1c705.63" 
+   name="xADL 2.0/Structure and Types/Types/Connector Types/Subarchitectures/ArchStructure Link Present"
+   description="Checks for the presence of an ArchStructure XLink on connector type subarchitectures.">
+    <rule context="instance:xArch/types:archTypes/types:connectorType/types:subArchitecture">
+      <assert test="types:archStructure">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Connector Type |*|
+        text=Connector type subarchitecture must have an ArchStructure link |*|
+        detail=Subarchitecture on 
+               Connector Type <value-of select="../types:description"/> must have an ArchStructure link.
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.91c3147f.102d23320a5.6e97fc7f5dbca4b7.64" 
+   name="xADL 2.0/Structure and Types/Types/Connector Types/Subarchitectures/ArchStructure Link Valid"
+   description="Checks the validity of ArchStructure XLinks on connector type subarchitectures.">
+    <rule context="instance:xArch/types:archTypes/types:connectorType/types:subArchitecture/types:archStructure">
+      <assert test="@xlink:type">
+        id0=<value-of select="../../@types:id"/> |*|
+        iddesc0=Connector Type |*|
+        text=Connector Type Subarchitecture's ArchStructure XLink must have a type |*|
+        detail=ArchStructure of subarchitecture of
+               Connector Type <value-of select="../../types:description"/>
+               must have an XLink type
+      </assert>
+      <assert test="@xlink:type = 'simple'">
+        id0=<value-of select="../../@types:id"/> |*|
+        iddesc0=Connector Type |*|
+        text=Connector Type Subarchitecture's ArchStructure XLink must have type 'simple' |*|
+        detail=ArchStructure of subarchitecture of
+               Connector Type <value-of select="../../types:description"/>
+               must have an XLink type 'simple'
+      </assert>
+      <assert test="starts-with(@xlink:href, '#')">
+        id0=<value-of select="../../@types:id"/> |*|
+        iddesc0=Connector Type |*|
+        text=Connector Type Subarchitecture's ArchStructure XLink href should start with '#' |*|
+        detail=ArchStructure of subarchitecture of 
+               Connector Type <value-of select="../../types:description"/>
+               must have an XLink href starting with '#'
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.91c3147f.102d233343e.3855e34cb21c47fa.65" 
+   name="xADL 2.0/Structure and Types/Types/Connector Types/Subarchitectures/ArchStructure link -&gt; ArchStructure"
+   description="Checks that ArchStructure XLinks on connector type subarchitectures point to ArchStructures.">
+    <rule context="instance:xArch/types:archTypes/types:connectorType/types:subArchitecture/types:archStructure">
+      <assert 
+        test="substring-after(@xlink:href, '#') = /instance:xArch/types:archStructure/@types:id">
+        id0=<value-of select="../../@types:id"/> |*|
+        iddesc0=Connector Type |*|
+        text=Connector Type Subarchitecture's ArchStructure link should point to an ArchStructure |*|
+        detail=ArchStructure of subarchitecture of 
+               Interface <value-of select="../types:description"/> on
+               Connector Type <value-of select="../../types:description"/>
+               must have an XLink href indicating an ArchStructure.
+      </assert>
+    </rule>
+  </pattern>
+
+  <!-- Connector type subarchitecture signature-interface mappings -->
+
+  <pattern id="test.91c3147f.102d2461bdc.aa7267d23ffe6dec.67" 
+   name="xADL 2.0/Structure and Types/Types/Connector Types/Subarchitectures/Signature-Interface Mappings/ID Present"
+   description="Checks for the presence of an ID on connector type subarchitecture signature-interface mappings.">
+    <rule context="instance:xArch/types:archTypes/types:connectorType/types:subArchitecture/types:signatureInterfaceMapping">
+      <assert test="@types:id">
+        text=Signature-Interface Mapping must have an ID |*|
+        detail=Signature-Interface Mapping <value-of select="./types:description/."/> must have an ID
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.91c3147f.102d2462df8.50dd2e4239074a3d.68" 
+   name="xADL 2.0/Structure and Types/Types/Connector Types/Subarchitectures/Signature-Interface Mappings/Description Present"
+   description="Checks for the presence of a Description on connector type subarchitecture signature-interface mappings.">
+    <rule context="instance:xArch/types:archTypes/types:connectorType/types:subArchitecture/types:signatureInterfaceMapping">
+      <assert test="types:description">
+        id=<value-of select="@types:id"/> |*|
+        iddesc=Signature-Interface Mapping |*|
+        text=Signature-Interface Mapping must have a description |*|
+        detail=Signature-Interface Mapping with ID <value-of select="@types:id"/> must have a description
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.91c3147f.102d2463cf4.46c7ea64d817aea1.69" 
+   name="xADL 2.0/Structure and Types/Types/Connector Types/Subarchitectures/Signature-Interface Mappings/Description Non-Empty"
+   description="Checks for the presence of a non-empty Description on connector type subarchitecture signature-interface mappings.">
+    <rule context="instance:xArch/types:archTypes/types:connectorType/types:subArchitecture/types:signatureInterfaceMapping/types:description">
+      <assert test="normalize-space(.) != ''">
+        id=<value-of select="../@types:id"/> |*|
+        iddesc=Signature-Interface Mapping |*|
+        text=Signature-Interface Mapping must have a non-empty description |*|
+        detail=Signature-Interface Mapping with ID <value-of select="@types:id"/> must have a non-empty description
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.91c3147f.102d25464ae.a11b236470590525.6d" 
+   name="xADL 2.0/Structure and Types/Types/Connector Types/Subarchitectures/Signature-Interface Mappings/OuterSignature Link Present"
+   description="Checks for the presence of an OuterSignature XLink on connector type subarchitecture signature-interface mappings.">
+    <rule context="instance:xArch/types:archTypes/types:connectorType/types:subArchitecture/types:signatureInterfaceMapping">
+      <assert test="types:outerSignature">
+        id0=<value-of select="@types:id"/> |*|
+        iddesc0=Signature-Interface Mapping |*|
+        id1=<value-of select="../../@types:id"/> |*|
+        iddesc1=Connector Type |*|
+        text=Connector type subarchitecture signature-interface mapping must have an outerSignature link |*|
+        detail=Signature-interface mapping <value-of select="types:description"/>
+               on Connector type <value-of select="../../types:description"/> must have an outerSignature link.
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.91c3147f.102d2548056.27bd577e0865f6ef.6e" 
+   name="xADL 2.0/Structure and Types/Types/Connector Types/Subarchitectures/Signature-Interface Mappings/OuterSignature Link Valid"
+   description="Checks the validity of OuterSignature XLinks on connector type subarchitecture signature-interface mappings.">
+    <rule context="instance:xArch/types:archTypes/types:connectorType/types:subArchitecture/types:signatureInterfaceMapping/types:outerSignature">
+      <assert test="@xlink:type">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Signature-Interface Mapping |*|
+        id1=<value-of select="../../../@types:id"/> |*|
+        iddesc1=Connector Type |*|
+        text=Connector type subarchitecture signature-interface mapping's OuterSignature XLink must have a type |*|
+        detail=OuterSignature of
+               Signature-Interface Mapping <value-of select="../types:description"/> on
+               Connector Type <value-of select="../../../types:description"/>
+               must have an XLink type
+      </assert>
+      <assert test="@xlink:type = 'simple'">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Signature-Interface Mapping |*|
+        id1=<value-of select="../../../@types:id"/> |*|
+        iddesc1=Connector Type |*|
+        text=Connector type subarchitecture signature-interface mapping's OuterSignature XLink must have type 'simple' |*|
+        detail=OuterSignature of
+               Signature-Interface Mapping <value-of select="../types:description"/> on
+               Connector Type <value-of select="../../../types:description"/>
+               must have an XLink type 'simple'
+      </assert>
+      <assert test="starts-with(@xlink:href, '#')">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Signature-Interface Mapping |*|
+        id1=<value-of select="../../../@types:id"/> |*|
+        iddesc1=Connector Type |*|
+        text=Connector type subarchitecture signature-interface mapping's OuterSignature XLink href should start with '#' |*|
+        detail=OuterSignature of
+               Signature-Interface Mapping <value-of select="../types:description"/> on
+               Connector Type <value-of select="../../../types:description"/>
+               must have an XLink href starting with '#'
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.91c3147f.102d2549c30.9d678610a8fe1fcb.6f" 
+   name="xADL 2.0/Structure and Types/Types/Connector Types/Subarchitectures/Signature-Interface Mappings/OuterSignature Link -&gt; Signature"
+   description="Checks that outerSignature XLinks on connector type subarchitecture signature-interface mappings point to Signatures on their connector types.">
+    <rule context="instance:xArch/types:archTypes/types:connectorType/types:subArchitecture/types:signatureInterfaceMapping/types:outerSignature">
+      <assert 
+        test="substring-after(@xlink:href, '#') = ../../../types:signature/@types:id">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Signature-Interface Mapping |*|
+        id1=<value-of select="../../../@types:id"/> |*|
+        iddesc1=Connector Type |*|
+        text=Connector type subarchitecture signature-interface mapping's OuterSignature link should point to a Signature on its Connector Type |*|
+        detail=OuterSignature of
+               Signature-Interface Mapping <value-of select="../types:description"/> on
+               Connector Type <value-of select="../../../types:description"/>
+               must have an XLink href indicating a signature on its connector type.
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.91c3147f.102d27f6e8e.19606b6364f14a06.2ae" 
+   name="xADL 2.0/Structure and Types/Types/Connector Types/Subarchitectures/Signature-Interface Mappings/InnerInterface Link Present"
+   description="Checks for the presence of an InnerInterface XLink on connector type subarchitecture signature-interface mappings.">
+    <rule context="instance:xArch/types:archTypes/types:connectorType/types:subArchitecture/types:signatureInterfaceMapping">
+      <assert test="types:innerInterface">
+        id0=<value-of select="@types:id"/> |*|
+        iddesc0=Signature-Interface Mapping |*|
+        id1=<value-of select="../../@types:id"/> |*|
+        iddesc1=Connector Type |*|
+        text=Connector type subarchitecture signature-interface mapping must have an innerInterface link |*|
+        detail=Signature-interface mapping <value-of select="types:description"/>
+               on Connector type <value-of select="../../types:description"/> must have an innerInterface link.
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.91c3147f.102d27f80fa.14fcbe1a7a64f491.2af" 
+   name="xADL 2.0/Structure and Types/Types/Connector Types/Subarchitectures/Signature-Interface Mappings/InnerInterface Link Valid"
+   description="Checks the validity of InnerInterface XLinks on connector type subarchitecture signature-interface mappings.">
+    <rule context="instance:xArch/types:archTypes/types:connectorType/types:subArchitecture/types:signatureInterfaceMapping/types:innerInterface">
+      <assert test="@xlink:type">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Signature-Interface Mapping |*|
+        id1=<value-of select="../../../@types:id"/> |*|
+        iddesc1=Connector Type |*|
+        text=Connector type subarchitecture signature-interface mapping's InnerInterface XLink must have a type |*|
+        detail=InnerInterface of
+               Signature-Interface Mapping <value-of select="../types:description"/> on
+               Connector Type <value-of select="../../../types:description"/>
+               must have an XLink type
+      </assert>
+      <assert test="@xlink:type = 'simple'">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Signature-Interface Mapping |*|
+        id1=<value-of select="../../../@types:id"/> |*|
+        iddesc1=Connector Type |*|
+        text=Connector type subarchitecture signature-interface mapping's InnerInterface XLink must have type 'simple' |*|
+        detail=InnerInterface of
+               Signature-Interface Mapping <value-of select="../types:description"/> on
+               Connector Type <value-of select="../../../types:description"/>
+               must have an XLink type 'simple'
+      </assert>
+      <assert test="starts-with(@xlink:href, '#')">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Signature-Interface Mapping |*|
+        id1=<value-of select="../../../@types:id"/> |*|
+        iddesc1=Connector Type |*|
+        text=Connector type subarchitecture signature-interface mapping's InnerInterface XLink href should start with '#' |*|
+        detail=InnerInterface of
+               Signature-Interface Mapping <value-of select="../types:description"/> on
+               Connector Type <value-of select="../../../types:description"/>
+               must have an XLink href starting with '#'
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.91c3147f.102d27f9cdf.d5760acda180fdc5.2b0" 
+   name="xADL 2.0/Structure and Types/Types/Connector Types/Subarchitectures/Signature-Interface Mappings/InnerInterface Link -&gt; Interface"
+   description="Checks that innerInterface XLinks on connector type subarchitecture signature-interface mappings point to Interfaces.">
+    <rule context="instance:xArch/types:archTypes/types:connectorType/types:subArchitecture/types:signatureInterfaceMapping/types:innerInterface">
+      <assert 
+        test="substring-after(@xlink:href, '#') = /instance:xArch/types:archStructure/*/types:interface/@types:id">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Signature-Interface Mapping |*|
+        id1=<value-of select="../../../@types:id"/> |*|
+        iddesc1=Connector Type |*|
+        text=Connector type subarchitecture signature-interface mapping's InnerInterface link should point to an Interface |*|
+        detail=InnerInterface of
+               Signature-Interface Mapping <value-of select="../types:description"/> on
+               Connector Type <value-of select="../../../types:description"/>
+               must have an XLink href indicating an interface.
+      </assert>
+    </rule>
+  </pattern>
+
+  <!-- Components to Component Types -->
+
+  <pattern id="test.80c3147f.102d1dc8116.ece17366a4a52d1e.56" 
+   name="xADL 2.0/Structure and Types/Types/Components/Type Link Present"
+   description="Checks for the presence of a type XLink on Components.">
+    <rule context="instance:xArch/types:archStructure/types:component">
+      <assert test="types:type">
+        id=<value-of select="@types:id"/> |*|
+        iddesc=Component |*|
+        text=Component must have a type link |*|
+        detail=Component <value-of select="types:description"/> must have a type link.
+      </assert>
+    </rule>
+  </pattern>
+  
+  <pattern id="test.80c3147f.102d1db4ebf.72e29631d7c1132d.55" 
+   name="xADL 2.0/Structure and Types/Types/Components/Type Link Valid"
+   description="Checks the validity of type XLinks on Components.">
+    <rule context="instance:xArch/types:archStructure/types:component/types:type">
+      <assert test="@xlink:type">
+        id=<value-of select="../@types:id"/> |*|
+        iddesc=Component |*|
+        text=Component's type XLink must have a type |*|
+        detail=Type of
+               Component <value-of select="../types:description"/>
+               must have an XLink type
+      </assert>
+      <assert test="@xlink:type = 'simple'">
+        id=<value-of select="../@types:id"/> |*|
+        iddesc=Component |*|
+        text=Component's type XLink must have type 'simple' |*|
+        detail=Type of
+               Component <value-of select="../types:description"/>
+               must have an XLink type 'simple'
+      </assert>
+      <assert test="starts-with(@xlink:href, '#')">
+        id=<value-of select="../@types:id"/> |*|
+        iddesc=Component |*|
+        text=Component's type XLink href should start with '#' |*|
+        detail=Type of
+               Component <value-of select="../types:description"/>
+               must have an XLink href starting with '#'
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3147f.102d1e180d1.6a33fa59ea1cb12.57" 
+   name="xADL 2.0/Structure and Types/Types/Components/Type link -&gt; ComponentType"
+   description="Checks that type XLinks on Components point to ComponentTypes.">
+    <rule context="instance:xArch/types:archStructure/types:component/types:type">
+      <assert 
+        test="substring-after(@xlink:href, '#') = /instance:xArch/types:archTypes/types:componentType/@types:id">
+        id=<value-of select="../@types:id"/> |*|
+        iddesc=Component |*|
+        text=Component's type link should point to a Component Type |*|
+        detail=Type of 
+               Component <value-of select="../types:description"/>
+               must have an XLink href indicating a component type.
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3147f.102d21cf3d9.ce7bb0a435fa1927.59" 
+   name="xADL 2.0/Structure and Types/Types/Components/Interfaces/Signature Link Present"
+   description="Checks for the presence of a signature XLink on component interfaces.">
+    <rule context="instance:xArch/types:archStructure/types:component/types:interface">
+      <assert test="types:signature">
+        id0=<value-of select="@types:id"/> |*|
+        iddesc0=Interface |*|
+        id1=<value-of select="../@types:id"/> |*|
+        iddesc1=Component |*|
+        text=Component Interface must have a signature link |*|
+        detail=Interface <value-of select="types:description"/>
+               on Component <value-of select="../types:description"/> must have a signature link.
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3147f.102d21fc439.7c927fba704208cf.5a" 
+   name="xADL 2.0/Structure and Types/Types/Components/Interfaces/Signature Link Valid"
+   description="Checks the validity of signature XLinks on component interfaces.">
+    <rule context="instance:xArch/types:archStructure/types:component/types:interface/types:signature">
+      <assert test="@xlink:type">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Interface |*|
+        id1=<value-of select="../../@types:id"/> |*|
+        iddesc1=Component |*|
+        text=Interface's signature XLink must have a type |*|
+        detail=Signature of
+               Interface <value-of select="../types:description"/> on
+               Component <value-of select="../../types:description"/>
+               must have an XLink type
+      </assert>
+      <assert test="@xlink:type = 'simple'">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Interface |*|
+        id1=<value-of select="../../@types:id"/> |*|
+        iddesc1=Component |*|
+        text=Component interface's signature XLink must have type 'simple' |*|
+        detail=Signature of
+               Interface <value-of select="../types:description"/> on
+               Component <value-of select="../../types:description"/>
+               must have an XLink type 'simple'
+      </assert>
+      <assert test="starts-with(@xlink:href, '#')">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Interface |*|
+        id1=<value-of select="../../@types:id"/> |*|
+        iddesc1=Component |*|
+        text=Component interface's signature XLink href should start with '#' |*|
+        detail=Signature of
+               Interface <value-of select="../types:description"/> on
+               Component <value-of select="../../types:description"/>
+               must have an XLink href starting with '#'
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3147f.102d2265559.cc933d4995c90295.5b" 
+   name="xADL 2.0/Structure and Types/Types/Components/Interfaces/Signature link -&gt; Signature"
+   description="Checks that signature XLinks on Components point to Signatures on ComponentTypes.">
+    <rule context="instance:xArch/types:archStructure/types:component/types:interface/types:signature">
+      <assert 
+        test="substring-after(@xlink:href, '#') = /instance:xArch/types:archTypes/types:componentType/types:signature/@types:id">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Interface |*|
+        id1=<value-of select="../../@types:id"/> |*|
+        iddesc1=Component |*|
+        text=Component interface's signature link should point to a Component Type Signature |*|
+        detail=Signature of
+               Interface <value-of select="../types:description"/> on
+               Component <value-of select="../../types:description"/>
+               must have an XLink href indicating a component type signature.
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3147f.102d2871711.ff3a20b004329533.2b2"
+   name="xADL 2.0/Structure and Types/Types/Components/Interfaces/Interface Type = Signature Type"
+   description="Checks that the type of a component's interface matches its signature's type.">
+    <rule context="instance:xArch/types:archStructure/types:component/types:interface">
+      <let name="href1" value="./types:type/@xlink:href"/>
+      <let name="sigid1" value="substring-after(./types:signature/@xlink:href, '#')"/>
+      <let name="href2" value="/instance:xArch/types:archTypes/types:componentType/types:signature[@types:id=string($sigid1)]/types:type/@xlink:href"/>
+      <assert 
+        test="$href1=$href2">
+        id0=<value-of select="@types:id"/> |*|
+        iddesc0=Interface |*|
+        id1=<value-of select="../@types:id"/> |*|
+        iddesc1=Component |*|
+        text=Component interface should have the same interface type as its signature |*|
+        detail=The interface type of
+               Interface <value-of select="../types:description"/> on
+               Component <value-of select="../../types:description"/>
+               must be the same as the interface type of its signature.
+      </assert>
+    </rule>
+  </pattern>
+
+  <!-- Connectors to Connector Types -->
+
+  <pattern id="test.80c3147f.102d22c4dd6.4084ec4646a1f3c0.5c" 
+   name="xADL 2.0/Structure and Types/Types/Connectors/Type Link Present"
+   description="Checks for the presence of a type XLink on Connectors.">
+    <rule context="instance:xArch/types:archStructure/types:connector">
+      <assert test="types:type">
+        id=<value-of select="@types:id"/> |*|
+        iddesc=Connector |*|
+        text=Connector must have a type link |*|
+        detail=Connector <value-of select="types:description"/> must have a type link.
+      </assert>
+    </rule>
+  </pattern>
+  
+  <pattern id="test.80c3147f.102d22c6906.172c1f889f291964.5d" 
+   name="xADL 2.0/Structure and Types/Types/Connectors/Type Link Valid"
+   description="Checks the validity of type XLinks on Connectors.">
+    <rule context="instance:xArch/types:archStructure/types:connector/types:type">
+      <assert test="@xlink:type">
+        id=<value-of select="../@types:id"/> |*|
+        iddesc=Connector |*|
+        text=Connector's type XLink must have a type |*|
+        detail=Type of
+               Connector <value-of select="../types:description"/>
+               must have an XLink type
+      </assert>
+      <assert test="@xlink:type = 'simple'">
+        id=<value-of select="../@types:id"/> |*|
+        iddesc=Connector |*|
+        text=Connector's type XLink must have type 'simple' |*|
+        detail=Type of
+               Connector <value-of select="../types:description"/>
+               must have an XLink type 'simple'
+      </assert>
+      <assert test="starts-with(@xlink:href, '#')">
+        id=<value-of select="../@types:id"/> |*|
+        iddesc=Connector |*|
+        text=Connector's type XLink href should start with '#' |*|
+        detail=Type of
+               Connector <value-of select="../types:description"/>
+               must have an XLink href starting with '#'
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3147f.102d22c7ef8.aede0aa856fdff66.5e" 
+   name="xADL 2.0/Structure and Types/Types/Connectors/Type link -&gt; ConnectorType"
+   description="Checks that type XLinks on Connectors point to ConnectorTypes.">
+    <rule context="instance:xArch/types:archStructure/types:connector/types:type">
+      <assert 
+        test="substring-after(@xlink:href, '#') = /instance:xArch/types:archTypes/types:connectorType/@types:id">
+        id=<value-of select="../@types:id"/> |*|
+        iddesc=Connector |*|
+        text=Connector's type link should point to a Connector Type |*|
+        detail=Type of 
+               Connector <value-of select="../types:description"/>
+               must have an XLink href indicating a connector type.
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3147f.102d22c9711.ffd6982ba46f2330.5f" 
+   name="xADL 2.0/Structure and Types/Types/Connectors/Interfaces/Signature Link Present"
+   description="Checks for the presence of a signature XLink on connector interfaces.">
+    <rule context="instance:xArch/types:archStructure/types:connector/types:interface">
+      <assert test="types:signature">
+        id0=<value-of select="@types:id"/> |*|
+        iddesc0=Interface |*|
+        id1=<value-of select="../@types:id"/> |*|
+        iddesc1=Connector |*|
+        text=Connector Interface must have a signature link |*|
+        detail=Interface <value-of select="types:description"/>
+               on Connector <value-of select="../types:description"/> must have a signature link.
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3147f.102d22caaaa.b4e1d1e0cac6cda5.60" 
+   name="xADL 2.0/Structure and Types/Types/Connectors/Interfaces/Signature Link Valid"
+   description="Checks the validity of signature XLinks on connector interfaces.">
+    <rule context="instance:xArch/types:archStructure/types:connector/types:interface/types:signature">
+      <assert test="@xlink:type">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Interface |*|
+        id1=<value-of select="../../@types:id"/> |*|
+        iddesc1=Connector |*|
+        text=Interface's signature XLink must have a type |*|
+        detail=Signature of
+               Interface <value-of select="../types:description"/> on
+               Connector <value-of select="../../types:description"/>
+               must have an XLink type
+      </assert>
+      <assert test="@xlink:type = 'simple'">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Interface |*|
+        id1=<value-of select="../../@types:id"/> |*|
+        iddesc1=Connector |*|
+        text=Connector interface's signature XLink must have type 'simple' |*|
+        detail=Signature of
+               Interface <value-of select="../types:description"/> on
+               Connector <value-of select="../../types:description"/>
+               must have an XLink type 'simple'
+      </assert>
+      <assert test="starts-with(@xlink:href, '#')">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Interface |*|
+        id1=<value-of select="../../@types:id"/> |*|
+        iddesc1=Connector |*|
+        text=Connector interface's signature XLink href should start with '#' |*|
+        detail=Signature of
+               Interface <value-of select="../types:description"/> on
+               Connector <value-of select="../../types:description"/>
+               must have an XLink href starting with '#'
+      </assert>
+    </rule>
+  </pattern>
+
+  <pattern id="test.80c3147f.102d22cc074.2fc69c1825fff71b.61" 
+   name="xADL 2.0/Structure and Types/Types/Connectors/Interfaces/Signature link -&gt; Signature"
+   description="Checks that signature XLinks on Connectors point to Signatures on ConnectorTypes.">
+    <rule context="instance:xArch/types:archStructure/types:connector/types:interface/types:signature">
+      <assert 
+        test="substring-after(@xlink:href, '#') = /instance:xArch/types:archTypes/types:connectorType/types:signature/@types:id">
+        id0=<value-of select="../@types:id"/> |*|
+        iddesc0=Interface |*|
+        id1=<value-of select="../../@types:id"/> |*|
+        iddesc1=Connector |*|
+        text=Connector interface's signature link should point to a Connector Type Signature |*|
+        detail=Signature of
+               Interface <value-of select="../types:description"/> on
+               Connector <value-of select="../../types:description"/>
+               must have an XLink href indicating a connector type signature.
+      </assert>
+    </rule>
+  </pattern>
+
+</schema>

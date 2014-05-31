@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin
+   id="archstudio_tests"
+   name="archstudio-tests"
+   version="0.0.0">
+   <runtime>
+      <library name="archstudio-tests.jar">
+         <export name="*"/>
+      </library>
+   </runtime>
+   <requires>
+      <import plugin="archstudio"/>
+      <import plugin="xarchlibs"/>
+      <import plugin="org.junit"/>
+   </requires>
+
+</plugin>

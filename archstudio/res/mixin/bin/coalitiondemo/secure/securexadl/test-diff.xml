@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<instance:xArch xsi:schemaLocation="http://www.ics.uci.edu/pub/arch/xArch/diff.xsd http://www.isr.uci.edu/projects/xarchuci/ext/diff.xsd http://www.ics.uci.edu/pub/arch/xArch/security.xsd file:///C:/Documents%20and%20Settings/Jie%20Ren/My%20Documents/My%20Research/workspace/securexadl/res/security.xsd"
+	xmlns:types="http://www.ics.uci.edu/pub/arch/xArch/types.xsd" xmlns:implementation="http://www.ics.uci.edu/pub/arch/xArch/implementation.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diff="http://www.ics.uci.edu/pub/arch/xArch/diff.xsd"
+	xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:javaimplementation="http://www.ics.uci.edu/pub/arch/xArch/javaimplementation.xsd"
+	xmlns:security="http://www.ics.uci.edu/pub/arch/xArch/security.xsd"
+	xmlns:javainitparams="http://www.ics.uci.edu/pub/arch/xArch/javainitparams.xsd" 
+	xmlns:instance="http://www.ics.uci.edu/pub/arch/xArch/instance.xsd">
+	<diff:diff xsi:type="diff:Diff">
+		<diff:diffPart xsi:type="diff:DiffPart">
+			<diff:add xsi:type="diff:Add">
+				<diff:component xsi:type="security:SecureComponent" types:id="FrenchtoUSFilter">
+					<types:description xsi:type="instance:Description">French to US Filter Component</types:description>
+					<types:interface xsi:type="types:Interface" types:id="FrenchtoUSFilter.IFACE_TOP">
+						<types:description xsi:type="instance:Description">French to US Filter Component Top Interface</types:description>
+						<types:direction xsi:type="instance:Direction">inout</types:direction>
+						<types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType" />
+					</types:interface>
+					<types:interface xsi:type="types:Interface" types:id="FrenchtoUSFilter.IFACE_BOTTOM">
+						<types:description xsi:type="instance:Description">French to US Filter Component Bottom Interface</types:description>
+						<types:direction xsi:type="instance:Direction">inout</types:direction>
+						<types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType" />
+					</types:interface>
+					<types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#FrenchtoUSFilter_type" />
+					<security:security>
+						<security:subject>France</security:subject>
+					</security:security>
+				</diff:component>
+			</diff:add>
+		</diff:diffPart>
+		<diff:diffPart xsi:type="diff:DiffPart">
+			<diff:add xsi:type="diff:Add">
+				<diff:link xsi:type="types:Link" types:id="FrenchRadarFilterBus_to_FrenchtoUSFilter">
+					<types:description xsi:type="instance:Description">FrenchRadarFilterBus to FrenchtoUSFilter Link</types:description>
+					<types:point xsi:type="instance:Point">
+						<instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#FrenchRadarFilterBus.IFACE_BOTTOM" />
+					</types:point>
+					<types:point xsi:type="instance:Point">
+						<instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#FrenchtoUSFilter.IFACE_TOP" />
+					</types:point>
+				</diff:link>
+			</diff:add>
+		</diff:diffPart>
+		<diff:diffPart xsi:type="diff:DiffPart">
+			<diff:add xsi:type="diff:Add">
+				<diff:link xsi:type="types:Link" types:id="FrenchtoUSFilter_to_USFranceConnector">
+					<types:description xsi:type="instance:Description">FrenchtoUSFilter to USFranceConnector Link</types:description>
+					<types:point xsi:type="instance:Point">
+						<instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#FrenchtoUSFilter.IFACE_BOTTOM" />
+					</types:point>
+					<types:point xsi:type="instance:Point">
+						<instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#USFranceConnector.IFACE_TOP" />
+					</types:point>
+				</diff:link>
+			</diff:add>
+		</diff:diffPart>
+		<diff:diffPart xsi:type="diff:DiffPart">
+			<diff:add xsi:type="diff:Add">
+				<diff:componentType xsi:type="implementation:VariantComponentTypeImpl" types:id="FrenchtoUSFilter_type">
+					<types:description xsi:type="instance:Description">French to US Filter Type</types:description>
+					<types:signature types:id="FrenchtoUSFilter_type_topSig" xsi:type="types:Signature">
+						<types:description xsi:type="instance:Description">French to US Filter Type Top</types:description>
+						<types:direction xsi:type="instance:Direction">inout</types:direction>
+						<types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType" />
+					</types:signature>
+					<types:signature types:id="FrenchtoUSFilter_type_bottomSig" xsi:type="types:Signature">
+						<types:description xsi:type="instance:Description">French to US Filter Type Bottom</types:description>
+						<types:direction xsi:type="instance:Direction">inout</types:direction>
+						<types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType" />
+					</types:signature>
+					<implementation:implementation xsi:type="javaimplementation:JavaImplementation">
+						<javaimplementation:mainClass xsi:type="javainitparams:JavaClassFileParams">
+							<javaimplementation:javaClassName xsi:type="javaimplementation:JavaClassName">c2demo.coalitiondemo.secure.FrenchtoUSFilterSecure</javaimplementation:javaClassName>
+							<javainitparams:initializationParameter javainitparams:name="Principal" xsi:type="javainitparams:InitializationParameter"
+								javainitparams:value="US" />
+							<javainitparams:initializationParameter javainitparams:name="Principal" xsi:type="javainitparams:InitializationParameter"
+								javainitparams:value="France" />
+							<!--
+							<javainitparams:initializationParameter javainitparams:name="Country3" xsi:type="javainitparams:InitializationParameter"
+								javainitparams:value="US" />
+							-->
+						</javaimplementation:mainClass>
+					</implementation:implementation>
+				</diff:componentType>
+			</diff:add>
+		</diff:diffPart>
+		<!--
+		<diff:diffPart xsi:type="diff:DiffPart">
+			<diff:add xsi:type="diff:Add">
+				<diff:link xsi:type="types:Link" types:id="FrenchRadarFilterBus_to_USFranceConnector">
+					<types:description xsi:type="instance:Description">FrenchRadarFilterBus to FrenchtoUSFilter Link</types:description>
+					<types:point xsi:type="instance:Point">
+						<instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#FrenchRadarFilterBus.IFACE_BOTTOM" />
+					</types:point>
+					<types:point xsi:type="instance:Point">
+						<instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#USFranceConnector.IFACE_TOP" />
+					</types:point>
+				</diff:link>
+			</diff:add>
+		</diff:diffPart>
+		-->
+	</diff:diff>
+</instance:xArch>

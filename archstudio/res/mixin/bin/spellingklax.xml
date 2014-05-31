@@ -1,0 +1,932 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance:xArch xsi:schemaLocation="http://www.ics.uci.edu/pub/arch/xArch/lookupimplementation.xsd http://www.isr.uci.edu/projects/xarchuci/ext/lookupimplementation.xsd http://www.ics.uci.edu/pub/arch/xArch/javaimplementation.xsd http://www.isr.uci.edu/projects/xarchuci/ext/javaimplementation.xsd http://www.ics.uci.edu/pub/arch/xArch/variants.xsd http://www.isr.uci.edu/projects/xarchuci/ext/variants.xsd http://www.ics.uci.edu/pub/arch/xArch/implementation.xsd http://www.isr.uci.edu/projects/xarchuci/ext/implementation.xsd http://www.ics.uci.edu/pub/arch/xArch/types.xsd http://www.isr.uci.edu/projects/xarchuci/ext/types.xsd http://www.ics.uci.edu/pub/arch/xArch/instance.xsd http://www.isr.uci.edu/projects/xarchuci/core/instance.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:types="http://www.ics.uci.edu/pub/arch/xArch/types.xsd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:implementation="http://www.ics.uci.edu/pub/arch/xArch/implementation.xsd" xmlns:javaimplementation="http://www.ics.uci.edu/pub/arch/xArch/javaimplementation.xsd" xmlns:lookupimplementation="http://www.ics.uci.edu/pub/arch/xArch/lookupimplementation.xsd" xmlns:instance="http://www.ics.uci.edu/pub/arch/xArch/instance.xsd">
+    <types:archStructure xsi:type="types:ArchStructure" types:id="Klax">
+        <types:description xsi:type="instance:Description">Klax (Spelling)</types:description>
+        <types:component xsi:type="types:Component" types:id="ClockComponent">
+            <types:description xsi:type="instance:Description">ClockComponent</types:description>
+            <types:interface xsi:type="types:Interface" types:id="ClockComponent.IFACE_TOP">
+                <types:description xsi:type="instance:Description">ClockComponent Top Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#ClockComponent_type_topSig"/>
+            </types:interface>
+            <types:interface xsi:type="types:Interface" types:id="ClockComponent.IFACE_BOTTOM">
+                <types:description xsi:type="instance:Description">ClockComponent Bottom Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#ClockComponent_type_bottomSig"/>
+            </types:interface>
+            <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#ClockComponent_type"/>
+        </types:component>
+        <types:component xsi:type="types:Component" types:id="StatusComponent">
+            <types:description xsi:type="instance:Description">StatusComponent</types:description>
+            <types:interface xsi:type="types:Interface" types:id="StatusComponent.IFACE_TOP">
+                <types:description xsi:type="instance:Description">StatusComponent Top Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#StatusComponent_type_topSig"/>
+            </types:interface>
+            <types:interface xsi:type="types:Interface" types:id="StatusComponent.IFACE_BOTTOM">
+                <types:description xsi:type="instance:Description">StatusComponent Bottom Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#StatusComponent_type_bottomSig"/>
+            </types:interface>
+            <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#StatusComponent_type"/>
+        </types:component>
+        <types:component xsi:type="types:Component" types:id="RelativePositionLogic">
+            <types:description xsi:type="instance:Description">RelativePositionLogic</types:description>
+            <types:interface xsi:type="types:Interface" types:id="RelativePositionLogic.IFACE_TOP">
+                <types:description xsi:type="instance:Description">RelativePositionLogic Top Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#RelativePositionLogic_type_topSig"/>
+            </types:interface>
+            <types:interface xsi:type="types:Interface" types:id="RelativePositionLogic.IFACE_BOTTOM">
+                <types:description xsi:type="instance:Description">RelativePositionLogic Bottom Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#RelativePositionLogic_type_bottomSig"/>
+            </types:interface>
+            <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#RelativePositionLogic_type"/>
+        </types:component>
+        <types:component xsi:type="types:Component" types:id="WellComponent">
+            <types:description xsi:type="instance:Description">WellComponent</types:description>
+            <types:interface xsi:type="types:Interface" types:id="WellComponent.IFACE_TOP">
+                <types:description xsi:type="instance:Description">WellComponent Top Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#WellComponent_type_topSig"/>
+            </types:interface>
+            <types:interface xsi:type="types:Interface" types:id="WellComponent.IFACE_BOTTOM">
+                <types:description xsi:type="instance:Description">WellComponent Bottom Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#WellComponent_type_bottomSig"/>
+            </types:interface>
+            <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#WellComponent_type"/>
+        </types:component>
+        <types:component xsi:type="types:Component" types:id="PaletteComponent">
+            <types:description xsi:type="instance:Description">PaletteComponent</types:description>
+            <types:interface xsi:type="types:Interface" types:id="PaletteComponent.IFACE_TOP">
+                <types:description xsi:type="instance:Description">PaletteComponent Top Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#PaletteComponent_type_topSig"/>
+            </types:interface>
+            <types:interface xsi:type="types:Interface" types:id="PaletteComponent.IFACE_BOTTOM">
+                <types:description xsi:type="instance:Description">PaletteComponent Bottom Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#PaletteComponent_type_bottomSig"/>
+            </types:interface>
+            <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#PaletteComponent_type"/>
+        </types:component>
+        <types:component xsi:type="types:Component" types:id="ChuteComponent">
+            <types:description xsi:type="instance:Description">ChuteComponent</types:description>
+            <types:interface xsi:type="types:Interface" types:id="ChuteComponent.IFACE_TOP">
+                <types:description xsi:type="instance:Description">ChuteComponent Top Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#ChuteComponent_type_topSig"/>
+            </types:interface>
+            <types:interface xsi:type="types:Interface" types:id="ChuteComponent.IFACE_BOTTOM">
+                <types:description xsi:type="instance:Description">ChuteComponent Bottom Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#ChuteComponent_type_bottomSig"/>
+            </types:interface>
+            <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#ChuteComponent_type"/>
+        </types:component>
+        <types:component xsi:type="types:Component" types:id="SpellingMatchingLogic">
+            <types:description xsi:type="instance:Description">SpellingMatchingLogic</types:description>
+            <types:interface xsi:type="types:Interface" types:id="SpellingMatchingLogic.IFACE_TOP">
+                <types:description xsi:type="instance:Description">SpellingMatchingLogic Top Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#SpellingMatchingLogic_type_topSig"/>
+            </types:interface>
+            <types:interface xsi:type="types:Interface" types:id="SpellingMatchingLogic.IFACE_BOTTOM">
+                <types:description xsi:type="instance:Description">SpellingMatchingLogic Bottom Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#SpellingMatchingLogic_type_bottomSig"/>
+            </types:interface>
+            <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#SpellingMatchingLogic_type"/>
+        </types:component>
+        <types:component xsi:type="types:Component" types:id="StatusLogic">
+            <types:description xsi:type="instance:Description">StatusLogic</types:description>
+            <types:interface xsi:type="types:Interface" types:id="StatusLogic.IFACE_TOP">
+                <types:description xsi:type="instance:Description">StatusLogic Top Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#StatusLogic_type_topSig"/>
+            </types:interface>
+            <types:interface xsi:type="types:Interface" types:id="StatusLogic.IFACE_BOTTOM">
+                <types:description xsi:type="instance:Description">StatusLogic Bottom Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#StatusLogic_type_bottomSig"/>
+            </types:interface>
+            <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#StatusLogic_type"/>
+        </types:component>
+        <types:component xsi:type="types:Component" types:id="NextLetterTileLogic">
+            <types:description xsi:type="instance:Description">NextLetterTileLogic</types:description>
+            <types:interface xsi:type="types:Interface" types:id="NextLetterTileLogic.IFACE_TOP">
+                <types:description xsi:type="instance:Description">NextLetterTileLogic Top Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#NextLetterTileLogic_type_topSig"/>
+            </types:interface>
+            <types:interface xsi:type="types:Interface" types:id="NextLetterTileLogic.IFACE_BOTTOM">
+                <types:description xsi:type="instance:Description">NextLetterTileLogic Bottom Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#NextLetterTileLogic_type_bottomSig"/>
+            </types:interface>
+            <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#NextLetterTileLogic_type"/>
+        </types:component>
+        <types:component xsi:type="types:Component" types:id="WellArtist">
+            <types:description xsi:type="instance:Description">WellArtist</types:description>
+            <types:interface xsi:type="types:Interface" types:id="WellArtist.IFACE_TOP">
+                <types:description xsi:type="instance:Description">WellArtist Top Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#WellArtist_type_topSig"/>
+            </types:interface>
+            <types:interface xsi:type="types:Interface" types:id="WellArtist.IFACE_BOTTOM">
+                <types:description xsi:type="instance:Description">WellArtist Bottom Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#WellArtist_type_bottomSig"/>
+            </types:interface>
+            <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#WellArtist_type"/>
+        </types:component>
+        <types:component xsi:type="types:Component" types:id="PaletteArtist">
+            <types:description xsi:type="instance:Description">PaletteArtist</types:description>
+            <types:interface xsi:type="types:Interface" types:id="PaletteArtist.IFACE_TOP">
+                <types:description xsi:type="instance:Description">PaletteArtist Top Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#PaletteArtist_type_topSig"/>
+            </types:interface>
+            <types:interface xsi:type="types:Interface" types:id="PaletteArtist.IFACE_BOTTOM">
+                <types:description xsi:type="instance:Description">PaletteArtist Bottom Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#PaletteArtist_type_bottomSig"/>
+            </types:interface>
+            <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#PaletteArtist_type"/>
+        </types:component>
+        <types:component xsi:type="types:Component" types:id="LetterTileArtist">
+            <types:description xsi:type="instance:Description">LetterTileArtist</types:description>
+            <types:interface xsi:type="types:Interface" types:id="LetterTileArtist.IFACE_TOP">
+                <types:description xsi:type="instance:Description">LetterTileArtist Top Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#LetterTileArtist_type_topSig"/>
+            </types:interface>
+            <types:interface xsi:type="types:Interface" types:id="LetterTileArtist.IFACE_BOTTOM">
+                <types:description xsi:type="instance:Description">LetterTileArtist Bottom Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#LetterTileArtist_type_bottomSig"/>
+            </types:interface>
+            <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#LetterTileArtist_type"/>
+        </types:component>
+        <types:component xsi:type="types:Component" types:id="ChuteArtist">
+            <types:description xsi:type="instance:Description">ChuteArtist</types:description>
+            <types:interface xsi:type="types:Interface" types:id="ChuteArtist.IFACE_TOP">
+                <types:description xsi:type="instance:Description">ChuteArtist Top Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#ChuteArtist_type_topSig"/>
+            </types:interface>
+            <types:interface xsi:type="types:Interface" types:id="ChuteArtist.IFACE_BOTTOM">
+                <types:description xsi:type="instance:Description">ChuteArtist Bottom Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#ChuteArtist_type_bottomSig"/>
+            </types:interface>
+            <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#ChuteArtist_type"/>
+        </types:component>
+        <types:component xsi:type="types:Component" types:id="StatusArtist">
+            <types:description xsi:type="instance:Description">StatusArtist</types:description>
+            <types:interface xsi:type="types:Interface" types:id="StatusArtist.IFACE_TOP">
+                <types:description xsi:type="instance:Description">StatusArtist Top Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#StatusArtist_type_topSig"/>
+            </types:interface>
+            <types:interface xsi:type="types:Interface" types:id="StatusArtist.IFACE_BOTTOM">
+                <types:description xsi:type="instance:Description">StatusArtist Bottom Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#StatusArtist_type_bottomSig"/>
+            </types:interface>
+            <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#StatusArtist_type"/>
+        </types:component>
+        <types:component xsi:type="types:Component" types:id="LayoutManager">
+            <types:description xsi:type="instance:Description">LayoutManager</types:description>
+            <types:interface xsi:type="types:Interface" types:id="LayoutManager.IFACE_TOP">
+                <types:description xsi:type="instance:Description">LayoutManager Top Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#LayoutManager_type_topSig"/>
+            </types:interface>
+            <types:interface xsi:type="types:Interface" types:id="LayoutManager.IFACE_BOTTOM">
+                <types:description xsi:type="instance:Description">LayoutManager Bottom Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#LayoutManager_type_bottomSig"/>
+            </types:interface>
+            <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#LayoutManager_type"/>
+        </types:component>
+        <types:component xsi:type="types:Component" types:id="GraphicsBinding">
+            <types:description xsi:type="instance:Description">GraphicsBinding</types:description>
+            <types:interface xsi:type="types:Interface" types:id="GraphicsBinding.IFACE_TOP">
+                <types:description xsi:type="instance:Description">GraphicsBinding Top Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#GraphicsBinding_type_topSig"/>
+            </types:interface>
+            <types:interface xsi:type="types:Interface" types:id="GraphicsBinding.IFACE_BOTTOM">
+                <types:description xsi:type="instance:Description">GraphicsBinding Bottom Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#GraphicsBinding_type_bottomSig"/>
+            </types:interface>
+            <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#GraphicsBinding_type"/>
+        </types:component>
+        <types:connector xsi:type="types:Connector" types:id="Bus1">
+            <types:description xsi:type="instance:Description">Bus1</types:description>
+            <types:interface xsi:type="types:Interface" types:id="Bus1.IFACE_TOP">
+                <types:description xsi:type="instance:Description">Bus1 Top Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#BusConnector_type_topSig"/>
+            </types:interface>
+            <types:interface xsi:type="types:Interface" types:id="Bus1.IFACE_BOTTOM">
+                <types:description xsi:type="instance:Description">Bus1 Bottom Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#BusConnector_type_bottomSig"/>
+            </types:interface>
+            <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#BusConnector_type"/>
+        </types:connector>
+        <types:connector xsi:type="types:Connector" types:id="Bus2">
+            <types:description xsi:type="instance:Description">Bus2</types:description>
+            <types:interface xsi:type="types:Interface" types:id="Bus2.IFACE_TOP">
+                <types:description xsi:type="instance:Description">Bus2 Top Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#BusConnector_type_topSig"/>
+            </types:interface>
+            <types:interface xsi:type="types:Interface" types:id="Bus2.IFACE_BOTTOM">
+                <types:description xsi:type="instance:Description">Bus2 Bottom Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#BusConnector_type_bottomSig"/>
+            </types:interface>
+            <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#BusConnector_type"/>
+        </types:connector>
+        <types:connector xsi:type="types:Connector" types:id="Bus3">
+            <types:description xsi:type="instance:Description">Bus3</types:description>
+            <types:interface xsi:type="types:Interface" types:id="Bus3.IFACE_TOP">
+                <types:description xsi:type="instance:Description">Bus3 Top Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#BusConnector_type_topSig"/>
+            </types:interface>
+            <types:interface xsi:type="types:Interface" types:id="Bus3.IFACE_BOTTOM">
+                <types:description xsi:type="instance:Description">Bus3 Bottom Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#BusConnector_type_bottomSig"/>
+            </types:interface>
+            <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#BusConnector_type"/>
+        </types:connector>
+        <types:connector xsi:type="types:Connector" types:id="Bus4">
+            <types:description xsi:type="instance:Description">Bus4</types:description>
+            <types:interface xsi:type="types:Interface" types:id="Bus4.IFACE_TOP">
+                <types:description xsi:type="instance:Description">Bus4 Top Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#BusConnector_type_topSig"/>
+            </types:interface>
+            <types:interface xsi:type="types:Interface" types:id="Bus4.IFACE_BOTTOM">
+                <types:description xsi:type="instance:Description">Bus4 Bottom Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#BusConnector_type_bottomSig"/>
+            </types:interface>
+            <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#BusConnector_type"/>
+        </types:connector>
+        <types:connector xsi:type="types:Connector" types:id="Bus5">
+            <types:description xsi:type="instance:Description">Bus5</types:description>
+            <types:interface xsi:type="types:Interface" types:id="Bus5.IFACE_TOP">
+                <types:description xsi:type="instance:Description">Bus5 Top Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#BusConnector_type_topSig"/>
+            </types:interface>
+            <types:interface xsi:type="types:Interface" types:id="Bus5.IFACE_BOTTOM">
+                <types:description xsi:type="instance:Description">Bus5 Bottom Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#BusConnector_type_bottomSig"/>
+            </types:interface>
+            <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#BusConnector_type"/>
+        </types:connector>
+        <types:connector xsi:type="types:Connector" types:id="Bus6">
+            <types:description xsi:type="instance:Description">Bus6</types:description>
+            <types:interface xsi:type="types:Interface" types:id="Bus6.IFACE_TOP">
+                <types:description xsi:type="instance:Description">Bus6 Top Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#BusConnector_type_topSig"/>
+            </types:interface>
+            <types:interface xsi:type="types:Interface" types:id="Bus6.IFACE_BOTTOM">
+                <types:description xsi:type="instance:Description">Bus6 Bottom Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+                <types:signature xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#BusConnector_type_bottomSig"/>
+            </types:interface>
+            <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#BusConnector_type"/>
+        </types:connector>
+        <types:link xsi:type="types:Link" types:id="ClockComponent_to_Bus1">
+            <types:description xsi:type="instance:Description">ClockComponent to Bus1 Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#ClockComponent.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#Bus1.IFACE_TOP"/>
+            </types:point>
+        </types:link>
+        <types:link xsi:type="types:Link" types:id="ChuteComponent_to_Bus1">
+            <types:description xsi:type="instance:Description">ChuteComponent to Bus1 Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#ChuteComponent.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#Bus1.IFACE_TOP"/>
+            </types:point>
+        </types:link>
+        <types:link xsi:type="types:Link" types:id="PaletteComponent_to_Bus1">
+            <types:description xsi:type="instance:Description">PaletteComponent to Bus1 Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#PaletteComponent.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#Bus1.IFACE_TOP"/>
+            </types:point>
+        </types:link>
+        <types:link xsi:type="types:Link" types:id="WellComponent_to_Bus1">
+            <types:description xsi:type="instance:Description">WellComponent to Bus1 Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#WellComponent.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#Bus1.IFACE_TOP"/>
+            </types:point>
+        </types:link>
+        <types:link xsi:type="types:Link" types:id="StatusComponent_to_Bus1">
+            <types:description xsi:type="instance:Description">StatusComponent to Bus1 Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#StatusComponent.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#Bus1.IFACE_TOP"/>
+            </types:point>
+        </types:link>
+        <types:link xsi:type="types:Link" types:id="Bus1_to_NextLetterTileLogic">
+            <types:description xsi:type="instance:Description">Bus1 to NextLetterTileLogic Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#Bus1.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#NextLetterTileLogic.IFACE_TOP"/>
+            </types:point>
+        </types:link>
+        <types:link xsi:type="types:Link" types:id="Bus1_to_RelativePositionLogic">
+            <types:description xsi:type="instance:Description">Bus1 to RelativePositionLogic Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#Bus1.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#RelativePositionLogic.IFACE_TOP"/>
+            </types:point>
+        </types:link>
+        <types:link xsi:type="types:Link" types:id="Bus1_to_Bus2">
+            <types:description xsi:type="instance:Description">Bus1 to Bus2 Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#Bus1.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#Bus2.IFACE_TOP"/>
+            </types:point>
+        </types:link>
+        <types:link xsi:type="types:Link" types:id="Bus1_to_Bus3">
+            <types:description xsi:type="instance:Description">Bus1 to Bus3 Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#Bus1.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#Bus3.IFACE_TOP"/>
+            </types:point>
+        </types:link>
+        <types:link xsi:type="types:Link" types:id="Bus1_to_SpellingMatchingLogic">
+            <types:description xsi:type="instance:Description">Bus1 to SpellingMatchingLogic Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#Bus1.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#SpellingMatchingLogic.IFACE_TOP"/>
+            </types:point>
+        </types:link>
+        <types:link xsi:type="types:Link" types:id="SpellingMatchingLogic_to_Bus2">
+            <types:description xsi:type="instance:Description">SpellingMatchingLogic to Bus2 Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#SpellingMatchingLogic.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#Bus2.IFACE_TOP"/>
+            </types:point>
+        </types:link>
+        <types:link xsi:type="types:Link" types:id="RelativePositionLogic_to_Bus2">
+            <types:description xsi:type="instance:Description">RelativePositionLogic to Bus2 Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#RelativePositionLogic.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#Bus2.IFACE_TOP"/>
+            </types:point>
+        </types:link>
+        <types:link xsi:type="types:Link" types:id="Bus2_to_StatusLogic">
+            <types:description xsi:type="instance:Description">Bus2 to StatusLogic Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#Bus2.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#StatusLogic.IFACE_TOP"/>
+            </types:point>
+        </types:link>
+        <types:link xsi:type="types:Link" types:id="Bus3_to_WellArtist">
+            <types:description xsi:type="instance:Description">Bus3 to WellArtist Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#Bus3.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#WellArtist.IFACE_TOP"/>
+            </types:point>
+        </types:link>
+        <types:link xsi:type="types:Link" types:id="Bus3_to_ChuteArtist">
+            <types:description xsi:type="instance:Description">Bus3 to ChuteArtist Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#Bus3.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#ChuteArtist.IFACE_TOP"/>
+            </types:point>
+        </types:link>
+        <types:link xsi:type="types:Link" types:id="Bus3_to_PaletteArtist">
+            <types:description xsi:type="instance:Description">Bus3 to PaletteArtist Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#Bus3.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#PaletteArtist.IFACE_TOP"/>
+            </types:point>
+        </types:link>
+        <types:link xsi:type="types:Link" types:id="Bus3_to_StatusArtist">
+            <types:description xsi:type="instance:Description">Bus3 to StatusArtist Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#Bus3.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#StatusArtist.IFACE_TOP"/>
+            </types:point>
+        </types:link>
+        <types:link xsi:type="types:Link" types:id="WellArtist_to_Bus4">
+            <types:description xsi:type="instance:Description">WellArtist to Bus4 Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#WellArtist.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#Bus4.IFACE_TOP"/>
+            </types:point>
+        </types:link>
+        <types:link xsi:type="types:Link" types:id="ChuteArtist_to_Bus4">
+            <types:description xsi:type="instance:Description">ChuteArtist to Bus4 Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#ChuteArtist.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#Bus4.IFACE_TOP"/>
+            </types:point>
+        </types:link>
+        <types:link xsi:type="types:Link" types:id="PaletteArtist_to_Bus4">
+            <types:description xsi:type="instance:Description">PaletteArtist to Bus4 Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#PaletteArtist.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#Bus4.IFACE_TOP"/>
+            </types:point>
+        </types:link>
+        <types:link xsi:type="types:Link" types:id="StatusArtist_to_Bus4">
+            <types:description xsi:type="instance:Description">StatusArtist to Bus4 Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#StatusArtist.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#Bus4.IFACE_TOP"/>
+            </types:point>
+        </types:link>
+        <types:link xsi:type="types:Link" types:id="Bus4_to_Bus5">
+            <types:description xsi:type="instance:Description">Bus4 to Bus5 Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#Bus4.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#Bus5.IFACE_TOP"/>
+            </types:point>
+        </types:link>
+        <types:link xsi:type="types:Link" types:id="Bus4_to_LetterTileArtist">
+            <types:description xsi:type="instance:Description">Bus4 to LetterTileArtist Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#Bus4.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#LetterTileArtist.IFACE_TOP"/>
+            </types:point>
+        </types:link>
+        <types:link xsi:type="types:Link" types:id="LetterTileArtist_to_Bus5">
+            <types:description xsi:type="instance:Description">LetterTileArtist to Bus5 Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#LetterTileArtist.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#Bus5.IFACE_TOP"/>
+            </types:point>
+        </types:link>
+        <types:link xsi:type="types:Link" types:id="Bus5_to_LayoutManager">
+            <types:description xsi:type="instance:Description">Bus5 to LayoutManager Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#Bus5.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#LayoutManager.IFACE_TOP"/>
+            </types:point>
+        </types:link>
+        <types:link xsi:type="types:Link" types:id="LayoutManager_to_Bus6">
+            <types:description xsi:type="instance:Description">LayoutManager to Bus6 Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#LayoutManager.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#Bus6.IFACE_TOP"/>
+            </types:point>
+        </types:link>
+        <types:link xsi:type="types:Link" types:id="Bus6_to_GraphicsBinding">
+            <types:description xsi:type="instance:Description">Bus6 to GraphicsBinding Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#Bus6.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#GraphicsBinding.IFACE_TOP"/>
+            </types:point>
+        </types:link>
+    </types:archStructure>
+    <types:archTypes xsi:type="types:ArchTypes">
+        <types:componentType xsi:type="implementation:VariantComponentTypeImpl" types:id="ClockComponent_type">
+            <types:description xsi:type="instance:Description">Clock Component Type</types:description>
+            <types:signature xsi:type="types:Signature" types:id="ClockComponent_type_topSig">
+                <types:description xsi:type="instance:Description">ClockComponent_type_topSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature" types:id="ClockComponent_type_bottomSig">
+                <types:description xsi:type="instance:Description">ClockComponent_type_bottomSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+            </types:signature>
+            <implementation:implementation xsi:type="javaimplementation:JavaImplementation">
+                <javaimplementation:mainClass xsi:type="javaimplementation:JavaClassFile">
+                    <javaimplementation:javaClassName xsi:type="javaimplementation:JavaClassName">c2demo.klax.ClockComponent</javaimplementation:javaClassName>
+                </javaimplementation:mainClass>
+            </implementation:implementation>
+        </types:componentType>
+        <types:componentType xsi:type="implementation:VariantComponentTypeImpl" types:id="StatusComponent_type">
+            <types:description xsi:type="instance:Description">Status Component Type</types:description>
+            <types:signature xsi:type="types:Signature" types:id="StatusComponent_type_topSig">
+                <types:description xsi:type="instance:Description">StatusComponent_type_topSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature" types:id="StatusComponent_type_bottomSig">
+                <types:description xsi:type="instance:Description">StatusComponent_type_bottomSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+            </types:signature>
+            <implementation:implementation xsi:type="javaimplementation:JavaImplementation">
+                <javaimplementation:mainClass xsi:type="javaimplementation:JavaClassFile">
+                    <javaimplementation:javaClassName xsi:type="javaimplementation:JavaClassName">c2demo.klax.StatusComponent</javaimplementation:javaClassName>
+                </javaimplementation:mainClass>
+            </implementation:implementation>
+        </types:componentType>
+        <types:componentType xsi:type="implementation:VariantComponentTypeImpl" types:id="RelativePositionLogic_type">
+            <types:description xsi:type="instance:Description">Relative Position Logic Type</types:description>
+            <types:signature xsi:type="types:Signature" types:id="RelativePositionLogic_type_topSig">
+                <types:description xsi:type="instance:Description">RelativePositionLogic_type_topSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature" types:id="RelativePositionLogic_type_bottomSig">
+                <types:description xsi:type="instance:Description">RelativePositionLogic_type_bottomSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+            </types:signature>
+            <implementation:implementation xsi:type="javaimplementation:JavaImplementation">
+                <javaimplementation:mainClass xsi:type="javaimplementation:JavaClassFile">
+                    <javaimplementation:javaClassName xsi:type="javaimplementation:JavaClassName">c2demo.klax.RelativePositionLogic</javaimplementation:javaClassName>
+                </javaimplementation:mainClass>
+            </implementation:implementation>
+        </types:componentType>
+        <types:componentType xsi:type="implementation:VariantComponentTypeImpl" types:id="WellComponent_type">
+            <types:description xsi:type="instance:Description">Well Component Type</types:description>
+            <types:signature xsi:type="types:Signature" types:id="WellComponent_type_topSig">
+                <types:description xsi:type="instance:Description">WellComponent_type_topSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature" types:id="WellComponent_type_bottomSig">
+                <types:description xsi:type="instance:Description">WellComponent_type_bottomSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+            </types:signature>
+            <implementation:implementation xsi:type="javaimplementation:JavaImplementation">
+                <javaimplementation:mainClass xsi:type="javaimplementation:JavaClassFile">
+                    <javaimplementation:javaClassName xsi:type="javaimplementation:JavaClassName">c2demo.klax.WellComponent</javaimplementation:javaClassName>
+                </javaimplementation:mainClass>
+            </implementation:implementation>
+        </types:componentType>
+        <types:componentType xsi:type="implementation:VariantComponentTypeImpl" types:id="PaletteComponent_type">
+            <types:description xsi:type="instance:Description">Palette Component Type</types:description>
+            <types:signature xsi:type="types:Signature" types:id="PaletteComponent_type_topSig">
+                <types:description xsi:type="instance:Description">PaletteComponent_type_topSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature" types:id="PaletteComponent_type_bottomSig">
+                <types:description xsi:type="instance:Description">PaletteComponent_type_bottomSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+            </types:signature>
+            <implementation:implementation xsi:type="javaimplementation:JavaImplementation">
+                <javaimplementation:mainClass xsi:type="javaimplementation:JavaClassFile">
+                    <javaimplementation:javaClassName xsi:type="javaimplementation:JavaClassName">c2demo.klax.PaletteComponent</javaimplementation:javaClassName>
+                </javaimplementation:mainClass>
+            </implementation:implementation>
+        </types:componentType>
+        <types:componentType xsi:type="implementation:VariantComponentTypeImpl" types:id="ChuteComponent_type">
+            <types:description xsi:type="instance:Description">Chute Component Type</types:description>
+            <types:signature xsi:type="types:Signature" types:id="ChuteComponent_type_topSig">
+                <types:description xsi:type="instance:Description">ChuteComponent_type_topSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature" types:id="ChuteComponent_type_bottomSig">
+                <types:description xsi:type="instance:Description">ChuteComponent_type_bottomSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+            </types:signature>
+            <implementation:implementation xsi:type="javaimplementation:JavaImplementation">
+                <javaimplementation:mainClass xsi:type="javaimplementation:JavaClassFile">
+                    <javaimplementation:javaClassName xsi:type="javaimplementation:JavaClassName">c2demo.klax.ChuteComponent</javaimplementation:javaClassName>
+                </javaimplementation:mainClass>
+            </implementation:implementation>
+        </types:componentType>
+        <types:componentType xsi:type="implementation:VariantComponentTypeImpl" types:id="SpellingMatchingLogic_type">
+            <types:description xsi:type="instance:Description">SpellingMatching Logic Type</types:description>
+            <types:signature xsi:type="types:Signature" types:id="SpellingMatchingLogic_type_topSig">
+                <types:description xsi:type="instance:Description">SpellingMatchingLogic_type_topSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature" types:id="SpellingMatchingLogic_type_bottomSig">
+                <types:description xsi:type="instance:Description">SpellingMatchingLogic_type_bottomSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+            </types:signature>
+            <implementation:implementation xsi:type="javaimplementation:JavaImplementation">
+                <javaimplementation:mainClass xsi:type="javaimplementation:JavaClassFile">
+                    <javaimplementation:javaClassName xsi:type="javaimplementation:JavaClassName">c2demo.klax.SpellingMatchingLogic</javaimplementation:javaClassName>
+                </javaimplementation:mainClass>
+            </implementation:implementation>
+        </types:componentType>
+        <types:componentType xsi:type="implementation:VariantComponentTypeImpl" types:id="StatusLogic_type">
+            <types:description xsi:type="instance:Description">Status Logic Type</types:description>
+            <types:signature xsi:type="types:Signature" types:id="StatusLogic_type_topSig">
+                <types:description xsi:type="instance:Description">StatusLogic_type_topSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature" types:id="StatusLogic_type_bottomSig">
+                <types:description xsi:type="instance:Description">StatusLogic_type_bottomSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+            </types:signature>
+            <implementation:implementation xsi:type="javaimplementation:JavaImplementation">
+                <javaimplementation:mainClass xsi:type="javaimplementation:JavaClassFile">
+                    <javaimplementation:javaClassName xsi:type="javaimplementation:JavaClassName">c2demo.klax.StatusLogic</javaimplementation:javaClassName>
+                </javaimplementation:mainClass>
+            </implementation:implementation>
+        </types:componentType>
+        <types:componentType xsi:type="implementation:VariantComponentTypeImpl" types:id="NextLetterTileLogic_type">
+            <types:description xsi:type="instance:Description">Next Letter Tile Logic Type</types:description>
+            <types:signature xsi:type="types:Signature" types:id="NextLetterTileLogic_type_topSig">
+                <types:description xsi:type="instance:Description">NextLetterTileLogic_type_topSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature" types:id="NextLetterTileLogic_type_bottomSig">
+                <types:description xsi:type="instance:Description">NextLetterTileLogic_type_bottomSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+            </types:signature>
+            <implementation:implementation xsi:type="javaimplementation:JavaImplementation">
+                <javaimplementation:mainClass xsi:type="javaimplementation:JavaClassFile">
+                    <javaimplementation:javaClassName xsi:type="javaimplementation:JavaClassName">c2demo.klax.NextLetterTileLogic</javaimplementation:javaClassName>
+                </javaimplementation:mainClass>
+            </implementation:implementation>
+        </types:componentType>
+        <types:componentType xsi:type="implementation:VariantComponentTypeImpl" types:id="WellArtist_type">
+            <types:description xsi:type="instance:Description">Well Artist Type</types:description>
+            <types:signature xsi:type="types:Signature" types:id="WellArtist_type_topSig">
+                <types:description xsi:type="instance:Description">WellArtist_type_topSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature" types:id="WellArtist_type_bottomSig">
+                <types:description xsi:type="instance:Description">WellArtist_type_bottomSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+            </types:signature>
+            <implementation:implementation xsi:type="javaimplementation:JavaImplementation">
+                <javaimplementation:mainClass xsi:type="javaimplementation:JavaClassFile">
+                    <javaimplementation:javaClassName xsi:type="javaimplementation:JavaClassName">c2demo.klax.WellArtist</javaimplementation:javaClassName>
+                </javaimplementation:mainClass>
+            </implementation:implementation>
+        </types:componentType>
+        <types:componentType xsi:type="implementation:VariantComponentTypeImpl" types:id="PaletteArtist_type">
+            <types:description xsi:type="instance:Description">Palette Artist Type</types:description>
+            <types:signature xsi:type="types:Signature" types:id="PaletteArtist_type_topSig">
+                <types:description xsi:type="instance:Description">PaletteArtist_type_topSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature" types:id="PaletteArtist_type_bottomSig">
+                <types:description xsi:type="instance:Description">PaletteArtist_type_bottomSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+            </types:signature>
+            <implementation:implementation xsi:type="javaimplementation:JavaImplementation">
+                <javaimplementation:mainClass xsi:type="javaimplementation:JavaClassFile">
+                    <javaimplementation:javaClassName xsi:type="javaimplementation:JavaClassName">c2demo.klax.PaletteArtist</javaimplementation:javaClassName>
+                </javaimplementation:mainClass>
+            </implementation:implementation>
+        </types:componentType>
+        <types:componentType xsi:type="implementation:VariantComponentTypeImpl" types:id="LetterTileArtist_type">
+            <types:description xsi:type="instance:Description">Letter Tile Artist Type</types:description>
+            <types:signature xsi:type="types:Signature" types:id="LetterTileArtist_type_topSig">
+                <types:description xsi:type="instance:Description">LetterTileArtist_type_topSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature" types:id="LetterTileArtist_type_bottomSig">
+                <types:description xsi:type="instance:Description">LetterTileArtist_type_bottomSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+            </types:signature>
+            <implementation:implementation xsi:type="javaimplementation:JavaImplementation">
+                <javaimplementation:mainClass xsi:type="javaimplementation:JavaClassFile">
+                    <javaimplementation:javaClassName xsi:type="javaimplementation:JavaClassName">c2demo.klax.LetterTileArtist</javaimplementation:javaClassName>
+                </javaimplementation:mainClass>
+            </implementation:implementation>
+        </types:componentType>
+        <types:componentType xsi:type="implementation:VariantComponentTypeImpl" types:id="ChuteArtist_type">
+            <types:description xsi:type="instance:Description">Chute Artist Type</types:description>
+            <types:signature xsi:type="types:Signature" types:id="ChuteArtist_type_topSig">
+                <types:description xsi:type="instance:Description">ChuteArtist_type_topSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature" types:id="ChuteArtist_type_bottomSig">
+                <types:description xsi:type="instance:Description">ChuteArtist_type_bottomSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+            </types:signature>
+            <implementation:implementation xsi:type="javaimplementation:JavaImplementation">
+                <javaimplementation:mainClass xsi:type="javaimplementation:JavaClassFile">
+                    <javaimplementation:javaClassName xsi:type="javaimplementation:JavaClassName">c2demo.klax.ChuteArtist</javaimplementation:javaClassName>
+                </javaimplementation:mainClass>
+            </implementation:implementation>
+        </types:componentType>
+        <types:componentType xsi:type="implementation:VariantComponentTypeImpl" types:id="StatusArtist_type">
+            <types:description xsi:type="instance:Description">Status Artist Type</types:description>
+            <types:signature xsi:type="types:Signature" types:id="StatusArtist_type_topSig">
+                <types:description xsi:type="instance:Description">StatusArtist_type_topSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature" types:id="StatusArtist_type_bottomSig">
+                <types:description xsi:type="instance:Description">StatusArtist_type_bottomSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+            </types:signature>
+            <implementation:implementation xsi:type="javaimplementation:JavaImplementation">
+                <javaimplementation:mainClass xsi:type="javaimplementation:JavaClassFile">
+                    <javaimplementation:javaClassName xsi:type="javaimplementation:JavaClassName">c2demo.klax.StatusArtist</javaimplementation:javaClassName>
+                </javaimplementation:mainClass>
+            </implementation:implementation>
+        </types:componentType>
+        <types:componentType xsi:type="implementation:VariantComponentTypeImpl" types:id="LayoutManager_type">
+            <types:description xsi:type="instance:Description">Layout Manager Type</types:description>
+            <types:signature xsi:type="types:Signature" types:id="LayoutManager_type_topSig">
+                <types:description xsi:type="instance:Description">LayoutManager_type_topSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature" types:id="LayoutManager_type_bottomSig">
+                <types:description xsi:type="instance:Description">LayoutManager_type_bottomSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+            </types:signature>
+            <implementation:implementation xsi:type="javaimplementation:JavaImplementation">
+                <javaimplementation:mainClass xsi:type="javaimplementation:JavaClassFile">
+                    <javaimplementation:javaClassName xsi:type="javaimplementation:JavaClassName">c2demo.klax.LayoutManager</javaimplementation:javaClassName>
+                </javaimplementation:mainClass>
+            </implementation:implementation>
+        </types:componentType>
+        <types:componentType xsi:type="implementation:VariantComponentTypeImpl" types:id="GraphicsBinding_type">
+            <types:description xsi:type="instance:Description">Graphics Binding Type</types:description>
+            <types:signature xsi:type="types:Signature" types:id="GraphicsBinding_type_topSig">
+                <types:description xsi:type="instance:Description">GraphicsBinding_type_topSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature" types:id="GraphicsBinding_type_bottomSig">
+                <types:description xsi:type="instance:Description">GraphicsBinding_type_bottomSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+            </types:signature>
+            <implementation:implementation xsi:type="javaimplementation:JavaImplementation">
+                <javaimplementation:mainClass xsi:type="javaimplementation:JavaClassFile">
+                    <javaimplementation:javaClassName xsi:type="javaimplementation:JavaClassName">c2demo.comp.graphics.GraphicsBinding</javaimplementation:javaClassName>
+                </javaimplementation:mainClass>
+            </implementation:implementation>
+        </types:componentType>
+        <types:connectorType xsi:type="implementation:VariantConnectorTypeImpl" types:id="BusConnector_type">
+            <types:description xsi:type="instance:Description">Bus Connector Type</types:description>
+            <types:signature xsi:type="types:Signature" types:id="BusConnector_type_topSig">
+                <types:description xsi:type="instance:Description">BusConnector_type_topSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature" types:id="BusConnector_type_bottomSig">
+                <types:description xsi:type="instance:Description">BusConnector_type_bottomSig</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+            </types:signature>
+            <implementation:implementation xsi:type="javaimplementation:JavaImplementation">
+                <javaimplementation:mainClass xsi:type="javaimplementation:JavaClassFile">
+                    <javaimplementation:javaClassName xsi:type="javaimplementation:JavaClassName">c2.legacy.conn.BusConnector</javaimplementation:javaClassName>
+                </javaimplementation:mainClass>
+            </implementation:implementation>
+        </types:connectorType>
+        <types:interfaceType xsi:type="implementation:InterfaceTypeImpl" types:id="C2TopType">
+            <types:description xsi:type="instance:Description">C2 Top Interface</types:description>
+            <implementation:implementation xsi:type="javaimplementation:JavaImplementation">
+                <javaimplementation:mainClass xsi:type="javaimplementation:JavaClassFile">
+                    <javaimplementation:javaClassName xsi:type="javaimplementation:JavaClassName">c2.fw.SimpleInterface</javaimplementation:javaClassName>
+                </javaimplementation:mainClass>
+            </implementation:implementation>
+            <implementation:implementation xsi:type="lookupimplementation:LookupImplementation">
+                <lookupimplementation:name xsi:type="lookupimplementation:LookupName">IFACE_TOP</lookupimplementation:name>
+            </implementation:implementation>
+        </types:interfaceType>
+        <types:interfaceType xsi:type="implementation:InterfaceTypeImpl" types:id="C2BottomType">
+            <types:description xsi:type="instance:Description">C2 Bottom Interface</types:description>
+            <implementation:implementation xsi:type="javaimplementation:JavaImplementation">
+                <javaimplementation:mainClass xsi:type="javaimplementation:JavaClassFile">
+                    <javaimplementation:javaClassName xsi:type="javaimplementation:JavaClassName">c2.fw.SimpleInterface</javaimplementation:javaClassName>
+                </javaimplementation:mainClass>
+            </implementation:implementation>
+            <implementation:implementation xsi:type="lookupimplementation:LookupImplementation">
+                <lookupimplementation:name xsi:type="lookupimplementation:LookupName">IFACE_BOTTOM</lookupimplementation:name>
+            </implementation:implementation>
+        </types:interfaceType>
+    </types:archTypes>
+</instance:xArch>
+

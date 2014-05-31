@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance:xArch xsi:schemaLocation="http://www.ics.uci.edu/pub/arch/xArch/diff.xsd http://www.isr.uci.edu/projects/xarchuci/ext/diff.xsd" xmlns:types="http://www.ics.uci.edu/pub/arch/xArch/types.xsd" xmlns:implementation="http://www.ics.uci.edu/pub/arch/xArch/implementation.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diff="http://www.ics.uci.edu/pub/arch/xArch/diff.xsd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:javaimplementation="http://www.ics.uci.edu/pub/arch/xArch/javaimplementation.xsd" xmlns:instance="http://www.ics.uci.edu/pub/arch/xArch/instance.xsd">
+    <diff:diff xsi:type="diff:Diff">
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:add xsi:type="diff:Add">
+                <diff:component xsi:type="types:Component" types:id="StatusMonitorComponent">
+            <types:description xsi:type="instance:Description">Status Monitor Component</types:description>
+            <types:interface xsi:type="types:Interface" types:id="StatusMonitorComponent.IFACE_TOP">
+                <types:description xsi:type="instance:Description">Status Monitor Component Top Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+            </types:interface>
+            <types:interface xsi:type="types:Interface" types:id="StatusMonitorComponent.IFACE_BOTTOM">
+                <types:description xsi:type="instance:Description">Status Monitor Component Bottom Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+            </types:interface>
+            <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#StatusMonitorComponent_type"/>
+        </diff:component>
+            </diff:add>
+        </diff:diffPart>
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:add xsi:type="diff:Add">
+                <diff:connector xsi:type="types:Connector" types:id="StatusMonitorBus">
+            <types:description xsi:type="instance:Description">StatusMonitorBus</types:description>
+            <types:interface xsi:type="types:Interface" types:id="StatusMonitorBus.IFACE_TOP">
+                <types:description xsi:type="instance:Description">StatusMonitorBus Top Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+            </types:interface>
+            <types:interface xsi:type="types:Interface" types:id="StatusMonitorBus.IFACE_BOTTOM">
+                <types:description xsi:type="instance:Description">StatusMonitorBus Bottom Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+            </types:interface>
+            <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#BusConnector_type"/>
+        </diff:connector>
+            </diff:add>
+        </diff:diffPart>
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:add xsi:type="diff:Add">
+                <diff:link xsi:type="types:Link" types:id="SensorBus_to_StatusMonitorBus">
+            <types:description xsi:type="instance:Description">SensorBus to StatusMonitorBus Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#SensorBus.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#StatusMonitorBus.IFACE_TOP"/>
+            </types:point>
+        </diff:link>
+            </diff:add>
+        </diff:diffPart>
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:add xsi:type="diff:Add">
+                <diff:link xsi:type="types:Link" types:id="FusionBus_to_StatusMonitorBus">
+            <types:description xsi:type="instance:Description">FusionBus to StatusMonitorBus Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#FusionBus.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#StatusMonitorBus.IFACE_TOP"/>
+            </types:point>
+        </diff:link>
+            </diff:add>
+        </diff:diffPart>
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:add xsi:type="diff:Add">
+                <diff:link xsi:type="types:Link" types:id="StatusMonitorBus_to_StatusMonitorComponent">
+            <types:description xsi:type="instance:Description">StatusMonitorBus to StatusMonitorComponent Link</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#StatusMonitorBus.IFACE_BOTTOM"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#StatusMonitorComponent.IFACE_TOP"/>
+            </types:point>
+        </diff:link>
+            </diff:add>
+        </diff:diffPart>
+        <diff:diffPart xsi:type="diff:DiffPart">
+            <diff:add xsi:type="diff:Add">
+                <diff:componentType xsi:type="implementation:VariantComponentTypeImpl" types:id="StatusMonitorComponent_type">
+            <types:description xsi:type="instance:Description">Status Monitor Component Type</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2TopType"/>
+            </types:signature>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#C2BottomType"/>
+            </types:signature>
+            <implementation:implementation xsi:type="javaimplementation:JavaImplementation">
+                <javaimplementation:mainClass xsi:type="javaimplementation:JavaClassFile">
+                    <javaimplementation:javaClassName xsi:type="javaimplementation:JavaClassName">c2demo.nad.StatusMonitorC2Component</javaimplementation:javaClassName>
+                </javaimplementation:mainClass>
+            </implementation:implementation>
+        </diff:componentType>
+            </diff:add>
+        </diff:diffPart>
+    </diff:diff>
+</instance:xArch>
+

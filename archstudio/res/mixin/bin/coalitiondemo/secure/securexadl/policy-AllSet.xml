@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PolicySet 
+	xmlns="urn:oasis:names:tc:xacml:1.0:policy" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:oasis:names:tc:xacml:1.0:policy http://www.oasis-open.org/committees/download.php/915/cs-xacml-schema-policy-01.xsd" 
+	PolicySetId="xADLSampleSet"
+	PolicyCombiningAlgId="urn:oasis:names:tc:xacml:1.0:policy-combining-algorithm:ordered-permit-overrides">
+	<Description> 
+		The sample set of Secure xADL policies, referencing each individual policy.
+	</Description>
+	<Target>
+		<Subjects>
+			<AnySubject/>
+		</Subjects>
+		<Resources>
+			<AnyResource/>
+		</Resources>
+		<Actions>
+			<AnyAction/>
+		</Actions>
+	</Target>
+	<PolicyIdReference>file:///C:/Documents%20and%20Settings/Jie%20Ren/My%20Documents/My%20Research/workspace/securexadl/res/policy-AddBrick.xml</PolicyIdReference>
+	<PolicyIdReference>file:///C:/Documents%20and%20Settings/Jie%20Ren/My%20Documents/My%20Research/workspace/securexadl/res/policy-RemoveBrick.xml</PolicyIdReference>
+	<PolicyIdReference>file:///C:/Documents%20and%20Settings/Jie%20Ren/My%20Documents/My%20Research/workspace/securexadl/res/policy-AddWeld.xml</PolicyIdReference>
+	<PolicyIdReference>file:///C:/Documents%20and%20Settings/Jie%20Ren/My%20Documents/My%20Research/workspace/securexadl/res/policy-RemoveWeld.xml</PolicyIdReference>
+	<PolicyIdReference>file:///C:/Documents%20and%20Settings/Jie%20Ren/My%20Documents/My%20Research/workspace/securexadl/res/policy-RouteMessageExternalContent.xml</PolicyIdReference>
+	<PolicyIdReference>file:///C:/Documents%20and%20Settings/Jie%20Ren/My%20Documents/My%20Research/workspace/securexadl/res/policy-RouteMessageExternalInterface.xml</PolicyIdReference>
+	<PolicyIdReference>file:///C:/Documents%20and%20Settings/Jie%20Ren/My%20Documents/My%20Research/workspace/securexadl/res/policy-RouteMessageInternal.xml</PolicyIdReference>
+</PolicySet>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance:xArch xmlns:hints="http://www.ics.uci.edu/pub/arch/xArch/hints.xsd" xmlns:instance="http://www.ics.uci.edu/pub/arch/xArch/instance.xsd" xmlns:types="http://www.ics.uci.edu/pub/arch/xArch/types.xsd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ics.uci.edu/pub/arch/xArch/tronanalysis.xsd http://www.isr.uci.edu/projects/xarchuci/ext/tronanalysis.xsd http://www.ics.uci.edu/pub/arch/xArch/analysis.xsd http://www.isr.uci.edu/projects/xarchuci/ext/analysis.xsd http://www.ics.uci.edu/pub/arch/xArch/types.xsd http://www.isr.uci.edu/projects/xarchuci/ext/types.xsd http://www.ics.uci.edu/pub/arch/xArch/hints.xsd http://www.isr.uci.edu/projects/xarchuci/ext/hints.xsd">
+    <types:archStructure types:id="archStructure.Container" xsi:type="types:ArchStructure">
+        <types:description xsi:type="instance:Description">DCOM with Delegation</types:description>
+        <types:component types:id="Client" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">Client</types:description>
+            <types:interface types:id="Client-Callback" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Client-Callback</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:interface>
+            <types:interface types:id="Client-Out" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Client-Out</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+        </types:component>
+        <types:component types:id="Intermediate" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">Intermediate</types:description>
+            <types:interface types:id="Intermediate-In" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Intermediate-In</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:interface>
+            <types:interface types:id="Intermediate-Out" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Intermediate-Out</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+        </types:component>
+        <types:component types:id="Component" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">Component</types:description>
+            <types:interface types:id="Component-In" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Component-In</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:interface>
+            <types:interface types:id="Component-SourceInterface" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Coomponent-SourceInterface</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+        </types:component>
+        <types:connector types:id="DCOM1" xsi:type="types:Connector">
+            <types:description xsi:type="instance:Description">DCOM</types:description>
+            <types:interface types:id="DCOM1-Client" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">DCOM1-Client</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:interface>
+            <types:interface types:id="DCOM1-Component" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">DCOM1-Component</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+        </types:connector>
+        <types:connector types:id="DCOM2" xsi:type="types:Connector">
+            <types:description xsi:type="instance:Description">DCOM</types:description>
+            <types:interface types:id="DCOM2-Client" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">DCOM2-Client</types:description>
+                <types:direction xsi:type="instance:Direction">in</types:direction>
+            </types:interface>
+            <types:interface types:id="DCOM2-Component" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">DCOM2-Component</types:description>
+                <types:direction xsi:type="instance:Direction">out</types:direction>
+            </types:interface>
+        </types:connector>
+        <types:link types:id="link1" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">link1</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#Client-Out" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#DCOM1-Client" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="link2" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">link2</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#DCOM1-Component" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#Intermediate-In" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="link3" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">link3</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#Intermediate-Out" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#DCOM2-Client" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="link4" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">link4</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#DCOM2-Component" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#Component-In" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+    </types:archStructure>
+
+<hints:renderingHints xsi:type="hints:RenderingHints">
+        <hints:hints xsi:type="hints:Hints">
+            <hints:hintedThing xlink:href="#archStructure.Container" xsi:type="instance:XMLLink" xlink:type="simple"/>
+            <hints:propertyHint hints:name="allHints" xsi:type="hints:PropertyHint" hints:value="link1|numPoints:java.lang.Integer=INT2;link1|point0:java.awt.Point=POINT10114,10085;link1|point1:java.awt.Point=POINT10141,10124;link1|splineMode:java.lang.Integer=INT100;link1|color:java.awt.Color=COLOR-16777216;link2|numPoints:java.lang.Integer=INT2;link2|point0:java.awt.Point=POINT10241,10126;link2|point1:java.awt.Point=POINT10284,10176;link2|splineMode:java.lang.Integer=INT100;link2|color:java.awt.Color=COLOR-16777216;link3|numPoints:java.lang.Integer=INT2;link3|point0:java.awt.Point=POINT10339,10240;link3|point1:java.awt.Point=POINT10374,10294;link3|splineMode:java.lang.Integer=INT100;link3|color:java.awt.Color=COLOR-16777216;link4|numPoints:java.lang.Integer=INT2;link4|point0:java.awt.Point=POINT10474,10296;link4|point1:java.awt.Point=POINT10512,10340;link4|splineMode:java.lang.Integer=INT100;link4|color:java.awt.Color=COLOR-16777216;Client|boundingBox:java.awt.Rectangle=RECT10014,10028,100,100;Client|color:java.awt.Color=COLOR-3814401;Client-Callback|boundingBox:java.awt.Rectangle=RECT10109,10033,10,10;Client-Callback|orientation:java.lang.Integer=INT1010;Client-Out|boundingBox:java.awt.Rectangle=RECT10109,10080,10,10;Client-Out|orientation:java.lang.Integer=INT1010;Intermediate|boundingBox:java.awt.Rectangle=RECT10239,10176,100,100;Intermediate|color:java.awt.Color=COLOR-3814401;Intermediate-In|boundingBox:java.awt.Rectangle=RECT10279,10171,10,10;Intermediate-In|orientation:java.lang.Integer=INT1000;Intermediate-Out|boundingBox:java.awt.Rectangle=RECT10334,10235,10,10;Intermediate-Out|orientation:java.lang.Integer=INT1010;Component|boundingBox:java.awt.Rectangle=RECT10468,10340,100,100;Component|color:java.awt.Color=COLOR-3814401;Component-In|boundingBox:java.awt.Rectangle=RECT10507,10335,10,10;Component-In|orientation:java.lang.Integer=INT1000;Component-SourceInterface|boundingBox:java.awt.Rectangle=RECT10463,10387,10,10;Component-SourceInterface|orientation:java.lang.Integer=INT1030;DCOM1|boundingBox:java.awt.Rectangle=RECT10141,10104,100,44;DCOM1|color:java.awt.Color=COLOR-5441;DCOM1-Client|boundingBox:java.awt.Rectangle=RECT10136,10119,10,10;DCOM1-Client|orientation:java.lang.Integer=INT1030;DCOM1-Component|boundingBox:java.awt.Rectangle=RECT10236,10121,10,10;DCOM1-Component|orientation:java.lang.Integer=INT1010;DCOM2|boundingBox:java.awt.Rectangle=RECT10374,10275,100,43;DCOM2|color:java.awt.Color=COLOR-5441;DCOM2-Client|boundingBox:java.awt.Rectangle=RECT10369,10289,10,10;DCOM2-Client|orientation:java.lang.Integer=INT1030;DCOM2-Component|boundingBox:java.awt.Rectangle=RECT10469,10291,10,10;DCOM2-Component|orientation:java.lang.Integer=INT1010;archStructure.Container$$environmentProperties|__scale:java.lang.Double=DOU1.0;archStructure.Container$$environmentProperties|__worldOriginY:java.lang.Integer=INT10000;archStructure.Container$$environmentProperties|__worldOriginX:java.lang.Integer=INT10000;"/>
+        </hints:hints>
+        
+    </hints:renderingHints>
+</instance:xArch>

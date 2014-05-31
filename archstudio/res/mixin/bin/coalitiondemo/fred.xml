@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance:xArch
+    xmlns:implementation="http://www.ics.uci.edu/pub/arch/xArch/implementation.xsd"
+    xmlns:instance="http://www.ics.uci.edu/pub/arch/xArch/instance.xsd"
+    xmlns:javaimplementation="http://www.ics.uci.edu/pub/arch/xArch/javaimplementation.xsd"
+	xmlns:javainitparams="http://www.ics.uci.edu/pub/arch/xArch/javainitparams.xsd" 
+    xmlns:types="http://www.ics.uci.edu/pub/arch/xArch/types.xsd"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance" xsi:schemaLocation="http://www.ics.uci.edu/pub/arch/xArch/javaimplementation.xsd http://www.isr.uci.edu/projects/xarchuci/ext/javaimplementation.xsd http://www.ics.uci.edu/pub/arch/xArch/variants.xsd http://www.isr.uci.edu/projects/xarchuci/ext/variants.xsd http://www.ics.uci.edu/pub/arch/xArch/implementation.xsd http://www.isr.uci.edu/projects/xarchuci/ext/implementation.xsd http://www.ics.uci.edu/pub/arch/xArch/types.xsd http://www.isr.uci.edu/projects/xarchuci/ext/types.xsd http://www.ics.uci.edu/pub/arch/xArch/instance.xsd http://www.ics.uci.edu/pub/arch/xarch/schemas/instance.xsd http://www.ics.uci.edu/pub/arch/xArch/javainitparams.xsd http://www.isr.uci.edu/projects/xarchuci/ext/javainitparams.xsd">
+    <types:archTypes xsi:type="types:ArchTypes">
+        <types:componentType types:id="FredDriverComponent_type" xsi:type="implementation:VariantComponentTypeImpl">
+            <types:description xsi:type="instance:Description">Fred Driver</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Standard Event Based Interface"
+                    xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <implementation:implementation xsi:type="javaimplementation:JavaImplementation">
+                <javaimplementation:mainClass xsi:type="javaimplementation:JavaClassFile">
+                    <javaimplementation:javaClassName xsi:type="javaimplementation:JavaClassName">c2demo.fred.FredDriverComponent</javaimplementation:javaClassName>
+                </javaimplementation:mainClass>
+            </implementation:implementation>
+        </types:componentType>
+        <types:connectorType types:id="FredConnector_type" xsi:type="implementation:VariantConnectorTypeImpl">
+            <types:description xsi:type="instance:Description">Fred Connector</types:description>
+            <types:signature xsi:type="types:Signature">
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Standard Event Based Interface"
+                    xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:signature>
+            <implementation:implementation xsi:type="javaimplementation:JavaImplementation">
+                <javaimplementation:mainClass xsi:type="javainitparams:JavaClassFileParams">
+                    <javaimplementation:javaClassName xsi:type="javaimplementation:JavaClassName">c2.conn.fred.FredConnector</javaimplementation:javaClassName>
+					<javainitparams:initializationParameter javainitparams:name="host" xsi:type="javainitparams:InitializationParameter" javainitparams:value="127.0.0.1/-.-.-.*" /> 
+					<javainitparams:initializationParameter javainitparams:name="groupName" xsi:type="javainitparams:InitializationParameter" javainitparams:value="FRED" /> 
+                </javaimplementation:mainClass>
+            </implementation:implementation>
+        </types:connectorType>
+        <types:interfaceType types:id="Standard Event Based Interface" xsi:type="types:InterfaceType">
+            <types:description xsi:type="instance:Description"/>
+        </types:interfaceType>
+    </types:archTypes>
+    <types:archStructure types:id="freddemo" xsi:type="types:ArchStructure">
+        <types:description xsi:type="instance:Description">Fred Demo</types:description>
+        <types:component types:id="FredDriverComponent" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">Fred Driver</types:description>
+            <types:interface types:id="FredDriverComponent.IFACE_LOCAL" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Fred Driver
+                    Local Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Standard Event Based Interface"
+                    xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:interface>
+            <types:type xlink:href="#FredDriverComponent_type"
+                xlink:type="simple" xsi:type="instance:XMLLink"/>
+        </types:component>
+        <types:connector types:id="FredConnector" xsi:type="types:Connector">
+            <types:description xsi:type="instance:Description">Fred Connector</types:description>
+            <types:interface types:id="FredConnector.IFACE_LOCAL" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Fred
+                    Connector Interface</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+                <types:type xlink:href="#Standard Event Based Interface"
+                    xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:interface>
+            <types:type xlink:href="#FredConnector_type" xlink:type="simple" xsi:type="instance:XMLLink"/>
+        </types:connector>
+        <types:link types:id="link1" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">Link 1</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface
+                    xlink:href="#FredDriverComponent.IFACE_LOCAL"
+                    xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface
+                    xlink:href="#FredConnector.IFACE_LOCAL" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+    </types:archStructure>
+</instance:xArch>

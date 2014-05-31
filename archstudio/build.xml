@@ -1,0 +1,386 @@
+<?xml version="1.0"?>
+
+<!--
+  ######################################################################
+  #
+  # ISR Mighty Automated Build 2 (MAB2) Ant script
+  # Originally developed by Eric M. Dashofy, [edashofy@ics.uci.edu]
+  #
+  # For use with Apache Ant 1.6.2 or better
+  # http://jakarta.apache.org/ant/
+  #
+  # This script builds software in the ISR MAB2 style.  This is
+  # markedly different from the original MAB.  For assistance
+  # converting projects from MAB to MAB2, please contact
+  # Eric Dashofy [edashofy@ics.uci.edu]
+  #
+  # For documentation on how to use this script, please see the MAST2
+  # website at:
+  #
+  # http://www.isr.uci.edu/projects/mast2/
+  #
+  ######################################################################
+-->
+
+<!--
+  CHANGELOG:
+
+  2001-11-14 Eric M. Dashofy [edashofy@ics.uci.edu]:
+    - Initial development.
+-->
+
+<project name="mab-ant" default="build" basedir=".">
+
+  <property file="mab2build.properties"/>
+
+  <property name="project.debug"                  value="true"/>
+  <property name="project.debuglevel"             value="lines,vars,source"/>
+
+  <property name="project.src.dir"                value="src"/>
+  <property name="project.res.dir"                value="res"/>
+  <property name="project.res.dir.mixin"          value="${project.res.dir}/mixin"/>
+  <property name="project.res.dir.mixlibs"        value="${project.res.dir}/mixlibs"/>
+  
+  <property name="project.target.dir"             value="."/>
+  <property name="project.target.dir.build"       value="${project.target.dir}/build"/>
+  <property name="project.target.dir.doc"         value="${project.target.dir}/doc"/>
+  <property name="project.target.dir.doc.javadoc" value="${project.target.dir}/doc/apiDocs"/>
+  <property name="project.target.dir.lib"         value="${project.target.dir}/lib"/>
+  <property name="project.target.jarfile"         value="${project.target.dir}/lib/${project.name}.jar"/>
+  <property name="project.target.buildinfofile"   value="${project.target.dir}/buildinfo.properties"/>
+  <property name="project.target.dir.wrk"         value="${project.target.dir}/.wrk"/>
+
+  <property name="project.target.versionfile"     value="${project.target.dir.build}/${project.name}.version"/>
+  
+  <available property="project.src.mixlibs.available"
+             file="${project.res.dir.mixlibs}"/>
+  <available property="project.src.mixin.available"
+             file="${project.res.dir.mixin}"/>
+
+  <target name="projectNameCheck" unless="project.name">
+    <fail message="Required property project.name not specified."/>
+  </target>
+
+  <target name="projectLongNameCheck" unless="project.longname">
+    <fail message="Required property project.longname not specified."/>
+  </target>
+
+  <target name="topLevelPackagesCheck" unless="project.toplevelpackages">
+    <fail message="Required property project.toplevelpackages not specified."/>
+  </target>
+
+  <target name="propertycheck" depends="projectNameCheck,projectLongNameCheck,topLevelPackagesCheck">
+  </target>
+  
+  <target name="init" depends="propertycheck"/>
+  
+  <!--This is a weird task.  What it does is use ant's built-in facilities
+     to convert a colon-separated list of top-level packages into some
+     build paths, stored in the patternset project.src.compilesources.
+     So, a set of top-level packages like com:edu:org will convert to
+     the pattern set of files in these packages.-->
+
+  <target name="generateJavaSources" depends="init">
+    <pathconvert pathsep="/**/*.java," property="allsrc1">
+      <map from="${basedir}${file.separator}" to=""/>
+      <path>
+        <pathelement path="${project.toplevelpackages}"/>
+      </path>
+    </pathconvert>
+
+    <property name="project.src.compilesources.property"
+              value="${allsrc1}/**/*.java"/>
+
+    <patternset id="project.src.compilesources" 
+                includes="${project.src.compilesources.property}"/>
+  </target>
+  
+  <target name="generateAllSources" depends="init">
+    <pathconvert pathsep="/**," property="allsrc2">
+      <map from="${basedir}${file.separator}" to=""/>
+      <path>
+        <pathelement path="${project.toplevelpackages}"/>
+      </path>
+    </pathconvert>
+
+    <property name="project.src.allsources.property"
+              value="${allsrc2}/**"/>
+
+    <patternset id="project.src.allsources" 
+                includes="${project.src.allsources.property}"/>
+  </target>
+
+  <target name="generateCompileClasspathNoMixlibs" unless="project.src.mixlibs.available">
+    <path id="project.compile.classpath">
+      <pathelement path="${classpath}"/>
+    </path>
+  </target>
+  
+  <target name="generateCompileClasspathMixlibs" if="project.src.mixlibs.available">
+    <path id="project.compile.classpath">
+      <pathelement path="${classpath}"/>
+      <fileset dir="${project.res.dir.mixlibs}">
+        <include name="**/*.jar"/>
+      </fileset>
+    </path>
+  </target>
+
+  <!--This task generates the compile classpath into the path with
+      id project.compile.classpath.  If the mixlibs directory exists,
+      any archives in that directory are automatically added to the
+      classpath.-->
+      
+  <target name="generateCompileClasspath" 
+          depends="init,
+                   generateCompileClasspathNoMixlibs,
+                   generateCompileClasspathMixlibs">
+  </target>
+
+  <!--This task compiles all the sources in the top-level 
+      packages into the build directory and then copies
+      all the resources (e.g. non-Java files) into the
+      build directory. -->
+  <target name="compile" depends="init,
+                                  generateJavaSources,
+                                  generateAllSources,
+                                  generateCompileClasspath">
+    <!--Make the build directory if one doesn't already exist.-->
+    <mkdir dir="${project.target.dir.build}"/>
+    
+    <!--Compile all sources to the target dir.-->
+    <javac srcdir="${project.src.dir}" destdir="${project.target.dir.build}"
+           debug="${project.debug}" debuglevel="${project.debuglevel}">
+      <patternset refid="project.src.compilesources"/>
+      <classpath refid="project.compile.classpath"/>
+    </javac>
+    
+    <copy todir="${project.target.dir.build}">
+      <fileset dir="${project.src.dir}">
+        <patternset refid="project.src.allsources"/>
+        <exclude name="**/*.java"/>
+      </fileset>
+    </copy>
+    
+    <antcall target="generateVersionFile"/>
+  </target>
+
+  <target name="jar-manifest" if="project.manifest">
+    <jar jarfile="${project.target.jarfile}"
+         basedir="${project.target.dir.build}"
+         manifest="${project.manifest}"
+         index="true"/>
+  </target>
+
+  <target name="jar-nomanifest" unless="project.manifest">
+    <jar jarfile="${project.target.jarfile}"
+         basedir="${project.target.dir.build}"
+         index="true"/>
+  </target>
+  
+  <target name="mixlibs" if="project.src.mixlibs.available">
+    <delete dir="${project.target.dir.wrk}"/>
+    <mkdir dir="${project.target.dir.wrk}"/>
+    <unzip dest="${project.target.dir.wrk}">
+      <patternset>
+        <include name="**"/>
+        <exclude name="manifest.mf"/>
+        <exclude name="META-INF"/>
+        <exclude name="META-INF/MANIFEST.MF"/>
+        <exclude name="META-INF/INDEX.LIST"/>
+      </patternset>
+      <fileset dir="${project.res.dir.mixlibs}">
+        <include name="**/*.zip"/>
+        <include name="**/*.jar"/>
+      </fileset>
+    </unzip>
+    
+    <jar jarfile="${project.target.jarfile}"
+         basedir="${project.target.dir.wrk}"
+         update="true"
+         index="true"/>
+     
+    <delete dir="${project.target.dir.wrk}"/>
+  </target>
+
+  <target name="task-prejar" if="project.task.prejar">
+    <ant antfile="${project.task.prejar}"/>
+  </target>
+
+  <target name="task-postjar" if="project.task.postjar">
+    <ant antfile="${project.task.postjar}"/>
+  </target>
+
+  <target name="generateVersionFile" depends="init" if="project.version">
+    <echo message="${project.version}" file="${project.target.versionfile}"/>
+  </target>
+
+  <target name="jar" depends="init,compile">
+    <mkdir dir="${project.target.dir.lib}"/>
+    <delete file="${project.target.jarfile}"/>
+
+    <antcall target="task-prejar"/>
+    <antcall target="jar-manifest" inheritRefs="true"/>
+    <antcall target="jar-nomanifest" inheritRefs="true"/>
+    <antcall target="mixlibs" inheritRefs="true"/>
+    <antcall target="task-postjar"/>
+  </target>
+
+  <target name="doc-params" if="project.javadoc.params">
+    <javadoc destdir="${project.target.dir.doc.javadoc}"
+             sourcepath="${project.src.dir}"
+             packagenames="${tlp-packages}.*"
+             additionalparam="${project.javadoc.params}"
+             windowtitle="${project.longname} Package Documentation">
+      <header><![CDATA[<i>${project.longname}</i>]]></header>
+    </javadoc>
+  </target>
+  
+  <target name="doc-noparams" unless="project.javadoc.params">
+    <javadoc destdir="${project.target.dir.doc.javadoc}"
+             sourcepath="${project.src.dir}"
+             packagenames="${tlp-packages}.*"
+             windowtitle="${project.longname} Package Documentation">
+      <header><![CDATA[<i>${project.longname}</i>]]></header>
+    </javadoc>
+  </target>
+
+  <target name="doc" depends="init">
+    <!--First, use some creative stuff here to generate a comma-separated package list-->
+    <pathconvert pathsep=".*," property="tlp-packages">
+      <map from="${basedir}${file.separator}" to=""/>
+      <path>
+        <pathelement path="${project.toplevelpackages}"/>
+      </path>
+    </pathconvert>
+
+    <!--Now, actually run javadoc-->
+    <antcall target="doc-params" inheritRefs="true"/>
+    <antcall target="doc-noparams" inheritRefs="true"/>
+  </target>
+  
+  <target name="mixin" depends="init" if="project.src.mixin.available">
+    <copy todir="${project.target.dir}" preserveLastModified="true">
+      <fileset dir="${project.res.dir.mixin}">
+        <include name="**"/>
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="generateBuildInfoFile">
+    <tstamp>
+      <format property="build.time" pattern="MM/dd/yyyy hh:mm aa"/>
+    </tstamp> 
+
+    <delete file="${project.target.buildinfofile}"/>
+
+    <echo message="#Build Info for project ${project.name}${line.separator}" file="${project.target.buildinfofile}"/>
+    <echo message="${line.separator}" file="${project.target.buildinfofile}" append="yes"/>
+
+    <echo message="project.name=       ${project.name}${line.separator}" 
+                                       file="${project.target.buildinfofile}" append="yes"/>
+    <echo message="project.longname=   ${project.longname}${line.separator}" 
+                                       file="${project.target.buildinfofile}" append="yes"/>
+    <antcall target="generateBuildInfoFile-description"/>
+    <antcall target="generateBuildInfoFile-version"/>
+    <echo message="build.time=         ${build.time}${line.separator}" 
+                                       file="${project.target.buildinfofile}" append="yes"/>
+    <echo message="user.name=          ${user.name}${line.separator}" 
+                                       file="${project.target.buildinfofile}" append="yes"/>
+    <echo message="os.name=            ${os.name}${line.separator}" 
+                                       file="${project.target.buildinfofile}" append="yes"/>
+    <echo message="os.version=         ${os.version}${line.separator}" 
+                                       file="${project.target.buildinfofile}" append="yes"/>
+    <echo message="os.arch=            ${os.arch}${line.separator}" 
+                                       file="${project.target.buildinfofile}" append="yes"/>
+  </target>
+
+  <target name="generateBuildInfoFile-description" if="project.description">
+    <echo message="project.description=${project.description}${line.separator}" 
+          file="${project.target.buildinfofile}" append="yes"/>
+  </target>
+
+  <target name="generateBuildInfoFile-version" if="project.version">
+    <echo message="project.version=    ${project.version}${line.separator}" 
+          file="${project.target.buildinfofile}" append="yes"/>
+  </target>
+
+  <target name="task-final" if="project.task.final">
+    <ant antfile="${project.task.postjar}"/>
+  </target>
+
+  <target name="build" depends="init,compile,generateBuildInfoFile">
+    <antcall target="task-final"/>
+  </target>
+
+  <target name="dist" depends="build,jar,doc,mixin">
+    <antcall target="task-final"/>
+  </target>
+  
+
+  <!-- CLEAN STUFF -->
+
+  <!--This deletes the build directory, which is useful
+      after a release build since everything in the build
+      directory is in the .jar file anyway-->
+  <target name="clean-build" depends="init">
+    <delete dir="${project.target.dir.build}"/>
+  </target>
+
+  <!--This just deletes the directories that are created
+      as a part of doing a build-->
+  <target name="tidy" depends="init">
+    <delete dir="${project.target.dir.build}"/>
+    <delete dir="${project.target.dir.doc}"/>
+    <delete dir="${project.target.dir.lib}"/>
+    <delete dir="${project.target.dir.work}"/>
+    <delete file="${project.target.buildinfofile}"/>
+  </target>
+  
+  <!--This cleans up any files that were mixed in to the
+      build-->
+      
+  <target name="clean-mixin" depends="init" if="project.src.mixin.available">
+    <delete includeEmptyDirs="true">
+      <fileset dir="${project.target.dir}">
+        <present targetdir="${project.res.dir.mixin}"/>
+        <exclude name="${project.clean.protect}"  if="project.clean.protect"/>
+        <excludesfile name="${project.clean.protect}" if="project.clean.protect"/>
+      </fileset>
+    </delete>
+  </target>  
+  
+  <!--This cleans all files and directories created as part
+      of the build or mixed into the build from the mixin
+      directory-->
+      
+  <target name="clean" depends="init,tidy,clean-mixin"/>
+  
+  <!--This cleans absolutely everything except the bare
+      essentials (src, res, properties, and .* files).
+      This will also avoid things explicitly specified in 
+      the 'clean protect' file.
+      
+      BE VERY CAREFUL WITH ULTRACLEAN!
+      
+      This is generally only useful when preparing a
+      release.-->
+      
+  <target name="ultraclean" depends="init">
+    <delete includeEmptyDirs="true">
+      <fileset dir="${project.target.dir}">
+        <exclude name=".*"/>
+        <exclude name="**/.*/**"/>
+        <exclude name="src"/>
+        <exclude name="src/**"/>
+        <exclude name="res"/>
+        <exclude name="res/**"/>
+        <exclude name="build.xml"/>
+        <exclude name="*.properties"/>
+        <exclude name="${project.clean.protect}"  if="project.clean.protect"/>
+        <excludesfile name="${project.clean.protect}" if="project.clean.protect"/>
+      </fileset>
+    </delete>
+  </target>
+
+</project>
+

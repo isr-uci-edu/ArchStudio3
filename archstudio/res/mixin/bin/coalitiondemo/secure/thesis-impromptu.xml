@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance:xArch xmlns:hints="http://www.ics.uci.edu/pub/arch/xArch/hints.xsd" xmlns:instance="http://www.ics.uci.edu/pub/arch/xArch/instance.xsd" xmlns:security="http://www.ics.uci.edu/pub/arch/xArch/security.xsd" xmlns:types="http://www.ics.uci.edu/pub/arch/xArch/types.xsd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ics.uci.edu/pub/arch/xArch/tronanalysis.xsd http://www.isr.uci.edu/projects/xarchuci/ext/tronanalysis.xsd http://www.ics.uci.edu/pub/arch/xArch/analysis.xsd http://www.isr.uci.edu/projects/xarchuci/ext/analysis.xsd http://www.ics.uci.edu/pub/arch/xArch/types.xsd http://www.isr.uci.edu/projects/xarchuci/ext/types.xsd http://www.ics.uci.edu/pub/arch/xArch/hints.xsd http://www.isr.uci.edu/projects/xarchuci/ext/hints.xsd http://www.ics.uci.edu/pub/arch/xArch/security.xsd file:///C:/Documents%20and%20Settings/Jie%20Ren/My%20Documents/My%20Research/workspace/securexadl/res/security.xsd">
+    <types:archTypes xsi:type="types:ArchTypes">
+        <types:componentType types:id="JettyType" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">Jetty Web Server</types:description>
+            <types:signature types:id="JettyType-sig-pie" xsi:type="types:Signature">
+                <types:description xsi:type="instance:Description">Jetty Signature Pie</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:signature>
+            <types:signature types:id="JettyType-sig-remote" xsi:type="types:Signature">
+                <types:description xsi:type="instance:Description">Jetty Signature Remote</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:signature>
+            <types:signature types:id="JettyType-sig-yancees" xsi:type="types:Signature">
+                <types:description xsi:type="instance:Description">Jetty Signature Yancees</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:signature>
+            <types:subArchitecture xsi:type="types:SubArchitecture">
+                <types:archStructure xlink:href="#archStructure.Jetty" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                <types:signatureInterfaceMapping xsi:type="types:SignatureInterfaceMapping">
+                    <types:description xsi:type="instance:Description">(New Signature-Interface Mapping)</types:description>
+                    <types:outerSignature xlink:href="#JettyType-sig-pie" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                    <types:innerInterface xlink:href="#ImpromptuProxy-pie" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                </types:signatureInterfaceMapping>
+                <types:signatureInterfaceMapping xsi:type="types:SignatureInterfaceMapping">
+                    <types:description xsi:type="instance:Description">(New Signature-Interface Mapping)</types:description>
+                    <types:outerSignature xlink:href="#JettyType-sig-remote" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                    <types:innerInterface xlink:href="#ImpromptuProxy-remote" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                </types:signatureInterfaceMapping>
+            </types:subArchitecture>
+        </types:componentType>
+        <types:componentType types:id="RemoteJettyType" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">Jetty Web Server</types:description>
+            <types:signature types:id="RemoteJettyType-sig-pie" xsi:type="types:Signature">
+                <types:description xsi:type="instance:Description">Jetty Signature Pie</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:signature>
+            <types:signature types:id="RemoteJettyType-sig-remote" xsi:type="types:Signature">
+                <types:description xsi:type="instance:Description">Jetty Signature Remote</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:signature>
+            <types:signature types:id="RemoteJettyType-sig-yancees" xsi:type="types:Signature">
+                <types:description xsi:type="instance:Description">Jetty Signature Yancees</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:signature>
+            <types:subArchitecture xsi:type="types:SubArchitecture">
+                <types:archStructure xlink:href="#archStructure.RemoteJetty" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                <types:signatureInterfaceMapping xsi:type="types:SignatureInterfaceMapping">
+                    <types:description xsi:type="instance:Description">(New Signature-Interface Mapping)</types:description>
+                    <types:outerSignature xlink:href="#RemoteJettyType-sig-pie" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                    <types:innerInterface xlink:href="#RemoteImpromptuProxy-pie" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                </types:signatureInterfaceMapping>
+                <types:signatureInterfaceMapping xsi:type="types:SignatureInterfaceMapping">
+                    <types:description xsi:type="instance:Description">(New Signature-Interface Mapping)</types:description>
+                    <types:outerSignature xlink:href="#RemoteJettyType-sig-remote" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                    <types:innerInterface xlink:href="#RemoteImpromptuProxy-remote" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                </types:signatureInterfaceMapping>
+            </types:subArchitecture>
+        </types:componentType>
+        <types:componentType types:id="ImpromptuType" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">Impromptu</types:description>
+            <types:signature types:id="Impromptu-sig-peer" xsi:type="types:Signature">
+                <types:description xsi:type="instance:Description">Impromptu Signature Peer</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:signature>
+            <types:signature types:id="Impromptu-sig-pieYancees" xsi:type="types:Signature">
+                <types:description xsi:type="instance:Description">Impromptu Signature Pie to Yancees</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:signature>
+            <types:signature types:id="Impromptu-sig-repositoryYancees" xsi:type="types:Signature">
+                <types:description xsi:type="instance:Description">Impromptu Signature Repository to Yancees</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:signature>
+            <types:subArchitecture xsi:type="types:SubArchitecture">
+                <types:archStructure xlink:href="#archStructure.Impromptu" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                <types:signatureInterfaceMapping xsi:type="types:SignatureInterfaceMapping">
+                    <types:description xsi:type="instance:Description">(New Signature-Interface Mapping)</types:description>
+                    <types:outerSignature xlink:href="#Impromptu-sig-peer" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                    <types:innerInterface xlink:href="#Jetty-remote" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                </types:signatureInterfaceMapping>
+                <types:signatureInterfaceMapping xsi:type="types:SignatureInterfaceMapping">
+                    <types:description xsi:type="instance:Description">(New Signature-Interface Mapping)</types:description>
+                    <types:outerSignature xlink:href="#Impromptu-sig-pieYancees" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                    <types:innerInterface xlink:href="#Pie-yancees" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                </types:signatureInterfaceMapping>
+                <types:signatureInterfaceMapping xsi:type="types:SignatureInterfaceMapping">
+                    <types:description xsi:type="instance:Description">(New Signature-Interface Mapping)</types:description>
+                    <types:outerSignature xlink:href="#Impromptu-sig-repositoryYancees" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                    <types:innerInterface xlink:href="#Jetty-yancees" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                </types:signatureInterfaceMapping>
+            </types:subArchitecture>
+        </types:componentType>
+        <types:componentType types:id="RemoteImpromptuType" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">Impromptu</types:description>
+            <types:signature types:id="RemoteImpromptu-sig-peer" xsi:type="types:Signature">
+                <types:description xsi:type="instance:Description">Impromptu Signature Peer</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:signature>
+            <types:signature types:id="RemoteImpromptu-sig-pieYancees" xsi:type="types:Signature">
+                <types:description xsi:type="instance:Description">Impromptu Signature Pie to Yancees</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:signature>
+            <types:signature types:id="RemoteImpromptu-sig-repositoryYancees" xsi:type="types:Signature">
+                <types:description xsi:type="instance:Description">Impromptu Signature Repository to Yancees</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:signature>
+            <types:subArchitecture xsi:type="types:SubArchitecture">
+                <types:archStructure xlink:href="#archStructure.RemoteImpromptu" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                <types:signatureInterfaceMapping xsi:type="types:SignatureInterfaceMapping">
+                    <types:description xsi:type="instance:Description">(New Signature-Interface Mapping)</types:description>
+                    <types:outerSignature xlink:href="#RemoteImpromptu-sig-peer" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                    <types:innerInterface xlink:href="#RemoteJetty-remote" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                </types:signatureInterfaceMapping>
+                <types:signatureInterfaceMapping xsi:type="types:SignatureInterfaceMapping">
+                    <types:description xsi:type="instance:Description">(New Signature-Interface Mapping)</types:description>
+                    <types:outerSignature xlink:href="#RemoteImpromptu-sig-pieYancees" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                    <types:innerInterface xlink:href="#RemotePie-yancees" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                </types:signatureInterfaceMapping>
+                <types:signatureInterfaceMapping xsi:type="types:SignatureInterfaceMapping">
+                    <types:description xsi:type="instance:Description">(New Signature-Interface Mapping)</types:description>
+                    <types:outerSignature xlink:href="#RemoteImpromptu-sig-repositoryYancees" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                    <types:innerInterface xlink:href="#RemoteJetty-yancees" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                </types:signatureInterfaceMapping>
+            </types:subArchitecture>
+        </types:componentType>
+        <types:componentType types:id="PieType" xsi:type="types:ComponentType">
+            <types:description xsi:type="instance:Description">Pie GUI</types:description>
+            <types:signature types:id="PieType-sig-webdav" xsi:type="types:Signature">
+                <types:description xsi:type="instance:Description">Pie Signature WebDAV</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:signature>
+            <types:signature types:id="PieType-sig-yancees" xsi:type="types:Signature">
+                <types:description xsi:type="instance:Description">Pie Signature Yancees</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:signature>
+        </types:componentType>
+        <types:connectorType types:id="SecureWebDAVConnector" xsi:type="types:ConnectorType">
+            <types:description xsi:type="instance:Description">Secure WebDAV Connector</types:description>
+            <types:signature types:id="WebDAVClient" xsi:type="types:Signature">
+                <types:description xsi:type="instance:Description">WebDAV Client</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:signature>
+            <types:signature types:id="WebDAVServer" xsi:type="types:Signature">
+				<types:description xsi:type="instance:Description">WebDAV Server</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:signature>
+            <!--
+            <types:subArchitecture xsi:type="types:SubArchitecture">
+                <types:archStructure xlink:href="#archStructure.Jetty" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:subArchitecture>
+            -->
+        </types:connectorType>
+    </types:archTypes>
+    <types:archStructure types:id="archStructure.Jetty" xsi:type="types:ArchStructure">
+        <types:description xsi:type="instance:Description">Jetty Web Server</types:description>
+        <types:component types:id="ImpromptuProxy" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">Impromptu Proxy</types:description>
+            <types:interface types:id="ImpromptuProxy-remote" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">ImpromptuProxy-remote</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+            <types:interface types:id="ImpromptuProxy-local" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">ImpromptuProxy-local</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+            <types:interface types:id="ImpromptuProxy-pie" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">ImpromptuProxy-pie</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+        </types:component>
+        <types:component types:id="SlideServer" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">Slide WebDAV Servlet</types:description>
+            <types:interface types:id="SlideServer-inout" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">SlideServer-inout</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+        </types:component>
+        <types:connector types:id="Impromptu_Slide" xsi:type="types:Connector">
+            <types:description xsi:type="instance:Description">Impromptu_Slide connector </types:description>
+            <types:interface types:id="Local" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Impromptu_Slide-client</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+            <types:interface types:id="Slide" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Impromptu_Slide-server</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+			<types:type xlink:href="#SecureWebDAVConnector" xlink:type="simple" xsi:type="instance:XMLLink"/>
+        </types:connector>
+        <types:link types:id="linkJ1" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">linkJ1</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#ImpromptuProxy-local" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#Local" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="linkJ2" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">linkJ2</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#Slide" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#SlideServer-inout" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+    </types:archStructure>
+    <types:archStructure types:id="archStructure.RemoteJetty" xsi:type="types:ArchStructure">
+        <types:description xsi:type="instance:Description">Remote Jetty Web Server</types:description>
+        <types:component types:id="RemoteImpromptuProxy" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">Impromptu Proxy</types:description>
+            <types:interface types:id="RemoteImpromptuProxy-remote" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">ImpromptuProxy-remote</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+            <types:interface types:id="RemoteImpromptuProxy-local" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">ImpromptuProxy-local</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+            <types:interface types:id="RemoteImpromptuProxy-pie" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">ImpromptuProxy-pie</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+        </types:component>
+        <types:component types:id="RemoteSlideServer" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">Slide WebDAV Servlet</types:description>
+            <types:interface types:id="RemoteSlideServer-inout" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">SlideServer-inout</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+        </types:component>
+        <types:connector types:id="RemoteImpromptu_Slide" xsi:type="types:Connector">
+            <types:description xsi:type="instance:Description">Impromptu_Slide connector </types:description>
+            <types:interface types:id="RemoteLocal" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Impromptu_Slide-client</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+            <types:interface types:id="RemoteSlide" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Impromptu_Slide-server</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+			<types:type xlink:href="#SecureWebDAVConnector" xlink:type="simple" xsi:type="instance:XMLLink"/>
+        </types:connector>
+        <types:link types:id="RemotelinkJ1" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">RemotelinkJ1</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#RemoteImpromptuProxy-local" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#RemoteLocal" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="RemotelinkJ2" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">RemotelinkJ2</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#RemoteSlide" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#RemoteSlideServer-inout" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+    </types:archStructure>
+    <types:archStructure types:id="archStructure.Impromptu" xsi:type="types:ArchStructure">
+        <types:description xsi:type="instance:Description">Impromptu</types:description>
+        <types:component types:id="Jetty" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">Jetty Web Server</types:description>
+            <types:interface types:id="Jetty-pie" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Jetty-pie</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+				<types:signature xlink:href="#JettyType-sig-pie" xlink:type="simple" xsi:type="instance:XMLLink"/>                
+            </types:interface>
+            <types:interface types:id="Jetty-remote" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Jetty-remote</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+				<types:signature xlink:href="#JettyType-sig-remote" xlink:type="simple" xsi:type="instance:XMLLink"/>                
+            </types:interface>
+            <types:interface types:id="Jetty-yancees" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Jetty-yancees</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+				<types:signature xlink:href="#JettyType-sig-yancees" xlink:type="simple" xsi:type="instance:XMLLink"/>                
+            </types:interface>
+            <types:type xlink:href="#JettyType" xlink:type="simple" xsi:type="instance:XMLLink"/>
+        </types:component>
+        <types:component types:id="Pie" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">Pie GUI</types:description>
+            <types:interface types:id="Pie-webdav" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Pie-webdav</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+				<types:signature xlink:href="#Pie-sig-webdav" xlink:type="simple" xsi:type="instance:XMLLink"/>                
+            </types:interface>
+            <types:interface types:id="Pie-yancees" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Pie-yancees</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+				<types:signature xlink:href="#PieType-sig-yancees" xlink:type="simple" xsi:type="instance:XMLLink"/>                
+            </types:interface>
+            <types:type xlink:href="#PieType" xlink:type="simple" xsi:type="instance:XMLLink"/>
+        </types:component>
+        <types:connector types:id="GUI_Impromptu" xsi:type="types:Connector">
+            <types:description xsi:type="instance:Description">GUI_Impromptu Connector </types:description>
+            <types:interface types:id="GUI" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">GUI_Impromptu-client</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+            <types:interface types:id="Impromptu" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">GUI_Impromptu-server</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+			<types:type xlink:href="#SecureWebDAVConnector" xlink:type="simple" xsi:type="instance:XMLLink"/>
+        </types:connector>
+        <types:link types:id="linkI1" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">linkI1</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#Pie-webdav" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#GUI" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="linkI2" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">linkI2</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#Impromptu" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#Jetty-pie" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+    </types:archStructure>
+    <types:archStructure types:id="archStructure.RemoteImpromptu" xsi:type="types:ArchStructure">
+        <types:description xsi:type="instance:Description">Remote Impromptu</types:description>
+        <types:component types:id="RemoteJetty" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">Jetty Web Server</types:description>
+            <types:interface types:id="RemoteJetty-pie" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Jetty-pie</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+				<types:signature xlink:href="#RemoteJettyType-sig-pie" xlink:type="simple" xsi:type="instance:XMLLink"/>                
+            </types:interface>
+            <types:interface types:id="RemoteJetty-remote" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Jetty-remote</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+				<types:signature xlink:href="#RemoteJettyType-sig-remote" xlink:type="simple" xsi:type="instance:XMLLink"/>                
+            </types:interface>
+            <types:interface types:id="RemoteJetty-yancees" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Jetty-yancees</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+				<types:signature xlink:href="#RemoteJettyType-sig-yancees" xlink:type="simple" xsi:type="instance:XMLLink"/>                
+            </types:interface>
+            <types:type xlink:href="#RemoteJettyType" xlink:type="simple" xsi:type="instance:XMLLink"/>
+        </types:component>
+        <types:component types:id="RemotePie" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">Pie GUI</types:description>
+            <types:interface types:id="RemotePie-webdav" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Pie-webdav</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+				<types:signature xlink:href="#Pie-sig-webdav" xlink:type="simple" xsi:type="instance:XMLLink"/>                
+            </types:interface>
+            <types:interface types:id="RemotePie-yancees" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Pie-yancees</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+				<types:signature xlink:href="#PieType-sig-yancees" xlink:type="simple" xsi:type="instance:XMLLink"/>                
+            </types:interface>
+            <types:type xlink:href="#PieType" xlink:type="simple" xsi:type="instance:XMLLink"/>
+        </types:component>
+        <types:connector types:id="RemoteGUI_Impromptu" xsi:type="types:Connector">
+            <types:description xsi:type="instance:Description">GUI_Impromptu Connector </types:description>
+            <types:interface types:id="RemoteGUI" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">GUI_Impromptu-client</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+            <types:interface types:id="RemoteImpromptuServer" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">GUI_Impromptu-server</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+			<types:type xlink:href="#SecureWebDAVConnector" xlink:type="simple" xsi:type="instance:XMLLink"/>
+        </types:connector>
+        <types:link types:id="linkR1" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">linkI1</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#RemotePie-webdav" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#RemoteGUI" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="linkR2" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">linkI2</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#RemoteImpromptuServer" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#RemoteJetty-pie" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+    </types:archStructure>
+    <types:archStructure types:id="archStructure.ImpromptuComplete" xsi:type="types:ArchStructure">
+        <types:description xsi:type="instance:Description">Impromptu Peer to Peer File Sharing</types:description>
+        <types:component types:id="LocalImpromptu" xsi:type="security:SecureComponent">
+            <types:description xsi:type="instance:Description">Local Impromptu</types:description>
+            <types:interface types:id="LocalImpromptu-peer" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">LocalImpromptu-peer</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+				<types:signature xlink:href="#Impromptu-sig-peer" xlink:type="simple" xsi:type="instance:XMLLink"/>                
+            </types:interface>
+            <types:interface types:id="LocalImpromptu-pieYancees" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">LocalImpromptu-pieYancees</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+				<types:signature xlink:href="#Impromptu-sig-pieYancees" xlink:type="simple" xsi:type="instance:XMLLink"/>                
+            </types:interface>
+            <types:interface types:id="LocalImpromptu-repositoryYancees" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">LocalImpromptu-repositoryYancees</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+				<types:signature xlink:href="#Impromptu-sig-repositoryYancees" xlink:type="simple" xsi:type="instance:XMLLink"/>                
+            </types:interface>
+            <types:type xlink:href="#ImpromptuType" xlink:type="simple" xsi:type="instance:XMLLink"/>
+			<security:security xsi:type="security:SecurityPropertyType">
+				<security:principals>
+					<security:principal>me</security:principal>
+				</security:principals>
+			</security:security>
+        </types:component>
+        <types:component types:id="RemoteImpromptu" xsi:type="security:SecureComponent">
+            <types:description xsi:type="instance:Description">Remote Impromptu</types:description>
+            <types:interface types:id="RemoteImpromptu-peer" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">RemoteImpromptu-peer</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+				<types:signature xlink:href="#RemoteImpromptu-sig-peer" xlink:type="simple" xsi:type="instance:XMLLink"/>                
+            </types:interface>
+            <types:interface types:id="RemoteImpromptu-pieYancees" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">RemoteImpromptu-pieYancees</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+				<types:signature xlink:href="#RemoteImpromptu-sig-pieYancees" xlink:type="simple" xsi:type="instance:XMLLink"/>                
+            </types:interface>
+            <types:interface types:id="RemoteImpromptu-repositoryYancees" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">RemoteImpromptu-repositoryYancees</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+				<types:signature xlink:href="#RemoteImpromptu-sig-repositoryYancees" xlink:type="simple" xsi:type="instance:XMLLink"/>                
+            </types:interface>
+            <types:type xlink:href="#RemoteImpromptuType" xlink:type="simple" xsi:type="instance:XMLLink"/>
+			<security:security xsi:type="security:SecurityPropertyType">
+				<security:principals>
+					<security:principal>other</security:principal>
+				</security:principals>
+			</security:security>
+        </types:component>
+        <types:connector types:id="Impromptu_Impromptu" xsi:type="types:Connector">
+            <types:description xsi:type="instance:Description">Impromptu_Impromptu Connector </types:description>
+            <types:interface types:id="LocalProxy" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Impromptu_Impromptu-client</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+            <types:interface types:id="Remote" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Impromptu_Impromptu-server</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+			<types:type xlink:href="#SecureWebDAVConnector" xlink:type="simple" xsi:type="instance:XMLLink"/>
+        </types:connector>
+        <types:connector types:id="Yancees" xsi:type="types:Connector">
+            <types:description xsi:type="instance:Description">Yancees</types:description>
+            <types:interface types:id="Yancees-local-pie" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Yancees-local-pie</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+            <types:interface types:id="Yancees-local-repository" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Yancees-local-repository</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+            <types:interface types:id="Yancees-remote-pie" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Yancees-remote-pie</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+            <types:interface types:id="Yancees-remote-repository" xsi:type="types:Interface">
+                <types:description xsi:type="instance:Description">Yancees-remote-repository</types:description>
+                <types:direction xsi:type="instance:Direction">inout</types:direction>
+            </types:interface>
+        </types:connector>
+        <types:link types:id="linkP1" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">linkP1</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#LocalImpromptu-pieYancees" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#Yancees-local-pie" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="linkP2" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">linkP2</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#LocalImpromptu-repositoryYancees" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#Yancees-local-repository" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="linkP3" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">linkP3</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#RemoteImpromptu-pieYancees" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#Yancees-remote-pie" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="linkP4" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">linkP4</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#RemoteImpromptu-repositoryYancees" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#Yancees-remote-repository" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="linkP5" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">linkP5</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#LocalImpromptu-peer" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#LocalProxy" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+        <types:link types:id="linkP6" xsi:type="types:Link">
+            <types:description xsi:type="instance:Description">linkP6</types:description>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#RemoteImpromptu-peer" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+            <types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#Remote" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </types:point>
+        </types:link>
+    </types:archStructure>
+
+
+
+
+
+
+
+<hints:renderingHints xsi:type="hints:RenderingHints">
+        <hints:hints xsi:type="hints:Hints">
+            <hints:hintedThing xlink:href="#ImpromptuType" xsi:type="instance:XMLLink" xlink:type="simple"/>
+            <hints:propertyHint hints:name="allHints" xsi:type="hints:PropertyHint" hints:value="ImpromptuType|boundingBox:java.awt.Rectangle=RECT10050,10050,200,150;ImpromptuType|color:java.awt.Color=COLOR-9932353;Impromptu-sig-peer|boundingBox:java.awt.Rectangle=RECT10045,10045,10,10;Impromptu-sig-peer|orientation:java.lang.Integer=INT1000;Impromptu-sig-pieYancees|boundingBox:java.awt.Rectangle=RECT10045,10045,10,10;Impromptu-sig-pieYancees|orientation:java.lang.Integer=INT1000;Impromptu-sig-repositoryYancees|boundingBox:java.awt.Rectangle=RECT10045,10045,10,10;Impromptu-sig-repositoryYancees|orientation:java.lang.Integer=INT1000;"/>
+        </hints:hints>
+        <hints:hints xsi:type="hints:Hints">
+            <hints:hintedThing xlink:href="#RemoteImpromptuType" xsi:type="instance:XMLLink" xlink:type="simple"/>
+            <hints:propertyHint hints:name="allHints" xsi:type="hints:PropertyHint" hints:value="RemoteImpromptuType|boundingBox:java.awt.Rectangle=RECT10050,10050,200,150;RemoteImpromptuType|color:java.awt.Color=COLOR-9932353;RemoteImpromptu-sig-peer|boundingBox:java.awt.Rectangle=RECT10045,10045,10,10;RemoteImpromptu-sig-peer|orientation:java.lang.Integer=INT1000;RemoteImpromptu-sig-pieYancees|boundingBox:java.awt.Rectangle=RECT10045,10045,10,10;RemoteImpromptu-sig-pieYancees|orientation:java.lang.Integer=INT1000;RemoteImpromptu-sig-repositoryYancees|boundingBox:java.awt.Rectangle=RECT10045,10045,10,10;RemoteImpromptu-sig-repositoryYancees|orientation:java.lang.Integer=INT1000;"/>
+        </hints:hints>
+        <hints:hints xsi:type="hints:Hints">
+            <hints:hintedThing xlink:href="#JettyType" xsi:type="instance:XMLLink" xlink:type="simple"/>
+            <hints:propertyHint hints:name="allHints" xsi:type="hints:PropertyHint" hints:value="JettyType|boundingBox:java.awt.Rectangle=RECT10050,10050,200,150;JettyType|color:java.awt.Color=COLOR-9932353;JettyType-sig-pie|boundingBox:java.awt.Rectangle=RECT10045,10045,10,10;JettyType-sig-pie|orientation:java.lang.Integer=INT1000;JettyType-sig-remote|boundingBox:java.awt.Rectangle=RECT10045,10045,10,10;JettyType-sig-remote|orientation:java.lang.Integer=INT1000;JettyType-sig-yancees|boundingBox:java.awt.Rectangle=RECT10045,10045,10,10;JettyType-sig-yancees|orientation:java.lang.Integer=INT1000;"/>
+        </hints:hints>
+        <hints:hints xsi:type="hints:Hints">
+            <hints:hintedThing xlink:href="#RemoteJettyType" xsi:type="instance:XMLLink" xlink:type="simple"/>
+            <hints:propertyHint hints:name="allHints" xsi:type="hints:PropertyHint" hints:value="RemoteJettyType|boundingBox:java.awt.Rectangle=RECT10050,10050,200,150;RemoteJettyType|color:java.awt.Color=COLOR-9932353;RemoteJettyType-sig-pie|boundingBox:java.awt.Rectangle=RECT10045,10045,10,10;RemoteJettyType-sig-pie|orientation:java.lang.Integer=INT1000;RemoteJettyType-sig-remote|boundingBox:java.awt.Rectangle=RECT10045,10045,10,10;RemoteJettyType-sig-remote|orientation:java.lang.Integer=INT1000;RemoteJettyType-sig-yancees|boundingBox:java.awt.Rectangle=RECT10045,10045,10,10;RemoteJettyType-sig-yancees|orientation:java.lang.Integer=INT1000;"/>
+        </hints:hints>
+        <hints:hints xsi:type="hints:Hints">
+            <hints:hintedThing xlink:href="#archStructure.Impromptu" xsi:type="instance:XMLLink" xlink:type="simple"/>
+            <hints:propertyHint hints:name="allHints" xsi:type="hints:PropertyHint" hints:value="linkI1|numPoints:java.lang.Integer=INT2;linkI1|point0:java.awt.Point=POINT10116,10118;linkI1|point1:java.awt.Point=POINT10159,10118;linkI1|splineMode:java.lang.Integer=INT100;linkI1|color:java.awt.Color=COLOR-16777216;linkI2|numPoints:java.lang.Integer=INT2;linkI2|point0:java.awt.Point=POINT10334,10117;linkI2|point1:java.awt.Point=POINT10369,10117;linkI2|splineMode:java.lang.Integer=INT100;linkI2|color:java.awt.Color=COLOR-16777216;Jetty|boundingBox:java.awt.Rectangle=RECT10369,10034,328,357;Jetty|color:java.awt.Color=COLOR-3814401;Jetty-pie|boundingBox:java.awt.Rectangle=RECT10364,10112,10,10;Jetty-pie|orientation:java.lang.Integer=INT1030;Jetty-remote|boundingBox:java.awt.Rectangle=RECT10692,10112,10,10;Jetty-remote|orientation:java.lang.Integer=INT1010;Jetty-yancees|boundingBox:java.awt.Rectangle=RECT10530,10386,10,10;Jetty-yancees|orientation:java.lang.Integer=INT1020;Pie|boundingBox:java.awt.Rectangle=RECT10016,10071,100,100;Pie|color:java.awt.Color=COLOR-3814401;Pie-webdav|boundingBox:java.awt.Rectangle=RECT10111,10113,10,10;Pie-webdav|orientation:java.lang.Integer=INT1010;Pie-yancees|boundingBox:java.awt.Rectangle=RECT10060,10166,10,10;Pie-yancees|orientation:java.lang.Integer=INT1020;GUI_Impromptu|boundingBox:java.awt.Rectangle=RECT10159,10095,175,43;GUI_Impromptu|color:java.awt.Color=COLOR-5441;GUI|boundingBox:java.awt.Rectangle=RECT10154,10113,10,10;GUI|orientation:java.lang.Integer=INT1030;Impromptu|boundingBox:java.awt.Rectangle=RECT10329,10112,10,10;Impromptu|orientation:java.lang.Integer=INT1010;"/>
+        </hints:hints>
+        <hints:hints xsi:type="hints:Hints">
+            <hints:hintedThing xlink:href="#archStructure.ImpromptuComplete" xsi:type="instance:XMLLink" xlink:type="simple"/>
+            <hints:propertyHint hints:name="allHints" xsi:type="hints:PropertyHint" hints:value="linkP1|numPoints:java.lang.Integer=INT2;linkP1|point0:java.awt.Point=POINT10090,10501;linkP1|point1:java.awt.Point=POINT10090,10555;linkP1|splineMode:java.lang.Integer=INT100;linkP1|color:java.awt.Color=COLOR-16777216;linkP2|numPoints:java.lang.Integer=INT2;linkP2|point0:java.awt.Point=POINT10335,10501;linkP2|point1:java.awt.Point=POINT10335,10555;linkP2|splineMode:java.lang.Integer=INT100;linkP2|color:java.awt.Color=COLOR-16777216;linkP3|numPoints:java.lang.Integer=INT2;linkP3|point0:java.awt.Point=POINT10554,10502;linkP3|point1:java.awt.Point=POINT10554,10555;linkP3|splineMode:java.lang.Integer=INT100;linkP3|color:java.awt.Color=COLOR-16777216;linkP4|numPoints:java.lang.Integer=INT2;linkP4|point0:java.awt.Point=POINT10804,10502;linkP4|point1:java.awt.Point=POINT10804,10555;linkP4|splineMode:java.lang.Integer=INT100;linkP4|color:java.awt.Color=COLOR-16777216;linkP5|numPoints:java.lang.Integer=INT2;linkP5|point0:java.awt.Point=POINT10437,10299;linkP5|point1:java.awt.Point=POINT10449,10299;linkP5|splineMode:java.lang.Integer=INT100;linkP5|color:java.awt.Color=COLOR-16777216;linkP6|numPoints:java.lang.Integer=INT2;linkP6|point0:java.awt.Point=POINT10513,10298;linkP6|point1:java.awt.Point=POINT10501,10298;linkP6|splineMode:java.lang.Integer=INT100;linkP6|color:java.awt.Color=COLOR-16777216;LocalImpromptu|boundingBox:java.awt.Rectangle=RECT10049,10200,388,301;LocalImpromptu|color:java.awt.Color=COLOR-3814401;LocalImpromptu-peer|boundingBox:java.awt.Rectangle=RECT10432,10294,10,10;LocalImpromptu-peer|orientation:java.lang.Integer=INT1010;LocalImpromptu-pieYancees|boundingBox:java.awt.Rectangle=RECT10085,10496,10,10;LocalImpromptu-pieYancees|orientation:java.lang.Integer=INT1020;LocalImpromptu-repositoryYancees|boundingBox:java.awt.Rectangle=RECT10330,10496,10,10;LocalImpromptu-repositoryYancees|orientation:java.lang.Integer=INT1020;RemoteImpromptu|boundingBox:java.awt.Rectangle=RECT10513,10200,395,302;RemoteImpromptu|color:java.awt.Color=COLOR-3814401;RemoteImpromptu-peer|boundingBox:java.awt.Rectangle=RECT10508,10293,10,10;RemoteImpromptu-peer|orientation:java.lang.Integer=INT1030;RemoteImpromptu-pieYancees|boundingBox:java.awt.Rectangle=RECT10549,10497,10,10;RemoteImpromptu-pieYancees|orientation:java.lang.Integer=INT1020;RemoteImpromptu-repositoryYancees|boundingBox:java.awt.Rectangle=RECT10799,10497,10,10;RemoteImpromptu-repositoryYancees|orientation:java.lang.Integer=INT1020;Impromptu_Impromptu|boundingBox:java.awt.Rectangle=RECT10449,10283,52,35;Impromptu_Impromptu|color:java.awt.Color=COLOR-5441;LocalProxy|boundingBox:java.awt.Rectangle=RECT10444,10294,10,10;LocalProxy|orientation:java.lang.Integer=INT1030;Remote|boundingBox:java.awt.Rectangle=RECT10496,10293,10,10;Remote|orientation:java.lang.Integer=INT1010;Yancees|boundingBox:java.awt.Rectangle=RECT10051,10555,850,37;Yancees|color:java.awt.Color=COLOR-5441;Yancees-local-pie|boundingBox:java.awt.Rectangle=RECT10085,10550,10,10;Yancees-local-pie|orientation:java.lang.Integer=INT1000;Yancees-local-repository|boundingBox:java.awt.Rectangle=RECT10330,10550,10,10;Yancees-local-repository|orientation:java.lang.Integer=INT1000;Yancees-remote-pie|boundingBox:java.awt.Rectangle=RECT10549,10550,10,10;Yancees-remote-pie|orientation:java.lang.Integer=INT1000;Yancees-remote-repository|boundingBox:java.awt.Rectangle=RECT10799,10550,10,10;Yancees-remote-repository|orientation:java.lang.Integer=INT1000;archStructure.ImpromptuComplete$$environmentProperties|__scale:java.lang.Double=DOU1.0;archStructure.ImpromptuComplete$$environmentProperties|__worldOriginY:java.lang.Integer=INT10000;archStructure.ImpromptuComplete$$environmentProperties|__worldOriginX:java.lang.Integer=INT10144;"/>
+        </hints:hints>
+        <hints:hints xsi:type="hints:Hints">
+            <hints:hintedThing xlink:href="#archStructure.Jetty" xsi:type="instance:XMLLink" xlink:type="simple"/>
+            <hints:propertyHint hints:name="allHints" xsi:type="hints:PropertyHint" hints:value="linkJ1|numPoints:java.lang.Integer=INT2;linkJ1|point0:java.awt.Point=POINT10354,10228;linkJ1|point1:java.awt.Point=POINT10354,10254;linkJ1|splineMode:java.lang.Integer=INT100;linkJ1|color:java.awt.Color=COLOR-16777216;linkJ2|numPoints:java.lang.Integer=INT2;linkJ2|point0:java.awt.Point=POINT10354,10287;linkJ2|point1:java.awt.Point=POINT10354,10316;linkJ2|splineMode:java.lang.Integer=INT100;linkJ2|color:java.awt.Color=COLOR-16777216;ImpromptuProxy|boundingBox:java.awt.Rectangle=RECT10235,10117,236,111;ImpromptuProxy|color:java.awt.Color=COLOR-3814401;ImpromptuProxy-remote|boundingBox:java.awt.Rectangle=RECT10466,10169,10,10;ImpromptuProxy-remote|orientation:java.lang.Integer=INT1010;ImpromptuProxy-local|boundingBox:java.awt.Rectangle=RECT10349,10223,10,10;ImpromptuProxy-local|orientation:java.lang.Integer=INT1020;ImpromptuProxy-pie|boundingBox:java.awt.Rectangle=RECT10230,10169,10,10;ImpromptuProxy-pie|orientation:java.lang.Integer=INT1030;SlideServer|boundingBox:java.awt.Rectangle=RECT10236,10316,239,105;SlideServer|color:java.awt.Color=COLOR-3814401;SlideServer-inout|boundingBox:java.awt.Rectangle=RECT10349,10311,10,10;SlideServer-inout|orientation:java.lang.Integer=INT1000;Impromptu_Slide|boundingBox:java.awt.Rectangle=RECT10264,10254,187,33;Impromptu_Slide|color:java.awt.Color=COLOR-5441;Local|boundingBox:java.awt.Rectangle=RECT10349,10249,10,10;Local|orientation:java.lang.Integer=INT1000;Slide|boundingBox:java.awt.Rectangle=RECT10349,10282,10,10;Slide|orientation:java.lang.Integer=INT1020;"/>
+        </hints:hints>
+        <hints:hints xsi:type="hints:Hints">
+            <hints:hintedThing xlink:href="#archStructure.RemoteImpromptu" xsi:type="instance:XMLLink" xlink:type="simple"/>
+            <hints:propertyHint hints:name="allHints" xsi:type="hints:PropertyHint" hints:value="linkR1|numPoints:java.lang.Integer=INT2;linkR1|point0:java.awt.Point=POINT10619,10161;linkR1|point1:java.awt.Point=POINT10574,10161;linkR1|splineMode:java.lang.Integer=INT100;linkR1|color:java.awt.Color=COLOR-16777216;linkR2|numPoints:java.lang.Integer=INT2;linkR2|point0:java.awt.Point=POINT10403,10161;linkR2|point1:java.awt.Point=POINT10033,10161;linkR2|splineMode:java.lang.Integer=INT100;linkR2|color:java.awt.Color=COLOR-16777216;RemoteJetty|boundingBox:java.awt.Rectangle=RECT10033,10073,332,363;RemoteJetty|color:java.awt.Color=COLOR-3814401;RemoteJetty-pie|boundingBox:java.awt.Rectangle=RECT10028,10156,10,10;RemoteJetty-pie|orientation:java.lang.Integer=INT1030;RemoteJetty-remote|boundingBox:java.awt.Rectangle=RECT10360,10157,10,10;RemoteJetty-remote|orientation:java.lang.Integer=INT1010;RemoteJetty-yancees|boundingBox:java.awt.Rectangle=RECT10195,10431,10,10;RemoteJetty-yancees|orientation:java.lang.Integer=INT1020;RemotePie|boundingBox:java.awt.Rectangle=RECT10619,10114,100,100;RemotePie|color:java.awt.Color=COLOR-3814401;RemotePie-webdav|boundingBox:java.awt.Rectangle=RECT10614,10156,10,10;RemotePie-webdav|orientation:java.lang.Integer=INT1030;RemotePie-yancees|boundingBox:java.awt.Rectangle=RECT10663,10209,10,10;RemotePie-yancees|orientation:java.lang.Integer=INT1020;RemoteGUI_Impromptu|boundingBox:java.awt.Rectangle=RECT10403,10140,171,41;RemoteGUI_Impromptu|color:java.awt.Color=COLOR-5441;RemoteGUI|boundingBox:java.awt.Rectangle=RECT10569,10156,10,10;RemoteGUI|orientation:java.lang.Integer=INT1010;RemoteImpromptuServer|boundingBox:java.awt.Rectangle=RECT10398,10156,10,10;RemoteImpromptuServer|orientation:java.lang.Integer=INT1030;archStructure.RemoteImpromptu$$environmentProperties|__scale:java.lang.Double=DOU1.0;archStructure.RemoteImpromptu$$environmentProperties|__worldOriginY:java.lang.Integer=INT10000;archStructure.RemoteImpromptu$$environmentProperties|__worldOriginX:java.lang.Integer=INT10000;"/>
+        </hints:hints>
+        <hints:hints xsi:type="hints:Hints">
+            <hints:hintedThing xlink:href="#archStructure.RemoteJetty" xsi:type="instance:XMLLink" xlink:type="simple"/>
+            <hints:propertyHint hints:name="allHints" xsi:type="hints:PropertyHint" hints:value="RemotelinkJ1|numPoints:java.lang.Integer=INT2;RemotelinkJ1|point0:java.awt.Point=POINT10421,10311;RemotelinkJ1|point1:java.awt.Point=POINT10420,10333;RemotelinkJ1|splineMode:java.lang.Integer=INT100;RemotelinkJ1|color:java.awt.Color=COLOR-16777216;RemotelinkJ2|numPoints:java.lang.Integer=INT2;RemotelinkJ2|point0:java.awt.Point=POINT10420,10370;RemotelinkJ2|point1:java.awt.Point=POINT10421,10393;RemotelinkJ2|splineMode:java.lang.Integer=INT100;RemotelinkJ2|color:java.awt.Color=COLOR-16777216;RemoteImpromptuProxy|boundingBox:java.awt.Rectangle=RECT10299,10202,243,109;RemoteImpromptuProxy|color:java.awt.Color=COLOR-3814401;RemoteImpromptuProxy-remote|boundingBox:java.awt.Rectangle=RECT10537,10255,10,10;RemoteImpromptuProxy-remote|orientation:java.lang.Integer=INT1010;RemoteImpromptuProxy-local|boundingBox:java.awt.Rectangle=RECT10416,10306,10,10;RemoteImpromptuProxy-local|orientation:java.lang.Integer=INT1020;RemoteImpromptuProxy-pie|boundingBox:java.awt.Rectangle=RECT10294,10254,10,10;RemoteImpromptuProxy-pie|orientation:java.lang.Integer=INT1030;RemoteSlideServer|boundingBox:java.awt.Rectangle=RECT10301,10393,240,108;RemoteSlideServer|color:java.awt.Color=COLOR-3814401;RemoteSlideServer-inout|boundingBox:java.awt.Rectangle=RECT10416,10388,10,10;RemoteSlideServer-inout|orientation:java.lang.Integer=INT1000;RemoteImpromptu_Slide|boundingBox:java.awt.Rectangle=RECT10327,10333,186,37;RemoteImpromptu_Slide|color:java.awt.Color=COLOR-5441;RemoteLocal|boundingBox:java.awt.Rectangle=RECT10415,10328,10,10;RemoteLocal|orientation:java.lang.Integer=INT1000;RemoteSlide|boundingBox:java.awt.Rectangle=RECT10415,10365,10,10;RemoteSlide|orientation:java.lang.Integer=INT1020;"/>
+        </hints:hints>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </hints:renderingHints>
+</instance:xArch>

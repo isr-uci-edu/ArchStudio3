@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<instance:xArch xsi:schemaLocation="http://www.ics.uci.edu/pub/arch/xArch/diff.xsd http://www.isr.uci.edu/projects/xarchuci/ext/diff.xsd"
+	xmlns:types="http://www.ics.uci.edu/pub/arch/xArch/types.xsd" xmlns:implementation="http://www.ics.uci.edu/pub/arch/xArch/implementation.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diff="http://www.ics.uci.edu/pub/arch/xArch/diff.xsd"
+	xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:javaimplementation="http://www.ics.uci.edu/pub/arch/xArch/javaimplementation.xsd"
+	xmlns:javainitparams="http://www.ics.uci.edu/pub/arch/xArch/javainitparams.xsd" xmlns:instance="http://www.ics.uci.edu/pub/arch/xArch/instance.xsd">
+	<diff:diff xsi:type="diff:Diff">
+		<diff:diffPart xsi:type="diff:DiffPart">
+			<diff:add xsi:type="diff:Add">
+				<diff:link xsi:type="types:Link" types:id="FrenchRadarFilterBus_to_USFranceConnector">
+					<types:description xsi:type="instance:Description">FrenchRadarFilterBus to FrenchtoUSFilter Link</types:description>
+					<types:point xsi:type="instance:Point">
+						<instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#FrenchRadarFilterBus.IFACE_BOTTOM" />
+					</types:point>
+					<types:point xsi:type="instance:Point">
+						<instance:anchorOnInterface xsi:type="instance:XMLLink" xlink:type="simple" xlink:href="#USFranceConnector.IFACE_TOP" />
+					</types:point>
+				</diff:link>
+			</diff:add>
+		</diff:diffPart>
+	</diff:diff>
+</instance:xArch>
